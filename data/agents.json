@@ -1,0 +1,20 @@
+{
+ "checked_at": "2026-10-30",
+ "note": "Every UA token verified against vendor documentation at build time, or marked unverified with the corroborating source. OAI-AdsBot added beyond the original SPEC list: OpenAI documents it as the validator for ad landing pages on ChatGPT, directly relevant to AI ad placement.",
+ "agents": [
+  {"token": "GPTBot", "group": "training", "vendor": "OpenAI", "verified": true, "doc_url": "https://platform.openai.com/docs/bots", "date_checked": "2026-10-30"},
+  {"token": "ClaudeBot", "group": "training", "vendor": "Anthropic", "verified": true, "doc_url": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler", "date_checked": "2026-10-30"},
+  {"token": "Google-Extended", "group": "training", "vendor": "Google", "verified": true, "doc_url": "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers", "date_checked": "2026-10-30"},
+  {"token": "CCBot", "group": "training", "vendor": "Common Crawl", "verified": true, "doc_url": "https://commoncrawl.org/faq", "date_checked": "2026-10-30"},
+  {"token": "Applebot-Extended", "group": "training", "vendor": "Apple", "verified": true, "doc_url": "https://support.apple.com/en-gb/119829", "date_checked": "2026-10-30"},
+  {"token": "Meta-ExternalAgent", "group": "training", "vendor": "Meta", "verified": false, "doc_url": "https://developers.facebook.com/docs/sharing/webmasters/crawler", "date_checked": "2026-10-30", "note": "Vendor documentation page not retrievable at check time; token corroborated by Cloudflare's AI bot reference.", "corroboration_url": "https://developers.cloudflare.com/ai-crawl-control/reference/bots/"},
+  {"token": "Bytespider", "group": "training", "vendor": "ByteDance", "verified": false, "doc_url": null, "date_checked": "2026-10-30", "note": "No vendor documentation located; token corroborated by Cloudflare's AI bot reference.", "corroboration_url": "https://developers.cloudflare.com/ai-crawl-control/reference/bots/"},
+  {"token": "OAI-SearchBot", "group": "search_user_triggered", "vendor": "OpenAI", "verified": true, "doc_url": "https://platform.openai.com/docs/bots", "date_checked": "2026-10-30"},
+  {"token": "ChatGPT-User", "group": "search_user_triggered", "vendor": "OpenAI", "verified": true, "doc_url": "https://platform.openai.com/docs/bots", "date_checked": "2026-10-30"},
+  {"token": "PerplexityBot", "group": "search_user_triggered", "vendor": "Perplexity", "verified": true, "doc_url": "https://docs.perplexity.ai/guides/bots", "date_checked": "2026-10-30"},
+  {"token": "Perplexity-User", "group": "search_user_triggered", "vendor": "Perplexity", "verified": true, "doc_url": "https://docs.perplexity.ai/guides/bots", "date_checked": "2026-10-30"},
+  {"token": "Claude-SearchBot", "group": "search_user_triggered", "vendor": "Anthropic", "verified": true, "doc_url": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler", "date_checked": "2026-10-30"},
+  {"token": "Claude-User", "group": "search_user_triggered", "vendor": "Anthropic", "verified": true, "doc_url": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler", "date_checked": "2026-10-30"},
+  {"token": "OAI-AdsBot", "group": "ads", "vendor": "OpenAI", "verified": true, "doc_url": "https://platform.openai.com/docs/bots", "date_checked": "2026-10-30", "note": "Validates ad landing pages submitted for ChatGPT ads; not a crawl opt-out token."}
+ ]
+}
