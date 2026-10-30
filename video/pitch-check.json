@@ -10,12 +10,12 @@
   "adjacent_octave_jumps": 0
  },
  {
-  "file": "02-trim.mp3",
-  "voiced_frames": 827,
+  "file": "02.mp3",
+  "voiced_frames": 876,
   "pitch_5_50_95": [
-   77.4,
-   83.9,
-   102.5
+   77.8,
+   84.9,
+   94.2
   ],
   "adjacent_octave_jumps": 0
  },
