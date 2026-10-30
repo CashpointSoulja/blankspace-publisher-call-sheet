@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>First 30 days | Publisher call sheet</title>
+<meta name="description" content="The first 30 days, how to test with small numbers, and what changes if demand is the constraint.">
+<!-- Visibility decision pending (SPEC §0). Keeps every page out of search results while links stay openable. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script type="module" src="/assets/js/common.js"></script>
+<script type="module" src="/assets/js/plan.js"></script>
+<script type="module" src="/assets/js/claims.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="site-nav-outer">
+  <nav class="site-nav" aria-label="Main">
+    <div class="nav-left">
+      <a class="nav-brand" href="/"><img src="/assets/logo-text-white.png" width="1767" height="275" alt="blankspace"></a>
+      <ul class="nav-links">
+        <li><a class="nav-link" href="/targets/">Call sheet</a></li>
+        <li><a class="nav-link" href="/check/">Live check</a></li>
+        <li><a class="nav-link" href="/pilots/">Pilots</a></li>
+        <li><a class="nav-link" href="/plan/">Plan</a></li>
+        <li><a class="nav-link" href="/method/">Method</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <span class="tag tag-neutral tag-sm">Unofficial concept</span>
+      <button class="nav-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+    </div>
+  </nav>
+</div>
+<div class="mobile-menu" id="mobile-menu" hidden>
+  <div class="mobile-menu__inner" role="dialog" aria-label="Pages">
+    <button class="mobile-menu__close" type="button" aria-label="Close menu">×</button>
+    <a href="/">Overview</a>
+    <a href="/targets/">Call sheet</a>
+    <a href="/check/">Live check</a>
+    <a href="/pilots/">Pilots</a>
+    <a href="/plan/">Plan</a>
+    <a href="/method/">Method</a>
+  </div>
+</div>
+
+<main id="main">
+  <header class="page-head hero">
+    <div class="wrap">
+      <span class="tag">Plan</span>
+      <h1>The first 30 days</h1>
+      <p class="sub">What I’d do with the call sheet in the first month, how I’d test with small numbers, and what changes if the constraint is demand rather than supply.</p>
+    </div>
+  </header>
+
+  <section class="section section-first" aria-labelledby="assume-title">
+    <div class="wrap">
+      <div class="callout">
+        <strong id="assume-title">The assumption.</strong> Supply is the constraint: getting live on publisher sites is what limits growth now. I took this from the job description and interviews. It is not measured. If it’s wrong, <a href="#demand">the last section</a> says what changes.
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="weeks-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Weeks one to four</span>
+        <h2 id="weeks-title">One month, four steps</h2>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num">1</span>
+          <h3>Set up</h3>
+          <p>Re-run the citation sample so the call sheet is current. Agree what a qualified meeting means. Set up the CRM: stages from researched to pilot, each publisher imported with its evidence link.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">2</span>
+          <h3>First conversations</h3>
+          <p>Contact the top of the call sheet by role, one opening angle per stance. Log every reply, and the reason for every no.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">3</span>
+          <h3>Adjust</h3>
+          <p>Read the replies against the scores. Drop signals that predicted nothing. Rewrite the angles that got no response. Start the next batch.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">4</span>
+          <h3>Report</h3>
+          <p>Meetings booked, objections heard, which signals lined up with replies. Decide what stays in the process and what goes.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="test-title">
+    <div class="wrap grid-2">
+      <div>
+        <span class="eyebrow">Testing with small numbers</span>
+        <h2 id="test-title">Why I wouldn’t A/B test subject lines</h2>
+        <div class="prose" style="margin-top:1.5rem">
+          <p>To tell a 5% reply rate from 10% with the usual 95% confidence and 80% power, each variant needs about 435 sends. A call sheet runs to tens of publishers. The test would never finish.</p>
+          <p>So I’d test differently:</p>
+          <ul>
+            <li><strong>Test big differences.</strong> Compare whole opening angles, not wording. Large effects need far fewer sends to see.</li>
+            <li><strong>Count meetings, not opens.</strong> Opens are noisy and easy to fake. A booked meeting is the outcome.</li>
+            <li><strong>Read every reply.</strong> With small numbers, the reasons people give are worth more than the rate.</li>
+            <li><strong>Review in batches of ten.</strong> Agree in advance what result would make me stop an angle.</li>
+            <li><strong>Keep a holdout.</strong> Contact a few comparable publishers without the evidence, to check the evidence adds anything.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card card-raised">
+        <h3 style="margin-bottom:1rem">Sends needed per variant</h3>
+        <form id="calc" class="stack">
+          <div class="input-row">
+            <div style="flex:1 1 140px">
+              <label class="field-label" for="p1">Reply rate A (%)</label>
+              <input class="input" id="p1" type="number" min="0.5" max="99" step="0.5" value="5">
+            </div>
+            <div style="flex:1 1 140px">
+              <label class="field-label" for="p2">Reply rate B (%)</label>
+              <input class="input" id="p2" type="number" min="0.5" max="99" step="0.5" value="10">
+            </div>
+          </div>
+        </form>
+        <div style="margin-top:1.5rem">
+          <div class="stat" id="calc-n">435</div>
+          <div class="stat-label">sends per variant, two-sided, 95% confidence, 80% power</div>
+        </div>
+        <pre class="block">n = (1.96·√(2·p̄(1−p̄)) + 0.8416·√(p₁(1−p₁) + p₂(1−p₂)))²
+    ÷ (p₁ − p₂)²</pre>
+        <p class="small muted">p̄ is the mean of the two rates. Rounded up.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ref-title">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:1.5rem">
+        <span class="eyebrow">Reference</span>
+        <h2 id="ref-title">The case study I’d lead with</h2>
+        <p class="sub">blankspace’s own published results, quoted with their source.</p>
+      </div>
+      <div class="inner" data-claims="sole-supplier-growth,sole-supplier-referrals" hidden></div>
+      <p class="small muted" data-claims-fallback>Shown here once the source page is recorded in the data.</p>
+    </div>
+  </section>
+
+  <section class="section" id="demand" aria-labelledby="demand-title">
+    <div class="wrap grid-2">
+      <div>
+        <span class="eyebrow">If the assumption is wrong</span>
+        <h2 id="demand-title">If it’s demand, not supply</h2>
+      </div>
+      <div class="prose">
+        <p>If advertisers, not publishers, are what limit growth, most of this still works. It points the other way.</p>
+        <ul>
+          <li><strong>The sample changes job.</strong> It already records which retailers and brands AI answers recommend. Those become the call sheet.</li>
+          <li><strong>The signals change.</strong> Placement and programmatic give way to signs of spend: affiliate programmes, retail media, presence in the answers themselves.</li>
+          <li><strong>The first calls change.</strong> Agencies and performance teams, by role, with the same evidence-first drafts.</li>
+          <li><strong>Pilots measure the advertiser.</strong> The pilot checklist keeps its shape. The week-one numbers become the advertiser’s.</li>
+        </ul>
+        <p>The live check, the verifier and the method carry over unchanged.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-col">
+        <span class="footer-col-title">Publisher call sheet</span>
+        <p class="footer-note">Built by Ayo Ahmed. Reads public files only. Nothing here can send email.</p>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Pages</span>
+        <a class="footer-link" href="/targets/">Call sheet</a>
+        <a class="footer-link" href="/check/">Live check</a>
+        <a class="footer-link" href="/pilots/">Pilot health</a>
+        <a class="footer-link" href="/plan/">First 30 days</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Sources</span>
+        <a class="footer-link" href="/method/">Method</a>
+        <a class="footer-link" href="/method/#crawler">The crawler</a>
+        <a class="footer-link" href="/data/citation-sample.csv" download>Raw sample (CSV)</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">Unofficial concept, not affiliated with blankspace.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,3 @@
+# Cloudflare Pages: /p/{domain}/ is served by the single evidence page, which reads the domain from the path.
+/p/:domain/  /p/  200
+/p/:domain   /p/:domain/  301

@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Method | Publisher call sheet</title>
+<meta name="description" content="Sample method, signal definitions, formulas, limitations and raw data.">
+<!-- Visibility decision pending (SPEC §0). Keeps every page out of search results while links stay openable. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script type="module" src="/assets/js/common.js"></script>
+<script type="module" src="/assets/js/method.js"></script>
+<script type="module" src="/assets/js/claims.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="site-nav-outer">
+  <nav class="site-nav" aria-label="Main">
+    <div class="nav-left">
+      <a class="nav-brand" href="/"><img src="/assets/logo-text-white.png" width="1767" height="275" alt="blankspace"></a>
+      <ul class="nav-links">
+        <li><a class="nav-link" href="/targets/">Call sheet</a></li>
+        <li><a class="nav-link" href="/check/">Live check</a></li>
+        <li><a class="nav-link" href="/pilots/">Pilots</a></li>
+        <li><a class="nav-link" href="/plan/">Plan</a></li>
+        <li><a class="nav-link" href="/method/">Method</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <span class="tag tag-neutral tag-sm">Unofficial concept</span>
+      <button class="nav-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+    </div>
+  </nav>
+</div>
+<div class="mobile-menu" id="mobile-menu" hidden>
+  <div class="mobile-menu__inner" role="dialog" aria-label="Pages">
+    <button class="mobile-menu__close" type="button" aria-label="Close menu">×</button>
+    <a href="/">Overview</a>
+    <a href="/targets/">Call sheet</a>
+    <a href="/check/">Live check</a>
+    <a href="/pilots/">Pilots</a>
+    <a href="/plan/">Plan</a>
+    <a href="/method/">Method</a>
+  </div>
+</div>
+
+<main id="main">
+  <header class="page-head hero">
+    <div class="wrap">
+      <span class="tag">Method</span>
+      <h1>How the call sheet is made</h1>
+      <p class="sub">The sample, the signals and their formulas, the crawler, and what this can’t see. Every number on the site comes from a file linked on this page.</p>
+    </div>
+  </header>
+
+  <section class="section section-first" aria-labelledby="nosend-title">
+    <div class="wrap">
+      <div class="card card-accent">
+        <span class="eyebrow">What this can’t do</span>
+        <h2 id="nosend-title" style="margin-bottom:1rem">There is no send function anywhere in the codebase.</h2>
+        <p class="sub">Drafts are text on a page. Nothing here can send email, messages or form submissions, and nothing contacts a publisher except the read-only live check described below. Outreach, if any, happens by hand, outside this site.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sample" aria-labelledby="sample-title">
+    <div class="wrap grid-2">
+      <div>
+        <span class="eyebrow">The citation sample</span>
+        <h2 id="sample-title">One dated sample, recorded in full</h2>
+        <div class="prose" style="margin-top:1.5rem">
+          <p>Shopping queries in three verticals were put to AI answer engines from the UK, logged out. Every probe is one query, on one engine, in one run. Every cited URL was captured from the answer’s sources, in order, and reduced to its registrable domain using the Public Suffix List.</p>
+          <p><strong>Results vary from run to run.</strong> The same query on the same engine can cite different sites an hour later. That is why each publisher’s stability is recorded, and why the sample is always shown with its date.</p>
+          <p>Figures are what was actually run. Nothing is extrapolated.</p>
+        </div>
+      </div>
+      <div class="inner" id="sample-facts"><p class="inner-body small muted">Loading.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="queries-section" aria-labelledby="queries-title">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:1.5rem">
+        <span class="eyebrow">Queries</span>
+        <h2 id="queries-title">Every query, as typed</h2>
+      </div>
+      <div id="queries"></div>
+      <p style="margin-top:1.5rem"><a class="btn btn-outline" href="/data/citation-sample.csv" download>Download the raw sample (CSV)</a></p>
+      <p class="small muted">One row per cited URL. A probe with no citations has one row with an empty URL. Columns: <code class="inline">probe_id, sample_id, date_utc, engine, run, vertical, query_id, query, location, logged_in, citation_rank, cited_url, cited_domain, domain_class</code>.</p>
+    </div>
+  </section>
+
+  <section class="section" id="classification" aria-labelledby="class-title">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:1.5rem">
+        <span class="eyebrow">Classification</span>
+        <h2 id="class-title">Who counts as a publisher</h2>
+        <p class="sub">Each cited domain gets one class and one line of rationale. Only publishers are ranked. The share of each class is a finding in its own right.</p>
+      </div>
+      <div class="grid-2" style="margin-bottom:2rem">
+        <ul class="facts">
+          <li class="fact"><span class="fact-text"><strong>Publisher.</strong> Main revenue is content monetisation through ads or affiliate links. Comparison and release-tracking sites count.</span></li>
+          <li class="fact"><span class="fact-text"><strong>Retailer.</strong> Sells the products directly.</span></li>
+          <li class="fact"><span class="fact-text"><strong>Brand.</strong> Makes the products.</span></li>
+        </ul>
+        <ul class="facts">
+          <li class="fact"><span class="fact-text"><strong>Forums and video.</strong> User-generated: forums, Reddit, video platforms.</span></li>
+          <li class="fact"><span class="fact-text"><strong>Other.</strong> Everything else, such as encyclopaedias and government sites.</span></li>
+        </ul>
+      </div>
+      <div id="domains"></div>
+    </div>
+  </section>
+
+  <section class="section" id="signals" aria-labelledby="signals-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Signals and formulas</span>
+        <h2 id="signals-title">Five signals, 100 points</h2>
+        <p class="sub">Each signal gives a sub-score from 0 to 1, or unknown. Points are weight × sub-score. An unknown signal is left out of both the total and the maximum, so it never lowers a score.</p>
+      </div>
+      <pre class="block">total = Σ (wᵢ × sᵢ)   over known signals
+max   = Σ wᵢ          over known signals
+shown as "round(total) / max"</pre>
+      <p class="small muted">Default weights: readership 40, placement 20, programmatic 15, reachability 10, commerce 15. With custom weights the call sheet ranks by Σ wᵢsᵢ ÷ Σ wᵢ. A live check of a publisher outside the sample has no readership, so it scores out of 60.</p>
+
+      <div class="faq-list" style="margin-top:2.5rem">
+        <details class="faq" open>
+          <summary>Agent readership · 40 · dated sample only</summary>
+          <div class="faq-body">
+            <pre class="block">share = probes in the vertical citing the domain ÷ probes in the vertical
+s     = min(1, share ÷ 0.25)</pre>
+            <p>A domain’s vertical is the one where its share is highest. Stability: cited in every run of at least one query and engine pair; cited in a single run only; or one run per query in the sample. Outside the sample, readership is unknown.</p>
+          </div>
+        </details>
+        <details class="faq">
+          <summary>Placement fit · 20 · live</summary>
+          <div class="faq-body">
+            <p>Sitemap from the <code class="inline">Sitemap:</code> line in robots.txt, else <code class="inline">/sitemap.xml</code>. For a sitemap index, the first child whose URL contains post, article, content, review or guide, else the first child. Up to 50 URLs are read.</p>
+            <pre class="block">slug pattern, case-insensitive:
+(^|[-/])(best|top-?\d+|vs|versus|review|reviews|buying-guide|compared|alternatives)([-/]|$)
+
+slug_share = matched ÷ sampled
+schema     = 1 if ItemList, Product or Review JSON-LD is on the homepage
+             or two sampled matching pages, else 0
+s          = 0.75 × min(1, slug_share ÷ 0.30) + 0.25 × schema</pre>
+            <p>With no sitemap reachable, the slug part is unknown, so the score uses markup alone and the maximum drops by 15.</p>
+          </div>
+        </details>
+        <details class="faq">
+          <summary>Programmatic stack · 15 · live, initial HTML only</summary>
+          <div class="faq-body">
+            <pre class="block">s = (ads.txt present + (ad systems ≥ 5) + header bidding seen) ÷ 3</pre>
+            <p>ads.txt is read from the registrable domain. It is absent on any status other than 200, or when the body starts with <code class="inline">&lt;</code>. One redirect within the same domain is followed. Records are lines with at least three comma-separated fields; ad systems are the distinct first fields. Header bidding means Prebid or Amazon’s tag in the initial HTML. The Google ad-server tag is reported but not scored. “Not seen” never means “absent”: scripts loaded later are invisible to this check.</p>
+          </div>
+        </details>
+        <details class="faq">
+          <summary>Agent reachability · 10 · live, declared policy</summary>
+          <div class="faq-body">
+            <p>robots.txt is parsed per RFC 9309: product tokens match case-insensitively, every group naming the agent is merged, otherwise the <code class="inline">*</code> group applies, the longest rule wins and ties go to Allow. Each agent below is tested against the path <code class="inline">/</code>.</p>
+            <pre class="block">search group: allowed (none disallowed) | partial | blocked (all disallowed)
+s = 1 | 0.5 | 0          unknown if robots.txt can’t be read</pre>
+            <p>This is declared policy, not observed behaviour. <code class="inline">Content-Signal</code> lines are recorded verbatim and not scored.</p>
+          </div>
+        </details>
+        <details class="faq">
+          <summary>Commerce monetisation · 15 · live</summary>
+          <div class="faq-body">
+            <p>Links on the homepage and sampled pages are matched against Skimlinks, Awin, Partnerize, Sovrn Commerce, Amazon Associates (links with <code class="inline">tag=</code>), Rakuten and CJ domains.</p>
+            <pre class="block">s = 0 (none) | 2/3 (one network) | 1 (two or more)</pre>
+          </div>
+        </details>
+        <details class="faq">
+          <summary>CDN · shown, not scored</summary>
+          <div class="faq-body">
+            <p>Read from response headers: Cloudflare, Fastly, CloudFront, Akamai and Vercel. Every match is recorded, because layered setups exist. Which CDNs blankspace deploys on is unknown to me, so the CDN doesn’t move the score.</p>
+          </div>
+        </details>
+        <details class="faq">
+          <summary>Stance and opening angle · my reading</summary>
+          <div class="faq-body">
+            <p>Read from the reachability result. “AI rules present” means robots.txt names a listed agent or carries a Content-Signal line.</p>
+            <table class="data-table lg">
+              <thead><tr><th scope="col">Stance</th><th scope="col">Condition</th><th scope="col">Priority</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">Already decided</td><td>Search allowed; training blocked or partial</td><td>High</td></tr>
+                <tr><td class="strong">Read for free</td><td>Search allowed; training allowed; AI rules present</td><td>High</td></tr>
+                <tr><td class="strong">No owner yet</td><td>Search allowed; no AI rules</td><td>Medium</td></tr>
+                <tr><td class="strong">Closed door</td><td>Search blocked or partial</td><td>Low</td></tr>
+                <tr><td class="strong">Unknown</td><td>robots.txt unreachable</td><td>None</td></tr>
+              </tbody>
+            </table>
+            <p style="margin-top:1rem">Angles and “why not higher” lines are my interpretation, and are labelled that way wherever they appear.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="crawler" aria-labelledby="crawler-title">
+    <div class="wrap grid-2">
+      <div>
+        <span class="eyebrow">The crawler</span>
+        <h2 id="crawler-title">How the live check behaves</h2>
+        <p class="sub" style="margin-top:1rem">If you run a site and saw this in your logs, this is what it was and what it did.</p>
+      </div>
+      <div class="prose">
+        <p>It identifies itself as:</p>
+        <pre class="block">AyoGTMResearch/0.1 (+{site}/method#crawler)</pre>
+        <ul>
+          <li>It never uses another crawler’s user-agent, including the AI agents it reports on.</li>
+          <li>It obeys robots.txt for its own token, <code>AyoGTMResearch</code>, for every file except robots.txt and ads.txt, which exist to be read.</li>
+          <li>If robots.txt can’t be read, it fetches nothing else from that host.</li>
+          <li>At most eight requests per check, eight seconds each, and the first 512 KB of any response.</li>
+          <li>Results are cached for 24 hours per host, and checks are rate-limited per visitor.</li>
+          <li>It only fetches public http and https addresses on the checked domain. It refuses IP addresses, local and reserved names, non-standard ports, and any name that resolves to a private or reserved address.</li>
+          <li>A refused request is recorded as evidence (“Blocked our fetch (403)”) and the check carries on.</li>
+          <li>Its only other outbound requests are DNS lookups, to confirm the address is public.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="agents-section" aria-labelledby="agents-title">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:1.5rem">
+        <span class="eyebrow">Agent lists</span>
+        <h2 id="agents-title">The AI agents tested in robots.txt</h2>
+        <p class="sub">Each token is checked against its operator’s documentation. A token not yet confirmed says so.</p>
+      </div>
+      <div class="inner" id="agents"></div>
+    </div>
+  </section>
+
+  <section class="section" id="verifier" aria-labelledby="verifier-title">
+    <div class="wrap grid-2">
+      <div>
+        <span class="eyebrow">Verifier</span>
+        <h2 id="verifier-title">How drafts are checked</h2>
+      </div>
+      <div class="prose">
+        <ol>
+          <li>Each claim’s reference is resolved. A reference that points at nothing removes the claim.</li>
+          <li>The value the sentence asserts is compared with the value in the evidence. A mismatch removes it.</li>
+          <li>A blankspace figure must use its required wording, as blankspace’s own claim with its source. Otherwise it is removed. Kept ones are tagged “Company claim”.</li>
+          <li>A second pass finds factual sentences with no claim marker and removes them.</li>
+          <li>The draft shown is what survived. The log lists every removal, word for word.</li>
+        </ol>
+        <p>Drafts are addressed to roles. No named individuals appear anywhere.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="claims" aria-labelledby="claims-title">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:1.5rem">
+        <span class="eyebrow">Company claims</span>
+        <h2 id="claims-title">blankspace’s figures</h2>
+        <p class="sub">blankspace’s performance figures appear only as their own claims, in fixed wording, with the page they come from.</p>
+      </div>
+      <div class="inner" data-claims="cpm,pickup,sole-supplier-growth,sole-supplier-referrals" hidden></div>
+      <p class="small muted" data-claims-fallback>None are shown until their source page is recorded in <code class="inline">data/company-claims.json</code>.</p>
+    </div>
+  </section>
+
+  <section class="section" id="limits" aria-labelledby="limits-title">
+    <div class="wrap grid-2">
+      <div>
+        <span class="eyebrow">Limitations</span>
+        <h2 id="limits-title">What this can’t see</h2>
+      </div>
+      <div class="prose">
+        <ul>
+          <li><strong>Real agent traffic.</strong> Citations show an engine recommended a site, not how often agents visit it. Only the publisher’s logs show that.</li>
+          <li><strong>Revenue.</strong> Direct-sold ads, deal terms and affiliate earnings are invisible from outside. No traffic or revenue estimates are made.</li>
+          <li><strong>Who owns AI policy.</strong> robots.txt shows a decision, not who made it.</li>
+          <li><strong>Later scripts.</strong> Header bidding and affiliate links added after the first response are not seen.</li>
+          <li><strong>One sample.</strong> One date, one location, logged out. Personalised answers may differ.</li>
+          <li><strong>Declared, not observed.</strong> Crawlers can ignore robots.txt. Reachability reports what the site asks for.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="data" aria-labelledby="data-title">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:1.5rem">
+        <span class="eyebrow">Raw data</span>
+        <h2 id="data-title">Every file behind the site</h2>
+      </div>
+      <ul class="facts" style="max-width:720px">
+        <li class="fact"><a class="fact-text" href="/data/citation-sample.csv" download>citation-sample.csv</a><span class="fact-value">Every probe and citation</span></li>
+        <li class="fact"><a class="fact-text" href="/data/front.json">front.json</a><span class="fact-value">Sample summary</span></li>
+        <li class="fact"><a class="fact-text" href="/data/targets.json">targets.json</a><span class="fact-value">Ranked call sheet</span></li>
+        <li class="fact"><a class="fact-text" href="/data/queries.json">queries.json</a><span class="fact-value">Queries and engines</span></li>
+        <li class="fact"><a class="fact-text" href="/data/domains.json">domains.json</a><span class="fact-value">Classifications</span></li>
+        <li class="fact"><a class="fact-text" href="/data/agents.json">agents.json</a><span class="fact-value">Agent tokens</span></li>
+        <li class="fact"><a class="fact-text" href="/data/company-claims.json">company-claims.json</a><span class="fact-value">blankspace’s claims and sources</span></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-col">
+        <span class="footer-col-title">Publisher call sheet</span>
+        <p class="footer-note">Built by Ayo Ahmed. Reads public files only. Nothing here can send email.</p>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Pages</span>
+        <a class="footer-link" href="/targets/">Call sheet</a>
+        <a class="footer-link" href="/check/">Live check</a>
+        <a class="footer-link" href="/pilots/">Pilot health</a>
+        <a class="footer-link" href="/plan/">First 30 days</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Sources</span>
+        <a class="footer-link" href="/method/">Method</a>
+        <a class="footer-link" href="/method/#crawler">The crawler</a>
+        <a class="footer-link" href="/data/citation-sample.csv" download>Raw sample (CSV)</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">Unofficial concept, not affiliated with blankspace.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

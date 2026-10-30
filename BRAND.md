@@ -35,7 +35,7 @@ blankspace's hosts are not reachable from the build environment, so the scrape w
 | `--accent` | `--c-blue` | `#5d94cf` = `rgb(93,148,207)` | Primary accent: buttons, highlighted stats, active states, eyebrows, links. |
 | `--accent-dim` | `--c-blue-dim` | `#5d94cf1f` (accent 0.12) | Icon tiles, active footer variant. |
 
-The other palette entries exist on their site but this build does not use them: `--c-orange #ef722e`, `--c-yellow #f4c627`, `--c-pink #e0676d`, `--c-red #de4345` (their advertiser mode), `--c-darkblue #282e4c`. Using them would imply a second product mode.
+The other palette entries exist on their site but this build does not use them: `--c-orange #ef722e`, `--c-yellow #f4c627`, `--c-pink #e0676d`, `--c-darkblue #282e4c`. Using them would imply a second product mode. The one exception is `--c-red #de4345`, kept as `--error` for form errors only, as their `.v2b-form-error` does (4.98 : 1 on black).
 
 ### Measured literals (not tokens on their site, used repeatedly in CSS)
 
@@ -178,7 +178,7 @@ Wordmark left at 20px tall. Links follow at 0.8125rem / 600 / `--muted`, padding
 
 | Variant | Spec (CSS) | Here |
 |---|---|---|
-| Primary, large | Montserrat 700, 0.9375rem, padding `.75rem 1.75rem`, radius 8px, fill `--accent`, border `--accent`, text `#fff`, hover `filter: brightness(1.1)` | Same shape, fill and colours, but text at **1.1875rem / 700**. This is the one deliberate deviation, for contrast (§8). An arrow `→` follows the label, as on their hero. |
+| Primary, large | Montserrat 700, 0.9375rem, padding `.75rem 1.75rem`, radius 8px, fill `--accent`, border `--accent`, text `#fff`, hover `filter: brightness(1.1)` | Same radius, fill and colours, but text at **1.1875rem / 700**, for contrast (§8). Padding drops to `.625rem 1.5rem` so the button keeps their 44px height. An arrow `→` may follow the label, as on their hero. |
 | Ghost, large | Same shape, transparent, border `--border-2`, text `--muted`, hover text `--text` | As measured |
 | Outline accent | Montserrat 700, 0.875rem, radius 999px, padding `.75rem 1.75rem .9rem`, transparent, text `--accent`, border `#5d94cf80`, hover fill `--accent` and text `#fff` | As measured. Use for small accent actions where a filled button would put sub-19px white text on blue. |
 | Nav pill | 0.8125rem / 600, radius 999px, padding `.4rem .875rem`, border `--border`, text `--muted` | As measured (ghost only, see §8) |
