@@ -1,0 +1,883 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Publisher call sheet | Unofficial blankspace concept</title>
+<meta name="description" content="An unofficial concept: which publishers AI answer engines cite in automotive, consumer electronics and sportswear, with the evidence for each.">
+<!-- Visibility decision pending (SPEC §0). Keeps the page out of search results while the link stays openable. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Nunito+Sans:wght@400;600;700;800&display=swap">
+<style>
+:root {
+  --bg: rgb(0, 0, 0);
+  --text: rgba(255, 255, 255, 0.92);
+  --heading: #ffffff;
+  --muted: rgba(255, 255, 255, 0.62);
+  --faint: rgba(255, 255, 255, 0.38);
+  --accent: rgb(93, 148, 207);
+  --accent-tint: rgba(93, 148, 207, 0.16);
+  --on-accent: #ffffff;           /* check against live pill buttons */
+  --green: #3fb97a;               /* placeholder: measure from live site */
+  --card: #0a1628;                /* placeholder: measure dashboard card navy */
+  --card-raised: #0e1d33;         /* derived from --card */
+  --line: rgba(255, 255, 255, 0.10); /* placeholder: measure card border */
+  --skeleton: rgba(255, 255, 255, 0.08);
+
+  --font-head: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
+
+  --radius-card: 16px;
+  --radius-inner: 10px;
+  --wrap: 1180px;
+  --gutter: clamp(20px, 4vw, 40px);
+
+  color-scheme: dark;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+*, *::before, *::after { box-sizing: inherit; }
+
+html {
+  background: var(--bg);
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--heading); }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+h1, h2, h3 {
+  font-family: var(--font-head);
+  font-weight: 900;
+  color: var(--heading);
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+
+h1 { font-size: clamp(2.1rem, 4.4vw, 3.75rem); line-height: 1.04; }
+h2 { font-size: clamp(1.6rem, 2.8vw, 2.4rem); line-height: 1.1; }
+h3 { font-size: 1.125rem; line-height: 1.25; letter-spacing: 0; }
+
+p { margin: 0; }
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
+}
+
+.micro {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip {
+  position: absolute; left: 16px; top: -60px;
+  background: var(--accent); color: var(--on-accent);
+  padding: 10px 16px; border-radius: 999px; font-weight: 800; z-index: 20;
+}
+.skip:focus { top: calc(12px + env(safe-area-inset-top, 0px)); }
+
+/* Slots awaiting data */
+[data-slot].is-empty {
+  color: var(--faint);
+  border-bottom: 1px dashed var(--faint);
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+.brand img { height: 22px; width: auto; }
+.site-header nav { margin-left: auto; }
+.site-header nav ul {
+  display: flex; gap: 22px;
+  list-style: none; margin: 0; padding: 0;
+}
+.site-header nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9375rem;
+}
+.site-header nav a:hover { color: var(--heading); }
+
+/* ---------- Pills ---------- */
+.pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.pill-tag {
+  padding: 4px 11px;
+  border: 1px solid var(--line);
+  font-weight: 800; font-size: 0.7rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted);
+}
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 52px;
+  padding: 0 26px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1.1875rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.btn-primary { background: var(--accent); color: var(--on-accent); }
+.btn-primary:hover { background: #7aaadb; color: var(--on-accent); }
+.btn-ghost { border-color: var(--line); color: var(--heading); background: transparent; }
+.btn-ghost:hover { border-color: var(--accent); color: var(--heading); }
+
+/* ---------- Cards & windows ---------- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+}
+
+.window { overflow: hidden; }
+.window-bar {
+  display: flex; align-items: center; gap: 12px;
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+}
+.dots { display: flex; gap: 7px; }
+.dots span { width: 10px; height: 10px; border-radius: 50%; }
+.dots span:nth-child(1) { background: #ff5f57; }
+.dots span:nth-child(2) { background: #febc2e; }
+.dots span:nth-child(3) { background: #28c840; }
+.window-bar .micro { margin-left: 4px; }
+.window-bar .stamp { margin-left: auto; }
+
+/* ---------- Hero ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.02fr);
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+  padding-top: clamp(28px, 6vw, 72px);
+  padding-bottom: clamp(56px, 8vw, 104px);
+}
+.hero-copy h1 { max-width: 15.5ch; }
+.lead {
+  margin-top: 24px;
+  font-size: clamp(1.125rem, 1.6vw, 1.3125rem);
+  line-height: 1.5;
+  max-width: 34ch;
+}
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.label-line {
+  margin-top: 28px;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 56ch;
+}
+
+/* Tabs inside the hero window */
+.tabs {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  padding: 16px 18px 0;
+}
+.tab, .filter {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+.tab[aria-selected="true"], .filter[aria-pressed="true"] {
+  color: var(--heading);
+  background: var(--accent-tint);
+  border-color: var(--accent);
+}
+.tab:hover, .filter:hover { color: var(--heading); }
+
+.panel { padding: 16px 18px 20px; }
+.panel[hidden] { display: none; }
+
+.filters { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+.filter { font-size: 0.8125rem; padding: 4px 12px; }
+
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table { width: 100%; border-collapse: collapse; }
+caption { text-align: left; }
+th {
+  text-align: left;
+  padding: 0 10px 10px 0;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+td {
+  padding: 12px 10px 12px 0;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  font-size: 0.9375rem;
+}
+tr:last-child td { border-bottom: 0; }
+td.rank { color: var(--faint); font-weight: 700; width: 2.2em; }
+td.domain { font-weight: 700; color: var(--heading); white-space: nowrap; }
+td.vertical { color: var(--muted); white-space: nowrap; }
+td.score { white-space: nowrap; }
+td.score strong {
+  font-family: var(--font-head); font-weight: 900;
+  color: var(--accent); font-size: 1.125rem;
+}
+td.score span { color: var(--faint); font-size: 0.8125rem; }
+td.angle { color: var(--muted); min-width: 16ch; }
+
+.skel {
+  display: inline-block;
+  height: 0.8em;
+  border-radius: 4px;
+  background: var(--skeleton);
+  vertical-align: middle;
+}
+
+.panel-foot {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  margin-top: 14px;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+/* Bucket bars */
+.buckets { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 14px; }
+.bucket {
+  display: grid;
+  grid-template-columns: 9.5em minmax(0, 1fr) 3.2em;
+  align-items: center; gap: 12px;
+  font-size: 0.9375rem;
+}
+.bucket .name { color: var(--text); }
+.bucket .track { height: 10px; border-radius: 999px; background: var(--skeleton); overflow: hidden; }
+.bucket .fill { height: 100%; width: 0; border-radius: 999px; background: var(--faint); }
+.bucket.is-publisher .fill { background: var(--accent); }
+.bucket .pct { text-align: right; font-weight: 700; color: var(--heading); }
+.bucket-note { margin-top: 16px; font-size: 0.875rem; color: var(--muted); max-width: 52ch; }
+
+/* ---------- Sections ---------- */
+.section { padding-top: clamp(56px, 8vw, 96px); padding-bottom: clamp(56px, 8vw, 96px); border-top: 1px solid var(--line); }
+.section-head { max-width: 680px; }
+.section-head p { margin-top: 16px; color: var(--muted); max-width: 60ch; }
+
+/* The bet */
+.bet {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: end;
+}
+.bet h2 { max-width: 18ch; }
+.bet p { color: var(--text); max-width: 52ch; }
+.bet p + p { margin-top: 14px; }
+
+/* Scorecard */
+.scorecard { margin-top: 40px; }
+.score-rows { list-style: none; margin: 0; padding: 6px 22px; }
+.score-row {
+  display: grid;
+  grid-template-columns: minmax(11em, 1.1fr) minmax(0, 0.9fr) minmax(0, 2fr);
+  gap: 8px 28px;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+.score-row:last-child { border-bottom: 0; }
+.score-name { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+.score-name h3 { font-size: 1rem; }
+.weight { display: flex; align-items: center; gap: 12px; }
+.weight .track { flex: 1; height: 8px; border-radius: 999px; background: var(--skeleton); overflow: hidden; }
+.weight .fill { height: 100%; border-radius: 999px; background: var(--accent); }
+.weight .pts {
+  font-family: var(--font-head); font-weight: 900;
+  color: var(--accent); min-width: 2.2ch; text-align: right;
+}
+.score-row p { font-size: 0.9375rem; color: var(--muted); }
+.score-row.unscored .weight .pts { color: var(--faint); font-family: var(--font-body); font-weight: 700; font-size: 0.875rem; min-width: auto; }
+.scorecard-foot {
+  padding: 16px 22px;
+  border-top: 1px solid var(--line);
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+/* Live check */
+.check {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(24px, 4vw, 56px);
+  padding: clamp(24px, 4vw, 44px);
+  align-items: center;
+}
+.live {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--green);
+  margin-bottom: 16px;
+}
+.live .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 0 rgba(63, 185, 122, 0.6);
+  animation: pulse 2.2s ease-out infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(63, 185, 122, 0.55); }
+  70% { box-shadow: 0 0 0 9px rgba(63, 185, 122, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(63, 185, 122, 0); }
+}
+.check-form label { display: block; font-weight: 700; color: var(--heading); margin-bottom: 10px; }
+.field { display: flex; gap: 10px; flex-wrap: wrap; }
+.field input {
+  flex: 1 1 240px;
+  min-height: 52px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--heading);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+}
+.field input::placeholder { color: var(--faint); }
+.field input:focus-visible { border-color: var(--accent); outline-offset: 2px; }
+.check-note { margin-top: 14px; font-size: 0.875rem; color: var(--muted); max-width: 56ch; }
+
+/* Next steps */
+.next {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 40px;
+}
+.next-item { padding: 26px; display: flex; flex-direction: column; gap: 14px; }
+.next-item.wide { grid-column: span 2; }
+.next-item p { color: var(--muted); font-size: 0.9375rem; }
+.next-item .go { margin-top: auto; font-weight: 700; font-size: 0.9375rem; }
+.figure {
+  font-family: var(--font-head); font-weight: 900;
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  line-height: 1;
+  color: var(--accent);
+}
+.log {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-inner);
+  padding: 14px 16px;
+  display: grid;
+  gap: 10px;
+}
+.log-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 6px 14px;
+  align-items: baseline;
+  font-size: 0.9375rem;
+}
+.log-row .pill-tag { border-color: rgba(255, 255, 255, 0.22); color: var(--heading); }
+.log-row q { color: var(--text); text-decoration: line-through; text-decoration-color: rgba(255, 255, 255, 0.4); }
+.log-row .why { grid-column: 2; font-size: 0.8125rem; color: var(--muted); }
+
+/* Builder */
+.builder {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: start;
+}
+.builder-intro p { margin-top: 16px; color: var(--text); max-width: 46ch; }
+.builder-links { display: flex; gap: 20px; margin-top: 20px; font-weight: 700; }
+.jd { padding: 6px 22px 10px; }
+.jd th { padding-top: 16px; }
+.jd td:first-child { color: var(--heading); font-weight: 600; width: 46%; padding-right: 20px; }
+.jd td:last-child { color: var(--muted); }
+.jd tr.not-built td:last-child { color: var(--faint); }
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding-top: 28px;
+  padding-bottom: 40px;
+  display: flex; flex-wrap: wrap; gap: 12px 28px;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .hero, .bet, .check, .builder { grid-template-columns: minmax(0, 1fr); }
+  .bet { align-items: start; }
+  .next { grid-template-columns: minmax(0, 1fr); }
+  .next-item.wide { grid-column: auto; }
+  .score-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .score-row p { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  .site-header { flex-wrap: wrap; }
+  .site-header nav { margin-left: 0; width: 100%; }
+  .site-header nav ul { gap: 18px; flex-wrap: wrap; }
+  .score-rows { padding: 0 16px; }
+  .score-row { grid-template-columns: minmax(0, 1fr); }
+  .bucket { grid-template-columns: 7.5em minmax(0, 1fr) 3em; }
+  td.angle { display: none; }
+  th.angle { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live .dot { animation: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="wrap site-header">
+  <a class="brand" href="/">
+    <img src="/assets/blankspace-wordmark.png" width="1767" height="275" alt="blankspace">
+  </a>
+  <span class="pill pill-tag">Unofficial concept</span>
+  <nav aria-label="Main">
+    <ul>
+      <li><a href="/targets">Call sheet</a></li>
+      <li><a href="/check">Live check</a></li>
+      <li><a href="/plan">Plan</a></li>
+      <li><a href="/method">Method</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- Finding -->
+  <section class="wrap hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <h1 id="hero-title"><span data-slot="publishers_cited" data-format="number">—</span> publishers showed up in AI answers to <span data-slot="queries" data-format="number">—</span> shopping queries across your three verticals.</h1>
+      <p class="lead">Here are the <span data-slot="shortlist_size" data-format="number">—</span> I’d call first, the evidence behind each one, and the message I’d send.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/targets">See the call sheet</a>
+        <a class="btn btn-ghost" href="#check">Check any publisher</a>
+      </div>
+      <p class="label-line">Unofficial concept by <span data-slot="builder.name">—</span>, not affiliated with blankspace. Citation data is a dated sample (<span data-slot="sample_date" data-format="date">—</span>, n = <span data-slot="probes" data-format="number">—</span> probes); live checks read public files only; nothing here can send email.</p>
+    </div>
+
+    <div class="card window">
+      <div class="window-bar">
+        <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
+        <span class="micro">Call sheet</span>
+        <span class="micro stamp">Dated sample <span data-slot="sample_date" data-format="date">—</span></span>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Sample views">
+        <button class="tab" role="tab" id="tab-sheet" aria-controls="panel-sheet" aria-selected="true">Call sheet</button>
+        <button class="tab" role="tab" id="tab-cited" aria-controls="panel-cited" aria-selected="false" tabindex="-1">Who gets cited</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-sheet" aria-labelledby="tab-sheet">
+        <div class="filters" role="group" aria-label="Filter by vertical">
+          <button class="filter" data-vertical="all" aria-pressed="true">All</button>
+          <button class="filter" data-vertical="automotive" aria-pressed="false">Automotive</button>
+          <button class="filter" data-vertical="consumer_electronics" aria-pressed="false">Electronics</button>
+          <button class="filter" data-vertical="sportswear" aria-pressed="false">Sportswear</button>
+        </div>
+        <div class="table-scroll">
+          <table>
+            <caption class="visually-hidden">Top publishers from the citation sample, ranked by score</caption>
+            <thead>
+              <tr>
+                <th class="micro" scope="col">#</th>
+                <th class="micro" scope="col">Publisher</th>
+                <th class="micro" scope="col">Vertical</th>
+                <th class="micro" scope="col">Score</th>
+                <th class="micro angle" scope="col">Opening angle</th>
+              </tr>
+            </thead>
+            <tbody id="preview-rows" aria-live="polite">
+              <tr aria-hidden="true"><td class="rank"><span class="skel" style="width:1em"></span></td><td><span class="skel" style="width:9em"></span></td><td><span class="skel" style="width:6em"></span></td><td><span class="skel" style="width:3em"></span></td><td class="angle"><span class="skel" style="width:12em"></span></td></tr>
+              <tr aria-hidden="true"><td class="rank"><span class="skel" style="width:1em"></span></td><td><span class="skel" style="width:7em"></span></td><td><span class="skel" style="width:5em"></span></td><td><span class="skel" style="width:3em"></span></td><td class="angle"><span class="skel" style="width:10em"></span></td></tr>
+              <tr aria-hidden="true"><td class="rank"><span class="skel" style="width:1em"></span></td><td><span class="skel" style="width:10em"></span></td><td><span class="skel" style="width:6em"></span></td><td><span class="skel" style="width:3em"></span></td><td class="angle"><span class="skel" style="width:11em"></span></td></tr>
+              <tr aria-hidden="true"><td class="rank"><span class="skel" style="width:1em"></span></td><td><span class="skel" style="width:8em"></span></td><td><span class="skel" style="width:5em"></span></td><td><span class="skel" style="width:3em"></span></td><td class="angle"><span class="skel" style="width:9em"></span></td></tr>
+              <tr aria-hidden="true"><td class="rank"><span class="skel" style="width:1em"></span></td><td><span class="skel" style="width:9em"></span></td><td><span class="skel" style="width:6em"></span></td><td><span class="skel" style="width:3em"></span></td><td class="angle"><span class="skel" style="width:12em"></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel-foot">
+          <span id="preview-status">Awaiting sample data</span>
+          <a href="/targets">Open the full call sheet</a>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-cited" aria-labelledby="tab-cited" hidden>
+        <ul class="buckets" id="buckets">
+          <li class="bucket is-publisher" data-class="publisher"><span class="name">Publishers</span><span class="track"><span class="fill"></span></span><span class="pct">—</span></li>
+          <li class="bucket" data-class="retailer"><span class="name">Retailers</span><span class="track"><span class="fill"></span></span><span class="pct">—</span></li>
+          <li class="bucket" data-class="brand"><span class="name">Brand sites</span><span class="track"><span class="fill"></span></span><span class="pct">—</span></li>
+          <li class="bucket" data-class="ugc"><span class="name">Forums and video</span><span class="track"><span class="fill"></span></span><span class="pct">—</span></li>
+          <li class="bucket" data-class="other"><span class="name">Other</span><span class="track"><span class="fill"></span></span><span class="pct">—</span></li>
+        </ul>
+        <p class="bucket-note">Share of all citations in the sample, by type of site. Only publishers go on the call sheet. How each domain was classified is on the method page.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Assumption -->
+  <section class="section" aria-labelledby="bet-title">
+    <div class="wrap bet">
+      <h2 id="bet-title">This is built on one assumption: supply is the constraint.</h2>
+      <div>
+        <p>From the job description and your interviews, I’ve assumed that getting live on publisher sites is what limits growth right now. Everything here is aimed at that.</p>
+        <p>If demand is the real constraint, the plan says what changes. <a href="/plan#demand">What changes if it’s demand</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scoring -->
+  <section class="section" aria-labelledby="score-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="score-title">How a publisher earns a place</h2>
+        <p>Five signals, 100 points. Every point traces to something you can open and check. A signal I couldn’t read is left out of the total, not counted as zero.</p>
+      </div>
+
+      <div class="card window scorecard">
+        <div class="window-bar">
+          <div class="dots" aria-hidden="true"><span></span><span></span><span></span></div>
+          <span class="micro">Scoring</span>
+        </div>
+        <ul class="score-rows">
+          <li class="score-row">
+            <div class="score-name"><h3>Agent readership</h3><span class="pill pill-tag">Dated sample</span></div>
+            <div class="weight"><span class="track"><span class="fill" style="width:100%"></span></span><span class="pts">40</span></div>
+            <p>Share of a vertical’s sampled queries where answer engines cited the publisher. Full marks at one query in four.</p>
+          </li>
+          <li class="score-row">
+            <div class="score-name"><h3>Placement fit</h3><span class="pill pill-tag">Live</span></div>
+            <div class="weight"><span class="track"><span class="fill" style="width:50%"></span></span><span class="pts">20</span></div>
+            <p>Share of sitemap pages that are roundups, comparisons or reviews, plus ItemList or Product markup. These are the pages a list placement fits into.</p>
+          </li>
+          <li class="score-row">
+            <div class="score-name"><h3>Programmatic stack</h3><span class="pill pill-tag">Live</span></div>
+            <div class="weight"><span class="track"><span class="fill" style="width:37.5%"></span></span><span class="pts">15</span></div>
+            <p>ads.txt published, five or more ad systems listed, header bidding in the initial HTML.</p>
+          </li>
+          <li class="score-row">
+            <div class="score-name"><h3>Commerce monetisation</h3><span class="pill pill-tag">Live</span></div>
+            <div class="weight"><span class="track"><span class="fill" style="width:37.5%"></span></span><span class="pts">15</span></div>
+            <p>Affiliate networks found in page links. A publisher already earning from buying intent understands the pitch quickly.</p>
+          </li>
+          <li class="score-row">
+            <div class="score-name"><h3>Agent reachability</h3><span class="pill pill-tag">Live</span></div>
+            <div class="weight"><span class="track"><span class="fill" style="width:25%"></span></span><span class="pts">10</span></div>
+            <p>Search and user-triggered AI agents not disallowed in robots.txt. This is declared policy, not observed behaviour.</p>
+          </li>
+          <li class="score-row unscored">
+            <div class="score-name"><h3>CDN</h3><span class="pill pill-tag">Live</span></div>
+            <div class="weight"><span class="pts">Shown, not scored</span></div>
+            <p>Read from response headers. I don’t know which CDNs you deploy on today, so it doesn’t move the score.</p>
+          </li>
+        </ul>
+        <p class="scorecard-foot">The weights are my opinion. On the call sheet you can drag them to yours and watch the order change.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live check -->
+  <section class="section" id="check" aria-labelledby="check-title">
+    <div class="wrap">
+      <div class="card check">
+        <div>
+          <span class="live micro"><span class="dot" aria-hidden="true"></span>Live check</span>
+          <h2 id="check-title">Try a publisher I haven’t seen.</h2>
+        </div>
+        <form class="check-form" action="/check" method="get">
+          <label for="check-url">Publisher address</label>
+          <div class="field">
+            <input id="check-url" name="url" type="text" inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="publisher.co.uk" required>
+            <button class="btn btn-primary" type="submit">Run check</button>
+          </div>
+          <p class="check-note">Reads robots.txt, response headers, ads.txt, the sitemap and up to three pages. Identifies itself honestly and obeys robots.txt. Citation data appears only for publishers in the dated sample.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next steps -->
+  <section class="section" aria-labelledby="next-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="next-title">From list to live pilot</h2>
+      </div>
+      <div class="next">
+        <article class="card next-item wide">
+          <h3>Outreach drafts, checked before you read them</h3>
+          <p>One draft per publisher on the call sheet, addressed to a role rather than a named person. Every claim links to its evidence. Anything that can’t be traced is removed, and the removal is logged.</p>
+          <div class="log" aria-label="Verifier log example">
+            <span class="micro">Verifier log, <span data-slot="verifier_example.domain">—</span></span>
+            <div class="log-row">
+              <span class="pill pill-tag">Removed</span>
+              <q data-slot="verifier_example.removed_text">—</q>
+              <span class="why">No matching evidence</span>
+            </div>
+          </div>
+          <p>No send function exists anywhere in the code.</p>
+          <a class="go" href="/targets">Read the drafts</a>
+        </article>
+
+        <article class="card next-item">
+          <h3>The first 30 days</h3>
+          <span class="figure">~430</span>
+          <p>Sends per variant to tell a 5% reply rate from 10%. Your publisher universe in three verticals is hundreds. The plan covers what I’d test instead.</p>
+          <a class="go" href="/plan">Read the plan</a>
+        </article>
+
+        <article class="card next-item wide">
+          <h3>Pilot health</h3>
+          <p>The questions I’d hold every pilot to: invisible-placement QA and publisher SEO sign-off before launch, agreed pick-up methodology in week one, renewal criteria settled before anything goes live.</p>
+          <a class="go" href="/pilots">Open the checklist</a>
+        </article>
+
+        <article class="card next-item">
+          <h3>Method</h3>
+          <p>Every query, every probe and every classification, with the raw data to download.</p>
+          <a class="go" href="/method">Read the method</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Builder -->
+  <section class="section" aria-labelledby="builder-title">
+    <div class="wrap builder">
+      <div class="builder-intro">
+        <h2 id="builder-title">Who built this</h2>
+        <p><span data-slot="builder.name">—</span>. <span data-slot="builder.bio">—</span></p>
+        <div class="builder-links">
+          <a data-href-slot="builder.repo_url" href="#">Repository</a>
+          <a href="/method">How it works</a>
+        </div>
+      </div>
+
+      <div class="card jd">
+        <table>
+          <caption class="visually-hidden">Job description requirements and where each is covered</caption>
+          <thead>
+            <tr><th class="micro" scope="col">The role asks for</th><th class="micro" scope="col">Where it is</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Outreach that books qualified publisher meetings</td><td>Call sheet, evidence pages, verified drafts</td></tr>
+            <tr><td>The GTM machine: lists, research agents, analytics</td><td>Live check, scoring, verifier, method</td></tr>
+            <tr class="not-built"><td>Sequences and CRM</td><td>Not built. A CRM is a buying decision, not a demo. The plan covers set-up.</td></tr>
+            <tr><td>A/B testing</td><td>The plan: test design for small numbers</td></tr>
+            <tr><td>Keeping pilots on track</td><td>Pilot health checklist</td></tr>
+            <tr><td>An end-to-end AI-native project you can demo</td><td>This site and its repository</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap site-footer">
+  <span>Unofficial concept, not affiliated with blankspace.</span>
+  <a href="/method">Method and sources</a>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var VERTICALS = {
+    automotive: "Automotive",
+    consumer_electronics: "Consumer electronics",
+    sportswear: "Sportswear"
+  };
+
+  function get(obj, path) {
+    return path.split(".").reduce(function (acc, key) {
+      return acc == null ? undefined : acc[key];
+    }, obj);
+  }
+
+  function format(value, kind) {
+    if (value == null || value === "") return null;
+    if (kind === "number" && typeof value === "number") return value.toLocaleString("en-GB");
+    if (kind === "date") {
+      var d = new Date(String(value) + "T00:00:00Z");
+      if (isNaN(d.getTime())) return String(value);
+      return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+    }
+    return String(value);
+  }
+
+  /* Mark every slot as empty until data arrives */
+  document.querySelectorAll("[data-slot]").forEach(function (el) { el.classList.add("is-empty"); });
+
+  /* Tabs */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+  function selectTab(tab) {
+    tabs.forEach(function (t) {
+      var on = t === tab;
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+    });
+  }
+  tabs.forEach(function (tab, i) {
+    tab.addEventListener("click", function () { selectTab(tab); });
+    tab.addEventListener("keydown", function (e) {
+      var next = null;
+      if (e.key === "ArrowRight") next = tabs[(i + 1) % tabs.length];
+      if (e.key === "ArrowLeft") next = tabs[(i - 1 + tabs.length) % tabs.length];
+      if (next) { e.preventDefault(); selectTab(next); next.focus(); }
+    });
+  });
+
+  /* Preview table */
+  var previewRows = [];
+  var tbody = document.getElementById("preview-rows");
+  var status = document.getElementById("preview-status");
+
+  function cell(cls, text) {
+    var td = document.createElement("td");
+    if (cls) td.className = cls;
+    if (text != null) td.textContent = text;
+    return td;
+  }
+
+  function renderPreview(vertical) {
+    if (!previewRows.length) return;
+    var rows = previewRows
+      .filter(function (r) { return vertical === "all" || r.vertical === vertical; })
+      .sort(function (a, b) { return a.rank - b.rank; })
+      .slice(0, 5);
+
+    tbody.textContent = "";
+    if (!rows.length) {
+      var tr = document.createElement("tr");
+      var td = cell(null, "No publishers from this vertical near the top of the sample.");
+      td.colSpan = 5;
+      tr.appendChild(td);
+      tbody.appendChild(tr);
+      return;
+    }
+    rows.forEach(function (r) {
+      var tr = document.createElement("tr");
+      tr.appendChild(cell("rank", String(r.rank)));
+      tr.appendChild(cell("domain", r.domain));
+      tr.appendChild(cell("vertical", VERTICALS[r.vertical] || r.vertical));
+      var score = cell("score");
+      var strong = document.createElement("strong");
+      strong.textContent = String(r.total);
+      var max = document.createElement("span");
+      max.textContent = " / " + r.max;
+      score.appendChild(strong);
+      score.appendChild(max);
+      tr.appendChild(score);
+      tr.appendChild(cell("angle", r.angle_label || ""));
+      tbody.appendChild(tr);
+    });
+  }
+
+  document.querySelectorAll(".filter").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll(".filter").forEach(function (b) {
+        b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+      });
+      renderPreview(btn.getAttribute("data-vertical"));
+    });
+  });
+
+  function renderBuckets(buckets) {
+    if (!Array.isArray(buckets)) return;
+    buckets.forEach(function (b) {
+      var li = document.querySelector('.bucket[data-class="' + String(b.class).replace(/[^a-z_]/g, "") + '"]');
+      if (!li || typeof b.share !== "number") return;
+      var pct = Math.max(0, Math.min(1, b.share)) * 100;
+      li.querySelector(".fill").style.width = pct + "%";
+      li.querySelector(".pct").textContent = Math.round(pct) + "%";
+    });
+  }
+
+  function fill(data) {
+    document.querySelectorAll("[data-slot]").forEach(function (el) {
+      var value = format(get(data, el.getAttribute("data-slot")), el.getAttribute("data-format"));
+      if (value != null) {
+        el.textContent = value;
+        el.classList.remove("is-empty");
+      }
+    });
+    document.querySelectorAll("[data-href-slot]").forEach(function (el) {
+      var href = get(data, el.getAttribute("data-href-slot"));
+      if (typeof href === "string" && /^https:\/\//.test(href)) el.setAttribute("href", href);
+    });
+
+    if (Array.isArray(data.preview) && data.preview.length) {
+      previewRows = data.preview;
+      renderPreview("all");
+      status.textContent = "Top five shown. Ranks are across all verticals.";
+    } else {
+      status.textContent = "No preview rows in the sample data.";
+    }
+    renderBuckets(data.citation_buckets);
+  }
+
+  fetch("/data/front.json", { cache: "no-store" })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(fill)
+    .catch(function () {
+      status.textContent = "Sample data not loaded. Expected at /data/front.json.";
+    });
+})();
+</script>
+</body>
+</html>
