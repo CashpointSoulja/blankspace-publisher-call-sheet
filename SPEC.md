@@ -2,7 +2,7 @@
 
 Source of truth for the build. If code and this file disagree, this file wins until it is changed.
 
-Unofficial concept by Ayo [surname] for the blankspace Founding GTM Associate application. Not affiliated with blankspace.
+Unofficial concept by Ayo Ahmed for the blankspace Founding GTM Associate application. Not affiliated with blankspace.
 
 ---
 
@@ -16,6 +16,8 @@ Unofficial concept by Ayo [surname] for the blankspace Founding GTM Associate ap
 ---
 
 ## 1. Brand tokens
+
+Measured values and the full component spec now live in `BRAND.md`, built from the owner-collected scrape in `research/`. Where this table and `BRAND.md` differ, `BRAND.md` wins.
 
 ### Colour
 
@@ -44,7 +46,7 @@ Unofficial concept by Ayo [surname] for the blankspace Founding GTM Associate ap
 
 | Component | Spec |
 |---|---|
-| Wordmark | `/assets/blankspace-wordmark.png` (1767 × 275, transparent). Always paired with an "Unofficial concept" pill |
+| Wordmark | `/assets/logo-text-white.png` (1767 × 275, transparent). Always paired with an "Unofficial concept" pill |
 | Pill button | `--accent` fill, fully rounded |
 | Pill tabs | Small, rounded. Selected state is accent-tinted fill with accent border |
 | Dashboard card | `--card` fill, 1px `--line` border, rounded |
