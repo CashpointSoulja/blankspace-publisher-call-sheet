@@ -1,21 +1,29 @@
-// /targets/: ranked call sheet from data/readership.json, with a vertical filter and weight
-// sliders that re-rank live. Custom weights rank by Σ w·s / Σ w over known signals (SPEC §3).
-// Only citation share was collected for the sample, so the live signals are unknown here:
-// they are left out of each total and maximum, never counted as zero.
+// /targets/: the call sheet. Citation share from data/readership.json, live signals from stored
+// checks in data/evidence/ where they exist. Weight sliders re-rank live (SPEC §3).
+// Ordering rules are in evidence-model.js buildCallSheet: checked publishers first, ranked on
+// every known signal; unchecked publishers after, on citation share. Unknown is never zero.
 
 import { el, clear, fmtDate, fmtPct, VERTICALS, STABILITY_LABELS, STABILITY_TOOLTIP } from "./common.js";
-import { SIGNALS, SIGNAL_LABELS, DEFAULT_WEIGHTS, partsFromSubscores, score, ratio } from "./score.js";
-import { loadSample, loadReadership, sampleDate, rankReadership } from "./sample-data.js";
+import { SIGNALS, SIGNAL_LABELS, DEFAULT_WEIGHTS } from "./score.js";
+import { loadSample, loadReadership, loadLiveEvidence, sampleDate, buildCallSheet } from "./sample-data.js";
+
+const STANCE_SHORT = {
+  "already-decided": "Already decided",
+  "reading-free": "Read for free",
+  "no-owner": "No owner yet",
+  "closed-door": "Closed door",
+  unknown: "Unknown"
+};
 
 const tbody = document.getElementById("rows");
 const status = document.getElementById("status");
 const sliders = document.getElementById("sliders");
-const weightsNote = document.getElementById("weights-note");
-let rows = [];
+const coverageNote = document.getElementById("weights-note");
+let readership = [];
+let live = {};
+let sample = null;
 let vertical = "all";
 let weights = { ...DEFAULT_WEIGHTS };
-
-const subscoresOf = (r) => ({ readership: r.s_citation_share, placement: null, programmatic: null, reachability: null, commerce: null });
 
 function readWeightsFromUrl() {
   const w = new URLSearchParams(location.search).get("w");
@@ -51,35 +59,68 @@ function buildSliders() {
   }
 }
 
+function groupRow(text, detail) {
+  return el("tr", { class: "group-row" }, el("th", { colspan: "8", scope: "rowgroup" }, text, el("span", { class: "muted" }, ` · ${detail}`)));
+}
+
+function row(x) {
+  const r = x.row;
+  return el("tr", { class: x.checked ? "is-checked" : "" },
+    el("td", { class: "num" }, String(x.position)),
+    el("td", {}, el("a", { class: "domain-link", href: `/p/${encodeURIComponent(r.domain)}/` }, r.domain)),
+    el("td", { class: "hide-sm" }, VERTICALS[r.vertical] || r.vertical),
+    el("td", { class: "score-cell" },
+      el("strong", {}, String(Math.round(x.scored.total))),
+      el("span", {}, ` / ${Math.round(x.scored.max)}`)),
+    el("td", { class: "num", title: x.known === SIGNALS.length ? "All five signals known" : `${SIGNALS.length - x.known} unknown, left out of the score` }, `${x.known} of ${SIGNALS.length}`),
+    el("td", { class: "num", title: `${STABILITY_LABELS[r.stability] || r.stability}. ${STABILITY_TOOLTIP}` }, fmtPct(r.share, 1)),
+    el("td", { class: "hide-sm" }, x.checked ? STANCE_SHORT[x.stance] || x.stance : el("span", { class: "muted" }, "Not checked")),
+    el("td", {}, x.checked
+      ? el("span", { class: "muted" }, fmtDate(x.checkedAt))
+      : el("a", { href: `/check/?url=${encodeURIComponent(r.domain)}` }, "Run")));
+}
+
 function render() {
   clear(tbody);
-  const ranked = rows
-    .map((r) => {
-      const scored = score(partsFromSubscores(subscoresOf(r)), weights);
-      return { r, scored, key: ratio(scored) };
-    })
-    .sort((a, b) => (b.key ?? -1) - (a.key ?? -1) || a.r.rank - b.r.rank);
-  ranked.forEach((x, i) => { x.newRank = i + 1; });
-  const shown = ranked.filter((x) => vertical === "all" || x.r.vertical === vertical);
-
-  if (!shown.length) {
-    tbody.append(el("tr", { class: "empty-row" }, el("td", { colspan: "8" },
-      rows.length ? "No publishers from this vertical in the sample." : "No rows. data/readership.json is empty or missing.")));
+  if (!readership.length) {
+    tbody.append(el("tr", { class: "empty-row" }, el("td", { colspan: "8" }, "No rows. data/readership.json is empty or missing.")));
     return;
   }
-  for (const { r, scored, newRank } of shown) {
-    const moved = newRank !== r.rank;
-    tbody.append(el("tr", {},
-      el("td", { class: "num" }, String(newRank), moved ? el("span", { class: "muted" }, ` (was ${r.rank})`) : null),
-      el("td", {}, el("a", { class: "domain-link", href: `/p/${encodeURIComponent(r.domain)}/` }, r.domain)),
-      el("td", { class: "hide-sm" }, VERTICALS[r.vertical] || r.vertical),
-      el("td", { class: "score-cell" },
-        el("strong", {}, String(Math.round(scored.total))),
-        el("span", {}, ` / ${Math.round(scored.max)}`)),
-      el("td", { class: "num" }, fmtPct(r.share, 1)),
-      el("td", { class: "num hide-sm" }, `${r.probes_cited_in_vertical} of ${r.vertical_probes_total}`),
-      el("td", { class: "hide-sm", title: STABILITY_TOOLTIP }, STABILITY_LABELS[r.stability] || r.stability),
-      el("td", {}, el("a", { href: `/check/?url=${encodeURIComponent(r.domain)}` }, "Run"))));
+  const sheet = buildCallSheet(readership, live, weights, sample);
+  const inVertical = (x) => vertical === "all" || x.vertical === vertical;
+  const groups = [
+    [sheet.complete, "Live-checked, all five signals read", "ranked on every signal"],
+    [sheet.partial, "Live-checked, some signals unreadable", "usually a blocked fetch; ranked on what was read, never as zero"],
+    [sheet.unchecked, "Not yet checked", "ranked on citation share; live signals unknown"]
+  ];
+  const shown = groups.map(([rows]) => rows.filter(inVertical));
+  if (!shown.some((g) => g.length)) {
+    tbody.append(el("tr", { class: "empty-row" }, el("td", { colspan: "8" }, "No publishers from this vertical in the sample.")));
+    return;
+  }
+  // Group headings appear once any publisher has a stored check.
+  const labelled = sheet.checked.length > 0;
+  groups.forEach(([all, label, detail], i) => {
+    if (!all.length || !shown[i].length) return;
+    if (labelled) tbody.append(groupRow(`${label} · ${shown[i].length}`, detail));
+    shown[i].forEach((x) => tbody.append(row(x)));
+  });
+}
+
+function describeCoverage() {
+  const n = Object.keys(live).filter((d) => readership.some((r) => r.domain === d)).length;
+  const date = fmtDate(sampleDate(sample));
+  document.getElementById("stamp").textContent = date ? `Dated sample · ${date}` : "Dated sample";
+  status.textContent = `${readership.length} publishers cited in the sample. Live signals checked for ${n} of ${readership.length}.`;
+  if (!coverageNote) return;
+  clear(coverageNote);
+  coverageNote.hidden = false;
+  if (!n) {
+    coverageNote.append(el("strong", {}, "Only citation share is collected so far. "),
+      "Placement, programmatic, reachability and commerce come from a live check of each publisher. Until checks are stored, those weights can’t change the order. Use “Run” on any row to read them now.");
+  } else {
+    coverageNote.append(el("strong", {}, `Live signals checked for ${n} of ${readership.length} publishers. `),
+      "Those are ranked first, on every signal known for them, so the weights re-rank them. The rest follow on citation share alone until they are checked. A signal not read is left out, never counted as zero.");
   }
 }
 
@@ -102,15 +143,12 @@ readWeightsFromUrl();
 buildSliders();
 render();
 
-Promise.all([loadReadership(), loadSample().catch(() => null)])
-  .then(([readership, sample]) => {
-    const date = fmtDate(sampleDate(sample));
-    document.getElementById("stamp").textContent = date ? `Dated sample · ${date}` : "Dated sample";
-    rows = rankReadership(readership);
-    status.textContent = rows.length
-      ? `${rows.length} publishers cited in the sample. Scored on citation share alone, so each is out of 40 until its live signals are collected.`
-      : "No sample rows found.";
-    if (weightsNote) weightsNote.hidden = false;
+Promise.all([loadReadership(), loadSample().catch(() => null), loadLiveEvidence().catch(() => ({}))])
+  .then(([r, s, l]) => {
+    readership = r;
+    sample = s;
+    live = l;
+    describeCoverage();
     render();
   })
   .catch(() => { status.textContent = "Sample data could not be read."; });

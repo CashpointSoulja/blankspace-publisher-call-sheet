@@ -3,7 +3,7 @@
 
 import { el, clear, loadJSON, fmtNumber, fmtDateTime, VERTICALS } from "./common.js";
 import { renderEvidence, resolvePointer } from "./evidence-view.js";
-import { loadSample, loadReadership, loadDomains, loadCitations, sampleDate, rankReadership, readershipSignal, evidenceFromSample } from "./sample-data.js";
+import { loadSample, loadReadership, loadDomains, loadCitations, sampleDate, rankReadership, buildEvidence } from "./sample-data.js";
 
 const DOMAIN_RE = /^[a-z0-9.-]+\.[a-z]{2,}$/;
 const REASONS = {
@@ -65,15 +65,12 @@ async function main() {
   }
 
   // A stored live check (data/evidence/{domain}.json) adds the live signals; citation share
-  // always comes from readership.json.
-  let ev = row ? evidenceFromSample(row, sample) : liveFile;
-  if (liveFile && row) {
-    ev = { ...liveFile, vertical: row.vertical, signals: { ...liveFile.signals, readership: readershipSignal(row, sample) } };
-  }
+  // always comes from readership.json, and the score is recomputed over everything known.
+  const ev = row ? buildEvidence(row, sample, liveFile) : liveFile;
 
   const cls = domains[domain];
   sub.textContent = [
-    row ? `Rank ${row.rank} of ${ranked.length} publishers.` : null,
+    row ? `Citation-share rank ${row.rank} of ${ranked.length}.` : null,
     ev.vertical ? `${VERTICALS[ev.vertical] || ev.vertical}.` : null,
     cls ? `Classified as a publisher: ${cls.rationale}.` : null,
     "Every line below points to the field it was read from."

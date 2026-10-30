@@ -2,8 +2,7 @@
 // Unknown values stay as visible empty slots.
 
 import { el, clear, loadJSON, fmtNumber, fmtDate, fmtPct, VERTICALS, CLASS_LABELS, initTabs } from "./common.js";
-import { partsFromSubscores, score } from "./score.js";
-import { loadSample, loadReadership, sampleDate, rankReadership } from "./sample-data.js";
+import { loadSample, loadReadership, loadLiveEvidence, sampleDate, buildCallSheet } from "./sample-data.js";
 
 const REASONS = {
   no_matching_evidence: "No matching evidence",
@@ -11,6 +10,13 @@ const REASONS = {
   unmarked_factual_sentence: "Factual sentence with no claim marker",
   company_claim_misphrased: "Company claim not in its required wording"
 };
+
+// "perplexity/sonar (live web search, …)" → "Sonar"
+function shortEngine(engine) {
+  if (!engine) return null;
+  const name = String(engine).split(" (")[0].split("/").pop();
+  return name.charAt(0).toUpperCase() + name.slice(1);
+}
 
 const get = (obj, path) => path.split(".").reduce((a, k) => (a == null ? undefined : a[k]), obj);
 
@@ -31,21 +37,21 @@ function renderPreview(vertical) {
   clear(tbody);
   const rows = previewRows
     .filter((r) => vertical === "all" || r.vertical === vertical)
-    .sort((a, b) => a.rank - b.rank)
+    .sort((a, b) => a.position - b.position)
     .slice(0, 5);
   if (!rows.length) {
     tbody.append(el("tr", { class: "empty-row" }, el("td", { colspan: "5" },
       previewRows.length ? "No publishers from this vertical in the sample." : "No sample rows found.")));
     return;
   }
-  for (const r of rows) {
-    const scored = score(partsFromSubscores({ readership: r.s_citation_share }));
+  for (const x of rows) {
+    const { row: r, scored } = x;
     tbody.append(el("tr", {},
-      el("td", { class: "num" }, String(r.rank)),
+      el("td", { class: "num" }, String(x.position)),
       el("td", {}, el("a", { class: "domain-link", href: `/p/${encodeURIComponent(r.domain)}/` }, r.domain)),
       el("td", { class: "hide-sm" }, VERTICALS[r.vertical] || r.vertical),
       el("td", { class: "num" }, fmtPct(r.share, 1)),
-      el("td", { class: "score-cell" }, el("strong", {}, String(Math.round(scored.total))), el("span", {}, ` / ${Math.round(scored.max)}`))));
+      el("td", { class: "score-cell hide-sm" }, el("strong", {}, String(Math.round(scored.total))), el("span", {}, ` / ${Math.round(scored.max)}`))));
   }
 }
 
@@ -88,7 +94,7 @@ function fill(data) {
 
   previewRows = data.ranked || [];
   renderPreview("all");
-  status.textContent = previewRows.length ? "Top five shown, by citation share. Ranks are across all verticals." : "No sample rows found.";
+  status.textContent = previewRows.length ? "Top five from the call sheet. Positions are across all verticals." : "No sample rows found.";
   renderBuckets(data.citation_buckets);
 
   const v = data.verifier_example;
@@ -107,15 +113,17 @@ function fill(data) {
 document.querySelectorAll("[data-slot]").forEach((n) => n.classList.add("is-empty"));
 renderPreview("all");
 
-Promise.all([loadSample(), loadReadership(), loadJSON("/data/front.json").catch(() => null)])
-  .then(([sample, readership, front]) => {
+Promise.all([loadSample(), loadReadership(), loadJSON("/data/front.json").catch(() => null), loadLiveEvidence().catch(() => ({}))])
+  .then(([sample, readership, front, live]) => {
+    const sheet = buildCallSheet(readership, live, undefined, sample);
     if (!sample) { status.textContent = "Sample data not found at /data/sample.json."; return; }
     fill({
       ...(front || {}),
       ...sample,
       sample_date: sampleDate(sample),
-      engine: sample.engines.join(", "),
-      ranked: rankReadership(readership)
+      // Short engine name for the hero; the full engine and gateway string is on /method/.
+      engine_short: shortEngine(sample.engines[0]),
+      ranked: [...sheet.checked, ...sheet.unchecked]
     });
   })
   .catch(() => { status.textContent = "Sample data could not be read."; });

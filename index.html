@@ -59,7 +59,8 @@
         <span class="tag">Publisher call sheet</span>
         <h1 id="hero-title-empty">Which publishers AI answers cite, and <span class="hl">who I’d call first.</span></h1>
         <h1 id="hero-title-data" hidden><span data-slot="publishers_cited" data-format="number">—</span> publishers were cited in AI answers to <span data-slot="queries" data-format="number">—</span> UK shopping queries. <span class="hl">Here’s who I’d call first.</span></h1>
-        <p class="hero-sub">Across automotive, consumer electronics and sportswear: who gets cited, the evidence behind each one, and where I’d start. One answer engine: <span data-slot="engine">—</span>. Runs per query: <span data-slot="runs_per_query" data-format="number">—</span>.</p>
+        <p class="hero-sub">Across automotive, consumer electronics and sportswear: who gets cited, the evidence behind each one, and where I’d start.</p>
+        <p class="hero-meta"><span data-slot="engine_short">—</span><span>&nbsp;· </span><span><span data-slot="queries" data-format="number">—</span> UK queries</span><span>&nbsp;· </span><span><span data-slot="runs_per_query" data-format="number">—</span> runs</span><span>&nbsp;· </span><a href="/method/#sample">Method</a></p>
         <div class="actions">
           <a class="btn btn-primary" href="/targets/">See the call sheet <span class="arrow" aria-hidden="true">→</span></a>
           <a class="btn btn-ghost" href="#check">Check any publisher</a>
@@ -96,7 +97,7 @@
                       <th scope="col">Publisher</th>
                       <th scope="col" class="hide-sm">Vertical</th>
                       <th scope="col">Citation share</th>
-                      <th scope="col">Score</th>
+                      <th scope="col" class="hide-sm">Score</th>
                     </tr>
                   </thead>
                   <tbody id="preview-rows" aria-live="polite"></tbody>

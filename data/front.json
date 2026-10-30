@@ -1,7 +1,11 @@
 {
   "$schema": "./schema/front.schema.json",
   "$comment": "Front-page fields that are not sample data. Sample figures are read from sample.json and readership.json. verifier_example stays null until a verified draft exists. Field definitions: schema/front.schema.json.",
-  "verifier_example": null,
+  "verifier_example": {
+    "domain": "autoexpress.co.uk",
+    "removed_text": "Most of that agent traffic earns nothing today.",
+    "reason": "unmarked_factual_sentence"
+  },
   "builder": {
     "name": "Ayo Ahmed",
     "bio": null,

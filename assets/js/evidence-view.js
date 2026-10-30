@@ -40,12 +40,14 @@ function notCollected(title, domain) {
       el("a", { href: `/check/?url=${encodeURIComponent(domain)}` }, "Run the live checks"), " to read it now."));
 }
 
-// opts: { sampleDate } for the "Not in the dated sample" line.
+// opts: { sampleDate } for the "Not in the dated sample" line; { sampleVertical } to show the
+// sample's vertical beside a live check, which has none of its own.
 export function renderEvidence(ev, opts = {}) {
   const live = ev.source === "live";
   const s = ev.signals || {};
   const sc = ev.score || {};
   const stanceCode = ev.stance ? ev.stance.code : "unknown";
+  const vertical = ev.vertical || opts.sampleVertical || null;
 
   // --- Summary ---------------------------------------------------------------------
   const summary = el("div", { class: "window" },
@@ -61,8 +63,8 @@ export function renderEvidence(ev, opts = {}) {
           el("div", { class: "kpi-val" }, `${Math.round(sc.total ?? 0)} / ${Math.round(sc.max ?? 0)}`),
           el("div", { class: "kpi-label" }, "Score out of known maximum")),
         el("div", { class: "kpi" },
-          el("div", { class: "kpi-val" }, ev.vertical ? VERTICALS[ev.vertical] || ev.vertical : "None"),
-          el("div", { class: "kpi-label" }, "Vertical")),
+          el("div", { class: "kpi-val" }, vertical ? VERTICALS[vertical] || vertical : "Not assessed"),
+          el("div", { class: "kpi-label" }, !ev.vertical && opts.sampleVertical ? "Vertical, from the dated sample" : "Vertical")),
         el("div", { class: "kpi" },
           el("div", { class: "kpi-val" }, s.reachability === undefined ? "Not checked" : STANCES[stanceCode] ? STANCES[stanceCode].priority : UNKNOWN),
           el("div", { class: "kpi-label" }, "Priority")),

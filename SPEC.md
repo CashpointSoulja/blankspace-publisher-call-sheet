@@ -276,6 +276,18 @@ Front-page fields that are not sample data. Sample figures come from `sample.jso
 
 Raw probes are kept in `data/raw/probes.jsonl`. Field definitions for every file are in `data/schema/`.
 
+`data/evidence-index.json` lists the stored live checks (`checked_at`, `domains`, `scope`), because a static host can't list a directory. It must name exactly the files in `data/evidence/`.
+
+### 8.2a Call-sheet ordering with partial live coverage
+
+Points over the known maximum compares like with like only when the same signals are known. So the call sheet groups publishers by how much was read, and ranks within each group by Σ wᵢsᵢ ÷ Σ wᵢ, then raw citation share, then name:
+
+1. live-checked, all five signals known;
+2. live-checked, some signal unreadable (more signals known first);
+3. not checked: citation share only.
+
+Unknown is never counted as zero, and no publisher is ranked above another because less of it is known.
+
 ### 8.3 citation-sample.csv
 
 One row per cited URL. A probe with zero citations gets one row with empty `cited_url`.
@@ -433,6 +445,8 @@ No named individuals anywhere in the artifact.
 3. A company claim must use `required_phrasing`. Otherwise removal (`company_claim_misphrased`). Kept ones are tagged `COMPANY CLAIM`.
 4. A second pass flags factual sentences with no claim marker. Those are removed (`unmarked_factual_sentence`).
 5. The draft shown is the post-verifier text. The log shows everything removed, verbatim.
+
+First drafts live in `outreach/{domain}.json`, are not deployed, and are verified by `scripts/verify-drafts.mjs` (`assets/js/verifier.js`). Evidence for a draft is the publisher's sample row plus any stored live check, the same object its evidence page shows. A factual sentence is one that states a number, a currency or a percentage, or touches a measurable subject (traffic, revenue, citations, agents and similar). Questions are exempt. Subject lines may not state facts. Drafts may not carry contact details.
 
 ---
 

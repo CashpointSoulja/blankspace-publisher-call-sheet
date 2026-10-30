@@ -116,4 +116,16 @@ async function agents() {
         x.corroboration_url ? [el("br"), el("a", { href: x.corroboration_url, rel: "noopener", target: "_blank" }, "Corroboration")] : null)))))));
 }
 
-Promise.all([sampleFacts(), classifications(), agents()]).catch(() => { /* each section keeps its notice */ });
+// Where the full-marks cap bites, and how thin the long tail is, from readership.json.
+async function scaleFacts() {
+  const r = await loadJSON("/data/readership.json").catch(() => null);
+  const box = document.getElementById("scale-facts");
+  if (!box || !Array.isArray(r) || !r.length) return;
+  const capped = r.filter((x) => x.s_citation_share >= 1);
+  const thin = r.filter((x) => x.probes_cited_in_vertical <= 2);
+  const byVertical = Object.keys(VERTICALS).map((v) => `${capped.filter((x) => x.vertical === v).length} in ${VERTICALS[v].toLowerCase()}`).join(", ");
+  clear(box);
+  box.append(`In this sample ${capped.length} of ${r.length} publishers reach the cap (${byVertical}). Below it the scale is linear. ${thin.length} publishers were cited in only one or two of their vertical’s probes, which a re-run could easily change, so small differences in the tail mean little.`);
+}
+
+Promise.all([sampleFacts(), classifications(), agents(), scaleFacts()]).catch(() => { /* each section keeps its notice */ });

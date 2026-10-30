@@ -1,0 +1,19 @@
+{
+  "run_id": "vr-dfbfb26a",
+  "domain": "autoexpress.co.uk",
+  "ran_at": "2026-10-30T06:26:55.371Z",
+  "claims_in": 4,
+  "kept": [
+    "c1",
+    "c2",
+    "c3",
+    "c4"
+  ],
+  "tagged_company_claims": [],
+  "removed": [
+    {
+      "text": "Most of that agent traffic earns nothing today.",
+      "reason": "unmarked_factual_sentence"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "domain": "autoexpress.co.uk",
+  "angle_code": "no-owner",
+  "recipient_role": "Commercial Director",
+  "subject": "autoexpress.co.uk and AI search",
+  "body": "Hello,\n\nI’ve been looking at which publishers AI search tools point UK car buyers to.\n\nautoexpress.co.uk was cited in 54 of the 80 automotive answers in a dated sample of UK buyer queries.[^c1][^c2][^c3] It was cited in both runs of the sample, not just one.[^c4]\n\nWould a 20-minute call to walk through the queries that cited you be useful?\n\nBest wishes",
+  "claims": [
+    {
+      "id": "c1",
+      "text": "Cited in 54 automotive answers",
+      "type": "evidence",
+      "ref": "/signals/readership/probes_cited",
+      "asserted_value": 54
+    },
+    {
+      "id": "c2",
+      "text": "Out of 80 automotive answers",
+      "type": "evidence",
+      "ref": "/signals/readership/probes_total",
+      "asserted_value": 80
+    },
+    {
+      "id": "c3",
+      "text": "Vertical: automotive",
+      "type": "evidence",
+      "ref": "/vertical",
+      "asserted_value": "automotive"
+    },
+    {
+      "id": "c4",
+      "text": "Cited in both runs",
+      "type": "evidence",
+      "ref": "/signals/readership/stability",
+      "asserted_value": "both_runs"
+    }
+  ],
+  "verifier_run_id": "vr-dfbfb26a"
+}

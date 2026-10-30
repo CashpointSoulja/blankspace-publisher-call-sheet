@@ -68,7 +68,7 @@
         </div>
         <div class="sliders" id="sliders"></div>
         <p class="small muted" style="margin-top:1rem">With your weights, each publisher ranks by points earned over points available on its known signals. The weights are kept in the page address, so you can share them.</p>
-        <p class="notice" id="weights-note" hidden style="margin-top:1rem"><strong>Only citation share is collected so far.</strong> Placement, programmatic, reachability and commerce come from a live check of each publisher, which hasn’t been run across the list. Until it is, those weights can’t change the order. Use “Run” on any row to read them now.</p>
+        <p class="notice" id="weights-note" hidden style="margin-top:1rem"></p>
       </div>
 
       <div class="window">
@@ -90,13 +90,13 @@
                 <caption class="visually-hidden">Publishers ranked by score with the current weights</caption>
                 <thead>
                   <tr>
-                    <th scope="col">Rank</th>
+                    <th scope="col">#</th>
                     <th scope="col">Publisher</th>
                     <th scope="col" class="hide-sm">Vertical</th>
                     <th scope="col">Score</th>
+                    <th scope="col">Signals</th>
                     <th scope="col">Citation share</th>
-                    <th scope="col" class="hide-sm">Probes citing it</th>
-                    <th scope="col" class="hide-sm">Stability</th>
+                    <th scope="col" class="hide-sm">Stance</th>
                     <th scope="col">Live check</th>
                   </tr>
                 </thead>
@@ -108,7 +108,7 @@
         </div>
       </div>
 
-      <p class="small muted">Citation share is the share of a vertical’s sampled probes whose answer cited the publisher. It is citation frequency on this one dated sample, not measured agent traffic. Full marks at one probe in four. Each publisher sits in the vertical where its share is highest. <a href="/method/#signals">How it’s calculated</a></p>
+      <p class="small muted">Citation share is the share of a vertical’s sampled probes whose answer cited the publisher. It is citation frequency on this one dated sample, not measured agent traffic. Full marks at one probe in four. Each publisher sits in the vertical where its share is highest. “Signals” counts how many of the five are known. <a href="/method/#ordering">How the order works</a></p>
     </div>
   </section>
 </main>

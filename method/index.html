@@ -207,6 +207,27 @@ s = 1 | 0.5 | 0          unknown if robots.txt can’t be read</pre>
     </div>
   </section>
 
+  <section class="section" id="ordering" aria-labelledby="ordering-title">
+    <div class="wrap grid-2">
+      <div>
+        <span class="eyebrow">Ordering</span>
+        <h2 id="ordering-title">How the call sheet is ordered</h2>
+        <p class="sub" style="margin-top:1rem">Publishers are only ranked against others known equally well.</p>
+      </div>
+      <div class="prose">
+        <ol>
+          <li><strong>Live-checked, all five signals read.</strong> Ranked by points earned over points available.</li>
+          <li><strong>Live-checked, some signals unreadable,</strong> usually because the site blocked part of the check. More signals read first, then points over points available.</li>
+          <li><strong>Not yet checked.</strong> Ranked on citation share alone.</li>
+        </ol>
+        <p>Points over points available is fair only between publishers whose known signals match. Mixed together, a publisher that blocked most of the check could outrank one read in full, purely because less is known. Unknown signals are never counted as zero. They are just never compared as if they were known. Ties go to the higher raw citation share, then the name.</p>
+        <h3>The citation-share scale</h3>
+        <p>Citation share reaches full marks at one probe in four, as the spec sets it. <span id="scale-facts">The figures below come from readership.json.</span></p>
+        <p>The cap makes citation share a qualifying signal: being cited often puts a publisher on the list, and fit decides the order among those cited most. Raw share still breaks ties above the cap.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="crawler" aria-labelledby="crawler-title">
     <div class="wrap grid-2">
       <div>
@@ -256,6 +277,7 @@ s = 1 | 0.5 | 0          unknown if robots.txt can’t be read</pre>
           <li>A second pass finds factual sentences with no claim marker and removes them.</li>
           <li>The draft shown is what survived. The log lists every removal, word for word.</li>
         </ol>
+        <p>A first draft is written by hand, addressed to a role. The verifier is deterministic: the same draft and evidence always give the same result. Drafts assert only what the evidence page shows. A sentence about traffic or revenue has nothing to point at, so it is removed.</p>
         <p>Drafts are addressed to roles. No named individuals appear anywhere.</p>
       </div>
     </div>

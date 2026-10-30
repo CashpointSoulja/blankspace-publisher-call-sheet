@@ -12,7 +12,7 @@ export const CRAWLER_TOKEN = "AyoGTMResearch";
 const BLOCK_STATUSES = new Set([401, 403, 406, 429, 451]);
 
 export class Session {
-  constructor({ userAgent, registrable, maxRequests = 8, timeoutMs = 8000, maxBytes = 512 * 1024, fetchImpl = fetch, dnsCheck = true }) {
+  constructor({ userAgent, registrable, maxRequests = 8, timeoutMs = 8000, maxBytes = 512 * 1024, fetchImpl = (input, init) => fetch(input, init), dnsCheck = true }) {
     this.userAgent = userAgent;
     this.registrable = registrable;
     this.maxRequests = maxRequests;

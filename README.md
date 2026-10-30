@@ -9,6 +9,8 @@ It shows which publishers AI answer engines cite for shopping queries in automot
 - `AGENTS.md`: standing rules for anyone changing the repository.
 - `data/README.md`: the data files and their schemas.
 - `worker/README.md`: the live-check worker and how to deploy it.
+- `docs/PRODUCT.md`: the PRD, ELI5, 5 Whys and jobs to be done, viability against the role, test results and the v2 roadmap.
+- `outreach/README.md`: how drafts are written and verified.
 
 ## Run it locally
 
@@ -27,7 +29,17 @@ node scripts/check.mjs
 ```
 
 ```bash
+node --test tests/*.test.mjs
+```
+
+```bash
 cd worker && npm install && npm test
+```
+
+After editing a draft in `outreach/`, or when evidence changes:
+
+```bash
+node scripts/verify-drafts.mjs
 ```
 
 ## Publish the site

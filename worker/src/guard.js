@@ -135,7 +135,7 @@ export function isPrivateV6(ip) {
 // Resolve a hostname over DNS-over-HTTPS and refuse it if any answer is private or reserved.
 // Cloudflare already refuses Worker subrequests to private space; this check says so plainly
 // instead of returning an opaque error, and catches public names that point inward.
-export async function assertResolvesPublic(host, fetchImpl = fetch) {
+export async function assertResolvesPublic(host, fetchImpl = (i, o) => fetch(i, o)) {
   const answers = [];
   for (const type of ["A", "AAAA"]) {
     let res;

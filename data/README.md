@@ -21,8 +21,9 @@ Collected files are kept exactly as collected, so field definitions live in the 
 | `domains.json` | `schema/domains.schema.json` | Every cited domain, keyed by domain: class, one-line rationale and counts |
 | `company-claims.json` | `schema/company-claims.schema.json` | blankspace's own figures. An array, per SPEC §8.5. Pages show a claim only once `source_url` and `accessed` are set. |
 | `citation-sample.csv` | Header row below | One row per cited URL. A probe with no citations gets one row with an empty `cited_url`. |
-| `evidence/{domain}.json` | `schema/evidence.schema.json` | Evidence object per publisher. The worker returns the same shape. |
-| `drafts/{domain}.json` | `schema/draft.schema.json` | Post-verifier draft. Every factual sentence ends in a claim marker `[^cN]`. |
+| `evidence/{domain}.json` | `schema/evidence.schema.json` | A stored live check, in the worker's shape. Citation share and the score are merged in from the sample at display time. |
+| `evidence-index.json` | `schema/evidence-index.schema.json` | The stored checks the call sheet loads. Must list exactly the files in `evidence/`. |
+| `drafts/{domain}.json` | `schema/draft.schema.json` | Post-verifier draft, written by `scripts/verify-drafts.mjs` from `outreach/{domain}.json`. Don't edit it by hand. |
 | `verifier/{domain}.json` | `schema/verifier.schema.json` | Verifier log. Removed sentences are kept verbatim. |
 
 `citation-sample.csv` columns, in order:

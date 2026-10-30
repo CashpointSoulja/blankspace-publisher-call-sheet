@@ -1,0 +1,17 @@
+{
+  "run_id": "vr-07235355",
+  "domain": "drive.co.uk",
+  "ran_at": "2026-10-30T06:26:55.371Z",
+  "claims_in": 5,
+  "kept": [
+    "c1",
+    "c2",
+    "c3",
+    "c4",
+    "c5"
+  ],
+  "tagged_company_claims": [
+    "c5"
+  ],
+  "removed": []
+}

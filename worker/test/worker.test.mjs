@@ -1,7 +1,8 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-import { normaliseTarget, isPrivateV4, isPrivateV6, TargetError } from "../src/guard.js";
+import { normaliseTarget, isPrivateV4, isPrivateV6, TargetError, assertResolvesPublic } from "../src/guard.js";
+import { Session } from "../src/fetcher.js";
 import { parseRobots, isAllowed, summarisePolicy } from "../src/robots.js";
 import {
   parseAdsTxt, headerBidding, hasGpt, extractLinks, affiliateEvidence, schemaTypes,
@@ -318,4 +319,24 @@ test("agents.json groups: ads tokens are per-agent only", () => {
   assert.equal(p.per_agent["OAI-AdsBot"], "blocked");
   assert.equal(p.search, "allowed");
   assert.equal(p.training, "allowed");
+});
+
+test("default fetch is never called unbound (Workers throws Illegal invocation)", async () => {
+  const real = globalThis.fetch;
+  const inner = mockFetch({ "https://plain.co.uk/robots.txt": { body: "User-agent: *\nAllow: /\n" } });
+  globalThis.fetch = function (input, init) {
+    if (this !== undefined && this !== globalThis) throw new TypeError("Illegal invocation");
+    return inner(input, init);
+  };
+  try {
+    // Each layer with its own default: Session, the DNS guard and runCheck.
+    const session = new Session({ userAgent: "t", registrable: "plain.co.uk", dnsCheck: false });
+    const res = await session.get("https://plain.co.uk/robots.txt", { respectRobots: false });
+    assert.equal(res.status, 200);
+    await assertResolvesPublic("plain.co.uk");
+    const ev = await runCheck("plain.co.uk", { siteOrigin: SITE });
+    assert.equal(ev.signals.reachability.search, "allowed");
+  } finally {
+    globalThis.fetch = real;
+  }
 });

@@ -56,7 +56,10 @@ async function run(url) {
   if (body.cache && body.cache.hit) {
     out.append(el("p", { class: "small muted" }, "Served from the 24-hour cache for this host. The publisher was not contacted again."));
   }
-  out.append(renderEvidence(body, { sampleDate: sampleDate(sample) }));
+  // The worker never knows the sample, so it returns vertical: null. Join the sample's vertical
+  // for display only; the raw evidence and its live score are left exactly as returned.
+  const row = readership.find((r) => r.domain === body.domain);
+  out.append(renderEvidence(body, { sampleDate: sampleDate(sample), sampleVertical: row ? row.vertical : null }));
 }
 
 const initial = new URLSearchParams(location.search).get("url");

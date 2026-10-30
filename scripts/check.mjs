@@ -83,9 +83,28 @@ function attributionHits(text, file) {
   return hits;
 }
 
+// Stored live checks quote publishers' robots.txt verbatim, and robots.txt names crawlers and
+// their operators. Exactly two fields are exempt, because they are the publisher's own words:
+// signals.reachability.excerpt (and content_signal) and the keys of per_agent. Everything else
+// in the file, and every page, is still scanned. The evidence itself is never altered.
+const EVIDENCE_FILE = /^data\/evidence\/[^/]+\.json$/;
+function withoutRobotsQuotes(text) {
+  let ev;
+  try { ev = JSON.parse(text); } catch { return text; }
+  const re = ev && ev.signals && ev.signals.reachability;
+  if (!re) return text;
+  const copy = structuredClone(ev);
+  const r = copy.signals.reachability;
+  if (Array.isArray(r.excerpt)) r.excerpt = r.excerpt.map(() => "");
+  if (Array.isArray(r.content_signal)) r.content_signal = r.content_signal.map(() => "");
+  if (r.per_agent && typeof r.per_agent === "object") r.per_agent = Object.values(r.per_agent);
+  return JSON.stringify(copy, null, 2);
+}
+
 for (const f of TEXT_FILES) {
   if (f === SELF) continue;
-  for (const h of attributionHits(read(f), f)) fail("attribution", `${f}: ${h}`);
+  const text = EVIDENCE_FILE.test(f) ? withoutRobotsQuotes(read(f)) : read(f);
+  for (const h of attributionHits(text, f)) fail("attribution", `${f}: ${h}`);
 }
 
 try {
@@ -194,6 +213,8 @@ if (existsSync(path.join(ROOT, "worker/src/check.js")) && !read("worker/src/chec
 // --- 5. Internal links ------------------------------------------------------------------------
 
 const DYNAMIC = [/^\/p\/[^/]+\/$/, /^\/api\//];
+// Files the site reads only if present. Their contents are checked in the data section.
+const OPTIONAL = new Set(["/data/evidence-index.json"]);
 const idCache = new Map();
 const idsIn = (file) => {
   if (!idCache.has(file)) idCache.set(file, new Set([...read(file).matchAll(/\sid="([^"]+)"/g)].map((m) => m[1])));
@@ -202,7 +223,7 @@ const idsIn = (file) => {
 
 function resolveInternal(href) {
   const [pathPart] = href.split(/[?#]/);
-  if (!pathPart) return { ok: true };
+  if (!pathPart || OPTIONAL.has(pathPart)) return { ok: true };
   if (DYNAMIC.some((re) => re.test(pathPart))) {
     return { ok: existsSync(path.join(ROOT, "p/index.html")) || pathPart.startsWith("/api/"), file: null };
   }
@@ -336,6 +357,22 @@ if (existsSync(path.join(ROOT, "data"))) {
 
   const dirFiles = (dir) => FILES.filter((f) => f.startsWith(`data/${dir}/`) && f.endsWith(".json"));
   data.evidence = Object.fromEntries(dirFiles("evidence").map((f) => [path.basename(f, ".json"), checkJson(f, "evidence")]));
+  // The call sheet finds stored checks through data/evidence-index.json: it must list exactly
+  // the files present, or the page would show a check as missing or fetch one that isn't there.
+  const indexPath = "data/evidence-index.json";
+  const evidenceIndex = FILES.includes(indexPath) ? checkJson(indexPath, "evidence-index") : null;
+  const stored = Object.keys(data.evidence).sort();
+  const indexed = evidenceIndex ? evidenceIndex.domains.slice().sort() : [];
+  if (stored.length && !evidenceIndex) fail("data", `${stored.length} stored check(s) but no ${indexPath}`);
+  else {
+    for (const d of stored) if (!indexed.includes(d)) fail("data", `${indexPath}: evidence/${d}.json is not listed`);
+    for (const d of indexed) if (!stored.includes(d)) fail("data", `${indexPath}: lists ${d}, which has no evidence file`);
+  }
+  for (const [domain, ev] of Object.entries(data.evidence)) {
+    if (!ev) continue;
+    if (ev.domain !== domain) fail("data", `evidence/${domain}.json: domain field is ${ev.domain}`);
+    if (!data.readership.some((r) => r.domain === domain)) warn("data", `evidence/${domain}.json is not a sample publisher, so the call sheet ignores it`);
+  }
   data.drafts = Object.fromEntries(dirFiles("drafts").map((f) => [path.basename(f, ".json"), checkJson(f, "draft")]));
   data.verifier = Object.fromEntries(dirFiles("verifier").map((f) => [path.basename(f, ".json"), checkJson(f, "verifier")]));
   const S = data.sample || {};
@@ -437,32 +474,28 @@ if (existsSync(path.join(ROOT, "data"))) {
     if (!claimIds.has(id)) fail("data", `company-claims.json: missing entry “${id}”`);
   }
 
-  // Drafts and verifier logs (SPEC §8.6, §8.7, §9)
-  const pointer = (obj, ptr) => ptr.split("/").slice(1).reduce((a, k) => (a == null ? undefined : a[k.replace(/~1/g, "/").replace(/~0/g, "~")]), obj);
-  for (const [domain, draft] of Object.entries(data.drafts)) {
-    if (!draft) continue;
-    const row = data.readership.find((r) => r.domain === domain);
-    const ev = data.evidence[domain] || (row ? { signals: { readership: { status: "in_sample", share: row.share, probes_cited: row.probes_cited_in_vertical, probes_total: row.vertical_probes_total, stability: row.stability, probe_ids: row.probe_ids } } } : null);
-    const draftIds = new Set(draft.claims.map((c) => c.id));
-    for (const c of draft.claims) {
-      if (c.type === "company_claim") {
-        const cc = data.claims.find((x) => `company-claims#${x.id}` === c.ref);
-        if (!cc) fail("data", `drafts/${domain}.json ${c.id}: ${c.ref} is not in company-claims.json`);
-        else if (!cc.source_url) fail("data", `drafts/${domain}.json ${c.id}: cites ${cc.id}, which has no source_url`);
-        else if (!c.text.includes(cc.required_phrasing)) fail("data", `drafts/${domain}.json ${c.id}: company claim must use “${cc.required_phrasing}”`);
-      } else if (!ev || pointer(ev, c.ref) === undefined) {
-        fail("data", `drafts/${domain}.json ${c.id}: ${c.ref} does not resolve in this domain's evidence`);
-      }
+  // Drafts and verifier logs (SPEC §8.6, §8.7, §9). The verifier resolves every claim against the
+  // same evidence the page shows, so a published draft must equal its output.
+  // Published drafts must be exactly what the verifier makes from outreach/ (ran_at aside).
+  try {
+    const { expectedDrafts, verifierExample } = await import("./drafts-lib.mjs");
+    const expected = expectedDrafts(ROOT, "compare");
+    const sources = new Set(expected.map((e) => e.domain));
+    for (const e of expected) {
+      const d = data.drafts[e.domain];
+      const v = data.verifier[e.domain];
+      if (!d || JSON.stringify(d) !== JSON.stringify(e.draft)) fail("drafts", `data/drafts/${e.domain}.json is not the verifier's output for outreach/${e.domain}.json; run node scripts/verify-drafts.mjs`);
+      if (!v || JSON.stringify({ ...v, ran_at: null }) !== JSON.stringify({ ...e.log, ran_at: null })) fail("drafts", `data/verifier/${e.domain}.json is out of date; run node scripts/verify-drafts.mjs`);
     }
-    for (const m of draft.body.matchAll(/\[\^(c\d+)\]/g)) if (!draftIds.has(m[1])) fail("data", `drafts/${domain}.json: body marker ${m[1]} has no claim`);
-    const v = data.verifier[domain];
-    if (!v) fail("data", `drafts/${domain}.json has no verifier/${domain}.json`);
-    else for (const id of [...v.kept, ...v.tagged_company_claims]) if (!draftIds.has(id)) fail("data", `verifier/${domain}.json: ${id} is not a claim in the draft`);
+    for (const d of new Set([...Object.keys(data.drafts), ...Object.keys(data.verifier)])) {
+      if (!sources.has(d)) fail("drafts", `data/drafts or data/verifier has ${d}, with no outreach/${d}.json source`);
+    }
+    if (JSON.stringify(data.front?.verifier_example ?? null) !== JSON.stringify(verifierExample(expected))) fail("drafts", "front.json verifier_example is stale; run node scripts/verify-drafts.mjs");
+  } catch (e) {
+    fail("drafts", `verifier could not run: ${e.message}`);
   }
-  const ex = data.front?.verifier_example;
-  if (ex) {
-    const v = data.verifier[ex.domain];
-    if (!v || !v.removed.some((r) => r.text === ex.removed_text)) fail("data", "front.json verifier_example.removed_text must appear verbatim in that domain's verifier log");
+  for (const [domain, draft] of Object.entries(data.drafts)) {
+    if (draft && /[\w.+-]+@[\w-]+\.[\w.]+/.test(draft.body)) fail("drafts", `drafts/${domain}.json: contact details in the body`);
   }
 
   // Release: no placeholders.
@@ -474,7 +507,6 @@ if (existsSync(path.join(ROOT, "data"))) {
   // Not placeholders, but gaps worth seeing on every run.
   const unverified = (data.agents?.agents || []).filter((a) => !a.verified).map((a) => a.token);
   if (unverified.length) warn("gap", `agents.json: ${unverified.join(", ")} unverified on vendor pages (corroborated instead)`);
-  if (!Object.keys(data.drafts).length) warn("gap", "no outreach drafts yet; evidence pages say so");
   if (!Object.keys(data.evidence).length) warn("gap", "no stored live checks in data/evidence/; live signals show as not collected");
 }
 

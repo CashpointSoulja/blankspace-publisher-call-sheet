@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "evidence-index.schema.json",
+  "title": "evidence-index.json",
+  "description": "Stored live checks in data/evidence/. The call sheet reads this list because a static host can't list a directory. domains must name exactly the files present.",
+  "type": "object",
+  "required": ["checked_at", "domains"],
+  "additionalProperties": false,
+  "properties": {
+    "checked_at": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}" },
+    "domains": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9.-]+\\.[a-z]{2,}$" } },
+    "scope": { "type": "string", "description": "Which publishers were checked and why. Shown on the call sheet." }
+  }
+}

@@ -23,7 +23,7 @@ const isOk = (res) => res && !res.error && res.status >= 200 && res.status < 300
 const isHtml = (res) => isOk(res) && /<(!doctype\s+html|html[\s>]|head[\s>]|body[\s>])/i.test(res.text.slice(0, 4096));
 const isSitemap = (res) => isOk(res) && /<(urlset|sitemapindex)[\s>]/i.test(res.text);
 
-export async function runCheck(input, { siteOrigin, fetchImpl = fetch, dnsCheck = true, now = () => new Date() }) {
+export async function runCheck(input, { siteOrigin, fetchImpl = (i, o) => fetch(i, o), dnsCheck = true, now = () => new Date() }) {
   const target = normaliseTarget(input); // throws TargetError for unsafe or invalid input
   const session = new Session({
     userAgent: userAgentFor(siteOrigin),

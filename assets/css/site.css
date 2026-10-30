@@ -226,6 +226,8 @@ main { display: block; }
 .hero-copy .tag { margin-bottom: 1.25rem; }
 .hero-copy h1 { margin-bottom: 1.25rem; }
 .hero-sub { color: var(--muted); font-size: 1rem; line-height: 1.7; max-width: 480px; margin: 0 0 2rem; }
+.hero-meta { display: flex; flex-wrap: wrap; column-gap: 0; row-gap: .25rem; margin: -1rem 0 2rem; color: var(--muted); font-size: .875rem; font-weight: 600; }
+.hero-meta > span { white-space: nowrap; }
 .label-line { margin-top: 2rem; color: var(--muted); font-size: .8125rem; line-height: 1.6; max-width: 520px; }
 
 /* ---------- Cards (BRAND §5) ---------- */
@@ -324,7 +326,7 @@ main { display: block; }
 .score-cell { white-space: nowrap; }
 .score-cell strong { font: 900 1rem var(--font-heading); letter-spacing: -.02em; color: var(--accent); }
 .score-cell span { color: var(--muted); font-size: .75rem; }
-.domain-link { color: var(--text); font-weight: 600; }
+.domain-link { color: var(--text); font-weight: 600; overflow-wrap: anywhere; }
 .domain-link:hover { color: var(--accent); }
 .empty-row td { color: var(--muted); padding: 1.5rem .875rem; font-size: .875rem; }
 
@@ -484,6 +486,12 @@ details.raw pre { max-height: 420px; }
 .scroll-y { max-height: 560px; overflow-y: auto; }
 .scroll-y thead th { position: sticky; top: 0; background: var(--chrome); }
 
+.group-row th {
+  text-align: left; padding: .875rem .875rem .5rem; border-top: 1px solid var(--chrome-line);
+  font: 700 .6875rem var(--font-body); letter-spacing: .06em; text-transform: uppercase; color: var(--accent);
+}
+.group-row th .muted { text-transform: none; letter-spacing: 0; font-weight: 600; }
+
 /* ---------- Company claims ---------- */
 .claim { margin: 0; padding: .875rem 1rem; border-top: 1px solid var(--row-line); font-size: .9375rem; color: var(--text); }
 .claim:first-child { border-top: 0; }
@@ -539,6 +547,7 @@ details.raw pre { max-height: 420px; }
   .nav-right .tag { letter-spacing: .04em; padding: .2rem .45rem; }
   .nav-menu-btn { padding: .35rem .7rem; }
   .actions { flex-direction: column; align-items: stretch; }
+  .data-table th, .data-table td, .data-table.lg th, .data-table.lg td { padding-left: .5rem; padding-right: .5rem; }
   .actions .btn { width: 100%; }
 }
 @media (max-width: 360px) {

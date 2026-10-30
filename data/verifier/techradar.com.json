@@ -1,0 +1,19 @@
+{
+  "run_id": "vr-d0728d05",
+  "domain": "techradar.com",
+  "ran_at": "2026-10-30T06:26:55.371Z",
+  "claims_in": 5,
+  "kept": [
+    "c1",
+    "c2",
+    "c3",
+    "c4"
+  ],
+  "tagged_company_claims": [],
+  "removed": [
+    {
+      "text": "Your readers already ask AI assistants before they buy.[^c5]",
+      "reason": "no_matching_evidence"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "domain": "techradar.com",
+  "angle_code": "already-decided",
+  "recipient_role": "Head of Ad Operations",
+  "subject": "techradar.com and AI search",
+  "body": "Hello,\n\nI’ve been looking at which publishers AI search tools point UK shoppers to.\n\ntechradar.com was cited in 21 of the 80 consumer electronics answers in a dated sample of UK buyer queries.[^c1][^c2][^c3] It was cited in both runs of the sample, not just one.[^c4]\n\nWould a 20-minute call to walk through the queries that cited you be useful?\n\nBest wishes",
+  "claims": [
+    {
+      "id": "c1",
+      "text": "Cited in 21 consumer electronics answers",
+      "type": "evidence",
+      "ref": "/signals/readership/probes_cited",
+      "asserted_value": 21
+    },
+    {
+      "id": "c2",
+      "text": "Out of 80 consumer electronics answers",
+      "type": "evidence",
+      "ref": "/signals/readership/probes_total",
+      "asserted_value": 80
+    },
+    {
+      "id": "c3",
+      "text": "Vertical: consumer electronics",
+      "type": "evidence",
+      "ref": "/vertical",
+      "asserted_value": "consumer_electronics"
+    },
+    {
+      "id": "c4",
+      "text": "Cited in both runs",
+      "type": "evidence",
+      "ref": "/signals/readership/stability",
+      "asserted_value": "both_runs"
+    }
+  ],
+  "verifier_run_id": "vr-d0728d05"
+}
