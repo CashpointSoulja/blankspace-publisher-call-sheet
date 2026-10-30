@@ -1,0 +1,23 @@
+{
+  "$schema": "./schema/agents.schema.json",
+  "$comment": "AI crawler product tokens evaluated against robots.txt (SPEC §4). These are third-party crawler names used as data, not attribution. Each entry carries the vendor documentation URL and the date it was checked. checked is null until someone confirms the token against the vendor page. scripts/check.mjs --release fails while any entry is unchecked. Field definitions: schema/agents.schema.json.",
+  "groups": {
+    "training": "Collects content for model training.",
+    "search": "Fetches pages for AI search answers or on a user's request."
+  },
+  "agents": [
+    { "token": "GPTBot", "group": "training", "vendor": "OpenAI", "doc_url": "https://platform.openai.com/docs/bots", "checked": null },
+    { "token": "ClaudeBot", "group": "training", "vendor": "Anthropic", "doc_url": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler", "checked": null },
+    { "token": "Google-Extended", "group": "training", "vendor": "Google", "doc_url": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers", "checked": null },
+    { "token": "CCBot", "group": "training", "vendor": "Common Crawl", "doc_url": "https://commoncrawl.org/ccbot", "checked": null },
+    { "token": "Applebot-Extended", "group": "training", "vendor": "Apple", "doc_url": "https://support.apple.com/en-us/119829", "checked": null },
+    { "token": "Meta-ExternalAgent", "group": "training", "vendor": "Meta", "doc_url": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers", "checked": null },
+    { "token": "Bytespider", "group": "training", "vendor": "ByteDance", "doc_url": null, "checked": null },
+    { "token": "OAI-SearchBot", "group": "search", "vendor": "OpenAI", "doc_url": "https://platform.openai.com/docs/bots", "checked": null },
+    { "token": "ChatGPT-User", "group": "search", "vendor": "OpenAI", "doc_url": "https://platform.openai.com/docs/bots", "checked": null },
+    { "token": "PerplexityBot", "group": "search", "vendor": "Perplexity", "doc_url": "https://docs.perplexity.ai/guides/bots", "checked": null },
+    { "token": "Perplexity-User", "group": "search", "vendor": "Perplexity", "doc_url": "https://docs.perplexity.ai/guides/bots", "checked": null },
+    { "token": "Claude-SearchBot", "group": "search", "vendor": "Anthropic", "doc_url": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler", "checked": null },
+    { "token": "Claude-User", "group": "search", "vendor": "Anthropic", "doc_url": "https://support.anthropic.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler", "checked": null }
+  ]
+}

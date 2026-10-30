@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "draft.schema.json",
+  "title": "drafts/{domain}.json",
+  "description": "Post-verifier outreach draft (SPEC §8.6). Addressed to a role, never a named person. Text only: nothing in this codebase can send it.",
+  "type": "object",
+  "required": ["domain", "angle_code", "recipient_role", "subject", "body", "claims", "verifier_run_id"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "$comment": { "type": "string" },
+    "domain": { "type": "string", "pattern": "^[a-z0-9.-]+\\.[a-z]{2,}$" },
+    "angle_code": { "enum": ["already-decided", "reading-free", "no-owner", "closed-door", "unknown"] },
+    "recipient_role": { "type": "string", "minLength": 1 },
+    "subject": { "type": "string", "minLength": 1 },
+    "body": { "type": "string", "description": "Markdown. Every factual sentence ends with a claim marker [^cN]." },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "text", "type", "ref", "asserted_value"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^c\\d+$" },
+          "text": { "type": "string" },
+          "type": { "enum": ["evidence", "company_claim"] },
+          "ref": { "type": "string", "pattern": "^(/.*|company-claims#[a-z-]+)$", "description": "JSON pointer into evidence/{domain}.json, or company-claims#{id}." },
+          "asserted_value": { "description": "The value the sentence asserts. Compared with the value at ref." }
+        }
+      }
+    },
+    "verifier_run_id": { "type": "string" }
+  }
+}

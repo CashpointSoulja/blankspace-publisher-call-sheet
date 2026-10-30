@@ -1,0 +1,20 @@
+{
+  "$schema": "./schema/front.schema.json",
+  "$comment": "Front page summary of the dated citation sample (SPEC §8.1). Placeholder: every value is null or empty until the sample is run and wired in. null renders as an empty slot, never as zero. Field definitions: schema/front.schema.json.",
+  "sample_id": null,
+  "sample_date": null,
+  "engines": [],
+  "runs_per_query": null,
+  "queries": null,
+  "probes": null,
+  "publishers_cited": null,
+  "shortlist_size": null,
+  "citation_buckets": [],
+  "preview": [],
+  "verifier_example": null,
+  "builder": {
+    "name": "Ayo Ahmed",
+    "bio": null,
+    "repo_url": null
+  }
+}

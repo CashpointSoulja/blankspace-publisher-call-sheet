@@ -1,0 +1,30 @@
+[
+  {
+    "id": "cpm",
+    "statement": "~$15 average CPM",
+    "required_phrasing": "blankspace reports an average CPM of around $15",
+    "source_url": null,
+    "accessed": null
+  },
+  {
+    "id": "pickup",
+    "statement": "98% ad pick-up",
+    "required_phrasing": "blankspace reports 98% ad pick-up",
+    "source_url": null,
+    "accessed": null
+  },
+  {
+    "id": "sole-supplier-growth",
+    "statement": "282% agent-traffic growth at The Sole Supplier",
+    "required_phrasing": "blankspace reports 282% growth in agent traffic for The Sole Supplier",
+    "source_url": null,
+    "accessed": null
+  },
+  {
+    "id": "sole-supplier-referrals",
+    "statement": "5x ChatGPT referrals at The Sole Supplier",
+    "required_phrasing": "blankspace reports 5x ChatGPT referrals for The Sole Supplier",
+    "source_url": null,
+    "accessed": null
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "queries.schema.json",
+  "title": "queries.json",
+  "description": "Queries probed in the citation sample (SPEC §6). Text is recorded exactly as typed into each engine.",
+  "type": "object",
+  "required": ["sample_id", "location", "logged_in", "engines", "queries"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "$comment": { "type": "string" },
+    "sample_id": { "type": ["string", "null"], "pattern": "^cs-\\d{4}-\\d{2}-\\d{2}$" },
+    "location": { "type": "string" },
+    "logged_in": { "type": "boolean" },
+    "engines": {
+      "type": "array",
+      "description": "Engine and model names as shown at the time of the run. Refresh before each run.",
+      "items": {
+        "type": "object",
+        "required": ["engine", "model", "checked"],
+        "additionalProperties": false,
+        "properties": {
+          "engine": { "type": "string" },
+          "model": { "type": ["string", "null"] },
+          "checked": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$" }
+        }
+      }
+    },
+    "queries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "vertical", "text"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^(auto|ce|sport)-\\d{2}$" },
+          "vertical": { "enum": ["automotive", "consumer_electronics", "sportswear"] },
+          "text": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

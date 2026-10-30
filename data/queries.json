@@ -1,0 +1,9 @@
+{
+  "$schema": "./schema/queries.schema.json",
+  "$comment": "The shopping queries probed in the citation sample (SPEC §6). Ids are auto-NN, ce-NN and sport-NN. Record the queries exactly as run. Placeholder: empty until the sample is run. Field definitions: schema/queries.schema.json.",
+  "sample_id": null,
+  "location": "UK",
+  "logged_in": false,
+  "engines": [],
+  "queries": []
+}

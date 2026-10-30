@@ -1,0 +1,31 @@
+# Live-check worker. Deploy steps: worker/README.md.
+name = "publisher-call-sheet-check"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+[vars]
+# Public origin of the static site. Used in the crawler user-agent:
+#   AyoGTMResearch/0.1 (+{SITE_ORIGIN}/method#crawler)
+SITE_ORIGIN = "https://publisher-call-sheet.pages.dev"
+# Other origins allowed to call /api/check, comma-separated. Leave empty when the worker
+# runs on a route under the site's own domain.
+ALLOWED_ORIGINS = ""
+# "off" disables the DNS-over-HTTPS private-address check. Leave on.
+DNS_CHECK = "on"
+
+# Per-client-IP rate limit: 10 checks per 60 seconds.
+[[ratelimits]]
+name = "RATE_LIMITER"
+namespace_id = "1001"
+simple = { limit = 10, period = 60 }
+
+# 24-hour cache by host. Create the namespace (see README), paste its id, then uncomment.
+# [[kv_namespaces]]
+# binding = "CHECK_CACHE"
+# id = "PASTE_KV_NAMESPACE_ID"
+
+# Serve on the site's own domain so the page can call /api/check without CORS.
+# Uncomment and set the zone after the site's custom domain exists.
+# routes = [
+#   { pattern = "callsheet.example.com/api/*", zone_name = "example.com" }
+# ]

@@ -1,0 +1,6 @@
+{
+  "$schema": "./schema/domains.schema.json",
+  "$comment": "Classification of every cited registrable domain (SPEC §6), one line of rationale each. Only class publisher is ranked. Placeholder: empty until the sample is classified. Field definitions: schema/domains.schema.json.",
+  "sample_id": null,
+  "domains": []
+}

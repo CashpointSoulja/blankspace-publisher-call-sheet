@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "company-claims.schema.json",
+  "title": "company-claims.json",
+  "description": "blankspace's own performance claims (SPEC §8.5). Pages render a claim only when source_url and accessed are set, always with required_phrasing and a COMPANY CLAIM tag.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "statement", "required_phrasing", "source_url", "accessed"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "enum": ["cpm", "pickup", "sole-supplier-growth", "sole-supplier-referrals"] },
+      "statement": { "type": "string", "minLength": 1 },
+      "required_phrasing": { "type": "string", "pattern": "^blankspace reports ", "description": "The only wording a page or draft may use." },
+      "source_url": { "type": ["string", "null"], "pattern": "^https://", "description": "Page where blankspace makes the claim. Fill from the page actually read." },
+      "accessed": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$" }
+    }
+  }
+}

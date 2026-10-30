@@ -1,0 +1,19 @@
+{
+  "name": "publisher-call-sheet-check",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Live evidence check for one publisher URL. Reads public files only.",
+  "author": "Ayo Ahmed",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "tldts": "^7.0.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

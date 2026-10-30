@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "verifier.schema.json",
+  "title": "verifier/{domain}.json",
+  "description": "Verifier log for a draft (SPEC §8.7, §9). removed[].text is verbatim.",
+  "type": "object",
+  "required": ["run_id", "domain", "ran_at", "claims_in", "kept", "tagged_company_claims", "removed"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "$comment": { "type": "string" },
+    "run_id": { "type": "string" },
+    "domain": { "type": "string", "pattern": "^[a-z0-9.-]+\\.[a-z]{2,}$" },
+    "ran_at": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T" },
+    "claims_in": { "type": "integer", "minimum": 0 },
+    "kept": { "type": "array", "items": { "type": "string", "pattern": "^c\\d+$" } },
+    "tagged_company_claims": { "type": "array", "items": { "type": "string", "pattern": "^c\\d+$" } },
+    "removed": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["text", "reason"],
+        "additionalProperties": false,
+        "properties": {
+          "text": { "type": "string" },
+          "reason": { "enum": ["no_matching_evidence", "value_mismatch", "unmarked_factual_sentence", "company_claim_misphrased"] }
+        }
+      }
+    }
+  }
+}

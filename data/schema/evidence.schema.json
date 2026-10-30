@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "evidence.schema.json",
+  "title": "evidence/{domain}.json and the worker's /api/check response",
+  "description": "Evidence object (SPEC §8.4). Every statement on an evidence page resolves to a JSON pointer into this object. Unknown values are null, never zero.",
+  "type": "object",
+  "required": ["domain", "vertical", "source", "checked_at", "fetch", "signals", "score", "stance", "cannot_see"],
+  "additionalProperties": false,
+  "$defs": {
+    "status3": { "type": ["string", "null"], "enum": ["allowed", "partial", "blocked", null] },
+    "num01": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+    "count": { "type": ["integer", "null"], "minimum": 0 },
+    "strings": { "type": "array", "items": { "type": "string" } },
+    "signalMap": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "readership": { "type": ["number", "null"] },
+        "placement": { "type": ["number", "null"] },
+        "programmatic": { "type": ["number", "null"] },
+        "reachability": { "type": ["number", "null"] },
+        "commerce": { "type": ["number", "null"] }
+      }
+    }
+  },
+  "properties": {
+    "$schema": { "type": "string" },
+    "$comment": { "type": "string" },
+    "domain": { "type": "string", "pattern": "^[a-z0-9.-]+\\.[a-z]{2,}$" },
+    "vertical": { "type": ["string", "null"], "enum": ["automotive", "consumer_electronics", "sportswear", null] },
+    "source": { "enum": ["sample", "live"] },
+    "checked_at": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T" },
+    "cache": {
+      "type": "object",
+      "description": "Worker only. Whether this response came from the 24-hour host cache.",
+      "additionalProperties": false,
+      "properties": { "hit": { "type": "boolean" }, "stored_at": { "type": ["string", "null"] } }
+    },
+    "fetch": {
+      "type": "object",
+      "required": ["user_agent", "requests", "blocked", "skipped"],
+      "additionalProperties": false,
+      "properties": {
+        "user_agent": { "type": "string" },
+        "requests": { "type": "integer", "minimum": 0, "maximum": 8, "description": "Requests made to the publisher. Budget is 8." },
+        "blocked": {
+          "type": "array",
+          "description": "Fetches the publisher refused. Evidence, not errors.",
+          "items": { "type": "object", "required": ["url", "status"], "additionalProperties": false, "properties": { "url": { "type": "string" }, "status": { "type": "integer" } } }
+        },
+        "skipped": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["url", "reason"],
+            "additionalProperties": false,
+            "properties": {
+              "url": { "type": "string" },
+              "reason": { "enum": ["robots_disallow", "budget", "timeout", "off_domain", "unsafe_target", "fetch_error"] }
+            }
+          }
+        }
+      }
+    },
+    "signals": {
+      "type": "object",
+      "required": ["readership", "placement", "programmatic", "reachability", "commerce", "cdn"],
+      "additionalProperties": false,
+      "properties": {
+        "readership": {
+          "type": "object",
+          "required": ["status"],
+          "additionalProperties": false,
+          "properties": {
+            "status": { "enum": ["in_sample", "not_in_sample"] },
+            "sample_id": { "type": ["string", "null"] },
+            "probes_total": { "$ref": "#/$defs/count" },
+            "probes_cited": { "$ref": "#/$defs/count" },
+            "share": { "$ref": "#/$defs/num01" },
+            "stability": { "type": ["string", "null"], "enum": ["both_runs", "one_run", "single_run_only", null] },
+            "probe_ids": { "$ref": "#/$defs/strings" }
+          }
+        },
+        "placement": {
+          "type": "object",
+          "required": ["sitemap_url", "slugs_sampled", "slugs_matched", "slug_share", "matched_examples", "schema_types", "pages_checked"],
+          "additionalProperties": false,
+          "properties": {
+            "sitemap_url": { "type": ["string", "null"] },
+            "slugs_sampled": { "$ref": "#/$defs/count" },
+            "slugs_matched": { "$ref": "#/$defs/count" },
+            "slug_share": { "$ref": "#/$defs/num01" },
+            "matched_examples": { "$ref": "#/$defs/strings" },
+            "schema_types": { "type": "array", "items": { "enum": ["ItemList", "Product", "Review"] } },
+            "pages_checked": { "$ref": "#/$defs/strings" }
+          }
+        },
+        "programmatic": {
+          "type": "object",
+          "required": ["ads_txt", "header_bidding", "ad_server_tag"],
+          "additionalProperties": false,
+          "properties": {
+            "ads_txt": {
+              "type": "object",
+              "required": ["present", "url"],
+              "additionalProperties": false,
+              "properties": {
+                "present": { "type": ["boolean", "null"], "description": "null when the fetch failed, so presence is unknown." },
+                "url": { "type": "string" },
+                "status": { "type": ["integer", "null"] },
+                "records": { "$ref": "#/$defs/count" },
+                "ad_systems": { "$ref": "#/$defs/count" },
+                "direct": { "$ref": "#/$defs/count" },
+                "reseller": { "$ref": "#/$defs/count" },
+                "managerdomain": { "type": ["string", "null"] },
+                "ownerdomain": { "type": ["string", "null"] },
+                "contact": { "type": ["array", "null"], "items": { "type": "string" } },
+                "note": { "type": ["string", "null"], "description": "e.g. redirected_off_domain, soft_404." }
+              }
+            },
+            "header_bidding": {
+              "type": "object",
+              "required": ["detected", "scope"],
+              "additionalProperties": false,
+              "properties": {
+                "detected": { "type": ["array", "null"], "items": { "enum": ["prebid", "amazon"] }, "description": "null when no HTML could be read." },
+                "scope": { "const": "initial_html" }
+              }
+            },
+            "ad_server_tag": {
+              "type": "object",
+              "required": ["gpt"],
+              "additionalProperties": false,
+              "properties": { "gpt": { "type": ["boolean", "null"] } }
+            }
+          }
+        },
+        "reachability": {
+          "type": "object",
+          "required": ["robots_url", "status", "training", "search", "per_agent", "ai_rules_present", "content_signal", "excerpt"],
+          "additionalProperties": false,
+          "properties": {
+            "robots_url": { "type": "string" },
+            "status": { "type": ["integer", "null"], "description": "HTTP status of robots.txt. null when unreachable." },
+            "training": { "$ref": "#/$defs/status3" },
+            "search": { "$ref": "#/$defs/status3" },
+            "per_agent": { "type": "object", "additionalProperties": { "enum": ["allowed", "blocked"] } },
+            "ai_rules_present": { "type": ["boolean", "null"] },
+            "content_signal": { "$ref": "#/$defs/strings" },
+            "excerpt": { "$ref": "#/$defs/strings" }
+          }
+        },
+        "commerce": {
+          "type": "object",
+          "required": ["networks", "evidence"],
+          "additionalProperties": false,
+          "properties": {
+            "networks": { "type": ["array", "null"], "items": { "enum": ["skimlinks", "awin", "partnerize", "sovrn", "amazon", "rakuten", "cj"] }, "description": "null when no page could be read." },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["network", "pattern", "page"],
+                "additionalProperties": false,
+                "properties": { "network": { "type": "string" }, "pattern": { "type": "string" }, "page": { "type": "string" } }
+              }
+            }
+          }
+        },
+        "cdn": {
+          "type": "object",
+          "required": ["providers", "evidence_headers"],
+          "additionalProperties": false,
+          "properties": {
+            "providers": { "type": "array", "items": { "enum": ["cloudflare", "fastly", "cloudfront", "akamai", "vercel", "unidentified"] } },
+            "evidence_headers": { "$ref": "#/$defs/strings" }
+          }
+        }
+      }
+    },
+    "score": {
+      "type": "object",
+      "required": ["weights", "subscores", "points", "total", "max", "missed"],
+      "additionalProperties": false,
+      "properties": {
+        "weights": { "$ref": "#/$defs/signalMap" },
+        "subscores": { "$ref": "#/$defs/signalMap" },
+        "points": { "$ref": "#/$defs/signalMap" },
+        "maxima": { "$ref": "#/$defs/signalMap" },
+        "total": { "type": "number", "minimum": 0 },
+        "max": { "type": "number", "minimum": 0, "maximum": 100 },
+        "missed": { "$ref": "#/$defs/strings" }
+      }
+    },
+    "stance": {
+      "type": "object",
+      "required": ["code", "angle_label"],
+      "additionalProperties": false,
+      "properties": {
+        "code": { "enum": ["already-decided", "reading-free", "no-owner", "closed-door", "unknown"] },
+        "angle_label": { "type": ["string", "null"] }
+      }
+    },
+    "cannot_see": { "$ref": "#/$defs/strings" }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "agents.schema.json",
+  "title": "agents.json",
+  "description": "Crawler product tokens evaluated against robots.txt (SPEC §4). Shared by the site and the worker.",
+  "type": "object",
+  "required": ["groups", "agents"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "$comment": { "type": "string" },
+    "groups": {
+      "type": "object",
+      "required": ["training", "search"],
+      "additionalProperties": false,
+      "properties": { "training": { "type": "string" }, "search": { "type": "string" } }
+    },
+    "agents": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["token", "group", "vendor", "doc_url", "checked"],
+        "additionalProperties": false,
+        "properties": {
+          "token": { "type": "string", "pattern": "^[A-Za-z0-9_-]+$", "description": "robots.txt product token, matched case-insensitively." },
+          "group": { "enum": ["training", "search"] },
+          "vendor": { "type": "string" },
+          "doc_url": { "type": ["string", "null"], "pattern": "^https://", "description": "Vendor page that documents the token." },
+          "checked": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "Date the token was confirmed on doc_url. null = not yet confirmed." }
+        }
+      }
+    }
+  }
+}
