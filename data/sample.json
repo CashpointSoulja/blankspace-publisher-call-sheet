@@ -1,0 +1,44 @@
+{
+ "sample_id": "sample-2026-10-30",
+ "dates_utc": [
+  "2026-10-30"
+ ],
+ "engines": [
+  "perplexity/sonar (live web search, via Vercel AI Gateway)"
+ ],
+ "runs_per_query": 2,
+ "queries": 120,
+ "probes": 240,
+ "condition": "UK-phrased buyer queries, logged out, one answer engine; results vary run to run",
+ "total_citations": 2424,
+ "unique_domains": 324,
+ "publishers_cited": 175,
+ "citation_buckets": [
+  {
+   "class": "publisher",
+   "share": 0.6918,
+   "count": 1677
+  },
+  {
+   "class": "retailer",
+   "share": 0.099,
+   "count": 240
+  },
+  {
+   "class": "brand",
+   "share": 0.0549,
+   "count": 133
+  },
+  {
+   "class": "ugc",
+   "share": 0.0008,
+   "count": 2
+  },
+  {
+   "class": "other",
+   "share": 0.1535,
+   "count": 372
+  }
+ ],
+ "collection_cost_usd": 0.6512
+}

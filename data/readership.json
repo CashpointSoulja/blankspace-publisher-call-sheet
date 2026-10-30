@@ -1,0 +1,3221 @@
+[
+ {
+  "domain": "pcmag.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 60,
+  "vertical_probes_total": 80,
+  "share": 0.75,
+  "s_readership": 1.0,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-02-r1",
+   "ce-02-r2",
+   "ce-03-r1",
+   "ce-03-r2",
+   "ce-05-r1",
+   "ce-05-r2",
+   "ce-06-r1",
+   "ce-06-r2",
+   "ce-07-r1",
+   "ce-07-r2",
+   "ce-08-r1",
+   "ce-08-r2",
+   "ce-09-r1",
+   "ce-09-r2",
+   "ce-10-r1",
+   "ce-10-r2",
+   "ce-11-r1",
+   "ce-11-r2",
+   "ce-12-r1",
+   "ce-12-r2",
+   "ce-13-r1",
+   "ce-13-r2",
+   "ce-15-r1",
+   "ce-15-r2",
+   "ce-16-r1",
+   "ce-16-r2",
+   "ce-17-r1",
+   "ce-17-r2",
+   "ce-18-r1",
+   "ce-18-r2",
+   "ce-19-r1",
+   "ce-19-r2",
+   "ce-20-r1",
+   "ce-20-r2",
+   "ce-22-r1",
+   "ce-22-r2",
+   "ce-23-r1",
+   "ce-23-r2",
+   "ce-24-r1",
+   "ce-24-r2",
+   "ce-25-r1",
+   "ce-25-r2",
+   "ce-27-r1",
+   "ce-27-r2",
+   "ce-28-r1",
+   "ce-28-r2",
+   "ce-32-r1",
+   "ce-32-r2",
+   "ce-33-r1",
+   "ce-33-r2",
+   "ce-36-r1",
+   "ce-36-r2",
+   "ce-37-r1",
+   "ce-37-r2",
+   "ce-38-r1",
+   "ce-38-r2",
+   "ce-39-r1",
+   "ce-39-r2",
+   "ce-40-r1",
+   "ce-40-r2"
+  ]
+ },
+ {
+  "domain": "autoexpress.co.uk",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 54,
+  "vertical_probes_total": 80,
+  "share": 0.675,
+  "s_readership": 1.0,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-01-r1",
+   "auto-01-r2",
+   "auto-02-r1",
+   "auto-02-r2",
+   "auto-03-r1",
+   "auto-03-r2",
+   "auto-05-r1",
+   "auto-05-r2",
+   "auto-08-r1",
+   "auto-08-r2",
+   "auto-09-r1",
+   "auto-09-r2",
+   "auto-11-r1",
+   "auto-11-r2",
+   "auto-12-r1",
+   "auto-12-r2",
+   "auto-13-r1",
+   "auto-13-r2",
+   "auto-14-r1",
+   "auto-14-r2",
+   "auto-15-r1",
+   "auto-15-r2",
+   "auto-16-r1",
+   "auto-16-r2",
+   "auto-18-r1",
+   "auto-18-r2",
+   "auto-19-r1",
+   "auto-19-r2",
+   "auto-21-r1",
+   "auto-21-r2",
+   "auto-22-r1",
+   "auto-22-r2",
+   "auto-23-r1",
+   "auto-23-r2",
+   "auto-26-r1",
+   "auto-26-r2",
+   "auto-27-r1",
+   "auto-27-r2",
+   "auto-28-r1",
+   "auto-28-r2",
+   "auto-30-r1",
+   "auto-30-r2",
+   "auto-32-r1",
+   "auto-32-r2",
+   "auto-33-r1",
+   "auto-33-r2",
+   "auto-36-r1",
+   "auto-36-r2",
+   "auto-38-r1",
+   "auto-38-r2",
+   "auto-39-r1",
+   "auto-39-r2",
+   "auto-40-r1",
+   "auto-40-r2"
+  ]
+ },
+ {
+  "domain": "whatcar.com",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 46,
+  "vertical_probes_total": 80,
+  "share": 0.575,
+  "s_readership": 1.0,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-01-r1",
+   "auto-01-r2",
+   "auto-02-r1",
+   "auto-02-r2",
+   "auto-03-r1",
+   "auto-03-r2",
+   "auto-06-r1",
+   "auto-06-r2",
+   "auto-07-r1",
+   "auto-07-r2",
+   "auto-08-r1",
+   "auto-08-r2",
+   "auto-09-r1",
+   "auto-09-r2",
+   "auto-12-r1",
+   "auto-12-r2",
+   "auto-13-r1",
+   "auto-13-r2",
+   "auto-14-r1",
+   "auto-14-r2",
+   "auto-16-r1",
+   "auto-16-r2",
+   "auto-18-r1",
+   "auto-18-r2",
+   "auto-20-r1",
+   "auto-20-r2",
+   "auto-21-r1",
+   "auto-21-r2",
+   "auto-23-r1",
+   "auto-23-r2",
+   "auto-24-r1",
+   "auto-24-r2",
+   "auto-26-r1",
+   "auto-26-r2",
+   "auto-32-r1",
+   "auto-32-r2",
+   "auto-34-r1",
+   "auto-34-r2",
+   "auto-35-r1",
+   "auto-35-r2",
+   "auto-36-r1",
+   "auto-36-r2",
+   "auto-37-r1",
+   "auto-37-r2",
+   "auto-38-r1",
+   "auto-38-r2"
+  ]
+ },
+ {
+  "domain": "drive.co.uk",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 44,
+  "vertical_probes_total": 80,
+  "share": 0.55,
+  "s_readership": 1.0,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-02-r1",
+   "auto-02-r2",
+   "auto-05-r1",
+   "auto-05-r2",
+   "auto-07-r1",
+   "auto-07-r2",
+   "auto-09-r1",
+   "auto-09-r2",
+   "auto-11-r1",
+   "auto-11-r2",
+   "auto-12-r1",
+   "auto-12-r2",
+   "auto-13-r1",
+   "auto-13-r2",
+   "auto-15-r1",
+   "auto-15-r2",
+   "auto-18-r1",
+   "auto-18-r2",
+   "auto-19-r1",
+   "auto-19-r2",
+   "auto-23-r1",
+   "auto-23-r2",
+   "auto-24-r1",
+   "auto-24-r2",
+   "auto-25-r1",
+   "auto-25-r2",
+   "auto-26-r1",
+   "auto-26-r2",
+   "auto-27-r1",
+   "auto-27-r2",
+   "auto-28-r1",
+   "auto-28-r2",
+   "auto-29-r1",
+   "auto-29-r2",
+   "auto-30-r1",
+   "auto-30-r2",
+   "auto-33-r1",
+   "auto-33-r2",
+   "auto-36-r1",
+   "auto-36-r2",
+   "auto-38-r1",
+   "auto-38-r2",
+   "auto-39-r1",
+   "auto-39-r2"
+  ]
+ },
+ {
+  "domain": "runnersworld.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 38,
+  "vertical_probes_total": 80,
+  "share": 0.475,
+  "s_readership": 1.0,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-29-r1",
+   "ce-29-r2",
+   "sport-01-r1",
+   "sport-01-r2",
+   "sport-02-r1",
+   "sport-02-r2",
+   "sport-03-r1",
+   "sport-03-r2",
+   "sport-06-r1",
+   "sport-06-r2",
+   "sport-07-r1",
+   "sport-07-r2",
+   "sport-09-r1",
+   "sport-09-r2",
+   "sport-10-r1",
+   "sport-10-r2",
+   "sport-11-r1",
+   "sport-11-r2",
+   "sport-14-r1",
+   "sport-14-r2",
+   "sport-15-r1",
+   "sport-15-r2",
+   "sport-18-r1",
+   "sport-18-r2",
+   "sport-19-r1",
+   "sport-19-r2",
+   "sport-25-r1",
+   "sport-25-r2",
+   "sport-26-r1",
+   "sport-26-r2",
+   "sport-27-r1",
+   "sport-27-r2",
+   "sport-29-r1",
+   "sport-29-r2",
+   "sport-36-r1",
+   "sport-36-r2",
+   "sport-37-r1",
+   "sport-37-r2",
+   "sport-40-r1",
+   "sport-40-r2"
+  ]
+ },
+ {
+  "domain": "nytimes.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 32,
+  "vertical_probes_total": 80,
+  "share": 0.4,
+  "s_readership": 1.0,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-01-r1",
+   "ce-01-r2",
+   "ce-03-r1",
+   "ce-03-r2",
+   "ce-06-r1",
+   "ce-06-r2",
+   "ce-10-r1",
+   "ce-10-r2",
+   "ce-11-r1",
+   "ce-11-r2",
+   "ce-14-r1",
+   "ce-14-r2",
+   "ce-15-r1",
+   "ce-15-r2",
+   "ce-17-r1",
+   "ce-17-r2",
+   "ce-18-r1",
+   "ce-18-r2",
+   "ce-21-r1",
+   "ce-21-r2",
+   "ce-26-r1",
+   "ce-26-r2",
+   "ce-27-r1",
+   "ce-27-r2",
+   "ce-28-r1",
+   "ce-28-r2",
+   "ce-33-r1",
+   "ce-33-r2",
+   "ce-36-r1",
+   "ce-36-r2",
+   "ce-40-r1",
+   "ce-40-r2",
+   "sport-19-r1",
+   "sport-19-r2",
+   "sport-35-r1",
+   "sport-35-r2"
+  ]
+ },
+ {
+  "domain": "cnet.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 30,
+  "vertical_probes_total": 80,
+  "share": 0.375,
+  "s_readership": 1.0,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-01-r1",
+   "ce-01-r2",
+   "ce-03-r1",
+   "ce-03-r2",
+   "ce-08-r1",
+   "ce-08-r2",
+   "ce-10-r1",
+   "ce-10-r2",
+   "ce-11-r1",
+   "ce-11-r2",
+   "ce-15-r1",
+   "ce-15-r2",
+   "ce-25-r1",
+   "ce-25-r2",
+   "ce-27-r1",
+   "ce-27-r2",
+   "ce-30-r1",
+   "ce-30-r2",
+   "ce-32-r1",
+   "ce-32-r2",
+   "ce-33-r1",
+   "ce-33-r2",
+   "ce-35-r1",
+   "ce-35-r2",
+   "ce-36-r1",
+   "ce-36-r2",
+   "ce-38-r1",
+   "ce-38-r2",
+   "ce-40-r1",
+   "ce-40-r2",
+   "sport-17-r1",
+   "sport-17-r2"
+  ]
+ },
+ {
+  "domain": "independent.co.uk",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 26,
+  "vertical_probes_total": 80,
+  "share": 0.325,
+  "s_readership": 1.0,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-03-r2",
+   "auto-05-r1",
+   "auto-05-r2",
+   "auto-33-r1",
+   "auto-33-r2",
+   "auto-39-r1",
+   "auto-39-r2",
+   "ce-02-r1",
+   "ce-02-r2",
+   "ce-04-r1",
+   "ce-04-r2",
+   "ce-05-r1",
+   "ce-05-r2",
+   "ce-07-r1",
+   "ce-07-r2",
+   "ce-12-r1",
+   "ce-12-r2",
+   "ce-13-r1",
+   "ce-13-r2",
+   "ce-15-r1",
+   "ce-15-r2",
+   "ce-20-r1",
+   "ce-20-r2",
+   "ce-21-r1",
+   "ce-21-r2",
+   "ce-22-r1",
+   "ce-22-r2",
+   "ce-29-r1",
+   "ce-29-r2",
+   "ce-37-r1",
+   "ce-37-r2",
+   "ce-39-r1",
+   "ce-39-r2",
+   "sport-04-r1",
+   "sport-04-r2",
+   "sport-21-r1",
+   "sport-21-r2",
+   "sport-29-r1",
+   "sport-29-r2",
+   "sport-34-r1",
+   "sport-34-r2",
+   "sport-37-r1",
+   "sport-37-r2"
+  ]
+ },
+ {
+  "domain": "rtings.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 26,
+  "vertical_probes_total": 80,
+  "share": 0.325,
+  "s_readership": 1.0,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-01-r1",
+   "ce-01-r2",
+   "ce-08-r1",
+   "ce-08-r2",
+   "ce-14-r1",
+   "ce-14-r2",
+   "ce-16-r1",
+   "ce-16-r2",
+   "ce-17-r1",
+   "ce-17-r2",
+   "ce-18-r1",
+   "ce-18-r2",
+   "ce-19-r1",
+   "ce-19-r2",
+   "ce-25-r1",
+   "ce-25-r2",
+   "ce-30-r1",
+   "ce-30-r2",
+   "ce-31-r1",
+   "ce-31-r2",
+   "ce-35-r1",
+   "ce-35-r2",
+   "ce-36-r1",
+   "ce-36-r2",
+   "ce-37-r1",
+   "ce-37-r2",
+   "sport-25-r1",
+   "sport-25-r2",
+   "sport-26-r1",
+   "sport-26-r2",
+   "sport-40-r1",
+   "sport-40-r2"
+  ]
+ },
+ {
+  "domain": "runrepeat.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 26,
+  "vertical_probes_total": 80,
+  "share": 0.325,
+  "s_readership": 1.0,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-01-r1",
+   "sport-01-r2",
+   "sport-02-r1",
+   "sport-02-r2",
+   "sport-04-r1",
+   "sport-04-r2",
+   "sport-10-r1",
+   "sport-10-r2",
+   "sport-11-r1",
+   "sport-11-r2",
+   "sport-12-r1",
+   "sport-12-r2",
+   "sport-13-r1",
+   "sport-13-r2",
+   "sport-16-r1",
+   "sport-16-r2",
+   "sport-17-r1",
+   "sport-17-r2",
+   "sport-25-r1",
+   "sport-25-r2",
+   "sport-26-r1",
+   "sport-26-r2",
+   "sport-30-r1",
+   "sport-30-r2",
+   "sport-40-r1",
+   "sport-40-r2"
+  ]
+ },
+ {
+  "domain": "tomsguide.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 26,
+  "vertical_probes_total": 80,
+  "share": 0.325,
+  "s_readership": 1.0,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-06-r1",
+   "ce-06-r2",
+   "ce-11-r1",
+   "ce-11-r2",
+   "ce-14-r1",
+   "ce-14-r2",
+   "ce-15-r1",
+   "ce-15-r2",
+   "ce-16-r1",
+   "ce-16-r2",
+   "ce-17-r1",
+   "ce-17-r2",
+   "ce-18-r1",
+   "ce-18-r2",
+   "ce-25-r1",
+   "ce-25-r2",
+   "ce-27-r1",
+   "ce-27-r2",
+   "ce-28-r1",
+   "ce-28-r2",
+   "ce-32-r1",
+   "ce-32-r2",
+   "ce-36-r1",
+   "ce-36-r2",
+   "ce-40-r1",
+   "ce-40-r2",
+   "sport-02-r1",
+   "sport-02-r2",
+   "sport-03-r1",
+   "sport-03-r2",
+   "sport-16-r1",
+   "sport-16-r2",
+   "sport-25-r1",
+   "sport-25-r2"
+  ]
+ },
+ {
+  "domain": "techradar.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 21,
+  "vertical_probes_total": 80,
+  "share": 0.2625,
+  "s_readership": 1.0,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-09-r1",
+   "ce-09-r2",
+   "ce-10-r1",
+   "ce-11-r1",
+   "ce-11-r2",
+   "ce-20-r1",
+   "ce-20-r2",
+   "ce-24-r1",
+   "ce-24-r2",
+   "ce-26-r1",
+   "ce-26-r2",
+   "ce-32-r1",
+   "ce-32-r2",
+   "ce-33-r1",
+   "ce-33-r2",
+   "ce-34-r1",
+   "ce-34-r2",
+   "ce-35-r1",
+   "ce-35-r2",
+   "ce-38-r1",
+   "ce-38-r2"
+  ]
+ },
+ {
+  "domain": "stuff.tv",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 20,
+  "vertical_probes_total": 80,
+  "share": 0.25,
+  "s_readership": 1.0,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-01-r1",
+   "ce-01-r2",
+   "ce-03-r1",
+   "ce-03-r2",
+   "ce-08-r1",
+   "ce-08-r2",
+   "ce-11-r1",
+   "ce-11-r2",
+   "ce-15-r1",
+   "ce-15-r2",
+   "ce-21-r1",
+   "ce-21-r2",
+   "ce-25-r1",
+   "ce-25-r2",
+   "ce-32-r1",
+   "ce-32-r2",
+   "ce-33-r1",
+   "ce-33-r2",
+   "ce-35-r1",
+   "ce-35-r2"
+  ]
+ },
+ {
+  "domain": "expertreviews.co.uk",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 18,
+  "vertical_probes_total": 80,
+  "share": 0.225,
+  "s_readership": 0.9,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-02-r1",
+   "ce-02-r2",
+   "ce-04-r1",
+   "ce-04-r2",
+   "ce-05-r1",
+   "ce-05-r2",
+   "ce-07-r1",
+   "ce-07-r2",
+   "ce-08-r1",
+   "ce-08-r2",
+   "ce-16-r1",
+   "ce-16-r2",
+   "ce-23-r1",
+   "ce-23-r2",
+   "ce-31-r1",
+   "ce-31-r2",
+   "ce-39-r1",
+   "ce-39-r2"
+  ]
+ },
+ {
+  "domain": "wired.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 16,
+  "vertical_probes_total": 80,
+  "share": 0.2,
+  "s_readership": 0.8,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-06-r1",
+   "ce-06-r2",
+   "ce-14-r1",
+   "ce-14-r2",
+   "ce-15-r1",
+   "ce-15-r2",
+   "ce-21-r1",
+   "ce-21-r2",
+   "ce-26-r1",
+   "ce-26-r2",
+   "ce-33-r1",
+   "ce-33-r2",
+   "ce-38-r1",
+   "ce-38-r2",
+   "ce-40-r1",
+   "ce-40-r2",
+   "sport-30-r1",
+   "sport-30-r2",
+   "sport-35-r1",
+   "sport-35-r2"
+  ]
+ },
+ {
+  "domain": "cnn.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 14,
+  "vertical_probes_total": 80,
+  "share": 0.175,
+  "s_readership": 0.7,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-10-r1",
+   "ce-10-r2",
+   "ce-11-r1",
+   "ce-11-r2",
+   "ce-18-r1",
+   "ce-18-r2",
+   "ce-21-r1",
+   "ce-21-r2",
+   "ce-25-r1",
+   "ce-25-r2",
+   "ce-36-r1",
+   "ce-36-r2",
+   "ce-40-r1",
+   "ce-40-r2",
+   "sport-02-r1",
+   "sport-02-r2",
+   "sport-17-r1",
+   "sport-17-r2",
+   "sport-19-r1",
+   "sport-19-r2",
+   "sport-20-r1",
+   "sport-20-r2",
+   "sport-26-r1",
+   "sport-26-r2",
+   "sport-35-r1",
+   "sport-35-r2"
+  ]
+ },
+ {
+  "domain": "t3.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 14,
+  "vertical_probes_total": 80,
+  "share": 0.175,
+  "s_readership": 0.7,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-03-r1",
+   "ce-03-r2",
+   "ce-17-r1",
+   "ce-17-r2",
+   "ce-24-r1",
+   "ce-24-r2",
+   "ce-25-r1",
+   "ce-25-r2",
+   "ce-26-r1",
+   "ce-26-r2",
+   "ce-33-r1",
+   "ce-33-r2",
+   "ce-37-r1",
+   "ce-37-r2",
+   "sport-11-r1",
+   "sport-11-r2"
+  ]
+ },
+ {
+  "domain": "telegraph.co.uk",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 14,
+  "vertical_probes_total": 80,
+  "share": 0.175,
+  "s_readership": 0.7,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-04-r1",
+   "ce-04-r2",
+   "ce-07-r1",
+   "ce-07-r2",
+   "ce-09-r1",
+   "ce-09-r2",
+   "ce-16-r1",
+   "ce-16-r2",
+   "ce-19-r1",
+   "ce-19-r2",
+   "ce-23-r1",
+   "ce-23-r2",
+   "ce-29-r1",
+   "ce-29-r2",
+   "sport-01-r1",
+   "sport-01-r2",
+   "sport-04-r1",
+   "sport-04-r2",
+   "sport-07-r1",
+   "sport-07-r2",
+   "sport-08-r1",
+   "sport-08-r2",
+   "sport-34-r1",
+   "sport-34-r2"
+  ]
+ },
+ {
+  "domain": "womenshealthmag.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 14,
+  "vertical_probes_total": 80,
+  "share": 0.175,
+  "s_readership": 0.7,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-04-r1",
+   "sport-04-r2",
+   "sport-07-r1",
+   "sport-07-r2",
+   "sport-08-r1",
+   "sport-08-r2",
+   "sport-11-r1",
+   "sport-11-r2",
+   "sport-27-r1",
+   "sport-27-r2",
+   "sport-31-r1",
+   "sport-31-r2",
+   "sport-34-r1",
+   "sport-34-r2"
+  ]
+ },
+ {
+  "domain": "evo.co.uk",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 12,
+  "vertical_probes_total": 80,
+  "share": 0.15,
+  "s_readership": 0.6,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-09-r1",
+   "auto-09-r2",
+   "auto-16-r1",
+   "auto-16-r2",
+   "auto-22-r1",
+   "auto-22-r2",
+   "auto-23-r1",
+   "auto-23-r2",
+   "auto-27-r1",
+   "auto-27-r2",
+   "auto-37-r1",
+   "auto-37-r2"
+  ]
+ },
+ {
+  "domain": "goodhousekeeping.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 12,
+  "vertical_probes_total": 80,
+  "share": 0.15,
+  "s_readership": 0.6,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-13-r1",
+   "ce-13-r2",
+   "sport-07-r1",
+   "sport-07-r2",
+   "sport-08-r1",
+   "sport-08-r2",
+   "sport-18-r1",
+   "sport-18-r2",
+   "sport-19-r1",
+   "sport-19-r2",
+   "sport-21-r1",
+   "sport-21-r2",
+   "sport-27-r1",
+   "sport-27-r2"
+  ]
+ },
+ {
+  "domain": "gq-magazine.co.uk",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 12,
+  "vertical_probes_total": 80,
+  "share": 0.15,
+  "s_readership": 0.6,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-01-r1",
+   "sport-01-r2",
+   "sport-09-r1",
+   "sport-09-r2",
+   "sport-15-r1",
+   "sport-15-r2",
+   "sport-22-r1",
+   "sport-22-r2",
+   "sport-29-r1",
+   "sport-29-r2",
+   "sport-34-r1",
+   "sport-34-r2"
+  ]
+ },
+ {
+  "domain": "idealo.co.uk",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 12,
+  "vertical_probes_total": 80,
+  "share": 0.15,
+  "s_readership": 0.6,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-05-r1",
+   "ce-05-r2",
+   "ce-12-r1",
+   "ce-12-r2",
+   "ce-23-r1",
+   "ce-34-r1",
+   "ce-34-r2",
+   "sport-04-r1",
+   "sport-04-r2",
+   "sport-05-r1",
+   "sport-05-r2",
+   "sport-09-r1",
+   "sport-09-r2",
+   "sport-18-r1",
+   "sport-18-r2",
+   "sport-33-r1",
+   "sport-33-r2",
+   "sport-34-r1",
+   "sport-34-r2"
+  ]
+ },
+ {
+  "domain": "outdoorsmagic.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 12,
+  "vertical_probes_total": 80,
+  "share": 0.15,
+  "s_readership": 0.6,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-07-r1",
+   "sport-07-r2",
+   "sport-09-r1",
+   "sport-09-r2",
+   "sport-10-r1",
+   "sport-10-r2",
+   "sport-20-r1",
+   "sport-20-r2",
+   "sport-27-r1",
+   "sport-27-r2",
+   "sport-33-r1",
+   "sport-33-r2"
+  ]
+ },
+ {
+  "domain": "pcworld.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 12,
+  "vertical_probes_total": 80,
+  "share": 0.15,
+  "s_readership": 0.6,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-06-r1",
+   "ce-06-r2",
+   "ce-19-r1",
+   "ce-19-r2",
+   "ce-26-r1",
+   "ce-26-r2",
+   "ce-27-r1",
+   "ce-27-r2",
+   "ce-37-r1",
+   "ce-37-r2",
+   "ce-38-r1",
+   "ce-38-r2"
+  ]
+ },
+ {
+  "domain": "tomshardware.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 12,
+  "vertical_probes_total": 80,
+  "share": 0.15,
+  "s_readership": 0.6,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-06-r1",
+   "ce-06-r2",
+   "ce-17-r1",
+   "ce-17-r2",
+   "ce-26-r1",
+   "ce-26-r2",
+   "ce-27-r1",
+   "ce-27-r2",
+   "ce-28-r1",
+   "ce-28-r2",
+   "ce-38-r1",
+   "ce-38-r2"
+  ]
+ },
+ {
+  "domain": "treelinereview.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 12,
+  "vertical_probes_total": 80,
+  "share": 0.15,
+  "s_readership": 0.6,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-06-r1",
+   "sport-06-r2",
+   "sport-19-r1",
+   "sport-19-r2",
+   "sport-20-r1",
+   "sport-20-r2",
+   "sport-30-r1",
+   "sport-30-r2",
+   "sport-33-r1",
+   "sport-33-r2",
+   "sport-35-r1",
+   "sport-35-r2"
+  ]
+ },
+ {
+  "domain": "whathifi.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 12,
+  "vertical_probes_total": 80,
+  "share": 0.15,
+  "s_readership": 0.6,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-01-r1",
+   "ce-01-r2",
+   "ce-07-r1",
+   "ce-08-r1",
+   "ce-08-r2",
+   "ce-31-r1",
+   "ce-31-r2",
+   "ce-34-r1",
+   "ce-34-r2",
+   "ce-35-r1",
+   "ce-35-r2",
+   "ce-38-r2"
+  ]
+ },
+ {
+  "domain": "yahoo.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 11,
+  "vertical_probes_total": 80,
+  "share": 0.1375,
+  "s_readership": 0.55,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-04-r1",
+   "auto-04-r2",
+   "auto-21-r1",
+   "auto-21-r2",
+   "auto-30-r1",
+   "auto-30-r2",
+   "ce-31-r1",
+   "ce-31-r2",
+   "ce-33-r1",
+   "ce-33-r2",
+   "sport-05-r1",
+   "sport-05-r2",
+   "sport-13-r1",
+   "sport-13-r2",
+   "sport-14-r1",
+   "sport-14-r2",
+   "sport-16-r1",
+   "sport-16-r2",
+   "sport-20-r1",
+   "sport-20-r2",
+   "sport-30-r2"
+  ]
+ },
+ {
+  "domain": "marieclaire.co.uk",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 10,
+  "vertical_probes_total": 80,
+  "share": 0.125,
+  "s_readership": 0.5,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-01-r1",
+   "sport-01-r2",
+   "sport-04-r1",
+   "sport-04-r2",
+   "sport-07-r1",
+   "sport-07-r2",
+   "sport-08-r1",
+   "sport-08-r2",
+   "sport-18-r1",
+   "sport-18-r2"
+  ]
+ },
+ {
+  "domain": "mashable.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 10,
+  "vertical_probes_total": 80,
+  "share": 0.125,
+  "s_readership": 0.5,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-01-r1",
+   "ce-01-r2",
+   "ce-03-r1",
+   "ce-03-r2",
+   "ce-11-r1",
+   "ce-11-r2",
+   "ce-12-r1",
+   "ce-12-r2",
+   "ce-36-r1",
+   "ce-36-r2"
+  ]
+ },
+ {
+  "domain": "motoringresearch.com",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 10,
+  "vertical_probes_total": 80,
+  "share": 0.125,
+  "s_readership": 0.5,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-02-r1",
+   "auto-02-r2",
+   "auto-08-r1",
+   "auto-08-r2",
+   "auto-16-r1",
+   "auto-16-r2",
+   "auto-17-r1",
+   "auto-17-r2",
+   "auto-26-r1",
+   "auto-26-r2"
+  ]
+ },
+ {
+  "domain": "soundguys.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 10,
+  "vertical_probes_total": 80,
+  "share": 0.125,
+  "s_readership": 0.5,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-01-r1",
+   "ce-01-r2",
+   "ce-08-r1",
+   "ce-08-r2",
+   "ce-17-r1",
+   "ce-17-r2",
+   "ce-30-r1",
+   "ce-30-r2",
+   "ce-35-r1",
+   "ce-35-r2"
+  ]
+ },
+ {
+  "domain": "the-independent.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 10,
+  "vertical_probes_total": 80,
+  "share": 0.125,
+  "s_readership": 0.5,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-05-r1",
+   "ce-05-r2",
+   "ce-07-r1",
+   "ce-07-r2",
+   "ce-13-r1",
+   "ce-13-r2",
+   "ce-39-r1",
+   "ce-39-r2",
+   "ce-40-r1",
+   "ce-40-r2",
+   "sport-02-r1",
+   "sport-02-r2"
+  ]
+ },
+ {
+  "domain": "womensrunning.co.uk",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 10,
+  "vertical_probes_total": 80,
+  "share": 0.125,
+  "s_readership": 0.5,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-29-r1",
+   "ce-29-r2",
+   "sport-07-r1",
+   "sport-07-r2",
+   "sport-18-r1",
+   "sport-18-r2",
+   "sport-27-r1",
+   "sport-27-r2",
+   "sport-29-r1",
+   "sport-29-r2",
+   "sport-36-r1",
+   "sport-36-r2"
+  ]
+ },
+ {
+  "domain": "autocar.co.uk",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 8,
+  "vertical_probes_total": 80,
+  "share": 0.1,
+  "s_readership": 0.4,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-01-r1",
+   "auto-01-r2",
+   "auto-05-r1",
+   "auto-05-r2",
+   "auto-13-r1",
+   "auto-13-r2",
+   "auto-39-r1",
+   "auto-39-r2"
+  ]
+ },
+ {
+  "domain": "businessinsider.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 8,
+  "vertical_probes_total": 80,
+  "share": 0.1,
+  "s_readership": 0.4,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-08-r1",
+   "ce-08-r2",
+   "ce-10-r1",
+   "ce-10-r2",
+   "ce-25-r1",
+   "ce-25-r2",
+   "ce-35-r1",
+   "ce-35-r2",
+   "sport-19-r1",
+   "sport-19-r2",
+   "sport-35-r1",
+   "sport-35-r2"
+  ]
+ },
+ {
+  "domain": "digitalcameraworld.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 8,
+  "vertical_probes_total": 80,
+  "share": 0.1,
+  "s_readership": 0.4,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-14-r1",
+   "ce-14-r2",
+   "ce-15-r1",
+   "ce-15-r2",
+   "ce-24-r1",
+   "ce-24-r2",
+   "ce-26-r1",
+   "ce-26-r2"
+  ]
+ },
+ {
+  "domain": "edmunds.com",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 8,
+  "vertical_probes_total": 80,
+  "share": 0.1,
+  "s_readership": 0.4,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-06-r1",
+   "auto-06-r2",
+   "auto-10-r1",
+   "auto-10-r2",
+   "auto-17-r1",
+   "auto-17-r2",
+   "auto-34-r1",
+   "auto-34-r2"
+  ]
+ },
+ {
+  "domain": "engadget.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 8,
+  "vertical_probes_total": 80,
+  "share": 0.1,
+  "s_readership": 0.4,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-01-r1",
+   "ce-01-r2",
+   "ce-15-r1",
+   "ce-15-r2",
+   "ce-21-r1",
+   "ce-21-r2",
+   "ce-40-r1",
+   "ce-40-r2"
+  ]
+ },
+ {
+  "domain": "garagegymreviews.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 8,
+  "vertical_probes_total": 80,
+  "share": 0.1,
+  "s_readership": 0.4,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-16-r1",
+   "sport-16-r2",
+   "sport-17-r1",
+   "sport-17-r2",
+   "sport-20-r1",
+   "sport-20-r2",
+   "sport-26-r1",
+   "sport-26-r2"
+  ]
+ },
+ {
+  "domain": "menshealth.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 8,
+  "vertical_probes_total": 80,
+  "share": 0.1,
+  "s_readership": 0.4,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-09-r1",
+   "ce-09-r2",
+   "sport-06-r1",
+   "sport-06-r2",
+   "sport-09-r1",
+   "sport-09-r2",
+   "sport-23-r1",
+   "sport-23-r2",
+   "sport-29-r1",
+   "sport-29-r2"
+  ]
+ },
+ {
+  "domain": "nbcnews.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 8,
+  "vertical_probes_total": 80,
+  "share": 0.1,
+  "s_readership": 0.4,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-01-r1",
+   "ce-01-r2",
+   "ce-10-r1",
+   "ce-10-r2",
+   "ce-11-r1",
+   "ce-11-r2",
+   "sport-03-r1",
+   "sport-03-r2",
+   "sport-19-r1",
+   "sport-19-r2",
+   "sport-20-r1",
+   "sport-20-r2",
+   "sport-25-r1",
+   "sport-25-r2"
+  ]
+ },
+ {
+  "domain": "techadvisor.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 8,
+  "vertical_probes_total": 80,
+  "share": 0.1,
+  "s_readership": 0.4,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-03-r1",
+   "ce-03-r2",
+   "ce-04-r1",
+   "ce-04-r2",
+   "ce-32-r1",
+   "ce-32-r2",
+   "ce-33-r1",
+   "ce-33-r2"
+  ]
+ },
+ {
+  "domain": "topgear.com",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 8,
+  "vertical_probes_total": 80,
+  "share": 0.1,
+  "s_readership": 0.4,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-08-r1",
+   "auto-08-r2",
+   "auto-22-r1",
+   "auto-22-r2",
+   "auto-27-r1",
+   "auto-27-r2",
+   "auto-29-r1",
+   "auto-29-r2"
+  ]
+ },
+ {
+  "domain": "usnews.com",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 8,
+  "vertical_probes_total": 80,
+  "share": 0.1,
+  "s_readership": 0.4,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-06-r1",
+   "auto-06-r2",
+   "auto-10-r1",
+   "auto-10-r2",
+   "auto-20-r1",
+   "auto-20-r2",
+   "auto-24-r1",
+   "auto-24-r2"
+  ]
+ },
+ {
+  "domain": "verywellfit.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 8,
+  "vertical_probes_total": 80,
+  "share": 0.1,
+  "s_readership": 0.4,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-12-r1",
+   "sport-12-r2",
+   "sport-17-r1",
+   "sport-17-r2",
+   "sport-19-r1",
+   "sport-19-r2",
+   "sport-26-r1",
+   "sport-26-r2"
+  ]
+ },
+ {
+  "domain": "220triathlon.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 6,
+  "vertical_probes_total": 80,
+  "share": 0.075,
+  "s_readership": 0.3,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-21-r1",
+   "sport-21-r2",
+   "sport-29-r1",
+   "sport-29-r2",
+   "sport-37-r1",
+   "sport-37-r2"
+  ]
+ },
+ {
+  "domain": "amateurphotographer.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 6,
+  "vertical_probes_total": 80,
+  "share": 0.075,
+  "s_readership": 0.3,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-14-r1",
+   "ce-14-r2",
+   "ce-15-r1",
+   "ce-15-r2",
+   "ce-32-r1",
+   "ce-32-r2"
+  ]
+ },
+ {
+  "domain": "autoblog.com",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 6,
+  "vertical_probes_total": 80,
+  "share": 0.075,
+  "s_readership": 0.3,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-04-r1",
+   "auto-04-r2",
+   "auto-20-r1",
+   "auto-20-r2",
+   "auto-34-r1",
+   "auto-34-r2"
+  ]
+ },
+ {
+  "domain": "electrifying.com",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 6,
+  "vertical_probes_total": 80,
+  "share": 0.075,
+  "s_readership": 0.3,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-03-r1",
+   "auto-03-r2",
+   "auto-07-r1",
+   "auto-07-r2",
+   "auto-13-r1",
+   "auto-13-r2"
+  ]
+ },
+ {
+  "domain": "glamourmagazine.co.uk",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 6,
+  "vertical_probes_total": 80,
+  "share": 0.075,
+  "s_readership": 0.3,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-04-r1",
+   "sport-04-r2",
+   "sport-07-r1",
+   "sport-07-r2",
+   "sport-08-r1",
+   "sport-08-r2"
+  ]
+ },
+ {
+  "domain": "gq.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 6,
+  "vertical_probes_total": 80,
+  "share": 0.075,
+  "s_readership": 0.3,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-16-r1",
+   "sport-16-r2",
+   "sport-17-r1",
+   "sport-17-r2",
+   "sport-39-r1",
+   "sport-39-r2"
+  ]
+ },
+ {
+  "domain": "ign.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 6,
+  "vertical_probes_total": 80,
+  "share": 0.075,
+  "s_readership": 0.3,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-06-r1",
+   "ce-06-r2",
+   "ce-17-r1",
+   "ce-17-r2",
+   "ce-28-r1",
+   "ce-28-r2"
+  ]
+ },
+ {
+  "domain": "irunfar.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 6,
+  "vertical_probes_total": 80,
+  "share": 0.075,
+  "s_readership": 0.3,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-06-r1",
+   "sport-06-r2",
+   "sport-19-r1",
+   "sport-19-r2",
+   "sport-20-r1",
+   "sport-20-r2"
+  ]
+ },
+ {
+  "domain": "motortrend.com",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 6,
+  "vertical_probes_total": 80,
+  "share": 0.075,
+  "s_readership": 0.3,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-10-r1",
+   "auto-10-r2",
+   "auto-17-r1",
+   "auto-17-r2",
+   "auto-34-r1",
+   "auto-34-r2"
+  ]
+ },
+ {
+  "domain": "outdoorgearlab.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 6,
+  "vertical_probes_total": 80,
+  "share": 0.075,
+  "s_readership": 0.3,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-06-r1",
+   "sport-06-r2",
+   "sport-30-r1",
+   "sport-30-r2",
+   "sport-39-r1",
+   "sport-39-r2"
+  ]
+ },
+ {
+  "domain": "pcgamer.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 6,
+  "vertical_probes_total": 80,
+  "share": 0.075,
+  "s_readership": 0.3,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-27-r1",
+   "ce-27-r2",
+   "ce-28-r1",
+   "ce-28-r2",
+   "ce-38-r1",
+   "ce-38-r2"
+  ]
+ },
+ {
+  "domain": "standard.co.uk",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 6,
+  "vertical_probes_total": 80,
+  "share": 0.075,
+  "s_readership": 0.3,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-13-r1",
+   "ce-13-r2",
+   "ce-29-r1",
+   "ce-29-r2",
+   "sport-12-r1",
+   "sport-12-r2",
+   "sport-18-r1",
+   "sport-18-r2",
+   "sport-29-r1",
+   "sport-29-r2"
+  ]
+ },
+ {
+  "domain": "testix.co.uk",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 6,
+  "vertical_probes_total": 80,
+  "share": 0.075,
+  "s_readership": 0.3,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-18-r1",
+   "sport-18-r2",
+   "sport-33-r1",
+   "sport-33-r2",
+   "sport-38-r1",
+   "sport-38-r2"
+  ]
+ },
+ {
+  "domain": "evpowered.co.uk",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 5,
+  "vertical_probes_total": 80,
+  "share": 0.0625,
+  "s_readership": 0.25,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-03-r2",
+   "auto-07-r1",
+   "auto-07-r2",
+   "auto-39-r1",
+   "auto-39-r2"
+  ]
+ },
+ {
+  "domain": "advnture.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-09-r1",
+   "sport-09-r2",
+   "sport-36-r1",
+   "sport-36-r2"
+  ]
+ },
+ {
+  "domain": "bikeradar.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-14-r1",
+   "sport-14-r2",
+   "sport-39-r1",
+   "sport-39-r2"
+  ]
+ },
+ {
+  "domain": "caranddriver.com",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-06-r1",
+   "auto-06-r2",
+   "auto-17-r1",
+   "auto-17-r2"
+  ]
+ },
+ {
+  "domain": "carbuyer.co.uk",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-11-r1",
+   "auto-11-r2",
+   "auto-30-r1",
+   "auto-30-r2"
+  ]
+ },
+ {
+  "domain": "compareelectronic.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-04-r1",
+   "ce-04-r2",
+   "ce-12-r1",
+   "ce-12-r2"
+  ]
+ },
+ {
+  "domain": "coolcuration.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-12-r1",
+   "ce-12-r2",
+   "ce-29-r1",
+   "ce-29-r2"
+  ]
+ },
+ {
+  "domain": "cyclingnews.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-14-r1",
+   "sport-14-r2",
+   "sport-39-r1",
+   "sport-39-r2"
+  ]
+ },
+ {
+  "domain": "cyclingweekly.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-14-r1",
+   "sport-14-r2",
+   "sport-39-r1",
+   "sport-39-r2"
+  ]
+ },
+ {
+  "domain": "esquire.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-08-r1",
+   "ce-08-r2",
+   "ce-40-r1",
+   "ce-40-r2"
+  ]
+ },
+ {
+  "domain": "eurogamer.net",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-18-r1",
+   "ce-18-r2",
+   "ce-19-r1",
+   "ce-19-r2"
+  ]
+ },
+ {
+  "domain": "everydayhealth.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-10-r1",
+   "ce-10-r2",
+   "sport-19-r1",
+   "sport-19-r2",
+   "sport-20-r1",
+   "sport-20-r2"
+  ]
+ },
+ {
+  "domain": "gagadget.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-24-r1",
+   "ce-24-r2",
+   "ce-30-r1",
+   "ce-30-r2"
+  ]
+ },
+ {
+  "domain": "gearjunkie.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-06-r1",
+   "sport-06-r2",
+   "sport-35-r1",
+   "sport-35-r2"
+  ]
+ },
+ {
+  "domain": "gsmarena.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-03-r1",
+   "ce-03-r2",
+   "ce-32-r1",
+   "ce-32-r2"
+  ]
+ },
+ {
+  "domain": "huffingtonpost.co.uk",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-02-r1",
+   "ce-02-r2",
+   "ce-05-r1",
+   "ce-05-r2"
+  ]
+ },
+ {
+  "domain": "motoring.today",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-02-r1",
+   "auto-02-r2",
+   "auto-25-r1",
+   "auto-25-r2"
+  ]
+ },
+ {
+  "domain": "outsideonline.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-06-r1",
+   "sport-06-r2",
+   "sport-30-r1",
+   "sport-30-r2"
+  ]
+ },
+ {
+  "domain": "pcguide.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-06-r1",
+   "ce-06-r2",
+   "ce-28-r1",
+   "ce-28-r2"
+  ]
+ },
+ {
+  "domain": "runweekly.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-27-r1",
+   "sport-27-r2",
+   "sport-29-r1",
+   "sport-29-r2"
+  ]
+ },
+ {
+  "domain": "stereonet.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-07-r1",
+   "ce-07-r2",
+   "ce-22-r1",
+   "ce-22-r2"
+  ]
+ },
+ {
+  "domain": "theruntesters.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-29-r1",
+   "ce-29-r2",
+   "sport-01-r1",
+   "sport-01-r2",
+   "sport-03-r1",
+   "sport-03-r2"
+  ]
+ },
+ {
+  "domain": "thetriathlete.co.uk",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-21-r1",
+   "sport-21-r2",
+   "sport-22-r1",
+   "sport-22-r2"
+  ]
+ },
+ {
+  "domain": "ukpicks.co.uk",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-21-r1",
+   "sport-21-r2",
+   "sport-24-r1",
+   "sport-24-r2"
+  ]
+ },
+ {
+  "domain": "usatoday.com",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-04-r1",
+   "auto-04-r2",
+   "auto-10-r1",
+   "auto-10-r2"
+  ]
+ },
+ {
+  "domain": "womanandhome.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-08-r1",
+   "sport-08-r2",
+   "sport-18-r1",
+   "sport-18-r2"
+  ]
+ },
+ {
+  "domain": "zdnet.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 4,
+  "vertical_probes_total": 80,
+  "share": 0.05,
+  "s_readership": 0.2,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-33-r1",
+   "ce-33-r2",
+   "ce-40-r1",
+   "ce-40-r2"
+  ]
+ },
+ {
+  "domain": "a2zcheck.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-32-r1",
+   "sport-32-r2"
+  ]
+ },
+ {
+  "domain": "alastairrunning.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-03-r1",
+   "sport-03-r2"
+  ]
+ },
+ {
+  "domain": "barbend.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-16-r1",
+   "sport-16-r2"
+  ]
+ },
+ {
+  "domain": "bestchargers.co.uk",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-29-r1",
+   "auto-29-r2"
+  ]
+ },
+ {
+  "domain": "bikehikesafari.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-35-r1",
+   "sport-35-r2"
+  ]
+ },
+ {
+  "domain": "carmagazine.co.uk",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-14-r1",
+   "auto-14-r2"
+  ]
+ },
+ {
+  "domain": "carthrottle.com",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-37-r1",
+   "auto-37-r2"
+  ]
+ },
+ {
+  "domain": "classical-music.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-16-r1",
+   "ce-16-r2"
+  ]
+ },
+ {
+  "domain": "coachweb.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-37-r1",
+   "sport-37-r2"
+  ]
+ },
+ {
+  "domain": "complex.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-13-r1",
+   "sport-13-r2"
+  ]
+ },
+ {
+  "domain": "creatorgearinsider.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-24-r1",
+   "ce-24-r2"
+  ]
+ },
+ {
+  "domain": "digitaltrends.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-32-r1",
+   "ce-32-r2"
+  ]
+ },
+ {
+  "domain": "doctorsofrunning.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-03-r1",
+   "sport-03-r2"
+  ]
+ },
+ {
+  "domain": "dpreview.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-14-r1",
+   "ce-14-r2"
+  ]
+ },
+ {
+  "domain": "effortlessswimming.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-21-r1",
+   "sport-21-r2"
+  ]
+ },
+ {
+  "domain": "elle.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-11-r1",
+   "sport-11-r2"
+  ]
+ },
+ {
+  "domain": "evcompared.co.uk",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-39-r1",
+   "auto-39-r2"
+  ]
+ },
+ {
+  "domain": "evguide.uk",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-13-r1",
+   "auto-13-r2"
+  ]
+ },
+ {
+  "domain": "femmecyclist.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-39-r1",
+   "sport-39-r2"
+  ]
+ },
+ {
+  "domain": "findthisbest.co.uk",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-21-r1",
+   "sport-21-r2"
+  ]
+ },
+ {
+  "domain": "fitandwell.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-16-r1",
+   "sport-16-r2"
+  ]
+ },
+ {
+  "domain": "forbes.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-10-r1",
+   "ce-10-r2",
+   "sport-30-r1",
+   "sport-30-r2"
+  ]
+ },
+ {
+  "domain": "fourfourtwo.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-05-r1",
+   "sport-05-r2"
+  ]
+ },
+ {
+  "domain": "gamesradar.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-17-r1",
+   "ce-17-r2"
+  ]
+ },
+ {
+  "domain": "gearscouted.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-12-r1",
+   "sport-12-r2"
+  ]
+ },
+ {
+  "domain": "globalbrandsmagazine.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-09-r1",
+   "ce-09-r2"
+  ]
+ },
+ {
+  "domain": "go-electra.com",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-20-r1",
+   "auto-20-r2"
+  ]
+ },
+ {
+  "domain": "gocompare.com",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-31-r1",
+   "auto-31-r2"
+  ]
+ },
+ {
+  "domain": "golfalot.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-23-r1",
+   "sport-23-r2"
+  ]
+ },
+ {
+  "domain": "golfmagic.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-23-r1",
+   "sport-23-r2"
+  ]
+ },
+ {
+  "domain": "highsnobiety.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-13-r1",
+   "sport-13-r2"
+  ]
+ },
+ {
+  "domain": "horseandhound.co.uk",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-35-r1",
+   "auto-35-r2"
+  ]
+ },
+ {
+  "domain": "howtogeek.com",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-04-r1",
+   "auto-04-r2"
+  ]
+ },
+ {
+  "domain": "inews.co.uk",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-33-r1",
+   "sport-33-r2"
+  ]
+ },
+ {
+  "domain": "inthesnow.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-34-r1",
+   "sport-34-r2"
+  ]
+ },
+ {
+  "domain": "kentucky.com",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-17-r1",
+   "auto-17-r2"
+  ]
+ },
+ {
+  "domain": "lifehacker.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-25-r1",
+   "ce-25-r2"
+  ]
+ },
+ {
+  "domain": "livefortheoutdoors.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-37-r1",
+   "sport-37-r2"
+  ]
+ },
+ {
+  "domain": "livescience.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-21-r1",
+   "ce-21-r2"
+  ]
+ },
+ {
+  "domain": "loudersound.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-31-r1",
+   "ce-31-r2"
+  ]
+ },
+ {
+  "domain": "macworld.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-36-r1",
+   "ce-36-r2"
+  ]
+ },
+ {
+  "domain": "mensjournal.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-06-r1",
+   "sport-06-r2"
+  ]
+ },
+ {
+  "domain": "mirror.co.uk",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-27-r1",
+   "auto-27-r2"
+  ]
+ },
+ {
+  "domain": "moneysupermarket.com",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-31-r1",
+   "auto-31-r2"
+  ]
+ },
+ {
+  "domain": "moveelectric.com",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-20-r1",
+   "auto-20-r2"
+  ]
+ },
+ {
+  "domain": "nationalclubgolfer.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-23-r1",
+   "sport-23-r2"
+  ]
+ },
+ {
+  "domain": "netballer.co.uk",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-31-r1",
+   "sport-31-r2"
+  ]
+ },
+ {
+  "domain": "outdoorlife.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-30-r1",
+   "sport-30-r2"
+  ]
+ },
+ {
+  "domain": "pcgamesn.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-38-r1",
+   "ce-38-r2"
+  ]
+ },
+ {
+  "domain": "pickbest.co.uk",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-18-r1",
+   "sport-18-r2"
+  ]
+ },
+ {
+  "domain": "practicalcaravan.com",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-19-r1",
+   "auto-19-r2"
+  ]
+ },
+ {
+  "domain": "pricerunner.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-36-r1",
+   "sport-36-r2"
+  ]
+ },
+ {
+  "domain": "pricespy.co.uk",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-05-r1",
+   "sport-05-r2"
+  ]
+ },
+ {
+  "domain": "road.cc",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-14-r1",
+   "sport-14-r2"
+  ]
+ },
+ {
+  "domain": "run-cadence.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-03-r1",
+   "sport-03-r2"
+  ]
+ },
+ {
+  "domain": "runnea.co.uk",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-11-r1",
+   "sport-11-r2"
+  ]
+ },
+ {
+  "domain": "running4beginners.co.uk",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-27-r1",
+   "sport-27-r2"
+  ]
+ },
+ {
+  "domain": "runningstate.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-25-r1",
+   "sport-25-r2"
+  ]
+ },
+ {
+  "domain": "runtothefinish.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-20-r1",
+   "sport-20-r2"
+  ]
+ },
+ {
+  "domain": "scarbir.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-30-r1",
+   "ce-30-r2"
+  ]
+ },
+ {
+  "domain": "scotsman.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-05-r1",
+   "ce-05-r2",
+   "sport-29-r1",
+   "sport-29-r2"
+  ]
+ },
+ {
+  "domain": "shape.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-17-r1",
+   "sport-17-r2"
+  ]
+ },
+ {
+  "domain": "slashgear.com",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-04-r1",
+   "auto-04-r2"
+  ]
+ },
+ {
+  "domain": "solihullobserver.co.uk",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-11-r1",
+   "auto-11-r2"
+  ]
+ },
+ {
+  "domain": "space.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-24-r1",
+   "ce-24-r2"
+  ]
+ },
+ {
+  "domain": "squashchamps.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-32-r1",
+   "sport-32-r2"
+  ]
+ },
+ {
+  "domain": "storagereview.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-27-r1",
+   "ce-27-r2"
+  ]
+ },
+ {
+  "domain": "switchbacktravel.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-33-r1",
+   "sport-33-r2"
+  ]
+ },
+ {
+  "domain": "techanything.co.uk",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-04-r1",
+   "ce-04-r2"
+  ]
+ },
+ {
+  "domain": "the-gadgeteer.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-26-r1",
+   "ce-26-r2"
+  ]
+ },
+ {
+  "domain": "thecarexpert.co.uk",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-25-r1",
+   "auto-25-r2"
+  ]
+ },
+ {
+  "domain": "thehoopsgeek.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-13-r1",
+   "sport-13-r2"
+  ]
+ },
+ {
+  "domain": "thisismoney.co.uk",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-25-r1",
+   "auto-25-r2"
+  ]
+ },
+ {
+  "domain": "today.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-21-r1",
+   "ce-21-r2"
+  ]
+ },
+ {
+  "domain": "top5best.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-32-r1",
+   "sport-32-r2"
+  ]
+ },
+ {
+  "domain": "trailrunnermag.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-02-r1",
+   "sport-02-r2"
+  ]
+ },
+ {
+  "domain": "travelandleisure.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-21-r1",
+   "ce-21-r2",
+   "sport-02-r1",
+   "sport-02-r2"
+  ]
+ },
+ {
+  "domain": "triathlonhealth.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-22-r1",
+   "sport-22-r2"
+  ]
+ },
+ {
+  "domain": "uswitch.com",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-31-r1",
+   "auto-31-r2",
+   "ce-04-r1",
+   "ce-04-r2"
+  ]
+ },
+ {
+  "domain": "vanreviewer.co.uk",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-38-r1",
+   "auto-38-r2"
+  ]
+ },
+ {
+  "domain": "weartesters.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-13-r1",
+   "sport-13-r2"
+  ]
+ },
+ {
+  "domain": "windowscentral.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-06-r1",
+   "ce-06-r2"
+  ]
+ },
+ {
+  "domain": "yorkshire.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "sport-36-r1",
+   "sport-36-r2"
+  ]
+ },
+ {
+  "domain": "yourhorse.co.uk",
+  "vertical": "automotive",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "auto-35-r1",
+   "auto-35-r2"
+  ]
+ },
+ {
+  "domain": "yours.co.uk",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 2,
+  "vertical_probes_total": 80,
+  "share": 0.025,
+  "s_readership": 0.1,
+  "stability": "both_runs",
+  "probe_ids": [
+   "ce-04-r1",
+   "ce-04-r2",
+   "sport-11-r1",
+   "sport-11-r2"
+  ]
+ },
+ {
+  "domain": "barefootreview.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 1,
+  "vertical_probes_total": 80,
+  "share": 0.0125,
+  "s_readership": 0.05,
+  "stability": "one_run",
+  "probe_ids": [
+   "sport-30-r2"
+  ]
+ },
+ {
+  "domain": "techtimes.com",
+  "vertical": "consumer_electronics",
+  "probes_cited_in_vertical": 1,
+  "vertical_probes_total": 80,
+  "share": 0.0125,
+  "s_readership": 0.05,
+  "stability": "one_run",
+  "probe_ids": [
+   "ce-38-r1"
+  ]
+ },
+ {
+  "domain": "trailruntemple.com",
+  "vertical": "sportswear",
+  "probes_cited_in_vertical": 1,
+  "vertical_probes_total": 80,
+  "share": 0.0125,
+  "s_readership": 0.05,
+  "stability": "one_run",
+  "probe_ids": [
+   "sport-30-r2"
+  ]
+ }
+]
