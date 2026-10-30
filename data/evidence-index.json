@@ -23,9 +23,11 @@
     "techradar.com",
     "tomsguide.com",
     "topgear.com",
+    "treelinereview.com",
     "usnews.com",
     "whatcar.com",
-    "womenshealthmag.com"
+    "womenshealthmag.com",
+    "yahoo.com"
   ],
-  "scope": "Top nine in each sample vertical, deduplicated; collection in progress. Unknown signals remain unknown."
+  "scope": "Top nine publishers by citation signal in each vertical, deduplicated:27 public-file checks on30October2026. Unknown signals stay unknown."
 }

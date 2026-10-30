@@ -44,7 +44,7 @@ AI assistants answer shopping questions by quoting websites. Some of those websi
 | The role asks for | What exists | Gap |
 |---|---|---|
 | Outreach that books qualified publisher meetings | Call sheet, evidence pages, four verified drafts | Nothing has been sent, so there are no meetings yet |
-| The GTM machine: lists, research agents, analytics | Citation sample, live-check worker, scoring, verifier | The live checks cover 25 publishers so far, not all 175 |
+| The GTM machine: lists, research agents, analytics | Citation sample, live-check worker, scoring, verifier | The live checks cover 27 publishers so far, not all 175 |
 | Sequences and CRM | Not built. A CRM is a buying decision. The plan covers set-up. | Everything |
 | A/B testing | The plan explains why small numbers rule out subject-line tests, with a calculator | No test has been run |
 | Keeping pilots on track | Pilot-health checklist | No pilot data |

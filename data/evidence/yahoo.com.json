@@ -1,0 +1,180 @@
+{
+  "domain": "yahoo.com",
+  "vertical": null,
+  "source": "live",
+  "checked_at": "2026-10-30T06:23:37.101Z",
+  "fetch": {
+    "user_agent": "AyoGTMResearch/0.1 (+https://blankspace-publisher-call-sheet.pages.dev/method#crawler)",
+    "requests": 7,
+    "blocked": [],
+    "skipped": []
+  },
+  "signals": {
+    "readership": {
+      "status": "not_in_sample"
+    },
+    "placement": {
+      "sitemap_url": null,
+      "slugs_sampled": null,
+      "slugs_matched": null,
+      "slug_share": null,
+      "matched_examples": [],
+      "schema_types": [],
+      "pages_checked": [
+        "https://www.yahoo.com/"
+      ]
+    },
+    "programmatic": {
+      "ads_txt": {
+        "present": true,
+        "url": "https://www.yahoo.com/ads.txt",
+        "status": 200,
+        "records": 721,
+        "ad_systems": 100,
+        "direct": 311,
+        "reseller": 410,
+        "managerdomain": null,
+        "ownerdomain": "yahooinc.com",
+        "contact": [],
+        "note": null
+      },
+      "header_bidding": {
+        "detected": [],
+        "scope": "initial_html"
+      },
+      "ad_server_tag": {
+        "gpt": true
+      }
+    },
+    "reachability": {
+      "robots_url": "https://www.yahoo.com/robots.txt",
+      "status": 200,
+      "per_agent": {
+        "GPTBot": "blocked",
+        "ClaudeBot": "blocked",
+        "Google-Extended": "blocked",
+        "CCBot": "blocked",
+        "Applebot-Extended": "allowed",
+        "Meta-ExternalAgent": "allowed",
+        "Bytespider": "blocked",
+        "OAI-SearchBot": "allowed",
+        "ChatGPT-User": "blocked",
+        "PerplexityBot": "blocked",
+        "Perplexity-User": "allowed",
+        "Claude-SearchBot": "allowed",
+        "Claude-User": "allowed",
+        "OAI-AdsBot": "allowed"
+      },
+      "training": "partial",
+      "search": "partial",
+      "ai_rules_present": true,
+      "content_signal": [],
+      "excerpt": [
+        "User-agent: ADmantX",
+        "User-agent: AlphaBot",
+        "User-agent: anthropic-ai",
+        "User-agent: AwarioRssBot",
+        "User-agent: AwarioSmartBot",
+        "User-agent: BLEXBot",
+        "User-agent: Buzzbot",
+        "User-agent: Bytespider",
+        "User-agent: CCBot",
+        "User-agent: ChatGPT-User",
+        "User-agent: claritybot",
+        "User-agent: Claude-Web",
+        "User-agent: ClaudeBot",
+        "User-agent: cohere-ai",
+        "User-agent: Diffbot",
+        "User-agent: FacebookBot",
+        "User-agent: FriendlyCrawler",
+        "User-agent: Google-Extended",
+        "User-agent: GPTBot",
+        "User-agent: huggingface",
+        "User-agent: ImagesiftBot",
+        "User-agent: img2dataset",
+        "User-agent: magpie-crawler",
+        "User-agent: Meltwater",
+        "User-agent: Neevabot",
+        "User-agent: news-please",
+        "User-agent: NewsNow",
+        "User-agent: Nutch",
+        "User-agent: omgili",
+        "User-agent: omgilibot",
+        "User-agent: panscient.com",
+        "User-agent: Perplexity-ai",
+        "User-agent: PerplexityBot",
+        "User-agent: PetalBot",
+        "User-agent: PiplBot",
+        "User-agent: scoop.it",
+        "User-agent: Scrapy",
+        "User-agent: Seekr",
+        "User-agent: SentiBot",
+        "User-agent: SeznamBot"
+      ]
+    },
+    "commerce": {
+      "networks": [],
+      "evidence": []
+    },
+    "cdn": {
+      "providers": [
+        "cloudflare"
+      ],
+      "evidence_headers": [
+        "cf-ray",
+        "server: cloudflare"
+      ]
+    }
+  },
+  "score": {
+    "weights": {
+      "readership": 40,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "subscores": {
+      "readership": null,
+      "placement": 0,
+      "programmatic": 0.667,
+      "reachability": 0.5,
+      "commerce": 0
+    },
+    "points": {
+      "readership": null,
+      "placement": 0,
+      "programmatic": 10,
+      "reachability": 5,
+      "commerce": 0
+    },
+    "maxima": {
+      "readership": 0,
+      "placement": 5,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "total": 15,
+    "max": 45,
+    "missed": [
+      "Placement: no ItemList, Product or Review markup on the 1 page checked.",
+      "Programmatic: no header bidding seen in the initial HTML. It may load later.",
+      "Reachability: search and user-triggered agents are partly disallowed in robots.txt.",
+      "Commerce: no affiliate network links found in the pages checked."
+    ]
+  },
+  "stance": {
+    "code": "closed-door",
+    "angle_label": "Search agents are disallowed in robots.txt. The reason is not visible from outside."
+  },
+  "cannot_see": [
+    "Real agent traffic volumes",
+    "Direct-sold ad revenue",
+    "Who owns AI policy internally"
+  ],
+  "cache": {
+    "hit": false,
+    "stored_at": null
+  }
+}
