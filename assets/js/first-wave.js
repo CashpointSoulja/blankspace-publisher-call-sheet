@@ -41,33 +41,36 @@ function sampleLine(domain, set, live) {
   return parts.join(". ") + ".";
 }
 
+// Card order answers four questions in turn: why this decision, what to ask and whom, what still
+// blocks activation, and the sources behind it. A hold shows what would lift it straight after the reason.
 function card(a, set, live) {
   const d = DECISIONS[a.decision];
+  const active = a.decision !== "exclude";
   return el("article", { class: "card wave-card", id: a.domains[0] },
     el("div", { class: "wave-head" },
       el("h3", {}, a.account),
       el("span", { class: d.tag }, d.label)),
     el("p", { class: "wave-reason" }, a.decision_reason),
+    active && a.release_condition ? [el("h4", { class: "micro wave-sub" }, "What would lift the hold"), el("p", { class: "small" }, a.release_condition)] : null,
     el("p", { class: "small muted" }, a.domains.map((dom, i) => [i ? " " : null, sampleLine(dom, set, live), " ",
       el("a", { href: `/p/${encodeURIComponent(dom)}/` }, "Evidence")])),
-    el("h4", { class: "micro wave-sub" }, "Verified from current sources"),
-    sourceList(a.verified),
-    a.decision === "exclude" ? null : [
+    active ? [
+      a.next_question ? [el("h4", { class: "micro wave-sub" }, "Next question"), el("p", { class: "wave-question" }, a.next_question)] : null,
       el("h4", { class: "micro wave-sub" }, "Who to ask"),
       el("p", { class: "small" }, a.owner_role),
-      a.next_question ? [el("h4", { class: "micro wave-sub" }, "Next question"), el("p", { class: "wave-question" }, a.next_question)] : null,
       a.gates.length ? [
-        el("h4", { class: "micro wave-sub" }, "Gates before going live"),
+        el("h4", { class: "micro wave-sub" }, "Gates before activation"),
         el("ul", { class: "facts" }, a.gates.map((g) => el("li", { class: "fact" },
           el("span", { class: "fact-text" }, GATES[g.gate], el("br"), el("span", { class: "muted small" }, g.note)),
           el("span", { class: `fact-value${g.status === "open" ? " unknown" : ""}` }, STATUS[g.status]))))
-      ] : null,
-      a.success_criteria_30d.length ? [
-        el("h4", { class: "micro wave-sub" }, "30-day success criteria, to agree, not results"),
-        el("ul", { class: "wave-list" }, a.success_criteria_30d.map((c) => el("li", {}, c)))
-      ] : null,
-      a.release_condition ? [el("h4", { class: "micro wave-sub" }, "What would lift the hold"), el("p", { class: "small" }, a.release_condition)] : null
-    ]);
+      ] : null
+    ] : null,
+    el("h4", { class: "micro wave-sub" }, "Verified from current sources"),
+    sourceList(a.verified),
+    active && a.success_criteria_30d.length ? [
+      el("h4", { class: "micro wave-sub" }, "30-day success criteria, to agree, not results"),
+      el("ul", { class: "wave-list" }, a.success_criteria_30d.map((c) => el("li", {}, c)))
+    ] : null);
 }
 
 async function main() {
@@ -85,7 +88,7 @@ async function main() {
     el("span", { class: "muted small" }, `, published ${fmtDate(path.published)}, read ${fmtDate(path.accessed)}. ${path.note}`)));
 
   for (const [key, title, sub] of [
-    ["ready_for_discovery", "Ready for discovery", "Worth a first conversation. Not a qualified lead: every gate below is still open."],
+    ["ready_for_discovery", "Ready for discovery", "Worth a first conversation, not a qualified lead. A commercial route is verified; the remaining gates are open questions."],
     ["hold", "On hold", "Something found in a current source blocks a first conversation, or no commercial route was found."],
     ["exclude", "Excluded", "Not a publisher on current evidence."]
   ]) {

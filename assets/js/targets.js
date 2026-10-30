@@ -2,7 +2,7 @@
 // checks in data/evidence/ where they exist. Weight sliders re-rank live (SPEC §3).
 // Ordering rules are in evidence-model.js buildCallSheet: checked publishers first, more signals
 // known first; unchecked publishers after, on citation share. Unknown is never zero.
-// This ranks evidence, not readiness: readiness is qualified by hand on /first-wave/.
+// This ranks evidence, not readiness: readiness is reviewed by hand on /first-wave/.
 
 import { el, clear, fmtDate, fmtPct, VERTICALS, STABILITY_LABELS, STABILITY_TOOLTIP } from "./common.js";
 import { SIGNALS, SIGNAL_LABELS, DEFAULT_WEIGHTS, STANCES } from "./score.js";
@@ -118,7 +118,7 @@ function describeCoverage() {
   } else {
     coverageNote.append(el("strong", {}, `Live signals checked for ${n} of ${readership.length} publishers. `),
       "Those are ranked first, more signals read first, and the weights re-rank them. The rest follow on citation share alone. A signal not read is left out, never counted as zero. This ranks evidence, not readiness to buy: ",
-      el("a", { href: "/first-wave/" }, "the first wave"), " is qualified by hand.");
+      el("a", { href: "/first-wave/" }, "the first wave"), " is reviewed by hand.");
   }
 }
 

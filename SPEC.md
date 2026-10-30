@@ -67,7 +67,7 @@ Measured values and the full component spec now live in `BRAND.md`, built from t
 
 | Route | Purpose | Data |
 |---|---|---|
-| `/` | Story: finding → assumption → scoring → live check → next steps → builder | `data/sample.json`, `data/readership.json`, `data/front.json` |
+| `/` | Leads with the first-wave decision, then the dated research finding. Story: finding → assumption → scoring → live check → next steps → builder | `data/sample.json`, `data/readership.json`, `data/front.json` |
 | `/first-wave` | Manual commercial qualification: ready for discovery, hold or excluded, each with sourced findings, the role to ask, the next question, gates and 30-day criteria | `data/qualification.json` |
 | `/targets` | Ranked call sheet, vertical filter, weight sliders that re-rank live. Ranks evidence, not readiness | `data/readership.json`, `data/corrections.json` |
 | `/p/{domain}` | Evidence page: raw signals, score breakdown, "why not higher", citation rows, angle, "can't see from outside", outreach draft and verifier log | `data/evidence/{domain}.json`, `data/drafts/{domain}.json`, `data/verifier/{domain}.json` |
@@ -142,7 +142,7 @@ Labelled "declared policy, not observed behaviour". `Content-Signal` lines are r
 
 ### 3.5 Commerce monetisation (w = 15, live)
 
-Revised 30 Oct 2026 after review. None of the 25 fully read checks saw an affiliate network, including publishers whose own pages confirm affiliate and ad revenue: links are rewritten by script after load, and ads run through managers the check can't see. So none seen is unknown, not zero. Stored checks keep what was observed. Commercial readiness is qualified by hand (`/first-wave`).
+Revised 30 Oct 2026 after review. None of the 25 fully read checks saw an affiliate network, including publishers whose own pages confirm affiliate and ad revenue: links are rewritten by script after load, and ads run through managers the check can't see. So none seen is unknown, not zero. Stored checks keep what was observed. Commercial readiness is reviewed by hand (`/first-wave`).
 
 Link patterns in homepage plus sampled pages:
 
@@ -221,7 +221,7 @@ Revised 30 Oct 2026. Labels say what robots.txt declares, nothing more. robots.t
 - Input normalised to `https://{host}/`. Reject IP literals, non-HTTP schemes, `localhost`, private and reserved ranges, and hosts that fail public suffix parsing.
 - User-agent: `AyoGTMResearch/0.1 (+https://{site}/method#crawler)`. Never spoofs AI agent user-agents. `/method` says so.
 - Obeys robots.txt for everything except robots.txt and ads.txt themselves.
-- Budget: at most 8 requests per check, 8s timeout each, first 512 KB of any HTML. Cache by host for 24 hours. Rate-limit per client IP.
+- Budget: at most 8 requests per check, 8s timeout each, first 512 KB of any HTML. Cache by host and rubric version for 24 hours, so a result scored under an older rubric is never served. Rate-limit per client IP.
 - A blocked fetch is evidence, not an error: record `{url, status}` and continue. Show "Blocked our fetch (403)".
 - No other outbound effects. No send function exists anywhere in the codebase.
 

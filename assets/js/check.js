@@ -53,10 +53,11 @@ async function run(url) {
   if (body.cache && body.cache.hit) {
     out.append(el("p", { class: "small muted" }, "Served from the 24-hour cache for this host. The publisher was not contacted again."));
   }
-  // The worker never knows the sample, so it returns vertical: null. Join the sample's vertical
-  // for display only; the raw evidence and its live score are left exactly as returned.
+  // The worker never knows the sample, so it returns vertical: null and readership not_in_sample.
+  // Join the sample's vertical and share for display only; the raw evidence and its live score
+  // are left exactly as returned.
   const row = readership.find((r) => r.domain === body.domain);
-  out.append(renderEvidence(body, { sampleDate: sampleDate(sample), sampleVertical: row ? row.vertical : null }));
+  out.append(renderEvidence(body, { sampleDate: sampleDate(sample), sampleVertical: row ? row.vertical : null, sampleShare: row ? row.share : null }));
 }
 
 const initial = new URLSearchParams(location.search).get("url");

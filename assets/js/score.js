@@ -4,6 +4,11 @@
 // A signal is a list of weighted parts. Each part has a share of the signal's weight and a
 // value in [0, 1], or null when unknown. Unknown parts leave both the total and the maximum.
 
+// Bump when a scoring or stance rule changes. The worker's cache key carries it, so a cached
+// check scored under an older rubric is never served. Stored evidence in data/ is left as collected.
+// 2: no affiliate network seen is unknown, not zero (30 Oct 2026).
+export const RUBRIC_VERSION = 2;
+
 export const SIGNALS = ["readership", "placement", "programmatic", "reachability", "commerce"];
 
 export const DEFAULT_WEIGHTS = Object.freeze({
@@ -97,7 +102,7 @@ export function reachabilityParts(r) {
 
 // Affiliate links found in the fetched HTML earn credit. None found is unknown, not zero: links
 // are often rewritten by script after load, and ads run through managers the check can't see.
-// Commercial readiness is qualified by hand, separately.
+// Commercial readiness is reviewed by hand, separately.
 export function commerceParts(c) {
   if (!c || !Array.isArray(c.networks)) return [{ share: 1, value: null }];
   const n = c.networks.length;
