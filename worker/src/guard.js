@@ -25,7 +25,7 @@ export function normaliseTarget(input) {
   if (explicit) {
     if (!/^https?$/i.test(explicit[1])) throw new TargetError("unsupported_scheme", "Only http and https addresses can be checked.");
   } else if (/^[a-z][a-z0-9+.-]*:(?!\d)/i.test(s)) {
-    // mailto:, javascript:, file:, data: and similar, written without //
+    // Mail, script, file and data URIs, which are written without //
     throw new TargetError("unsupported_scheme", "Only http and https addresses can be checked.");
   } else {
     s = "https://" + s;

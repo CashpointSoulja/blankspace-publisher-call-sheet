@@ -316,7 +316,7 @@ probe_id,sample_id,date_utc,engine,run,vertical,query_id,query,location,logged_i
     "user_agent": "string",
     "requests": 7,
     "blocked": [{ "url": "string", "status": 403 }],
-    "skipped": [{ "url": "string", "reason": "robots_disallow|budget|timeout" }]
+    "skipped": [{ "url": "string", "reason": "robots_disallow|budget|timeout|off_domain|unsafe_target|fetch_error" }]
   },
   "signals": {
     "readership": {
@@ -382,6 +382,8 @@ probe_id,sample_id,date_utc,engine,run,vertical,query_id,query,location,logged_i
 ```
 
 Every user-facing statement on an evidence page must resolve to a JSON pointer in this object (e.g. `/signals/reachability/excerpt/0`).
+
+Additions made at build time, defined in `data/schema/evidence.schema.json`: `score.maxima` (points available per known signal), `programmatic.ads_txt.status` and `.contact`, and, from the worker only, `cache: { hit, stored_at }`. `ads_txt.present`, `header_bidding.detected`, `ad_server_tag.gpt` and `commerce.networks` are `null` when the file or page could not be read.
 
 ### 8.5 company-claims.json
 
