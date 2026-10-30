@@ -1,6 +1,2949 @@
 {
-  "$schema": "./schema/domains.schema.json",
-  "$comment": "Classification of every cited registrable domain (SPEC §6), one line of rationale each. Only class publisher is ranked. Placeholder: empty until the sample is classified. Field definitions: schema/domains.schema.json.",
-  "sample_id": null,
-  "domains": []
+ "220triathlon.com": {
+  "class": "publisher",
+  "rationale": "triathlon magazine (Our Media); ads and affiliate",
+  "citations": 6,
+  "probes_cited": 6,
+  "vertical_shares": {
+   "sportswear": 0.075
+  }
+ },
+ "a2zcheck.com": {
+  "class": "publisher",
+  "rationale": "product round-ups; affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "adidas.co.uk": {
+  "class": "brand",
+  "rationale": "sportswear manufacturer",
+  "citations": 18,
+  "probes_cited": 14,
+  "vertical_shares": {
+   "sportswear": 0.175
+  }
+ },
+ "adidas.com": {
+  "class": "brand",
+  "rationale": "sportswear manufacturer",
+  "citations": 6,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "advnture.com": {
+  "class": "publisher",
+  "rationale": "outdoor editorial (Future); ads and affiliate",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "sportswear": 0.05
+  }
+ },
+ "alastairrunning.com": {
+  "class": "publisher",
+  "rationale": "running review blog; affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "alibaba.com": {
+  "class": "retailer",
+  "rationale": "marketplace retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "alpinetrek.co.uk": {
+  "class": "retailer",
+  "rationale": "outdoor gear retailer",
+  "citations": 6,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "sportswear": 0.05
+  }
+ },
+ "amateurphotographer.com": {
+  "class": "publisher",
+  "rationale": "photography magazine; ad-funded editorial",
+  "citations": 6,
+  "probes_cited": 6,
+  "vertical_shares": {
+   "consumer_electronics": 0.075
+  }
+ },
+ "amazon.co.uk": {
+  "class": "retailer",
+  "rationale": "online retailer",
+  "citations": 6,
+  "probes_cited": 6,
+  "vertical_shares": {
+   "consumer_electronics": 0.075
+  }
+ },
+ "amazon.com": {
+  "class": "retailer",
+  "rationale": "online retailer",
+  "citations": 8,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "sportswear": 0.05
+  }
+ },
+ "anker.com": {
+  "class": "brand",
+  "rationale": "charging device manufacturer",
+  "citations": 12,
+  "probes_cited": 8,
+  "vertical_shares": {
+   "consumer_electronics": 0.1
+  }
+ },
+ "asics.com": {
+  "class": "brand",
+  "rationale": "sportswear manufacturer",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "sportswear": 0.05
+  }
+ },
+ "asus.com": {
+  "class": "brand",
+  "rationale": "device manufacturer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "autoblog.com": {
+  "class": "publisher",
+  "rationale": "automotive news/reviews; ad-funded",
+  "citations": 8,
+  "probes_cited": 6,
+  "vertical_shares": {
+   "automotive": 0.075
+  }
+ },
+ "autocar.co.uk": {
+  "class": "publisher",
+  "rationale": "car magazine; ad-funded editorial",
+  "citations": 8,
+  "probes_cited": 8,
+  "vertical_shares": {
+   "automotive": 0.1
+  }
+ },
+ "autodue.co.uk": {
+  "class": "other",
+  "rationale": "small automotive site; insufficient evidence",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "autoexpress.co.uk": {
+  "class": "publisher",
+  "rationale": "car magazine site; display ads and affiliate commerce",
+  "citations": 82,
+  "probes_cited": 54,
+  "vertical_shares": {
+   "automotive": 0.675
+  }
+ },
+ "autohero.com": {
+  "class": "retailer",
+  "rationale": "online used-car retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "autohit.co.uk": {
+  "class": "other",
+  "rationale": "small automotive site; insufficient evidence",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "autotrader.co.uk": {
+  "class": "other",
+  "rationale": "vehicle listings marketplace; dealer subscriptions",
+  "citations": 14,
+  "probes_cited": 14,
+  "vertical_shares": {
+   "automotive": 0.175
+  }
+ },
+ "avenue85.co.uk": {
+  "class": "retailer",
+  "rationale": "outdoor gear retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "barbend.com": {
+  "class": "publisher",
+  "rationale": "strength training editorial; ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "barefootreview.com": {
+  "class": "publisher",
+  "rationale": "barefoot shoe review blog; affiliate",
+  "citations": 1,
+  "probes_cited": 1,
+  "vertical_shares": {
+   "sportswear": 0.0125
+  }
+ },
+ "bestchargers.co.uk": {
+  "class": "publisher",
+  "rationale": "charger buying guides; affiliate",
+  "citations": 4,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "bikehikesafari.com": {
+  "class": "publisher",
+  "rationale": "outdoor gear blog; affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "bikeradar.com": {
+  "class": "publisher",
+  "rationale": "cycling reviews (Our Media); ads and affiliate",
+  "citations": 6,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "sportswear": 0.05
+  }
+ },
+ "bmw.co.uk": {
+  "class": "brand",
+  "rationale": "vehicle manufacturer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "bobi.car": {
+  "class": "other",
+  "rationale": "car subscription marketplace; not content-monetised",
+  "citations": 6,
+  "probes_cited": 6,
+  "vertical_shares": {
+   "automotive": 0.075
+  }
+ },
+ "boingplay.com": {
+  "class": "other",
+  "rationale": "low citation count; not individually reviewed, insufficient evidence to class as publisher",
+  "citations": 1,
+  "probes_cited": 1,
+  "vertical_shares": {
+   "sportswear": 0.0125
+  }
+ },
+ "bumper.co": {
+  "class": "other",
+  "rationale": "car finance provider",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "automotive": 0.05
+  }
+ },
+ "businessinsider.com": {
+  "class": "publisher",
+  "rationale": "business media; ads and affiliate (Reviews)",
+  "citations": 12,
+  "probes_cited": 12,
+  "vertical_shares": {
+   "consumer_electronics": 0.1,
+   "sportswear": 0.05
+  }
+ },
+ "car-planet.co.uk": {
+  "class": "retailer",
+  "rationale": "online used-car retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "caradviser.co.uk": {
+  "class": "other",
+  "rationale": "small automotive content site; insufficient evidence of ad model",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "caranddriver.com": {
+  "class": "publisher",
+  "rationale": "car magazine (Hearst); ads and affiliate",
+  "citations": 6,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "automotive": 0.05
+  }
+ },
+ "carbuyer.co.uk": {
+  "class": "publisher",
+  "rationale": "car review site; ads and affiliate",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "automotive": 0.05
+  }
+ },
+ "carcody.com": {
+  "class": "other",
+  "rationale": "small automotive content site; insufficient evidence of ad model",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "carfax.com": {
+  "class": "other",
+  "rationale": "vehicle history reports",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "cargurus.co.uk": {
+  "class": "other",
+  "rationale": "used-car listings marketplace; dealer subscriptions/leads",
+  "citations": 48,
+  "probes_cited": 44,
+  "vertical_shares": {
+   "automotive": 0.55
+  }
+ },
+ "cargurus.com": {
+  "class": "other",
+  "rationale": "used-car listings marketplace; dealer subscriptions/leads",
+  "citations": 8,
+  "probes_cited": 8,
+  "vertical_shares": {
+   "automotive": 0.1
+  }
+ },
+ "carleasing.co.uk": {
+  "class": "other",
+  "rationale": "leasing broker",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "carmagazine.co.uk": {
+  "class": "publisher",
+  "rationale": "car magazine; ad-funded editorial",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "carmoola.co.uk": {
+  "class": "other",
+  "rationale": "car finance provider",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "carplus.co.uk": {
+  "class": "retailer",
+  "rationale": "online used-car retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "cars.com": {
+  "class": "other",
+  "rationale": "car listings marketplace; dealer products",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "carsa.co.uk": {
+  "class": "retailer",
+  "rationale": "online used-car retailer",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "automotive": 0.05
+  }
+ },
+ "carthrottle.com": {
+  "class": "publisher",
+  "rationale": "car enthusiast content site; ad-funded editorial",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "carvertical.com": {
+  "class": "other",
+  "rationale": "vehicle history reports",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "carwow.co.uk": {
+  "class": "other",
+  "rationale": "car-buying marketplace; dealer lead-gen, not content monetisation",
+  "citations": 69,
+  "probes_cited": 48,
+  "vertical_shares": {
+   "automotive": 0.6
+  }
+ },
+ "castiron-lift.com": {
+  "class": "other",
+  "rationale": "gym equipment seller; not individually verified",
+  "citations": 4,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "chgr.org": {
+  "class": "other",
+  "rationale": "low citation count; not individually reviewed, insufficient evidence to class as publisher",
+  "citations": 4,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "cinch.co.uk": {
+  "class": "retailer",
+  "rationale": "online used-car retailer",
+  "citations": 48,
+  "probes_cited": 30,
+  "vertical_shares": {
+   "automotive": 0.375
+  }
+ },
+ "classical-music.com": {
+  "class": "publisher",
+  "rationale": "music magazine (Our Media); ad-funded",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "cnet.com": {
+  "class": "publisher",
+  "rationale": "tech reviews; ads and affiliate",
+  "citations": 36,
+  "probes_cited": 32,
+  "vertical_shares": {
+   "consumer_electronics": 0.375,
+   "sportswear": 0.025
+  }
+ },
+ "cnn.com": {
+  "class": "publisher",
+  "rationale": "news publisher; ads and affiliate (Underscored)",
+  "citations": 28,
+  "probes_cited": 26,
+  "vertical_shares": {
+   "consumer_electronics": 0.175,
+   "sportswear": 0.15
+  }
+ },
+ "coachweb.com": {
+  "class": "publisher",
+  "rationale": "fitness editorial; ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "coltura.org": {
+  "class": "other",
+  "rationale": "EV advocacy nonprofit",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "compareelectronic.com": {
+  "class": "publisher",
+  "rationale": "electronics comparison; affiliate",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "consumer_electronics": 0.05
+  }
+ },
+ "complex.com": {
+  "class": "publisher",
+  "rationale": "youth culture media; ads and affiliate commerce",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "consumerreports.org": {
+  "class": "other",
+  "rationale": "subscription-funded consumer nonprofit; no ad inventory",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "automotive": 0.025,
+   "consumer_electronics": 0.025
+  }
+ },
+ "coolcuration.com": {
+  "class": "publisher",
+  "rationale": "product round-ups; affiliate",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "consumer_electronics": 0.05
+  }
+ },
+ "creatorgearinsider.com": {
+  "class": "publisher",
+  "rationale": "creator gear reviews; affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "currys.co.uk": {
+  "class": "retailer",
+  "rationale": "electronics retailer",
+  "citations": 8,
+  "probes_cited": 6,
+  "vertical_shares": {
+   "consumer_electronics": 0.075
+  }
+ },
+ "cyclescheme.co.uk": {
+  "class": "other",
+  "rationale": "cycle-to-work scheme provider",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "cyclingnews.com": {
+  "class": "publisher",
+  "rationale": "cycling editorial (Future); ads and affiliate",
+  "citations": 6,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "sportswear": 0.05
+  }
+ },
+ "cyclingweekly.com": {
+  "class": "publisher",
+  "rationale": "cycling magazine (Future); ads and affiliate",
+  "citations": 14,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "sportswear": 0.05
+  }
+ },
+ "decathlon.co.uk": {
+  "class": "retailer",
+  "rationale": "sports retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "digitalcameraworld.com": {
+  "class": "publisher",
+  "rationale": "camera reviews (Future); ads and affiliate",
+  "citations": 8,
+  "probes_cited": 8,
+  "vertical_shares": {
+   "consumer_electronics": 0.1
+  }
+ },
+ "digitaltrends.com": {
+  "class": "publisher",
+  "rationale": "tech editorial; ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "digitec.ch": {
+  "class": "retailer",
+  "rationale": "Swiss electronics retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "doctorsofrunning.com": {
+  "class": "publisher",
+  "rationale": "running shoe review blog; affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "dpreview.com": {
+  "class": "publisher",
+  "rationale": "camera reviews; ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "drive.co.uk": {
+  "class": "publisher",
+  "rationale": "automotive editorial (Nine); ad-funded",
+  "citations": 50,
+  "probes_cited": 44,
+  "vertical_shares": {
+   "automotive": 0.55
+  }
+ },
+ "drivejohnsons.co.uk": {
+  "class": "retailer",
+  "rationale": "franchised dealer group",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "edmunds.com": {
+  "class": "publisher",
+  "rationale": "car research editorial; ads and dealer referral on content",
+  "citations": 12,
+  "probes_cited": 8,
+  "vertical_shares": {
+   "automotive": 0.1
+  }
+ },
+ "effortlessswimming.com": {
+  "class": "publisher",
+  "rationale": "swimming coaching content; ads and products",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "electriccarscheme.com": {
+  "class": "other",
+  "rationale": "EV salary-sacrifice scheme provider; content supports service",
+  "citations": 8,
+  "probes_cited": 8,
+  "vertical_shares": {
+   "automotive": 0.1
+  }
+ },
+ "electrifying.com": {
+  "class": "publisher",
+  "rationale": "EV review site; ads and lead referral on editorial",
+  "citations": 6,
+  "probes_cited": 6,
+  "vertical_shares": {
+   "automotive": 0.075
+  }
+ },
+ "elle.com": {
+  "class": "publisher",
+  "rationale": "women's magazine (Hearst); ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "engadget.com": {
+  "class": "publisher",
+  "rationale": "tech editorial (Yahoo); ads and affiliate",
+  "citations": 8,
+  "probes_cited": 8,
+  "vertical_shares": {
+   "consumer_electronics": 0.1
+  }
+ },
+ "epson.co.uk": {
+  "class": "brand",
+  "rationale": "device manufacturer",
+  "citations": 1,
+  "probes_cited": 1,
+  "vertical_shares": {
+   "consumer_electronics": 0.0125
+  }
+ },
+ "esquire.com": {
+  "class": "publisher",
+  "rationale": "men's magazine (Hearst); ads and affiliate",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "consumer_electronics": 0.05
+  }
+ },
+ "eurogamer.net": {
+  "class": "publisher",
+  "rationale": "games editorial; ad-funded",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "consumer_electronics": 0.05
+  }
+ },
+ "euroncap.com": {
+  "class": "other",
+  "rationale": "vehicle safety assessment body; no ad inventory",
+  "citations": 14,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "euronics.co.uk": {
+  "class": "retailer",
+  "rationale": "electronics retailer group",
+  "citations": 1,
+  "probes_cited": 1,
+  "vertical_shares": {
+   "consumer_electronics": 0.0125
+  }
+ },
+ "evcompared.co.uk": {
+  "class": "publisher",
+  "rationale": "EV comparison site; affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "everydayhealth.com": {
+  "class": "publisher",
+  "rationale": "health media (Ziff Davis); ads and affiliate",
+  "citations": 6,
+  "probes_cited": 6,
+  "vertical_shares": {
+   "consumer_electronics": 0.025,
+   "sportswear": 0.05
+  }
+ },
+ "evguide.uk": {
+  "class": "publisher",
+  "rationale": "EV advice site; affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "evo.co.uk": {
+  "class": "publisher",
+  "rationale": "performance car magazine; ad-funded editorial",
+  "citations": 26,
+  "probes_cited": 12,
+  "vertical_shares": {
+   "automotive": 0.15
+  }
+ },
+ "evpowered.co.uk": {
+  "class": "publisher",
+  "rationale": "EV editorial site; ad-funded",
+  "citations": 7,
+  "probes_cited": 5,
+  "vertical_shares": {
+   "automotive": 0.0625
+  }
+ },
+ "expertreviews.co.uk": {
+  "class": "publisher",
+  "rationale": "product reviews; ads and affiliate",
+  "citations": 20,
+  "probes_cited": 18,
+  "vertical_shares": {
+   "consumer_electronics": 0.225
+  }
+ },
+ "ezviz.com": {
+  "class": "brand",
+  "rationale": "smart camera brand",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "femmecyclist.com": {
+  "class": "publisher",
+  "rationale": "women's cycling editorial; affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "fightco.co.uk": {
+  "class": "retailer",
+  "rationale": "boxing gear retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "fightgear.co.uk": {
+  "class": "retailer",
+  "rationale": "boxing gear retailer",
+  "citations": 4,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "findthisbest.co.uk": {
+  "class": "publisher",
+  "rationale": "product round-ups; affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "fitandmyth.com": {
+  "class": "other",
+  "rationale": "low citation count; not individually reviewed, insufficient evidence to class as publisher",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "fitandwell.com": {
+  "class": "publisher",
+  "rationale": "fitness editorial (Future); ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "fleetalliance.co.uk": {
+  "class": "other",
+  "rationale": "fleet leasing provider",
+  "citations": 4,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "fleetfeet.com": {
+  "class": "retailer",
+  "rationale": "running specialty retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "fmb.org.uk": {
+  "class": "other",
+  "rationale": "trade federation",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "footballboots.co.uk": {
+  "class": "retailer",
+  "rationale": "football boot retailer",
+  "citations": 8,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "forbes.com": {
+  "class": "publisher",
+  "rationale": "business media; ads and affiliate (Vetted)",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "consumer_electronics": 0.025,
+   "sportswear": 0.025
+  }
+ },
+ "ford.co.uk": {
+  "class": "brand",
+  "rationale": "vehicle manufacturer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "fourfourtwo.com": {
+  "class": "publisher",
+  "rationale": "football magazine (Future); ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "frontum.co.uk": {
+  "class": "retailer",
+  "rationale": "electronics retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "gagadget.com": {
+  "class": "publisher",
+  "rationale": "tech reviews; ads and affiliate",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "consumer_electronics": 0.05
+  }
+ },
+ "gamesradar.com": {
+  "class": "publisher",
+  "rationale": "games editorial (Future); ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "garagegymreviews.com": {
+  "class": "publisher",
+  "rationale": "gym equipment reviews; ads and affiliate",
+  "citations": 8,
+  "probes_cited": 8,
+  "vertical_shares": {
+   "sportswear": 0.1
+  }
+ },
+ "gearjunkie.com": {
+  "class": "publisher",
+  "rationale": "outdoor gear editorial; ads and affiliate",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "sportswear": 0.05
+  }
+ },
+ "gearscouted.com": {
+  "class": "publisher",
+  "rationale": "gear round-up site; affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "gilbert-netball.com": {
+  "class": "brand",
+  "rationale": "netball equipment brand",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "glamourmagazine.co.uk": {
+  "class": "publisher",
+  "rationale": "women's magazine (Conde Nast); ads and affiliate",
+  "citations": 6,
+  "probes_cited": 6,
+  "vertical_shares": {
+   "sportswear": 0.075
+  }
+ },
+ "globalbrandsmagazine.com": {
+  "class": "publisher",
+  "rationale": "ad-funded online business magazine",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "go-electra.com": {
+  "class": "publisher",
+  "rationale": "EV advice editorial; affiliate/ads",
+  "citations": 4,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "gocompare.com": {
+  "class": "publisher",
+  "rationale": "quote comparison; referral fees (affiliate)",
+  "citations": 4,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "golfalot.com": {
+  "class": "publisher",
+  "rationale": "golf equipment editorial; ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "golfmagic.com": {
+  "class": "publisher",
+  "rationale": "golf editorial; ads and affiliate",
+  "citations": 6,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "goodhousekeeping.com": {
+  "class": "publisher",
+  "rationale": "women's magazine (Hearst); ads and affiliate",
+  "citations": 14,
+  "probes_cited": 14,
+  "vertical_shares": {
+   "consumer_electronics": 0.025,
+   "sportswear": 0.15
+  }
+ },
+ "gq-magazine.co.uk": {
+  "class": "publisher",
+  "rationale": "men's magazine (Conde Nast); ads and affiliate",
+  "citations": 12,
+  "probes_cited": 12,
+  "vertical_shares": {
+   "sportswear": 0.15
+  }
+ },
+ "gq.com": {
+  "class": "publisher",
+  "rationale": "men's magazine (Conde Nast); ads and affiliate",
+  "citations": 6,
+  "probes_cited": 6,
+  "vertical_shares": {
+   "sportswear": 0.075
+  }
+ },
+ "greavessports.com": {
+  "class": "retailer",
+  "rationale": "sports retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "gsmarena.com": {
+  "class": "publisher",
+  "rationale": "phone database/reviews; display ads",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "consumer_electronics": 0.05
+  }
+ },
+ "gymshark.com": {
+  "class": "brand",
+  "rationale": "gymwear brand",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "sportswear": 0.05
+  }
+ },
+ "highsnobiety.com": {
+  "class": "publisher",
+  "rationale": "style/streetwear media; ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "hippoleasing.co.uk": {
+  "class": "other",
+  "rationale": "leasing broker",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "automotive": 0.05
+  }
+ },
+ "hiredronepilot.uk": {
+  "class": "other",
+  "rationale": "drone services marketplace",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "hole19golf.com": {
+  "class": "other",
+  "rationale": "golf GPS app; content supports app, not ad-funded",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "honor.com": {
+  "class": "brand",
+  "rationale": "device manufacturer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "honourandglory.co.uk": {
+  "class": "other",
+  "rationale": "small retailer; not individually verified",
+  "citations": 8,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "horseandhound.co.uk": {
+  "class": "publisher",
+  "rationale": "equestrian magazine (Future); ads and affiliate",
+  "citations": 4,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "howdeninsurance.co.uk": {
+  "class": "other",
+  "rationale": "insurer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "howtogeek.com": {
+  "class": "publisher",
+  "rationale": "tech how-to editorial; ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "huffingtonpost.co.uk": {
+  "class": "publisher",
+  "rationale": "news publisher; ads and affiliate",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "consumer_electronics": 0.05
+  }
+ },
+ "idealo.co.uk": {
+  "class": "publisher",
+  "rationale": "price comparison; retailer referral fees (affiliate)",
+  "citations": 32,
+  "probes_cited": 19,
+  "vertical_shares": {
+   "consumer_electronics": 0.0875,
+   "sportswear": 0.15
+  }
+ },
+ "ign.com": {
+  "class": "publisher",
+  "rationale": "games/entertainment media; ads and affiliate",
+  "citations": 6,
+  "probes_cited": 6,
+  "vertical_shares": {
+   "consumer_electronics": 0.075
+  }
+ },
+ "independent.co.uk": {
+  "class": "publisher",
+  "rationale": "news publisher; ads and affiliate (IndyBest)",
+  "citations": 55,
+  "probes_cited": 43,
+  "vertical_shares": {
+   "automotive": 0.0875,
+   "consumer_electronics": 0.325,
+   "sportswear": 0.125
+  }
+ },
+ "inews.co.uk": {
+  "class": "publisher",
+  "rationale": "news publisher (DMGT); ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "inthesnow.com": {
+  "class": "publisher",
+  "rationale": "ski magazine; ad-funded editorial",
+  "citations": 4,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "irunfar.com": {
+  "class": "publisher",
+  "rationale": "trail running editorial; ad-funded",
+  "citations": 6,
+  "probes_cited": 6,
+  "vertical_shares": {
+   "sportswear": 0.075
+  }
+ },
+ "iseecars.com": {
+  "class": "other",
+  "rationale": "used-car search engine; dealer lead-gen",
+  "citations": 12,
+  "probes_cited": 6,
+  "vertical_shares": {
+   "automotive": 0.075
+  }
+ },
+ "isuzu.co.uk": {
+  "class": "brand",
+  "rationale": "vehicle manufacturer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "jcrew.com": {
+  "class": "retailer",
+  "rationale": "fashion retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "jct600.co.uk": {
+  "class": "retailer",
+  "rationale": "franchised dealer group",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "johnlewis.com": {
+  "class": "retailer",
+  "rationale": "department store",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "jvc.com": {
+  "class": "brand",
+  "rationale": "device manufacturer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "kandoo.co.uk": {
+  "class": "retailer",
+  "rationale": "outdoor gear retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "kbb.com": {
+  "class": "other",
+  "rationale": "valuation and listings (Cox Automotive); dealer products, not ad-funded editorial",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "automotive": 0.05
+  }
+ },
+ "kentucky.com": {
+  "class": "publisher",
+  "rationale": "news publisher (McClatchy); ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "leasecar.uk": {
+  "class": "other",
+  "rationale": "leasing broker",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "leasingoptions.co.uk": {
+  "class": "other",
+  "rationale": "leasing broker",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "lg.com": {
+  "class": "brand",
+  "rationale": "device manufacturer",
+  "citations": 4,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "lifehacker.com": {
+  "class": "publisher",
+  "rationale": "lifestyle editorial; ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "linkspeed.co.uk": {
+  "class": "retailer",
+  "rationale": "networking equipment retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "livefortheoutdoors.com": {
+  "class": "publisher",
+  "rationale": "outdoor editorial (Our Media); ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "livescience.com": {
+  "class": "publisher",
+  "rationale": "science editorial (Future); ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "lookers.co.uk": {
+  "class": "retailer",
+  "rationale": "franchised dealer group",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "loudersound.com": {
+  "class": "publisher",
+  "rationale": "music editorial (Future); ad-funded",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "loveelectric.cars": {
+  "class": "other",
+  "rationale": "EV salary-sacrifice provider; content supports service",
+  "citations": 5,
+  "probes_cited": 5,
+  "vertical_shares": {
+   "automotive": 0.0625
+  }
+ },
+ "macworld.com": {
+  "class": "publisher",
+  "rationale": "Apple-focused editorial; ads and affiliate",
+  "citations": 4,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "marieclaire.co.uk": {
+  "class": "publisher",
+  "rationale": "women's magazine (Future); ads and affiliate",
+  "citations": 12,
+  "probes_cited": 10,
+  "vertical_shares": {
+   "sportswear": 0.125
+  }
+ },
+ "marksandspencer.com": {
+  "class": "retailer",
+  "rationale": "department store",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "mashable.com": {
+  "class": "publisher",
+  "rationale": "digital media (Ziff Davis); ads and affiliate",
+  "citations": 14,
+  "probes_cited": 10,
+  "vertical_shares": {
+   "consumer_electronics": 0.125
+  }
+ },
+ "menshealth.com": {
+  "class": "publisher",
+  "rationale": "men's fitness magazine (Hearst); ads and affiliate",
+  "citations": 10,
+  "probes_cited": 10,
+  "vertical_shares": {
+   "consumer_electronics": 0.025,
+   "sportswear": 0.1
+  }
+ },
+ "mensjournal.com": {
+  "class": "publisher",
+  "rationale": "men's magazine; ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "mirror.co.uk": {
+  "class": "publisher",
+  "rationale": "news publisher (Reach); ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "moneysupermarket.com": {
+  "class": "publisher",
+  "rationale": "quote comparison; referral fees (affiliate)",
+  "citations": 4,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "motoring.today": {
+  "class": "publisher",
+  "rationale": "motoring editorial; ad-funded",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "automotive": 0.05
+  }
+ },
+ "motoringresearch.com": {
+  "class": "publisher",
+  "rationale": "automotive news/reviews site; ad-funded",
+  "citations": 10,
+  "probes_cited": 10,
+  "vertical_shares": {
+   "automotive": 0.125
+  }
+ },
+ "motorpoint.co.uk": {
+  "class": "retailer",
+  "rationale": "used-car supermarket retailer",
+  "citations": 28,
+  "probes_cited": 26,
+  "vertical_shares": {
+   "automotive": 0.325
+  }
+ },
+ "motortrend.com": {
+  "class": "publisher",
+  "rationale": "automotive media; ads and affiliate",
+  "citations": 6,
+  "probes_cited": 6,
+  "vertical_shares": {
+   "automotive": 0.075
+  }
+ },
+ "moveelectric.com": {
+  "class": "publisher",
+  "rationale": "EV editorial (Haymarket); ad-funded",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "msi.com": {
+  "class": "brand",
+  "rationale": "device manufacturer",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "consumer_electronics": 0.05
+  }
+ },
+ "mymeglio.com": {
+  "class": "retailer",
+  "rationale": "sportswear retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "mytriathlon.co.uk": {
+  "class": "retailer",
+  "rationale": "triathlon retailer",
+  "citations": 4,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "nationalclubgolfer.com": {
+  "class": "publisher",
+  "rationale": "golf editorial; ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "nationwidevehiclecontracts.co.uk": {
+  "class": "other",
+  "rationale": "leasing broker",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "nbcnews.com": {
+  "class": "publisher",
+  "rationale": "news publisher; ads and affiliate (Select)",
+  "citations": 17,
+  "probes_cited": 14,
+  "vertical_shares": {
+   "consumer_electronics": 0.075,
+   "sportswear": 0.1
+  }
+ },
+ "netballer.co.uk": {
+  "class": "publisher",
+  "rationale": "netball editorial; affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "netballuk.co.uk": {
+  "class": "other",
+  "rationale": "netball organisation store; insufficient evidence of ad model",
+  "citations": 8,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "newbalance.co.uk": {
+  "class": "brand",
+  "rationale": "sportswear manufacturer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "nike.com": {
+  "class": "brand",
+  "rationale": "sportswear manufacturer",
+  "citations": 14,
+  "probes_cited": 10,
+  "vertical_shares": {
+   "sportswear": 0.125
+  }
+ },
+ "nytimes.com": {
+  "class": "publisher",
+  "rationale": "news publisher incl. Wirecutter affiliate reviews",
+  "citations": 40,
+  "probes_cited": 36,
+  "vertical_shares": {
+   "consumer_electronics": 0.4,
+   "sportswear": 0.05
+  }
+ },
+ "o2.co.uk": {
+  "class": "other",
+  "rationale": "mobile network operator",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "obsbot.com": {
+  "class": "brand",
+  "rationale": "webcam manufacturer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "octopusev.com": {
+  "class": "other",
+  "rationale": "EV leasing company; content supports service",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "automotive": 0.05
+  }
+ },
+ "origym.co.uk": {
+  "class": "other",
+  "rationale": "fitness training course provider",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "outdoorgearlab.com": {
+  "class": "publisher",
+  "rationale": "outdoor gear reviews; affiliate",
+  "citations": 10,
+  "probes_cited": 6,
+  "vertical_shares": {
+   "sportswear": 0.075
+  }
+ },
+ "outdoorlife.com": {
+  "class": "publisher",
+  "rationale": "outdoor magazine (Recurrent); ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "outdoorsmagic.com": {
+  "class": "publisher",
+  "rationale": "outdoor gear editorial; ads and affiliate",
+  "citations": 12,
+  "probes_cited": 12,
+  "vertical_shares": {
+   "sportswear": 0.15
+  }
+ },
+ "outsideonline.com": {
+  "class": "publisher",
+  "rationale": "outdoor magazine; ads and affiliate",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "sportswear": 0.05
+  }
+ },
+ "patternkeepers.com": {
+  "class": "other",
+  "rationale": "low citation count; not individually reviewed, insufficient evidence to class as publisher",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "pcgamer.com": {
+  "class": "publisher",
+  "rationale": "gaming editorial (Future); ads and affiliate",
+  "citations": 6,
+  "probes_cited": 6,
+  "vertical_shares": {
+   "consumer_electronics": 0.075
+  }
+ },
+ "pcgamesn.com": {
+  "class": "publisher",
+  "rationale": "PC games editorial (Network N); ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "pcguide.com": {
+  "class": "publisher",
+  "rationale": "PC hardware reviews; ads and affiliate",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "consumer_electronics": 0.05
+  }
+ },
+ "pcmag.com": {
+  "class": "publisher",
+  "rationale": "tech reviews (Ziff Davis); ads and affiliate",
+  "citations": 120,
+  "probes_cited": 60,
+  "vertical_shares": {
+   "consumer_electronics": 0.75
+  }
+ },
+ "pcworld.com": {
+  "class": "publisher",
+  "rationale": "tech editorial (Foundry); ads and affiliate",
+  "citations": 16,
+  "probes_cited": 12,
+  "vertical_shares": {
+   "consumer_electronics": 0.15
+  }
+ },
+ "peggyomara.com": {
+  "class": "other",
+  "rationale": "low citation count; not individually reviewed, insufficient evidence to class as publisher",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "peugeot.co.uk": {
+  "class": "brand",
+  "rationale": "vehicle manufacturer",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "automotive": 0.05
+  }
+ },
+ "philips.co.uk": {
+  "class": "brand",
+  "rationale": "device manufacturer",
+  "citations": 1,
+  "probes_cited": 1,
+  "vertical_shares": {
+   "consumer_electronics": 0.0125
+  }
+ },
+ "pickbest.co.uk": {
+  "class": "publisher",
+  "rationale": "product round-ups; affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "practicalcaravan.com": {
+  "class": "publisher",
+  "rationale": "caravan magazine; ad-funded editorial",
+  "citations": 6,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "pricerunner.com": {
+  "class": "publisher",
+  "rationale": "price comparison; retailer referral fees (affiliate)",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "pricespy.co.uk": {
+  "class": "publisher",
+  "rationale": "price comparison; retailer referral fees (affiliate)",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "primark.com": {
+  "class": "retailer",
+  "rationale": "fashion retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "prodirectsport.com": {
+  "class": "retailer",
+  "rationale": "sports retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "protectyourbubble.com": {
+  "class": "other",
+  "rationale": "insurer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "pulmangroup.co.uk": {
+  "class": "retailer",
+  "rationale": "franchised dealer group",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "rac.co.uk": {
+  "class": "other",
+  "rationale": "motoring services membership organisation; content supports membership",
+  "citations": 30,
+  "probes_cited": 26,
+  "vertical_shares": {
+   "automotive": 0.325
+  }
+ },
+ "regit.cars": {
+  "class": "other",
+  "rationale": "motoring services platform",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "rei.com": {
+  "class": "retailer",
+  "rationale": "outdoor retail co-op",
+  "citations": 4,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "road.cc": {
+  "class": "publisher",
+  "rationale": "cycling editorial; ad-funded",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "roadethos.com": {
+  "class": "other",
+  "rationale": "small automotive content site; insufficient evidence of ad model",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "rtings.com": {
+  "class": "publisher",
+  "rationale": "product review site; ads, affiliate and subscriptions on content",
+  "citations": 60,
+  "probes_cited": 32,
+  "vertical_shares": {
+   "consumer_electronics": 0.325,
+   "sportswear": 0.075
+  }
+ },
+ "rugbystore.co.uk": {
+  "class": "retailer",
+  "rationale": "rugby retailer",
+  "citations": 4,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "rugbystuff.com": {
+  "class": "retailer",
+  "rationale": "rugby equipment retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "run-cadence.com": {
+  "class": "publisher",
+  "rationale": "running editorial; affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "runandbecome.com": {
+  "class": "retailer",
+  "rationale": "running specialist retailer",
+  "citations": 6,
+  "probes_cited": 6,
+  "vertical_shares": {
+   "sportswear": 0.075
+  }
+ },
+ "runna.com": {
+  "class": "other",
+  "rationale": "running training app; content supports subscriptions",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "runnea.co.uk": {
+  "class": "publisher",
+  "rationale": "running shoe review site; affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "runnersworld.com": {
+  "class": "publisher",
+  "rationale": "running magazine (Hearst); ads and affiliate",
+  "citations": 58,
+  "probes_cited": 40,
+  "vertical_shares": {
+   "consumer_electronics": 0.025,
+   "sportswear": 0.475
+  }
+ },
+ "running4beginners.co.uk": {
+  "class": "publisher",
+  "rationale": "running advice blog; ads/affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "runningstate.com": {
+  "class": "publisher",
+  "rationale": "running editorial; affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "runningwarehouse.com": {
+  "class": "retailer",
+  "rationale": "running retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "runrepeat.com": {
+  "class": "publisher",
+  "rationale": "shoe review aggregation; affiliate commissions",
+  "citations": 85,
+  "probes_cited": 26,
+  "vertical_shares": {
+   "sportswear": 0.325
+  }
+ },
+ "runtothefinish.com": {
+  "class": "publisher",
+  "rationale": "running advice site; ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "runweekly.com": {
+  "class": "publisher",
+  "rationale": "running editorial; affiliate",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "sportswear": 0.05
+  }
+ },
+ "saga.co.uk": {
+  "class": "other",
+  "rationale": "insurance/services group",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "automotive": 0.025,
+   "consumer_electronics": 0.025
+  }
+ },
+ "samsung.com": {
+  "class": "brand",
+  "rationale": "device manufacturer",
+  "citations": 7,
+  "probes_cited": 3,
+  "vertical_shares": {
+   "consumer_electronics": 0.0375
+  }
+ },
+ "sandicliffe.co.uk": {
+  "class": "retailer",
+  "rationale": "franchised dealer group",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "scarbir.com": {
+  "class": "publisher",
+  "rationale": "earbud review blog; affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "scotsman.com": {
+  "class": "publisher",
+  "rationale": "news publisher (National World); ads and affiliate",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "consumer_electronics": 0.025,
+   "sportswear": 0.025
+  }
+ },
+ "seib.co.uk": {
+  "class": "other",
+  "rationale": "specialist insurer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "selectcarleasing.co.uk": {
+  "class": "other",
+  "rationale": "leasing broker",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "automotive": 0.05
+  }
+ },
+ "serp.co": {
+  "class": "other",
+  "rationale": "low citation count; not individually reviewed, insufficient evidence to class as publisher",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "shape.com": {
+  "class": "publisher",
+  "rationale": "fitness magazine (Dotdash Meredith); ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "skechers.co.uk": {
+  "class": "brand",
+  "rationale": "footwear manufacturer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "skoda.co.uk": {
+  "class": "brand",
+  "rationale": "vehicle manufacturer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "slashgear.com": {
+  "class": "publisher",
+  "rationale": "tech/auto editorial; ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "smartwool.com": {
+  "class": "brand",
+  "rationale": "merino apparel brand",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "solihullobserver.co.uk": {
+  "class": "publisher",
+  "rationale": "local news; ad-funded",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "sony.co.uk": {
+  "class": "brand",
+  "rationale": "device manufacturer",
+  "citations": 2,
+  "probes_cited": 1,
+  "vertical_shares": {
+   "consumer_electronics": 0.0125
+  }
+ },
+ "soundcore.com": {
+  "class": "brand",
+  "rationale": "audio device brand (Anker)",
+  "citations": 6,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "soundguys.com": {
+  "class": "publisher",
+  "rationale": "audio reviews; ads and affiliate",
+  "citations": 10,
+  "probes_cited": 10,
+  "vertical_shares": {
+   "consumer_electronics": 0.125
+  }
+ },
+ "space.com": {
+  "class": "publisher",
+  "rationale": "space editorial (Future); ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "sport-conrad.com": {
+  "class": "retailer",
+  "rationale": "ski/outdoor retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "sportsshoes.com": {
+  "class": "retailer",
+  "rationale": "sports footwear retailer",
+  "citations": 8,
+  "probes_cited": 6,
+  "vertical_shares": {
+   "sportswear": 0.075
+  }
+ },
+ "sportyswim.co.uk": {
+  "class": "retailer",
+  "rationale": "swim gear retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "squashchamps.com": {
+  "class": "publisher",
+  "rationale": "squash gear editorial; affiliate",
+  "citations": 4,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "squashgalaxy.com": {
+  "class": "retailer",
+  "rationale": "squash retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "standard.co.uk": {
+  "class": "publisher",
+  "rationale": "news publisher; ads and affiliate",
+  "citations": 10,
+  "probes_cited": 10,
+  "vertical_shares": {
+   "consumer_electronics": 0.05,
+   "sportswear": 0.075
+  }
+ },
+ "startfitness.co.uk": {
+  "class": "retailer",
+  "rationale": "sports retailer",
+  "citations": 6,
+  "probes_cited": 6,
+  "vertical_shares": {
+   "sportswear": 0.075
+  }
+ },
+ "stereonet.com": {
+  "class": "publisher",
+  "rationale": "hi-fi reviews and classifieds; ad-funded editorial",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "consumer_electronics": 0.05
+  }
+ },
+ "storagereview.com": {
+  "class": "publisher",
+  "rationale": "storage hardware reviews; ad-funded",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "stuff.tv": {
+  "class": "publisher",
+  "rationale": "gadget magazine; ad-funded editorial",
+  "citations": 20,
+  "probes_cited": 20,
+  "vertical_shares": {
+   "consumer_electronics": 0.25
+  }
+ },
+ "suzuki.co.uk": {
+  "class": "brand",
+  "rationale": "vehicle manufacturer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "swiftgroup.co.uk": {
+  "class": "brand",
+  "rationale": "caravan manufacturer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "switchbacktravel.com": {
+  "class": "publisher",
+  "rationale": "outdoor gear reviews; ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "t3.com": {
+  "class": "publisher",
+  "rationale": "gadget magazine (Future); ads and affiliate",
+  "citations": 16,
+  "probes_cited": 16,
+  "vertical_shares": {
+   "consumer_electronics": 0.175,
+   "sportswear": 0.025
+  }
+ },
+ "tapo.com": {
+  "class": "brand",
+  "rationale": "smart home device brand (TP-Link)",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "techadvisor.com": {
+  "class": "publisher",
+  "rationale": "tech reviews (Foundry); ads and affiliate",
+  "citations": 10,
+  "probes_cited": 8,
+  "vertical_shares": {
+   "consumer_electronics": 0.1
+  }
+ },
+ "techanything.co.uk": {
+  "class": "publisher",
+  "rationale": "tech buying guides; affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "techradar.com": {
+  "class": "publisher",
+  "rationale": "tech reviews (Future); ads and affiliate",
+  "citations": 21,
+  "probes_cited": 21,
+  "vertical_shares": {
+   "consumer_electronics": 0.2625
+  }
+ },
+ "techtimes.com": {
+  "class": "publisher",
+  "rationale": "tech news site; ad-funded",
+  "citations": 1,
+  "probes_cited": 1,
+  "vertical_shares": {
+   "consumer_electronics": 0.0125
+  }
+ },
+ "telegraph.co.uk": {
+  "class": "publisher",
+  "rationale": "news publisher; ads, subscriptions and affiliate (Recommended)",
+  "citations": 28,
+  "probes_cited": 24,
+  "vertical_shares": {
+   "consumer_electronics": 0.175,
+   "sportswear": 0.125
+  }
+ },
+ "tennis-warehouse.com": {
+  "class": "retailer",
+  "rationale": "tennis retailer",
+  "citations": 6,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "testix.co.uk": {
+  "class": "publisher",
+  "rationale": "product round-up site; affiliate",
+  "citations": 6,
+  "probes_cited": 6,
+  "vertical_shares": {
+   "sportswear": 0.075
+  }
+ },
+ "the-gadgeteer.com": {
+  "class": "publisher",
+  "rationale": "gadget reviews; ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "the-independent.com": {
+  "class": "publisher",
+  "rationale": "news publisher; ads and affiliate (IndyBest)",
+  "citations": 12,
+  "probes_cited": 12,
+  "vertical_shares": {
+   "consumer_electronics": 0.125,
+   "sportswear": 0.025
+  }
+ },
+ "thecarexpert.co.uk": {
+  "class": "publisher",
+  "rationale": "car advice editorial; affiliate/lead referral on content",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "thegolfshoponline.co.uk": {
+  "class": "retailer",
+  "rationale": "golf retailer",
+  "citations": 4,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "thehoopsgeek.com": {
+  "class": "publisher",
+  "rationale": "basketball shoe reviews; affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "thenorthface.com": {
+  "class": "brand",
+  "rationale": "outdoor apparel manufacturer",
+  "citations": 6,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "sportswear": 0.05
+  }
+ },
+ "theruntesters.com": {
+  "class": "publisher",
+  "rationale": "running gear reviews; ads and affiliate",
+  "citations": 6,
+  "probes_cited": 6,
+  "vertical_shares": {
+   "consumer_electronics": 0.025,
+   "sportswear": 0.05
+  }
+ },
+ "thesportsedit.com": {
+  "class": "retailer",
+  "rationale": "activewear retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "theswimmingshop.com": {
+  "class": "retailer",
+  "rationale": "swim gear retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "thetestedhub.com": {
+  "class": "other",
+  "rationale": "low citation count; not individually reviewed, insufficient evidence to class as publisher",
+  "citations": 1,
+  "probes_cited": 1,
+  "vertical_shares": {
+   "sportswear": 0.0125
+  }
+ },
+ "thetriathlete.co.uk": {
+  "class": "publisher",
+  "rationale": "triathlon editorial; affiliate",
+  "citations": 10,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "sportswear": 0.05
+  }
+ },
+ "thewinners.ae": {
+  "class": "other",
+  "rationale": "low citation count; not individually reviewed, insufficient evidence to class as publisher",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "thisismoney.co.uk": {
+  "class": "publisher",
+  "rationale": "money editorial (DMGT); ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "today.com": {
+  "class": "publisher",
+  "rationale": "NBC lifestyle site; ads and affiliate (Shop Today)",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "tomsguide.com": {
+  "class": "publisher",
+  "rationale": "tech reviews (Future); ads and affiliate",
+  "citations": 38,
+  "probes_cited": 34,
+  "vertical_shares": {
+   "consumer_electronics": 0.325,
+   "sportswear": 0.1
+  }
+ },
+ "tomshardware.com": {
+  "class": "publisher",
+  "rationale": "PC hardware editorial (Future); ads and affiliate",
+  "citations": 14,
+  "probes_cited": 12,
+  "vertical_shares": {
+   "consumer_electronics": 0.15
+  }
+ },
+ "top5best.com": {
+  "class": "publisher",
+  "rationale": "product round-ups; affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "topgear.com": {
+  "class": "publisher",
+  "rationale": "BBC Top Gear magazine site; ad-funded editorial",
+  "citations": 10,
+  "probes_cited": 8,
+  "vertical_shares": {
+   "automotive": 0.1
+  }
+ },
+ "toyota.co.uk": {
+  "class": "brand",
+  "rationale": "vehicle manufacturer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "trailrunnermag.com": {
+  "class": "publisher",
+  "rationale": "trail running magazine; ad-funded",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "trailruntemple.com": {
+  "class": "publisher",
+  "rationale": "trail running gear blog; affiliate",
+  "citations": 1,
+  "probes_cited": 1,
+  "vertical_shares": {
+   "sportswear": 0.0125
+  }
+ },
+ "travelandleisure.com": {
+  "class": "publisher",
+  "rationale": "travel magazine (Dotdash Meredith); ads and affiliate",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "consumer_electronics": 0.025,
+   "sportswear": 0.025
+  }
+ },
+ "treelinereview.com": {
+  "class": "publisher",
+  "rationale": "outdoor gear review site; ads and affiliate",
+  "citations": 14,
+  "probes_cited": 12,
+  "vertical_shares": {
+   "sportswear": 0.15
+  }
+ },
+ "trekitt.co.uk": {
+  "class": "retailer",
+  "rationale": "outdoor gear retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "triathlonhealth.com": {
+  "class": "publisher",
+  "rationale": "triathlon editorial; affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "truecar.com": {
+  "class": "other",
+  "rationale": "car-buying marketplace; dealer lead-gen",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "automotive": 0.05
+  }
+ },
+ "ukpicks.co.uk": {
+  "class": "publisher",
+  "rationale": "product round-ups; affiliate",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "sportswear": 0.05
+  }
+ },
+ "usatoday.com": {
+  "class": "publisher",
+  "rationale": "news publisher; ads and affiliate (Reviewed)",
+  "citations": 6,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "automotive": 0.05
+  }
+ },
+ "usnews.com": {
+  "class": "publisher",
+  "rationale": "news publisher; ads and affiliate (360 Reviews)",
+  "citations": 10,
+  "probes_cited": 8,
+  "vertical_shares": {
+   "automotive": 0.1
+  }
+ },
+ "uswitch.com": {
+  "class": "publisher",
+  "rationale": "quote comparison; referral fees (affiliate)",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "automotive": 0.025,
+   "consumer_electronics": 0.025
+  }
+ },
+ "vanreviewer.co.uk": {
+  "class": "publisher",
+  "rationale": "van review site; affiliate/ads on editorial",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "vertumotors.com": {
+  "class": "retailer",
+  "rationale": "franchised dealer group",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "very.co.uk": {
+  "class": "retailer",
+  "rationale": "online department store",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "consumer_electronics": 0.05
+  }
+ },
+ "verywellfit.com": {
+  "class": "publisher",
+  "rationale": "fitness editorial (Dotdash Meredith); ads",
+  "citations": 8,
+  "probes_cited": 8,
+  "vertical_shares": {
+   "sportswear": 0.1
+  }
+ },
+ "visunext.co.uk": {
+  "class": "retailer",
+  "rationale": "AV retailer",
+  "citations": 1,
+  "probes_cited": 1,
+  "vertical_shares": {
+   "consumer_electronics": 0.0125
+  }
+ },
+ "vivacar.fr": {
+  "class": "retailer",
+  "rationale": "used-car retailer (FR)",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "volkswagen.co.uk": {
+  "class": "brand",
+  "rationale": "vehicle manufacturer",
+  "citations": 4,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "weartesters.com": {
+  "class": "publisher",
+  "rationale": "basketball shoe reviews; ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "weski.com": {
+  "class": "retailer",
+  "rationale": "ski retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "wfhlounge.com": {
+  "class": "other",
+  "rationale": "low citation count; not individually reviewed, insufficient evidence to class as publisher",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "whatcar.com": {
+  "class": "publisher",
+  "rationale": "car review magazine (Haymarket); ad-funded editorial",
+  "citations": 72,
+  "probes_cited": 46,
+  "vertical_shares": {
+   "automotive": 0.575
+  }
+ },
+ "whathifi.com": {
+  "class": "publisher",
+  "rationale": "hi-fi/AV reviews (Future); ads and affiliate",
+  "citations": 18,
+  "probes_cited": 12,
+  "vertical_shares": {
+   "consumer_electronics": 0.15
+  }
+ },
+ "which.co.uk": {
+  "class": "other",
+  "rationale": "subscription consumer association; no ad placement inventory",
+  "citations": 32,
+  "probes_cited": 22,
+  "vertical_shares": {
+   "automotive": 0.025,
+   "consumer_electronics": 0.25
+  }
+ },
+ "whocanfixmycar.com": {
+  "class": "other",
+  "rationale": "repair marketplace",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "windowscentral.com": {
+  "class": "publisher",
+  "rationale": "tech editorial (Future); ads and affiliate",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "wired.com": {
+  "class": "publisher",
+  "rationale": "tech magazine (Conde Nast); ads and affiliate",
+  "citations": 22,
+  "probes_cited": 20,
+  "vertical_shares": {
+   "consumer_electronics": 0.2,
+   "sportswear": 0.05
+  }
+ },
+ "womanandhome.com": {
+  "class": "publisher",
+  "rationale": "women's magazine (Future); ads and affiliate",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "sportswear": 0.05
+  }
+ },
+ "womenshealthmag.com": {
+  "class": "publisher",
+  "rationale": "women's fitness magazine (Hearst); ads and affiliate",
+  "citations": 20,
+  "probes_cited": 14,
+  "vertical_shares": {
+   "sportswear": 0.175
+  }
+ },
+ "womensrunning.co.uk": {
+  "class": "publisher",
+  "rationale": "running magazine; ad-funded editorial",
+  "citations": 12,
+  "probes_cited": 12,
+  "vertical_shares": {
+   "consumer_electronics": 0.025,
+   "sportswear": 0.125
+  }
+ },
+ "worldwidestereo.com": {
+  "class": "retailer",
+  "rationale": "AV retailer",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "consumer_electronics": 0.025
+  }
+ },
+ "yahoo.com": {
+  "class": "publisher",
+  "rationale": "portal/news; ads and affiliate commerce",
+  "citations": 23,
+  "probes_cited": 21,
+  "vertical_shares": {
+   "automotive": 0.075,
+   "consumer_electronics": 0.05,
+   "sportswear": 0.1375
+  }
+ },
+ "yorkshire.com": {
+  "class": "publisher",
+  "rationale": "regional tourism site; ad-funded",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "yourhorse.co.uk": {
+  "class": "publisher",
+  "rationale": "equestrian magazine; ad-funded",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "automotive": 0.025
+  }
+ },
+ "yours.co.uk": {
+  "class": "publisher",
+  "rationale": "women's magazine (Our Media); ads and affiliate",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "consumer_electronics": 0.025,
+   "sportswear": 0.025
+  }
+ },
+ "youtube.com": {
+  "class": "ugc",
+  "rationale": "user-generated video platform",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ },
+ "zdnet.com": {
+  "class": "publisher",
+  "rationale": "tech media; ads and affiliate",
+  "citations": 4,
+  "probes_cited": 4,
+  "vertical_shares": {
+   "consumer_electronics": 0.05
+  }
+ },
+ "zone3.com": {
+  "class": "brand",
+  "rationale": "triathlon apparel brand",
+  "citations": 2,
+  "probes_cited": 2,
+  "vertical_shares": {
+   "sportswear": 0.025
+  }
+ }
 }

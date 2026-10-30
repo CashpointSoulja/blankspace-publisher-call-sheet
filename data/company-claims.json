@@ -1,30 +1,30 @@
 [
-  {
-    "id": "cpm",
-    "statement": "~$15 average CPM",
-    "required_phrasing": "blankspace reports an average CPM of around $15",
-    "source_url": null,
-    "accessed": null
-  },
-  {
-    "id": "pickup",
-    "statement": "98% ad pick-up",
-    "required_phrasing": "blankspace reports 98% ad pick-up",
-    "source_url": null,
-    "accessed": null
-  },
-  {
-    "id": "sole-supplier-growth",
-    "statement": "282% agent-traffic growth at The Sole Supplier",
-    "required_phrasing": "blankspace reports 282% growth in agent traffic for The Sole Supplier",
-    "source_url": null,
-    "accessed": null
-  },
-  {
-    "id": "sole-supplier-referrals",
-    "statement": "5x ChatGPT referrals at The Sole Supplier",
-    "required_phrasing": "blankspace reports 5x ChatGPT referrals for The Sole Supplier",
-    "source_url": null,
-    "accessed": null
-  }
+ {
+  "id": "cpm",
+  "statement": "$15.02 average CPM on live accounts",
+  "required_phrasing": "blankspace reports a $15.02 average CPM on live accounts",
+  "source_url": "https://blankspace.so/",
+  "accessed": "2026-10-30"
+ },
+ {
+  "id": "pickup",
+  "statement": "98% of the ads blankspace serves are successfully picked up by agents",
+  "required_phrasing": "blankspace reports that 98% of the ads it serves are successfully picked up by agents",
+  "source_url": "https://newdigitalage.co/ai/we-are-building-advertising-infrastructure-for-live-search-agents-blankspace-co-founder-alexander-taylor-on-monetising-the-llm-ecosystem/",
+  "accessed": "2026-10-30"
+ },
+ {
+  "id": "sole-supplier-growth",
+  "statement": "The Sole Supplier's live search agent traffic grew 282% since working with blankspace",
+  "required_phrasing": "blankspace reports The Sole Supplier's live search agent traffic grew 282% since they started working together",
+  "source_url": "https://newdigitalage.co/ai/we-are-building-advertising-infrastructure-for-live-search-agents-blankspace-co-founder-alexander-taylor-on-monetising-the-llm-ecosystem/",
+  "accessed": "2026-10-30"
+ },
+ {
+  "id": "sole-supplier-referrals",
+  "statement": "The Sole Supplier's ChatGPT referral traffic grew 5x",
+  "required_phrasing": "blankspace reports The Sole Supplier's ChatGPT referral traffic grew 5x",
+  "source_url": "https://newdigitalage.co/ai/we-are-building-advertising-infrastructure-for-live-search-agents-blankspace-co-founder-alexander-taylor-on-monetising-the-llm-ecosystem/",
+  "accessed": "2026-10-30"
+ }
 ]
