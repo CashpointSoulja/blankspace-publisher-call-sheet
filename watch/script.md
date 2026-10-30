@@ -1,13 +1,55 @@
-# Publisher call sheet walkthrough
+# Publisher Call Sheet — Demo Script
 
-A citation is a reason to investigate, not a qualified lead. I built this to turn publisher research into a clear discovery decision. The job description and the interview both point towards growing publisher supply. Whether that is the biggest constraint is still an assumption.
+0:00–0:12 | Homepage
 
-Two accounts are worth a first conversation on the evidence reviewed. Their own pages show a commercial route. That does not prove interest. Each record separates current findings from open questions, names the role to ask, and lists what must be agreed before activation.
+How would I help blankspace get its next thousand publishers live?
 
-The holds and exclusions matter too. One website in the sample is now a car marketplace. It comes out of the publisher queue. Another publisher rules out product placement. It stays on hold. Advertising and affiliate income do not prove that sponsored placements are acceptable.
+I wanted to show you how I'd approach that problem, so I built something.
 
-Behind those decisions is a dated research sample. One hundred and twenty UK shopping queries, run twice through one answer engine. These are citations, not measured traffic or revenue. The research list keeps the raw evidence. Missing signals stay unknown, rather than becoming zero.
+I'm Ayo Ahmed, I'm interested in joining your founding GTM team, and this is Publisher Call Sheet.
 
-Open an account to see the evidence and a draft message. The message asks about feasibility. It does not claim to represent the company or promise a free service. A code check compares specific claims with the evidence. Claims that fail are removed and logged. It cannot prove every sentence true. Nothing here can send a message.
+0:12–0:28 | Research Dashboard
 
-The first month should end in a decision. Name the owner. Choose the pages. Get technical and editorial approval. Measure the traffic before monetisation. Write down what would make a pilot worth continuing, and how to roll back. This does not prove a pipeline problem has been solved. It is a useful starting point for better discovery, with the reasons to proceed or stop written down.
+I started with 120 UK shopping queries, run twice through an AI answer engine, to see which publishers were being cited.
+
+Those citations aren't traffic or revenue. They're starting points for research.
+
+The goal is to find publishers worth speaking to, not just build another lead list.
+
+0:28–0:45 | Publisher Accounts
+
+From the accounts I reviewed, two stood out as worth an initial conversation.
+
+Their websites show potential commercial routes, but that doesn't mean they're interested in blankspace.
+
+So each account separates what I know, what I don't, who I'd approach and what I'd need to learn.
+
+0:45–1:02 | Qualification and Exclusions
+
+And knowing who not to contact matters just as much.
+
+One website turned out to be a car marketplace, so I excluded it.
+
+Another publisher explicitly rules out product placement, so that stays on hold.
+
+I'd rather spend time on a credible opportunity than chase a misleading signal.
+
+1:02–1:18 | Outreach and Evidence
+
+Once I've identified an account, the desk prepares a personalised discovery message using the research.
+
+It checks specific claims against the evidence and flags anything unsupported.
+
+Nothing sends automatically. I'd review the message before reaching out.
+
+The objective is a qualified conversation, not just another email.
+
+1:18–1:35 | Pilot Planning and Closing
+
+And getting a meeting isn't the finish line.
+
+I'd want to identify the decision-maker, agree on a pilot, measure what happens and understand what would make the publisher want to continue.
+
+I built this to demonstrate how I'd approach publisher acquisition at blankspace: research, qualify, engage, learn and repeat.
+
+I'd love the opportunity to put it to work with your team.

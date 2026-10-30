@@ -1,62 +1,62 @@
 [
-  {
-    "file": "01.mp3",
-    "voiced_frames": 140,
-    "pitch_5_50_95": [
-      78.2,
-      83.4,
-      96.3
-    ],
-    "adjacent_octave_jumps": 0
-  },
-  {
-    "file": "02.mp3",
-    "voiced_frames": 190,
-    "pitch_5_50_95": [
-      81.9,
-      86.8,
-      95.2
-    ],
-    "adjacent_octave_jumps": 0
-  },
-  {
-    "file": "03.mp3",
-    "voiced_frames": 174,
-    "pitch_5_50_95": [
-      79.1,
-      85.3,
-      98.0
-    ],
-    "adjacent_octave_jumps": 0
-  },
-  {
-    "file": "04.mp3",
-    "voiced_frames": 222,
-    "pitch_5_50_95": [
-      81.0,
-      85.6,
-      98.5
-    ],
-    "adjacent_octave_jumps": 0
-  },
-  {
-    "file": "05.mp3",
-    "voiced_frames": 215,
-    "pitch_5_50_95": [
-      77.2,
-      82.4,
-      92.7
-    ],
-    "adjacent_octave_jumps": 0
-  },
-  {
-    "file": "06.mp3",
-    "voiced_frames": 284,
-    "pitch_5_50_95": [
-      78.7,
-      84.8,
-      99.5
-    ],
-    "adjacent_octave_jumps": 0
-  }
+ {
+  "file": "01.mp3",
+  "voiced_frames": 663,
+  "pitch_5_50_95": [
+   78.3,
+   86.3,
+   114.1
+  ],
+  "adjacent_octave_jumps": 0
+ },
+ {
+  "file": "02-trim.mp3",
+  "voiced_frames": 827,
+  "pitch_5_50_95": [
+   77.4,
+   83.9,
+   102.5
+  ],
+  "adjacent_octave_jumps": 0
+ },
+ {
+  "file": "03-trim.mp3",
+  "voiced_frames": 682,
+  "pitch_5_50_95": [
+   77.8,
+   84.9,
+   100.3
+  ],
+  "adjacent_octave_jumps": 0
+ },
+ {
+  "file": "04-trim.mp3",
+  "voiced_frames": 815,
+  "pitch_5_50_95": [
+   78.7,
+   84.9,
+   93.8
+  ],
+  "adjacent_octave_jumps": 0
+ },
+ {
+  "file": "05-trim.mp3",
+  "voiced_frames": 802,
+  "pitch_5_50_95": [
+   77.8,
+   84.4,
+   98.0
+  ],
+  "adjacent_octave_jumps": 0
+ },
+ {
+  "file": "06-trim.mp3",
+  "voiced_frames": 1088,
+  "pitch_5_50_95": [
+   76.0,
+   83.4,
+   98.6
+  ],
+  "adjacent_octave_jumps": 0
+ }
 ]
