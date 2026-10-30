@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "qualification.schema.json",
+  "title": "qualification.json",
+  "description": "Manual commercial qualification for the first wave, separate from the automated score. ready_for_discovery means worth a first conversation, not a qualified lead.",
+  "type": "object",
+  "required": ["reviewed_at", "company_path", "accounts"],
+  "additionalProperties": false,
+  "$defs": {
+    "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "source": {
+      "type": "object", "required": ["finding", "source_url", "accessed"], "additionalProperties": false,
+      "properties": {
+        "finding": { "type": "string", "minLength": 1 },
+        "source_url": { "type": "string", "pattern": "^https://" },
+        "accessed": { "$ref": "#/$defs/date" }
+      }
+    }
+  },
+  "properties": {
+    "$schema": { "type": "string" },
+    "$comment": { "type": "string" },
+    "reviewed_at": { "$ref": "#/$defs/date" },
+    "company_path": {
+      "type": "object", "required": ["finding", "source_url", "published", "accessed", "note"], "additionalProperties": false,
+      "properties": {
+        "finding": { "type": "string" }, "source_url": { "type": "string", "pattern": "^https://" },
+        "published": { "$ref": "#/$defs/date" }, "accessed": { "$ref": "#/$defs/date" }, "note": { "type": "string" }
+      }
+    },
+    "accounts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["account", "domains", "decision", "decision_reason", "verified", "owner_role", "next_question", "gates", "success_criteria_30d", "release_condition"],
+        "additionalProperties": false,
+        "properties": {
+          "account": { "type": "string", "minLength": 1, "description": "The buying unit. Named only as far as a source supports; no guessed parents." },
+          "domains": { "type": "array", "minItems": 1, "items": { "type": "string", "pattern": "^[a-z0-9.-]+\\.[a-z]{2,}$" } },
+          "decision": { "enum": ["ready_for_discovery", "hold", "exclude"] },
+          "decision_reason": { "type": "string", "minLength": 1 },
+          "verified": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/source" } },
+          "owner_role": { "type": "string", "description": "A role, never a named person." },
+          "next_question": { "type": ["string", "null"] },
+          "gates": {
+            "type": "array",
+            "items": {
+              "type": "object", "required": ["gate", "status", "note"], "additionalProperties": false,
+              "properties": {
+                "gate": { "enum": ["commercial_route", "editorial_policy", "seo_signoff", "edge_deployment", "pilot_terms"] },
+                "status": { "enum": ["passed", "open", "failed"] },
+                "note": { "type": "string" }
+              }
+            }
+          },
+          "success_criteria_30d": { "type": "array", "items": { "type": "string" }, "description": "Criteria to agree, never predicted results." },
+          "release_condition": { "type": ["string", "null"], "description": "What would move a hold forward." }
+        }
+      }
+    }
+  }
+}

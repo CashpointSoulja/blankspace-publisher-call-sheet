@@ -22,26 +22,29 @@ export const SIGNAL_LABELS = Object.freeze({
   commerce: "Commerce monetisation"
 });
 
-// Angle text is Ayo's interpretation (SPEC §5). Pages label it as such.
+// Stances name what robots.txt declares, and nothing more (SPEC §5). robots.txt is a request to
+// crawlers: it says nothing about real agent traffic, who owns the policy, or willingness to pilot.
+// `angle` is Ayo's reading, shown labelled, and ends in the question a conversation would answer.
+// There is no priority tier: readiness comes from manual qualification (data/qualification.json).
 export const STANCES = Object.freeze({
   "already-decided": {
-    priority: "High",
-    angle: "You’ve already decided AI search is welcome. Those visits earn nothing yet."
+    label: "Search allowed, training restricted",
+    angle: "AI search is allowed and training is restricted, so someone has made a choice. My question: who made it, and are those search visits commercialised today?"
   },
   "reading-free": {
-    priority: "High",
-    angle: "AI agents read you every day, free."
+    label: "Search and training allowed, AI agents named",
+    angle: "AI agents are named and allowed to read and train. My question: is that deliberate, and does anyone own it commercially?"
   },
   "no-owner": {
-    priority: "Medium",
-    angle: "No stated AI policy usually means no owner yet. The first conversation is about who owns it."
+    label: "Policy not stated",
+    angle: "robots.txt says nothing about AI agents. That shows no stated policy, not who owns one. My question: who owns live-search policy and commercialisation?"
   },
   "closed-door": {
-    priority: "Low",
-    angle: "Search agents are disallowed in robots.txt. The reason is not visible from outside."
+    label: "Search agents restricted",
+    angle: "Some or all AI search agents are disallowed. I wouldn’t start here. The reason isn’t visible from outside."
   },
   unknown: {
-    priority: "n/a",
+    label: "robots.txt not read",
     angle: null
   }
 });
@@ -92,10 +95,13 @@ export function reachabilityParts(r) {
   return [{ share: 1, value: r.search in map ? map[r.search] : null }];
 }
 
+// Affiliate links found in the fetched HTML earn credit. None found is unknown, not zero: links
+// are often rewritten by script after load, and ads run through managers the check can't see.
+// Commercial readiness is qualified by hand, separately.
 export function commerceParts(c) {
   if (!c || !Array.isArray(c.networks)) return [{ share: 1, value: null }];
   const n = c.networks.length;
-  return [{ share: 1, value: n === 0 ? 0 : n === 1 ? 2 / 3 : 1 }];
+  return [{ share: 1, value: n === 0 ? null : n === 1 ? 2 / 3 : 1 }];
 }
 
 export function partsFromEvidence(signals) {
@@ -208,10 +214,8 @@ export function missedPoints(signals, weights = DEFAULT_WEIGHTS) {
     out.push(`Reachability: search and user-triggered agents are ${re.search === "blocked" ? "all disallowed" : "partly disallowed"} in robots.txt.`);
   }
   const c = s.commerce;
-  if (c && Array.isArray(c.networks) && c.networks.length < 2) {
-    out.push(c.networks.length === 0
-      ? "Commerce: no affiliate network links found in the pages checked."
-      : "Commerce: one affiliate network found. Full marks need two.");
+  if (c && Array.isArray(c.networks) && c.networks.length === 1) {
+    out.push("Commerce: one affiliate network seen in the fetched HTML. Full marks need two.");
   }
   return out;
 }

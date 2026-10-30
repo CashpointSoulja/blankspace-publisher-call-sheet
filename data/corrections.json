@@ -1,0 +1,26 @@
+{
+  "$schema": "./schema/corrections.schema.json",
+  "$comment": "Dated corrections to the sample's classification, applied when pages load. The collected files (citation-sample.csv, domains.json, readership.json, sample.json) are never edited; pages show both the original and the corrected figures. Field definitions: schema/corrections.schema.json.",
+  "corrections": [
+    {
+      "domain": "drive.co.uk",
+      "field": "class",
+      "from": "publisher",
+      "to": "retailer",
+      "rationale": "car marketplace for new and used cars, backed by Volkswagen Financial Services; dealer stock onboarding",
+      "reason": "The current site sells cars and onboards dealer stock. It is not a publisher. The original rationale named a parent company the current site does not support.",
+      "sources": [
+        {
+          "url": "https://drive.co.uk/",
+          "accessed": "2026-10-30",
+          "finding": "Homepage: “New & Used Cars for Sale Online”, backed by Volkswagen Financial Services"
+        },
+        {
+          "url": "https://drive.co.uk/join-us",
+          "accessed": "2026-10-30",
+          "finding": "Join-us page onboards dealer stock, not advertisers"
+        }
+      ]
+    }
+  ]
+}

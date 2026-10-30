@@ -3,11 +3,25 @@
 
 import { loadJSON, loadText, parseCSV } from "./common.js";
 
-export { sampleDate, readershipSignal, buildEvidence, evidenceFromSample, buildCallSheet } from "./evidence-model.js";
+import { applyCorrections } from "./evidence-model.js";
+
+export { sampleDate, readershipSignal, buildEvidence, evidenceFromSample, buildCallSheet, applyCorrections } from "./evidence-model.js";
 
 export const loadSample = () => loadJSON("/data/sample.json");
 export const loadReadership = () => loadJSON("/data/readership.json").then((r) => (Array.isArray(r) ? r : []));
 export const loadDomains = () => loadJSON("/data/domains.json").then((d) => d || {});
+export const loadCorrections = () => loadJSON("/data/corrections.json").catch(() => null);
+export const loadQualification = () => loadJSON("/data/qualification.json").catch(() => null);
+
+// The collected sample with dated corrections applied. `sample.original` keeps the figures as
+// collected; `removed` lists domains no longer ranked as publishers.
+export async function loadSampleSet() {
+  const [sample, readership, domains, corrections] = await Promise.all([
+    loadSample().catch(() => null), loadReadership().catch(() => []), loadDomains().catch(() => ({})), loadCorrections()
+  ]);
+  return applyCorrections({ sample, readership, domains }, corrections);
+}
+
 export const loadCitations = () => loadText("/data/citation-sample.csv").then((t) => (t ? parseCSV(t) : []));
 
 // Stored live checks. data/evidence-index.json lists them, because a static host can't list a

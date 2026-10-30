@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>First wave | Publisher call sheet</title>
+<meta name="description" content="The accounts I’d start with, the ones I’d hold, and why, with every finding sourced and dated.">
+<!-- Visibility decision pending (SPEC §0). Keeps every page out of search results while links stay openable. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script type="module" src="/assets/js/common.js"></script>
+<script type="module" src="/assets/js/first-wave.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="site-nav-outer">
+  <nav class="site-nav" aria-label="Main">
+    <div class="nav-left">
+      <a class="nav-brand" href="/"><img src="/assets/logo-text-white.png" width="1767" height="275" alt="blankspace"></a>
+      <ul class="nav-links">
+        <li><a class="nav-link" href="/first-wave/">First wave</a></li>
+        <li><a class="nav-link" href="/targets/">Call sheet</a></li>
+        <li><a class="nav-link" href="/check/">Live check</a></li>
+        <li><a class="nav-link" href="/pilots/">Pilots</a></li>
+        <li><a class="nav-link" href="/plan/">Plan</a></li>
+        <li><a class="nav-link" href="/method/">Method</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <span class="tag tag-neutral tag-sm">Unofficial concept</span>
+      <button class="nav-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+    </div>
+  </nav>
+</div>
+<div class="mobile-menu" id="mobile-menu" hidden>
+  <div class="mobile-menu__inner" role="dialog" aria-label="Pages">
+    <button class="mobile-menu__close" type="button" aria-label="Close menu">×</button>
+    <a href="/">Overview</a>
+    <a href="/first-wave/">First wave</a>
+    <a href="/targets/">Call sheet</a>
+    <a href="/check/">Live check</a>
+    <a href="/pilots/">Pilots</a>
+    <a href="/plan/">Plan</a>
+    <a href="/method/">Method</a>
+  </div>
+</div>
+
+<main id="main">
+  <header class="page-head hero">
+    <div class="wrap">
+      <span class="tag">First wave</span>
+      <h1>Where I’d start, and where I wouldn’t</h1>
+      <p class="sub">The call sheet ranks who AI answers cite. This page checks who could actually say yes. Each account was reviewed by hand against its current public pages, with every finding sourced and dated. Ready for discovery means worth a first conversation, not a qualified lead.</p>
+      <p class="small muted" id="wave-counts" style="margin-top:1rem"></p>
+    </div>
+  </header>
+
+  <section class="section section-first">
+    <div class="wrap stack" id="wave" aria-live="polite">
+      <p class="notice">Loading the first wave.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="wave-how">
+    <div class="wrap grid-2">
+      <div>
+        <span class="eyebrow">How accounts are chosen</span>
+        <h2 id="wave-how">Judgement, written down</h2>
+      </div>
+      <div class="prose">
+        <ul>
+          <li><strong>Start from the call sheet,</strong> not a hunch, then check each candidate’s current site by hand.</li>
+          <li><strong>A commercial route must be published</strong> before an account is ready for discovery: an advertise page, a commercial role, a partnerships route.</li>
+          <li><strong>Editorial policy can rule an account out.</strong> Affiliate income is not the same as being open to sponsored placements.</li>
+          <li><strong>Accounts are named only as far as a source supports.</strong> No parent company is assumed from a domain name.</li>
+          <li><strong>robots.txt and CDN headers are not readiness.</strong> They show a declared crawler policy and the edge a site sits behind, not agent traffic, deployment access or willingness to pilot.</li>
+          <li><strong>Fewer verified accounts beat a full quota.</strong> Holds and exclusions are shown because they are the judgement.</li>
+        </ul>
+        <p>Nothing here has been sent to anyone. No contact details are recorded.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-col">
+        <span class="footer-col-title">Publisher call sheet</span>
+        <p class="footer-note">Built by Ayo Ahmed. Reads public files only. Nothing here can send email.</p>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Pages</span>
+        <a class="footer-link" href="/first-wave/">First wave</a>
+        <a class="footer-link" href="/targets/">Call sheet</a>
+        <a class="footer-link" href="/check/">Live check</a>
+        <a class="footer-link" href="/pilots/">Pilot health</a>
+        <a class="footer-link" href="/plan/">First 30 days</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Sources</span>
+        <a class="footer-link" href="/method/">Method</a>
+        <a class="footer-link" href="/method/#crawler">The crawler</a>
+        <a class="footer-link" href="/data/citation-sample.csv" download>Raw sample (CSV)</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">Unofficial concept, not affiliated with blankspace.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

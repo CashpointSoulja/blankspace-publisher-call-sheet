@@ -1,0 +1,248 @@
+{
+  "$schema": "./schema/qualification.schema.json",
+  "$comment": "Manual commercial qualification for the first wave. Separate from the automated score. Every verified finding carries its source and access date; everything else is an open question. ready_for_discovery means worth a first conversation, not a qualified lead. Sources were read by Ayo Ahmed on the date given; the raw source ledger is held outside the repository. Field definitions: schema/qualification.schema.json.",
+  "reviewed_at": "2026-10-30",
+  "company_path": {
+    "finding": "blankspace’s publisher playbook describes integration through Cloudflare Workers, Akamai, Fastly or AWS Lambda@Edge, and recommends 3 to 7 days in Observe mode before switching to Monetise.",
+    "source_url": "https://blankspace.so/blog/publisher-playbook-monetising-ai-traffic/",
+    "published": "2026-02-24",
+    "accessed": "2026-10-30",
+    "note": "Company-published path. Not a promise of outcomes, of integration access, or of any free service."
+  },
+  "accounts": [
+    {
+      "account": "TechRadar",
+      "domains": [
+        "techradar.com"
+      ],
+      "decision": "ready_for_discovery",
+      "decision_reason": "A current commercial route is published. Willingness to buy is unknown.",
+      "verified": [
+        {
+          "finding": "The advertise page lists advertising and partnership opportunities, including programmatic and eCommerce routes",
+          "source_url": "https://www.techradar.com/how-to/advertise-with-us",
+          "accessed": "2026-10-30"
+        },
+        {
+          "finding": "The same page lists a UK commercial lead role for tech",
+          "source_url": "https://www.techradar.com/how-to/advertise-with-us",
+          "accessed": "2026-10-30"
+        }
+      ],
+      "owner_role": "Head of Commercial, Tech (UK), as listed on the advertise page",
+      "next_question": "Who owns AI search visits commercially, and would your SEO and engineering leads consider a time-boxed, observe-only feasibility check?",
+      "gates": [
+        {
+          "gate": "commercial_route",
+          "status": "passed",
+          "note": "Advertise page lists advertising, partnership, programmatic and eCommerce routes."
+        },
+        {
+          "gate": "editorial_policy",
+          "status": "open",
+          "note": "Unknown whether editorial policy allows sponsored or agent-facing placements."
+        },
+        {
+          "gate": "seo_signoff",
+          "status": "open",
+          "note": "Unknown whether the SEO lead would sign off an edge integration."
+        },
+        {
+          "gate": "edge_deployment",
+          "status": "open",
+          "note": "A CDN response header shows the edge a site sits behind, not whether its team can deploy there."
+        },
+        {
+          "gate": "pilot_terms",
+          "status": "open",
+          "note": "No pick-up method, pages in scope or decision date agreed."
+        }
+      ],
+      "success_criteria_30d": [
+        "Observe-only check agreed for named pages, with SEO and engineering sign-off recorded",
+        "Pick-up and impression definitions agreed in writing before anything goes live",
+        "Observe mode run on agreed pages for the period blankspace’s playbook recommends before any Monetise decision",
+        "A dated go or no-go decision on Monetise mode, against criteria agreed at the start"
+      ],
+      "release_condition": null
+    },
+    {
+      "account": "Carwow Studio Ltd (Auto Express)",
+      "domains": [
+        "autoexpress.co.uk"
+      ],
+      "decision": "ready_for_discovery",
+      "decision_reason": "The contact page names the operating company and a commercial lead for online advertising. Willingness to buy is unknown.",
+      "verified": [
+        {
+          "finding": "Contact page names CARWOW STUDIO LTD as the operating company (page dated 29 Jun 2026)",
+          "source_url": "https://www.autoexpress.co.uk/contact-us",
+          "accessed": "2026-10-30"
+        },
+        {
+          "finding": "Contact page lists a Commercial Director role for online advertising and sales",
+          "source_url": "https://www.autoexpress.co.uk/contact-us",
+          "accessed": "2026-10-30"
+        }
+      ],
+      "owner_role": "Commercial Director, online advertising and sales, as listed on the contact page",
+      "next_question": "Who owns AI search visits commercially across Auto Express, and would an observe-only feasibility check on a few review pages be acceptable to your SEO lead?",
+      "gates": [
+        {
+          "gate": "commercial_route",
+          "status": "passed",
+          "note": "Contact page lists a commercial lead for online advertising and sales."
+        },
+        {
+          "gate": "editorial_policy",
+          "status": "open",
+          "note": "Unknown whether editorial policy allows sponsored or agent-facing placements."
+        },
+        {
+          "gate": "seo_signoff",
+          "status": "open",
+          "note": "Unknown whether the SEO lead would sign off an edge integration."
+        },
+        {
+          "gate": "edge_deployment",
+          "status": "open",
+          "note": "A CDN response header shows the edge a site sits behind, not whether its team can deploy there."
+        },
+        {
+          "gate": "pilot_terms",
+          "status": "open",
+          "note": "No pick-up method, pages in scope or decision date agreed."
+        }
+      ],
+      "success_criteria_30d": [
+        "Observe-only check agreed for named pages, with SEO and engineering sign-off recorded",
+        "Pick-up and impression definitions agreed in writing before anything goes live",
+        "Observe mode run on agreed pages for the period blankspace’s playbook recommends before any Monetise decision",
+        "A dated go or no-go decision on Monetise mode, against criteria agreed at the start"
+      ],
+      "release_condition": null
+    },
+    {
+      "account": "RunRepeat",
+      "domains": [
+        "runrepeat.com"
+      ],
+      "decision": "hold",
+      "decision_reason": "Ads and affiliate revenue are confirmed, but ads are managed by a third party and no direct commercial route or sponsored-content policy was found.",
+      "verified": [
+        {
+          "finding": "The about page confirms the site earns from affiliate commissions and ads",
+          "source_url": "https://runrepeat.com/about",
+          "accessed": "2026-10-30"
+        },
+        {
+          "finding": "The privacy policy says a third-party ad manager (Mediavine) manages interest-based advertising",
+          "source_url": "https://runrepeat.com/privacy-policy",
+          "accessed": "2026-10-30"
+        }
+      ],
+      "owner_role": "Unknown: no commercial role is published",
+      "next_question": "Does your editorial policy allow sponsored placements, and who decides on new ad formats alongside your ad manager?",
+      "gates": [
+        {
+          "gate": "commercial_route",
+          "status": "open",
+          "note": "Ad revenue confirmed, but no direct advertising or partnerships route is published."
+        },
+        {
+          "gate": "editorial_policy",
+          "status": "open",
+          "note": "Unknown whether editorial policy allows sponsored or agent-facing placements."
+        },
+        {
+          "gate": "seo_signoff",
+          "status": "open",
+          "note": "Unknown whether the SEO lead would sign off an edge integration."
+        },
+        {
+          "gate": "edge_deployment",
+          "status": "open",
+          "note": "A CDN response header shows the edge a site sits behind, not whether its team can deploy there."
+        },
+        {
+          "gate": "pilot_terms",
+          "status": "open",
+          "note": "No pick-up method, pages in scope or decision date agreed."
+        }
+      ],
+      "success_criteria_30d": [],
+      "release_condition": "A public advertising or partnerships route, and an editorial policy that allows sponsored placements."
+    },
+    {
+      "account": "Treeline Review",
+      "domains": [
+        "treelinereview.com"
+      ],
+      "decision": "hold",
+      "decision_reason": "Its editorial policy rules out product placement, which agent-facing placements would resemble. Affiliate income is not sponsor readiness.",
+      "verified": [
+        {
+          "finding": "Trust page states: “No banner ads. No pop-ups. No product placement.”",
+          "source_url": "https://www.treelinereview.com/why-you-can-trust-us",
+          "accessed": "2026-10-30"
+        }
+      ],
+      "owner_role": "Unknown",
+      "next_question": "Would placements read only by AI agents fall inside your no-product-placement policy?",
+      "gates": [
+        {
+          "gate": "commercial_route",
+          "status": "open",
+          "note": "No commercial route checked."
+        },
+        {
+          "gate": "editorial_policy",
+          "status": "failed",
+          "note": "Stated policy: no banner ads, no pop-ups, no product placement."
+        },
+        {
+          "gate": "seo_signoff",
+          "status": "open",
+          "note": "Unknown whether the SEO lead would sign off an edge integration."
+        },
+        {
+          "gate": "edge_deployment",
+          "status": "open",
+          "note": "A CDN response header shows the edge a site sits behind, not whether its team can deploy there."
+        },
+        {
+          "gate": "pilot_terms",
+          "status": "open",
+          "note": "No pick-up method, pages in scope or decision date agreed."
+        }
+      ],
+      "success_criteria_30d": [],
+      "release_condition": "Only if the publisher states that agent-facing placements fit its editorial policy."
+    },
+    {
+      "account": "drive.co.uk",
+      "domains": [
+        "drive.co.uk"
+      ],
+      "decision": "exclude",
+      "decision_reason": "Not a publisher. The current site is a car marketplace, so it is reclassified as a retailer (see corrections.json) and removed from the ranking.",
+      "verified": [
+        {
+          "finding": "Homepage: “New & Used Cars for Sale Online”, backed by Volkswagen Financial Services",
+          "source_url": "https://drive.co.uk/",
+          "accessed": "2026-10-30"
+        },
+        {
+          "finding": "Join-us page onboards dealer stock",
+          "source_url": "https://drive.co.uk/join-us",
+          "accessed": "2026-10-30"
+        }
+      ],
+      "owner_role": "Not applicable",
+      "next_question": null,
+      "gates": [],
+      "success_criteria_30d": [],
+      "release_condition": null
+    }
+  ]
+}

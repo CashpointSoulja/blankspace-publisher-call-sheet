@@ -60,7 +60,9 @@ Run both checks before every commit.
 | `assets/js/score.js` | Scoring and stance rules (SPEC §3, §5). Shared with the worker. |
 | `assets/js/evidence-model.js` | Evidence merging and call-sheet ordering. No DOM, so tests and scripts use it too. |
 | `assets/js/verifier.js` | The draft verifier (SPEC §9). Deterministic, with no network access. |
-| `outreach/` | First drafts, before the verifier. Not deployed. `node scripts/verify-drafts.mjs` writes `data/drafts/` and `data/verifier/`. |
+| `outreach/` | First drafts, before the verifier. Not deployed. Only for accounts ready for discovery. `node scripts/verify-drafts.mjs` writes `data/drafts/` and `data/verifier/`. |
+| `data/qualification.json` | Manual commercial qualification. Every verified finding needs a source and access date. Never guess a parent company, and never treat robots.txt, CDN headers or affiliate links as readiness. |
+| `data/corrections.json` | Dated classification corrections. Correct here; never edit the collected sample files. |
 | `tests/` | Call-sheet and verifier tests: `node --test tests/*.test.mjs` |
 | `assets/js/evidence-view.js` | Evidence renderer for `/p/` and `/check/`. Every fact shows its JSON pointer. |
 | `assets/js/config.js` | The worker endpoint |

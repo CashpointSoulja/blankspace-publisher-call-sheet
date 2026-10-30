@@ -43,7 +43,7 @@ AI assistants answer shopping questions by quoting websites. Some of those websi
 
 | The role asks for | What exists | Gap |
 |---|---|---|
-| Outreach that books qualified publisher meetings | Call sheet, evidence pages, four verified drafts | Nothing has been sent, so there are no meetings yet |
+| Outreach that books qualified publisher meetings | A first wave qualified by hand, a call sheet, evidence pages, two verified drafts asking for a feasibility conversation | Nothing has been sent, so there are no meetings yet |
 | The GTM machine: lists, research agents, analytics | Citation sample, live-check worker, scoring, verifier | The live checks cover 27 publishers so far, not all 175 |
 | Sequences and CRM | Not built. A CRM is a buying decision. The plan covers set-up. | Everything |
 | A/B testing | The plan explains why small numbers rule out subject-line tests, with a calculator | No test has been run |
@@ -57,15 +57,30 @@ Run on 30 Oct 2026 against the committed data.
 | Check | Result |
 |---|---|
 | `node scripts/check.mjs --release`: standing rules, links, schemas, and every `sample.json` figure recomputed from the raw files | Pass. One warning: two crawler tokens are corroborated rather than vendor-verified. |
-| `node --test tests/*.test.mjs`: call-sheet ordering and verifier rules | 19 of 19 pass |
+| `node --test tests/*.test.mjs`: call-sheet ordering, corrections, stance wording, commerce-unknown and verifier rules | 22 of 22 pass |
 | `cd worker && npm test`: target guard, robots.txt parsing, signals, budget, rate limit and unbound fetch | 17 of 17 pass |
-| Verifier on the four drafts | 2 sentences removed: one unmarked traffic claim, one claim with no evidence behind it. Every other claim kept. |
+| Verifier on the two drafts (accounts ready for discovery only) | 2 sentences removed: one unmarked traffic claim, one claim with no evidence behind it. Every other claim kept. |
 | My live QA on the deployed site | Every route returns 200. The automotive filter shows its 38 rows. Weights persist in the URL. A live check of TechRadar works from the browser across origins. |
+
+## Revision after review (30 Oct 2026)
+
+The first version ranked 175 domains and called the top "who I’d call first". Reviewing it against the role and the live site showed that this was research, not a GTM decision:
+
+- **#1 wasn’t a publisher.** drive.co.uk is now a car marketplace. Its classification named a parent company the current site doesn’t support. It is corrected in `data/corrections.json`, with sources, and the collected sample is unchanged.
+- **The front page recommended calling sites that block AI search.** Stance was 10 points and gated nothing.
+- **Labels stated inferences as facts.** “No owner yet” read robots.txt as if it showed an org chart. Labels now say only what robots.txt declares.
+- **The commerce signal was blind.** It saw no affiliate network on 25 fully read checks, including publishers whose own pages confirm ads and affiliate revenue. None seen is now unknown, not zero.
+- **A CDN header isn’t deployability.** It may be bot protection. Deployment is an open gate.
+
+So the site now leads with a first wave, qualified by hand from current commercial pages: two accounts ready for discovery, two on hold with their reasons, and one excluded. The ranked list stays as the engine behind it. I chose to show fewer verified accounts rather than fill a quota.
+
+Limits: commercial findings come from public pages I read on 30 Oct 2026. They show a commercial route, not willingness to buy. Nothing has been sent.
 
 ## v2 roadmap
 
-1. **Live checks for all 175 publishers.** Then the call sheet ranks every row on the same five signals.
-2. **More engines and runs.** Citation share comes from one engine on one day. A second engine and repeat runs would show which citations are stable.
-3. **Decide the citation-share scale.** The full-marks cap at 1 in 4 ties the top 13, and raw share breaks those ties. Half the publishers sit on one or two citations, which a re-run could easily change. The options are to keep the scale, to give no credit below three citations, or to scale within each vertical. Each changes the rubric, so each needs a decision first.
-4. **Reply tracking.** Once outreach is real, record replies against stance and score, and drop signals that predict nothing.
-5. **CRM import.** Export the call sheet with evidence links into whichever CRM the team chooses.
+1. **Qualify the next wave by hand,** from the top of the call sheet, and record each decision with its sources.
+2. **Live checks for the rest of the publishers.** Then the call sheet ranks every row on the same five signals.
+3. **More engines and runs.** Citation share comes from one engine on one day. A second engine and repeat runs would show which citations are stable.
+4. **Decide the citation-share scale.** The full-marks cap at 1 in 4 ties the top 13, and raw share breaks those ties. Half the publishers sit on one or two citations, which a re-run could easily change. The options are to keep the scale, to give no credit below three citations, or to scale within each vertical. Each changes the rubric, so each needs a decision first.
+5. **Reply tracking.** Once outreach is real, record replies against stance and score, and drop signals that predict nothing.
+6. **CRM import.** Export the call sheet with evidence links into whichever CRM the team chooses.

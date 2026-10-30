@@ -2,8 +2,8 @@
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { buildCallSheet, buildEvidence } from "../assets/js/evidence-model.js";
-import { DEFAULT_WEIGHTS } from "../assets/js/score.js";
+import { buildCallSheet, buildEvidence, applyCorrections } from "../assets/js/evidence-model.js";
+import { DEFAULT_WEIGHTS, STANCES } from "../assets/js/score.js";
 
 const SAMPLE = { sample_id: "sample-test", dates_utc: ["2026-10-30"] };
 
@@ -76,19 +76,20 @@ test("checked publishers are never ranked against unchecked ones on mismatched m
   const sheet = buildCallSheet(READERSHIP, { "bravo.co.uk": weak }, DEFAULT_WEIGHTS, SAMPLE);
   assert.equal(sheet.checked[0].domain, "bravo.co.uk");
   assert.equal(sheet.checked[0].scored.total, 40);
-  assert.equal(sheet.checked[0].scored.max, 100);
+  assert.equal(sheet.checked[0].scored.max, 85, "no affiliate links seen: commerce unknown, not zero");
   assert.equal(sheet.unchecked[0].domain, "alpha.co.uk");
 });
 
 test("weight sliders re-rank the checked group", () => {
   const live = {
     "alpha.co.uk": liveCheck("alpha.co.uk", { slugShare: 0, schema: false, networks: 2 }),   // weak placement, strong commerce
-    "bravo.co.uk": liveCheck("bravo.co.uk", { slugShare: 0.3, schema: true, networks: 0, ads: false }) // strong placement only
+    "bravo.co.uk": liveCheck("bravo.co.uk", { slugShare: 0.3, schema: true, networks: 1, ads: false, bidding: false }) // strong placement
   };
-  // Default weights: alpha 40 + 0 + 15 + 10 + 15 = 80; bravo 40 + 20 + 5 + 10 + 0 = 75.
+  // Default weights: alpha 40 + 0 + 15 + 10 + 15 = 80; bravo 40 + 20 + 0 + 10 + 10 = 80; the tie
+  // goes to alpha's higher citation share.
   const byDefault = buildCallSheet(READERSHIP, live, DEFAULT_WEIGHTS, SAMPLE).checked.map((x) => x.domain);
   assert.deepEqual(byDefault, ["alpha.co.uk", "bravo.co.uk"]);
-  // Placement-heavy: alpha 10 + 0 + 10 + 10 + 10 = 40; bravo 10 + 60 + 3.3 + 10 + 0 = 83.3.
+  // Placement-heavy: alpha 10 + 0 + 10 + 10 + 10 = 40; bravo 10 + 60 + 0 + 10 + 6.7 = 86.7.
   const placementHeavy = { readership: 10, placement: 60, programmatic: 10, reachability: 10, commerce: 10 };
   const reranked = buildCallSheet(READERSHIP, live, placementHeavy, SAMPLE).checked.map((x) => x.domain);
   assert.deepEqual(reranked, ["bravo.co.uk", "alpha.co.uk"]);
@@ -116,21 +117,60 @@ test("citation share always comes from the sample, and the score is recomputed",
 test("a check with unreadable signals never outranks one read in full", () => {
   // alpha blocked most of the check: only citation share, programmatic (ads.txt) and
   // reachability are known, all at full marks, so its ratio is 1. bravo was read in full and
-  // scores 76 / 100. bravo still leads: the two ratios are over different signals.
+  // scores less. bravo still leads: the two ratios are over different signals.
   const blocked = liveCheck("alpha.co.uk");
   blocked.signals.placement = { sitemap_url: null, slugs_sampled: null, slugs_matched: null, slug_share: null, matched_examples: [], schema_types: [], pages_checked: [] };
   blocked.signals.programmatic.header_bidding = { detected: null, scope: "initial_html" };
   blocked.signals.commerce = { networks: null, evidence: [] };
-  const live = { "alpha.co.uk": blocked, "bravo.co.uk": liveCheck("bravo.co.uk", { networks: 0 }) };
+  const live = { "alpha.co.uk": blocked, "bravo.co.uk": liveCheck("bravo.co.uk", { networks: 1 }) };
   const sheet = buildCallSheet(READERSHIP, live, DEFAULT_WEIGHTS, SAMPLE);
-  assert.deepEqual(sheet.complete.map((x) => x.domain), ["bravo.co.uk"]);
-  assert.deepEqual(sheet.partial.map((x) => x.domain), ["alpha.co.uk"]);
-  const a = sheet.partial[0];
+  assert.deepEqual(sheet.checked.map((x) => x.domain), ["bravo.co.uk", "alpha.co.uk"]);
+  const [b, a] = sheet.checked;
+  assert.equal(b.known, 5);
   assert.equal(a.known, 3);
-  assert.equal(a.key, 1);
-  assert.ok(a.key > sheet.complete[0].key, "higher ratio, yet ranked after the complete check");
-  assert.deepEqual(sheet.all.map((x) => x.domain).slice(0, 2), ["bravo.co.uk", "alpha.co.uk"]);
+  assert.ok(a.key > b.key, "higher ratio, yet ranked after the fuller check");
   assert.equal(a.scored.max, 60, "its unknowns are left out, not scored as zero");
+});
+
+test("no affiliate links seen is unknown, not zero", () => {
+  const ev = buildEvidence(READERSHIP[0], SAMPLE, liveCheck("alpha.co.uk", { networks: 0 }));
+  assert.equal(ev.score.subscores.commerce, null);
+  assert.equal(ev.score.maxima.commerce, 0);
+  assert.ok(!ev.score.missed.some((m) => m.startsWith("Commerce")), "no 'why not higher' line for an unknown");
+});
+
+test("stance wording comes from the current rules, not the stored check", () => {
+  const live = liveCheck("alpha.co.uk", { search: "allowed" });
+  live.signals.reachability.training = "allowed";
+  live.signals.reachability.ai_rules_present = false;
+  live.stance = { code: "no-owner", angle_label: "old text that asserted an owner" };
+  const ev = buildEvidence(READERSHIP[0], SAMPLE, live);
+  assert.equal(ev.stance.code, "no-owner");
+  assert.equal(STANCES["no-owner"].label, "Policy not stated");
+  assert.equal(ev.stance.angle_label, STANCES["no-owner"].angle);
+  assert.ok(!/usually means no owner/.test(ev.stance.angle_label));
+});
+
+test("corrections remove a publisher without touching the collected figures", () => {
+  const sample = {
+    sample_id: "s", dates_utc: ["2026-10-30"], publishers_cited: 2,
+    citation_buckets: [{ class: "publisher", share: 0.8, count: 80 }, { class: "retailer", share: 0.2, count: 20 }]
+  };
+  const domains = {
+    "alpha.co.uk": { class: "publisher", rationale: "x", citations: 50, probes_cited: 1, vertical_shares: {} },
+    "bravo.co.uk": { class: "publisher", rationale: "y", citations: 30, probes_cited: 1, vertical_shares: {} },
+    "shop.co.uk": { class: "retailer", rationale: "z", citations: 20, probes_cited: 1, vertical_shares: {} }
+  };
+  const corrections = { corrections: [{ domain: "bravo.co.uk", field: "class", from: "publisher", to: "retailer", rationale: "marketplace", reason: "r", sources: [] }] };
+  const before = JSON.stringify({ sample, domains });
+  const out = applyCorrections({ sample, readership: READERSHIP, domains }, corrections);
+  assert.equal(JSON.stringify({ sample, domains }), before, "inputs untouched");
+  assert.deepEqual(out.readership.map((r) => r.domain), ["alpha.co.uk"]);
+  assert.equal(out.sample.publishers_cited, 1);
+  assert.equal(out.sample.original.publishers_cited, 2);
+  assert.deepEqual(out.sample.citation_buckets, [{ class: "publisher", count: 50, share: 0.5 }, { class: "retailer", count: 50, share: 0.5 }]);
+  assert.equal(out.domains["bravo.co.uk"].class, "retailer");
+  assert.deepEqual(out.removed, ["bravo.co.uk"]);
 });
 
 test("vertical filter keeps global positions", () => {

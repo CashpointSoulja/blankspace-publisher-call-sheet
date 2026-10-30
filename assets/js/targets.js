@@ -1,19 +1,15 @@
 // /targets/: the call sheet. Citation share from data/readership.json, live signals from stored
 // checks in data/evidence/ where they exist. Weight sliders re-rank live (SPEC §3).
-// Ordering rules are in evidence-model.js buildCallSheet: checked publishers first, ranked on
-// every known signal; unchecked publishers after, on citation share. Unknown is never zero.
+// Ordering rules are in evidence-model.js buildCallSheet: checked publishers first, more signals
+// known first; unchecked publishers after, on citation share. Unknown is never zero.
+// This ranks evidence, not readiness: readiness is qualified by hand on /first-wave/.
 
 import { el, clear, fmtDate, fmtPct, VERTICALS, STABILITY_LABELS, STABILITY_TOOLTIP } from "./common.js";
-import { SIGNALS, SIGNAL_LABELS, DEFAULT_WEIGHTS } from "./score.js";
-import { loadSample, loadReadership, loadLiveEvidence, sampleDate, buildCallSheet } from "./sample-data.js";
+import { SIGNALS, SIGNAL_LABELS, DEFAULT_WEIGHTS, STANCES } from "./score.js";
+import { loadSampleSet, loadLiveEvidence, loadQualification, sampleDate, buildCallSheet } from "./sample-data.js";
 
-const STANCE_SHORT = {
-  "already-decided": "Already decided",
-  "reading-free": "Read for free",
-  "no-owner": "No owner yet",
-  "closed-door": "Closed door",
-  unknown: "Unknown"
-};
+const DECISION_LABELS = { ready_for_discovery: "Ready for discovery", hold: "Hold", exclude: "Excluded" };
+let decisions = {};
 
 const tbody = document.getElementById("rows");
 const status = document.getElementById("status");
@@ -67,14 +63,15 @@ function row(x) {
   const r = x.row;
   return el("tr", { class: x.checked ? "is-checked" : "" },
     el("td", { class: "num" }, String(x.position)),
-    el("td", {}, el("a", { class: "domain-link", href: `/p/${encodeURIComponent(r.domain)}/` }, r.domain)),
+    el("td", {}, el("a", { class: "domain-link", href: `/p/${encodeURIComponent(r.domain)}/` }, r.domain),
+      decisions[r.domain] ? [" ", el("a", { class: decisions[r.domain] === "ready_for_discovery" ? "tag tag-sm" : "tag tag-neutral tag-sm", href: `/first-wave/#${encodeURIComponent(r.domain)}` }, DECISION_LABELS[decisions[r.domain]])] : null),
     el("td", { class: "hide-sm" }, VERTICALS[r.vertical] || r.vertical),
     el("td", { class: "score-cell" },
       el("strong", {}, String(Math.round(x.scored.total))),
       el("span", {}, ` / ${Math.round(x.scored.max)}`)),
     el("td", { class: "num", title: x.known === SIGNALS.length ? "All five signals known" : `${SIGNALS.length - x.known} unknown, left out of the score` }, `${x.known} of ${SIGNALS.length}`),
     el("td", { class: "num", title: `${STABILITY_LABELS[r.stability] || r.stability}. ${STABILITY_TOOLTIP}` }, fmtPct(r.share, 1)),
-    el("td", { class: "hide-sm" }, x.checked ? STANCE_SHORT[x.stance] || x.stance : el("span", { class: "muted" }, "Not checked")),
+    el("td", { class: "hide-sm" }, x.checked ? STANCES[x.stance].label : el("span", { class: "muted" }, "Not checked")),
     el("td", {}, x.checked
       ? el("span", { class: "muted" }, fmtDate(x.checkedAt))
       : el("a", { href: `/check/?url=${encodeURIComponent(r.domain)}` }, "Run")));
@@ -88,30 +85,30 @@ function render() {
   }
   const sheet = buildCallSheet(readership, live, weights, sample);
   const inVertical = (x) => vertical === "all" || x.vertical === vertical;
-  const groups = [
-    [sheet.complete, "Live-checked, all five signals read", "ranked on every signal"],
-    [sheet.partial, "Live-checked, some signals unreadable", "usually a blocked fetch; ranked on what was read, never as zero"],
-    [sheet.unchecked, "Not yet checked", "ranked on citation share; live signals unknown"]
-  ];
-  const shown = groups.map(([rows]) => rows.filter(inVertical));
-  if (!shown.some((g) => g.length)) {
+  const checked = sheet.checked.filter(inVertical);
+  const unchecked = sheet.unchecked.filter(inVertical);
+  if (!checked.length && !unchecked.length) {
     tbody.append(el("tr", { class: "empty-row" }, el("td", { colspan: "8" }, "No publishers from this vertical in the sample.")));
     return;
   }
   // Group headings appear once any publisher has a stored check.
-  const labelled = sheet.checked.length > 0;
-  groups.forEach(([all, label, detail], i) => {
-    if (!all.length || !shown[i].length) return;
-    if (labelled) tbody.append(groupRow(`${label} · ${shown[i].length}`, detail));
-    shown[i].forEach((x) => tbody.append(row(x)));
-  });
+  if (sheet.checked.length && checked.length) {
+    tbody.append(groupRow(`Live-checked · ${checked.length}`, "more signals read first, then score; unknown never counts as zero"));
+    checked.forEach((x) => tbody.append(row(x)));
+  }
+  if (unchecked.length) {
+    if (sheet.checked.length) tbody.append(groupRow(`Not yet checked · ${unchecked.length}`, "ranked on citation share; live signals unknown"));
+    unchecked.forEach((x) => tbody.append(row(x)));
+  }
 }
 
 function describeCoverage() {
   const n = Object.keys(live).filter((d) => readership.some((r) => r.domain === d)).length;
   const date = fmtDate(sampleDate(sample));
   document.getElementById("stamp").textContent = date ? `Dated sample · ${date}` : "Dated sample";
-  status.textContent = `${readership.length} publishers cited in the sample. Live signals checked for ${n} of ${readership.length}.`;
+  const fixes = sample && sample.corrections && sample.corrections.length
+    ? ` ${sample.original.publishers_cited} as collected; ${sample.corrections.length} reclassified after review, see the method.` : "";
+  status.textContent = `${readership.length} publishers cited in the sample.${fixes} Live signals checked for ${n} of ${readership.length}.`;
   if (!coverageNote) return;
   clear(coverageNote);
   coverageNote.hidden = false;
@@ -120,7 +117,8 @@ function describeCoverage() {
       "Placement, programmatic, reachability and commerce come from a live check of each publisher. Until checks are stored, those weights can’t change the order. Use “Run” on any row to read them now.");
   } else {
     coverageNote.append(el("strong", {}, `Live signals checked for ${n} of ${readership.length} publishers. `),
-      "Those are ranked first, on every signal known for them, so the weights re-rank them. The rest follow on citation share alone until they are checked. A signal not read is left out, never counted as zero.");
+      "Those are ranked first, more signals read first, and the weights re-rank them. The rest follow on citation share alone. A signal not read is left out, never counted as zero. This ranks evidence, not readiness to buy: ",
+      el("a", { href: "/first-wave/" }, "the first wave"), " is qualified by hand.");
   }
 }
 
@@ -143,10 +141,11 @@ readWeightsFromUrl();
 buildSliders();
 render();
 
-Promise.all([loadReadership(), loadSample().catch(() => null), loadLiveEvidence().catch(() => ({}))])
-  .then(([r, s, l]) => {
-    readership = r;
-    sample = s;
+Promise.all([loadSampleSet(), loadLiveEvidence().catch(() => ({})), loadQualification()])
+  .then(([set, l, q]) => {
+    decisions = Object.fromEntries(((q && q.accounts) || []).flatMap((a) => a.domains.map((d) => [d, a.decision])));
+    readership = set.readership;
+    sample = set.sample;
     live = l;
     describeCoverage();
     render();

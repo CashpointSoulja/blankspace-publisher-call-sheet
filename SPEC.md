@@ -68,7 +68,8 @@ Measured values and the full component spec now live in `BRAND.md`, built from t
 | Route | Purpose | Data |
 |---|---|---|
 | `/` | Story: finding → assumption → scoring → live check → next steps → builder | `data/sample.json`, `data/readership.json`, `data/front.json` |
-| `/targets` | Ranked call sheet, vertical filter, weight sliders that re-rank live | `data/readership.json` |
+| `/first-wave` | Manual commercial qualification: ready for discovery, hold or excluded, each with sourced findings, the role to ask, the next question, gates and 30-day criteria | `data/qualification.json` |
+| `/targets` | Ranked call sheet, vertical filter, weight sliders that re-rank live. Ranks evidence, not readiness | `data/readership.json`, `data/corrections.json` |
 | `/p/{domain}` | Evidence page: raw signals, score breakdown, "why not higher", citation rows, angle, "can't see from outside", outreach draft and verifier log | `data/evidence/{domain}.json`, `data/drafts/{domain}.json`, `data/verifier/{domain}.json` |
 | `/check?url=` | Live evidence page for any URL. Readership shows "Not in the dated sample ({date})"; score out of known maximum | Worker `/api/check` |
 | `/pilots` | Pilot-health checklist, all questions, no data | Static |
@@ -141,6 +142,8 @@ Labelled "declared policy, not observed behaviour". `Content-Signal` lines are r
 
 ### 3.5 Commerce monetisation (w = 15, live)
 
+Revised 30 Oct 2026 after review. None of the 25 fully read checks saw an affiliate network, including publishers whose own pages confirm affiliate and ad revenue: links are rewritten by script after load, and ads run through managers the check can't see. So none seen is unknown, not zero. Stored checks keep what was observed. Commercial readiness is qualified by hand (`/first-wave`).
+
 Link patterns in homepage plus sampled pages:
 
 | Network | Patterns |
@@ -154,7 +157,7 @@ Link patterns in homepage plus sampled pages:
 | CJ | `anrdoezrs.net`, `jdoqocy.com`, `tkqlhce.com`, `dpbolvw.net`, `kqzyfj.com` |
 
 ```
-s_commerce = 0 (none) | 2/3 (one network) | 1 (two or more)
+s_commerce = unknown (none seen) | 2/3 (one network) | 1 (two or more)
 ```
 
 ### 3.6 CDN (shown, not scored)
@@ -188,13 +191,15 @@ Stored in `data/agents.json`. Every entry carries the vendor documentation URL a
 ai_rules_present = any robots.txt group names a listed agent, or any Content-Signal line exists
 ```
 
-| Code | Condition | Angle (Ayo's interpretation, labelled) | Priority |
+Revised 30 Oct 2026. Labels say what robots.txt declares, nothing more. robots.txt is a request to crawlers. It doesn't show real agent traffic, bot rules at the edge, who owns the policy, or willingness to pilot. There is no priority tier: readiness comes from manual qualification. The angle is Ayo's reading, labelled, ending in a question. Codes are unchanged, so stored checks stay valid. Pages render the current wording by code.
+
+| Code | Label | Condition | Angle (Ayo's reading, labelled) |
 |---|---|---|---|
-| `already-decided` | Search allowed; training blocked or partial | "You’ve already decided AI search is welcome. Those visits earn nothing yet." | High |
-| `reading-free` | Search allowed; training allowed; AI rules present | "AI agents read you every day, free." | High |
-| `no-owner` | Search allowed; no AI rules present | "No stated AI policy usually means no owner yet." First conversation is about who owns it | Medium |
-| `closed-door` | Search blocked or partial | Shown with the reason. No speculation about why | Low |
-| `unknown` | robots.txt unreachable | No angle | n/a |
+| `already-decided` | Search allowed, training restricted | Search allowed; training blocked or partial | Someone has made a choice. Who made it, and are those visits commercialised today? |
+| `reading-free` | Search and training allowed, AI agents named | Search allowed; training allowed; AI rules present | Is that deliberate, and does anyone own it commercially? |
+| `no-owner` | Policy not stated | Search allowed; no AI rules present | No stated policy, not who owns one. Who owns live-search policy and commercialisation? |
+| `closed-door` | Search agents restricted | Search blocked or partial | Not a place to start. The reason isn't visible from outside |
+| `unknown` | robots.txt not read | robots.txt unreachable | No angle |
 
 ---
 
@@ -274,17 +279,20 @@ Front-page fields that are not sample data. Sample figures come from `sample.jso
 
 `/targets` ranks by `s_citation_share`, then `share`. The live signals for in-sample publishers come from a live check, stored as `evidence/{domain}.json` when kept. Until then they are unknown, and each row scores out of 40.
 
-Raw probes are kept in `data/raw/probes.jsonl`. Field definitions for every file are in `data/schema/`.
+Raw probes are kept in `data/raw/probes.jsonl`.
+
+`data/corrections.json` holds dated, sourced classification corrections. It is applied at load time, and the collected files are never edited. Pages show the original and corrected figures. `data/qualification.json` holds the manual commercial qualification for `/first-wave`. Every verified finding has a source URL and access date; everything else is an open question. Accounts are named only as far as a source supports. Drafts are written only for accounts marked `ready_for_discovery`, which means worth a first conversation, not a qualified lead. Field definitions for every file are in `data/schema/`.
 
 `data/evidence-index.json` lists the stored live checks (`checked_at`, `domains`, `scope`), because a static host can't list a directory. It must name exactly the files in `data/evidence/`.
 
 ### 8.2a Call-sheet ordering with partial live coverage
 
+Revised 30 Oct 2026: once commerce became unknown when none is seen, "all five read" stopped meaning anything, so live-checked publishers sort by signals known, then ratio.
+
 Points over the known maximum compares like with like only when the same signals are known. So the call sheet groups publishers by how much was read, and ranks within each group by Σ wᵢsᵢ ÷ Σ wᵢ, then raw citation share, then name:
 
-1. live-checked, all five signals known;
-2. live-checked, some signal unreadable (more signals known first);
-3. not checked: citation share only.
+1. live-checked, more signals known first;
+2. not checked: citation share only.
 
 Unknown is never counted as zero, and no publisher is ranked above another because less of it is known.
 

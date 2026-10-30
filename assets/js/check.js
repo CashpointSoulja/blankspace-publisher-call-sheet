@@ -2,7 +2,7 @@
 
 import { el, clear, CHECK_ENDPOINT } from "./common.js";
 import { renderEvidence } from "./evidence-view.js";
-import { loadSample, loadReadership, sampleDate } from "./sample-data.js";
+import { loadSampleSet, sampleDate } from "./sample-data.js";
 
 const form = document.getElementById("check-form");
 const input = document.getElementById("check-url");
@@ -21,10 +21,7 @@ async function run(url) {
   button.disabled = true;
   out.append(el("p", { class: "notice", role: "status" }, "Checking. Up to eight requests, eight seconds each."));
 
-  const [sample, readership] = await Promise.all([
-    loadSample().catch(() => null),
-    loadReadership().catch(() => [])
-  ]);
+  const { sample, readership } = await loadSampleSet();
 
   let res;
   try {

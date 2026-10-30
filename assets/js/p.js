@@ -1,9 +1,9 @@
 // /p/{domain}/: evidence page for an in-sample publisher.
 // Loads data/evidence/{domain}.json, plus the draft and verifier log when they exist.
 
-import { el, clear, loadJSON, fmtNumber, fmtDateTime, VERTICALS } from "./common.js";
+import { el, clear, loadJSON, fmtNumber, fmtDate, fmtDateTime, VERTICALS } from "./common.js";
 import { renderEvidence, resolvePointer } from "./evidence-view.js";
-import { loadSample, loadReadership, loadDomains, loadCitations, sampleDate, rankReadership, buildEvidence } from "./sample-data.js";
+import { loadSampleSet, loadQualification, loadCitations, sampleDate, rankReadership, buildEvidence } from "./sample-data.js";
 
 const DOMAIN_RE = /^[a-z0-9.-]+\.[a-z]{2,}$/;
 const REASONS = {
@@ -40,18 +40,39 @@ async function main() {
   document.title = `${domain} | Evidence | Publisher call sheet`;
   title.textContent = domain;
 
-  const [sample, readership, domains, liveFile, draft, verifier, claims] = await Promise.all([
-    loadSample().catch(() => null),
-    loadReadership().catch(() => []),
-    loadDomains().catch(() => ({})),
+  const [set, qualification, liveFile, draft, verifier, claims] = await Promise.all([
+    loadSampleSet(),
+    loadQualification(),
     loadJSON(`/data/evidence/${domain}.json`).catch(() => null),
     loadJSON(`/data/drafts/${domain}.json`).catch(() => null),
     loadJSON(`/data/verifier/${domain}.json`).catch(() => null),
     loadJSON("/data/company-claims.json").catch(() => [])
   ]);
 
+  const { sample, readership, domains } = set;
+  const account = qualification ? qualification.accounts.find((a) => a.domains.includes(domain)) : null;
   const ranked = rankReadership(readership);
   const row = ranked.find((r) => r.domain === domain);
+
+  // Reclassified after review: show the dated correction with its sources, not a ranking.
+  const fix = domains[domain] && domains[domain].corrected;
+  if (fix) {
+    sub.textContent = `Reclassified from ${fix.from} to ${fix.to} after review, so it isn’t ranked. ${fix.rationale}.`;
+    clear(root);
+    root.append(el("section", { class: "inner" },
+      el("div", { class: "inner-head" }, el("span", {}, "Dated correction"), el("span", { class: "tag tag-neutral tag-sm" }, "Excluded")),
+      el("div", { class: "inner-body" },
+        el("p", { class: "small" }, fix.reason),
+        el("ul", { class: "facts" }, fix.sources.map((x) => el("li", { class: "fact" },
+          el("span", { class: "fact-text" }, x.finding),
+          el("span", { class: "fact-value small" }, el("a", { href: x.url, rel: "noopener", target: "_blank" }, "Source")),
+          el("span", { class: "ptr" }, `Read ${fmtDate(x.accessed)}`)))),
+        el("p", { class: "small muted" }, "The collected sample and its citations are unchanged. ",
+          liveFile ? [el("a", { href: `/data/evidence/${encodeURIComponent(domain)}.json` }, "The stored live check"), " is kept as collected. "] : null,
+          el("a", { href: "/method/#corrections" }, "All corrections")))));
+    return;
+  }
+
   if (!row && !liveFile) {
     const cls = domains[domain];
     sub.textContent = cls
@@ -76,10 +97,11 @@ async function main() {
     "Every line below points to the field it was read from."
   ].filter(Boolean).join(" ");
   clear(root);
+  if (account) root.append(qualificationNote(account));
   root.append(renderEvidence(ev, { sampleDate: sampleDate(sample) }));
 
   if (row) root.append(await renderCitations(domain, row, cls));
-  root.append(renderDraft(domain, ev, draft, verifier, claims || []));
+  root.append(renderDraft(domain, ev, draft, verifier, claims || [], account));
 }
 
 async function renderCitations(domain, row, cls) {
@@ -106,14 +128,28 @@ async function renderCitations(domain, row, cls) {
     el("div", { class: "inner-body" }, el("a", { href: "/data/citation-sample.csv", download: "" }, "Download the full sample (CSV)")));
 }
 
-function renderDraft(domain, ev, draft, verifier, claims) {
+const DECISION_LABELS = { ready_for_discovery: "Ready for discovery", hold: "Hold", exclude: "Excluded" };
+
+// Manual commercial qualification, kept apart from the automated evidence below.
+function qualificationNote(a) {
+  return el("section", { class: "inner" },
+    el("div", { class: "inner-head" }, el("span", {}, `First wave · ${a.account}`),
+      el("span", { class: a.decision === "ready_for_discovery" ? "tag tag-sm" : "tag tag-neutral tag-sm" }, DECISION_LABELS[a.decision])),
+    el("div", { class: "inner-body" },
+      el("p", { class: "small" }, a.decision_reason, " ",
+        el("a", { href: `/first-wave/#${encodeURIComponent(a.domains[0])}` }, "Sources, gates and the next question"))));
+}
+
+function renderDraft(domain, ev, draft, verifier, claims, account) {
   const wrap = el("section", { class: "panel", "aria-labelledby": "draft-h" },
     el("span", { class: "eyebrow" }, "Outreach draft"),
     el("h2", { id: "draft-h", style: "font-size:1.75rem; margin-bottom:1rem" }, "The message I’d send"),
     el("p", { class: "sub" }, "Text only. Nothing in this codebase can send email or any other message. Addressed to a role, never a named person."));
 
   if (!draft) {
-    wrap.append(el("p", { class: "notice", style: "margin-top:1.5rem" }, `No draft for ${domain} yet.`));
+    wrap.append(el("p", { class: "notice", style: "margin-top:1.5rem" }, account && account.decision !== "ready_for_discovery"
+      ? `No draft. ${account.account} is on ${account.decision === "hold" ? "hold" : "the excluded list"}: ${account.decision_reason}`
+      : `No draft for ${domain}. Drafts are written only for accounts ready for discovery.`));
     return wrap;
   }
 
