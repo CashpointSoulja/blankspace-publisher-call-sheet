@@ -1,0 +1,193 @@
+{
+  "domain": "gq-magazine.co.uk",
+  "vertical": null,
+  "source": "live",
+  "checked_at": "2026-10-30T06:21:48.768Z",
+  "fetch": {
+    "user_agent": "AyoGTMResearch/0.1 (+https://blankspace-publisher-call-sheet.pages.dev/method#crawler)",
+    "requests": 8,
+    "blocked": [],
+    "skipped": []
+  },
+  "signals": {
+    "readership": {
+      "status": "not_in_sample"
+    },
+    "placement": {
+      "sitemap_url": "https://www.gq-magazine.co.uk/sitemap-2026-10.xml",
+      "slugs_sampled": 50,
+      "slugs_matched": 12,
+      "slug_share": 0.24,
+      "matched_examples": [
+        "https://www.gq-magazine.co.uk/watches/gallery/best-new-watches",
+        "https://www.gq-magazine.co.uk/fashion/article/tailors-best-dressed-james-bond-29-10-26",
+        "https://www.gq-magazine.co.uk/fashion/gallery/best-black-overcoats",
+        "https://www.gq-magazine.co.uk/gallery/best-winter-coats",
+        "https://www.gq-magazine.co.uk/article/best-wedding-bands-for-men"
+      ],
+      "schema_types": [
+        "ItemList"
+      ],
+      "pages_checked": [
+        "https://www.gq-magazine.co.uk/"
+      ]
+    },
+    "programmatic": {
+      "ads_txt": {
+        "present": true,
+        "url": "https://www.gq-magazine.co.uk/ads.txt",
+        "status": 200,
+        "records": 563,
+        "ad_systems": 97,
+        "direct": 65,
+        "reseller": 498,
+        "managerdomain": null,
+        "ownerdomain": "condenast.com",
+        "contact": [
+          "adstxt@condenast.com"
+        ],
+        "note": null
+      },
+      "header_bidding": {
+        "detected": [],
+        "scope": "initial_html"
+      },
+      "ad_server_tag": {
+        "gpt": true
+      }
+    },
+    "reachability": {
+      "robots_url": "https://www.gq-magazine.co.uk/robots.txt",
+      "status": 200,
+      "per_agent": {
+        "GPTBot": "allowed",
+        "ClaudeBot": "blocked",
+        "Google-Extended": "blocked",
+        "CCBot": "blocked",
+        "Applebot-Extended": "blocked",
+        "Meta-ExternalAgent": "blocked",
+        "Bytespider": "blocked",
+        "OAI-SearchBot": "allowed",
+        "ChatGPT-User": "allowed",
+        "PerplexityBot": "blocked",
+        "Perplexity-User": "blocked",
+        "Claude-SearchBot": "blocked",
+        "Claude-User": "blocked",
+        "OAI-AdsBot": "allowed"
+      },
+      "training": "partial",
+      "search": "partial",
+      "ai_rules_present": true,
+      "content_signal": [],
+      "excerpt": [
+        "User-agent: Amazonbot",
+        "User-agent: Applebot-Extended",
+        "User-agent: archive.org_bot",
+        "User-agent: Bravebot",
+        "User-agent: Brightbot 1.0",
+        "User-agent: Bytespider",
+        "User-agent: CCBot",
+        "User-agent: Claude-SearchBot",
+        "User-agent: Claude-User",
+        "User-agent: ClaudeBot",
+        "User-agent: cohere-ai",
+        "User-agent: cohere-training-data-crawler",
+        "User-agent: Diffbot",
+        "User-agent: DuckAssistBot",
+        "User-agent: factset_spyderbot",
+        "User-agent: FirecrawlAgent",
+        "User-agent: Google-CloudVertexBot",
+        "User-agent: Google-Extended",
+        "User-agent: GoogleOther",
+        "User-agent: heritrix",
+        "User-agent: ia_archiver",
+        "User-agent: ia_archiver-web.archive.org",
+        "User-agent: meta-externalagent",
+        "User-agent: meta-externalfetcher",
+        "User-agent: meta-webindexer",
+        "User-agent: MistralAI-User",
+        "User-agent: PanguBot",
+        "User-agent: Perplexity-User",
+        "User-agent: PerplexityBot",
+        "User-agent: PetalBot",
+        "User-agent: Scrapy",
+        "User-agent: Shap-User",
+        "User-agent: ShapBot",
+        "User-agent: Timpibot",
+        "User-agent: Yisouspider",
+        "User-agent: YouBot",
+        "User-agent: Webzio",
+        "User-agent: Webzio-Extended",
+        "Disallow: /"
+      ]
+    },
+    "commerce": {
+      "networks": [],
+      "evidence": []
+    },
+    "cdn": {
+      "providers": [
+        "cloudflare",
+        "cloudfront"
+      ],
+      "evidence_headers": [
+        "cf-ray",
+        "server: cloudflare",
+        "x-amz-cf-id",
+        "x-amz-cf-pop",
+        "via: cloudfront"
+      ]
+    }
+  },
+  "score": {
+    "weights": {
+      "readership": 40,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "subscores": {
+      "readership": null,
+      "placement": 0.85,
+      "programmatic": 0.667,
+      "reachability": 0.5,
+      "commerce": 0
+    },
+    "points": {
+      "readership": null,
+      "placement": 17,
+      "programmatic": 10,
+      "reachability": 5,
+      "commerce": 0
+    },
+    "maxima": {
+      "readership": 0,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "total": 32,
+    "max": 60,
+    "missed": [
+      "Placement: 12 of 50 sampled sitemap URLs look like roundups, comparisons or reviews (24%). Full marks start at 30%.",
+      "Programmatic: no header bidding seen in the initial HTML. It may load later.",
+      "Reachability: search and user-triggered agents are partly disallowed in robots.txt.",
+      "Commerce: no affiliate network links found in the pages checked."
+    ]
+  },
+  "stance": {
+    "code": "closed-door",
+    "angle_label": "Search agents are disallowed in robots.txt. The reason is not visible from outside."
+  },
+  "cannot_see": [
+    "Real agent traffic volumes",
+    "Direct-sold ad revenue",
+    "Who owns AI policy internally"
+  ],
+  "cache": {
+    "hit": false,
+    "stored_at": null
+  }
+}

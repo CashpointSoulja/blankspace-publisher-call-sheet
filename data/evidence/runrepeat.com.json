@@ -1,0 +1,177 @@
+{
+  "domain": "runrepeat.com",
+  "vertical": null,
+  "source": "live",
+  "checked_at": "2026-10-30T06:21:23.211Z",
+  "fetch": {
+    "user_agent": "AyoGTMResearch/0.1 (+https://blankspace-publisher-call-sheet.pages.dev/method#crawler)",
+    "requests": 4,
+    "blocked": [],
+    "skipped": [
+      {
+        "url": "https://adstxt.mediavine.com/sites/runrepeat/ads.txt",
+        "reason": "off_domain"
+      }
+    ]
+  },
+  "signals": {
+    "readership": {
+      "status": "not_in_sample"
+    },
+    "placement": {
+      "sitemap_url": null,
+      "slugs_sampled": null,
+      "slugs_matched": null,
+      "slug_share": null,
+      "matched_examples": [],
+      "schema_types": [],
+      "pages_checked": [
+        "https://runrepeat.com/"
+      ]
+    },
+    "programmatic": {
+      "ads_txt": {
+        "present": null,
+        "url": "https://runrepeat.com/ads.txt",
+        "status": null,
+        "note": "redirected_off_domain"
+      },
+      "header_bidding": {
+        "detected": [],
+        "scope": "initial_html"
+      },
+      "ad_server_tag": {
+        "gpt": false
+      }
+    },
+    "reachability": {
+      "robots_url": "https://runrepeat.com/robots.txt",
+      "status": 200,
+      "per_agent": {
+        "GPTBot": "allowed",
+        "ClaudeBot": "allowed",
+        "Google-Extended": "allowed",
+        "CCBot": "allowed",
+        "Applebot-Extended": "allowed",
+        "Meta-ExternalAgent": "allowed",
+        "Bytespider": "allowed",
+        "OAI-SearchBot": "allowed",
+        "ChatGPT-User": "allowed",
+        "PerplexityBot": "allowed",
+        "Perplexity-User": "allowed",
+        "Claude-SearchBot": "allowed",
+        "Claude-User": "allowed",
+        "OAI-AdsBot": "allowed"
+      },
+      "training": "allowed",
+      "search": "allowed",
+      "ai_rules_present": false,
+      "content_signal": [],
+      "excerpt": [
+        "User-agent: *",
+        "Disallow: /search*",
+        "Disallow: /redirect/*",
+        "Disallow: /uk/redirect/*",
+        "Disallow: /es/redireccionar/*",
+        "Disallow: /*?*order_by=*",
+        "Disallow: /*?*filter=*",
+        "Disallow: /*?*filter[*",
+        "Disallow: /*?*filter%*",
+        "Disallow: /*?*fb_ref=*",
+        "Disallow: /*?*review-type=*",
+        "Disallow: /*?*selected_size=*",
+        "Disallow: /*?*selected_color=*",
+        "Disallow: /*?*selected_width=*",
+        "Disallow: /*?*selected_gender=*",
+        "Disallow: /*?*arch-support=*",
+        "Disallow: /*?*arch-type=*",
+        "Disallow: /*?*athlete-signature=*",
+        "Disallow: /*?*boot-grading-for-crampons=*",
+        "Disallow: /*?*brand=*",
+        "Disallow: /*?*category=*",
+        "Disallow: /*?*cleat-design=*",
+        "Disallow: /*?*closure=*",
+        "Disallow: /*?*collaboration=*",
+        "Disallow: /*?*collection=*",
+        "Disallow: /*?*colors=*",
+        "Disallow: /*?*condition=*",
+        "Disallow: /*?*construction=*",
+        "Disallow: /*?*corescore=*",
+        "Disallow: /*?*crampon-compatibility=*",
+        "Disallow: /*?*cushioning=*",
+        "Disallow: /*?*cut=*",
+        "Disallow: /*?*designed-by=*",
+        "Disallow: /*?*designer=*",
+        "Disallow: /*?*discount=*",
+        "Disallow: /*?*distance=*",
+        "Disallow: /*?*downturn=*",
+        "Disallow: /*?*embellishment=*",
+        "Disallow: /*?*environment=*",
+        "Disallow: /*?*event=*"
+      ]
+    },
+    "commerce": {
+      "networks": [],
+      "evidence": []
+    },
+    "cdn": {
+      "providers": [
+        "cloudflare"
+      ],
+      "evidence_headers": [
+        "cf-ray",
+        "server: cloudflare"
+      ]
+    }
+  },
+  "score": {
+    "weights": {
+      "readership": 40,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "subscores": {
+      "readership": null,
+      "placement": 0,
+      "programmatic": 0,
+      "reachability": 1,
+      "commerce": 0
+    },
+    "points": {
+      "readership": null,
+      "placement": 0,
+      "programmatic": 0,
+      "reachability": 10,
+      "commerce": 0
+    },
+    "maxima": {
+      "readership": 0,
+      "placement": 5,
+      "programmatic": 5,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "total": 10,
+    "max": 35,
+    "missed": [
+      "Placement: no ItemList, Product or Review markup on the 1 page checked.",
+      "Programmatic: no header bidding seen in the initial HTML. It may load later.",
+      "Commerce: no affiliate network links found in the pages checked."
+    ]
+  },
+  "stance": {
+    "code": "no-owner",
+    "angle_label": "No stated AI policy usually means no owner yet. The first conversation is about who owns it."
+  },
+  "cannot_see": [
+    "Real agent traffic volumes",
+    "Direct-sold ad revenue",
+    "Who owns AI policy internally"
+  ],
+  "cache": {
+    "hit": false,
+    "stored_at": null
+  }
+}

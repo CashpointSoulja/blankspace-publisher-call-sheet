@@ -1,0 +1,153 @@
+{
+  "domain": "evo.co.uk",
+  "vertical": null,
+  "source": "live",
+  "checked_at": "2026-10-30T06:19:47.103Z",
+  "fetch": {
+    "user_agent": "AyoGTMResearch/0.1 (+https://blankspace-publisher-call-sheet.pages.dev/method#crawler)",
+    "requests": 8,
+    "blocked": [],
+    "skipped": []
+  },
+  "signals": {
+    "readership": {
+      "status": "not_in_sample"
+    },
+    "placement": {
+      "sitemap_url": "https://www.evo.co.uk/sitemaps/article.xml",
+      "slugs_sampled": 50,
+      "slugs_matched": 16,
+      "slug_share": 0.32,
+      "matched_examples": [
+        "https://www.evo.co.uk/best-cars/20652/best-hypercars",
+        "https://www.evo.co.uk/best-cars/17721/best-fast-family-cars",
+        "https://www.evo.co.uk/best-cars/new-cars-coming-soon",
+        "https://www.evo.co.uk/track-cars/20129/best-trackday-cars",
+        "https://www.evo.co.uk/honda/civic-type-r/208625/one-last-drive-in-the-worlds-best-hot-hatch-goodbye-to-hondas-civic-type"
+      ],
+      "schema_types": [],
+      "pages_checked": [
+        "https://www.evo.co.uk/",
+        "https://www.evo.co.uk/best-cars/20652/best-hypercars"
+      ]
+    },
+    "programmatic": {
+      "ads_txt": {
+        "present": true,
+        "url": "https://evo.co.uk/ads.txt",
+        "status": 200,
+        "records": 376,
+        "ad_systems": 82,
+        "direct": 99,
+        "reseller": 277,
+        "managerdomain": null,
+        "ownerdomain": "carwow.co.uk",
+        "contact": [],
+        "note": null
+      },
+      "header_bidding": {
+        "detected": [],
+        "scope": "initial_html"
+      },
+      "ad_server_tag": {
+        "gpt": true
+      }
+    },
+    "reachability": {
+      "robots_url": "https://evo.co.uk/robots.txt",
+      "status": 200,
+      "per_agent": {
+        "GPTBot": "allowed",
+        "ClaudeBot": "allowed",
+        "Google-Extended": "allowed",
+        "CCBot": "allowed",
+        "Applebot-Extended": "allowed",
+        "Meta-ExternalAgent": "allowed",
+        "Bytespider": "allowed",
+        "OAI-SearchBot": "allowed",
+        "ChatGPT-User": "allowed",
+        "PerplexityBot": "allowed",
+        "Perplexity-User": "allowed",
+        "Claude-SearchBot": "allowed",
+        "Claude-User": "allowed",
+        "OAI-AdsBot": "allowed"
+      },
+      "training": "allowed",
+      "search": "allowed",
+      "ai_rules_present": false,
+      "content_signal": [],
+      "excerpt": [
+        "User-agent: *",
+        "Disallow: /search/",
+        "Disallow: /*?amp"
+      ]
+    },
+    "commerce": {
+      "networks": [],
+      "evidence": []
+    },
+    "cdn": {
+      "providers": [
+        "cloudflare",
+        "cloudfront"
+      ],
+      "evidence_headers": [
+        "cf-ray",
+        "server: cloudflare",
+        "x-amz-cf-id",
+        "x-amz-cf-pop",
+        "via: cloudfront"
+      ]
+    }
+  },
+  "score": {
+    "weights": {
+      "readership": 40,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "subscores": {
+      "readership": null,
+      "placement": 0.75,
+      "programmatic": 0.667,
+      "reachability": 1,
+      "commerce": 0
+    },
+    "points": {
+      "readership": null,
+      "placement": 15,
+      "programmatic": 10,
+      "reachability": 10,
+      "commerce": 0
+    },
+    "maxima": {
+      "readership": 0,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "total": 35,
+    "max": 60,
+    "missed": [
+      "Placement: no ItemList, Product or Review markup on the 2 pages checked.",
+      "Programmatic: no header bidding seen in the initial HTML. It may load later.",
+      "Commerce: no affiliate network links found in the pages checked."
+    ]
+  },
+  "stance": {
+    "code": "no-owner",
+    "angle_label": "No stated AI policy usually means no owner yet. The first conversation is about who owns it."
+  },
+  "cannot_see": [
+    "Real agent traffic volumes",
+    "Direct-sold ad revenue",
+    "Who owns AI policy internally"
+  ],
+  "cache": {
+    "hit": false,
+    "stored_at": null
+  }
+}

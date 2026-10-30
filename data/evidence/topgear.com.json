@@ -1,0 +1,147 @@
+{
+  "domain": "topgear.com",
+  "vertical": null,
+  "source": "live",
+  "checked_at": "2026-10-30T06:20:50.236Z",
+  "fetch": {
+    "user_agent": "AyoGTMResearch/0.1 (+https://blankspace-publisher-call-sheet.pages.dev/method#crawler)",
+    "requests": 7,
+    "blocked": [
+      {
+        "url": "https://www.topgear.com/robots.txt",
+        "status": 403
+      },
+      {
+        "url": "https://www.topgear.com/",
+        "status": 403
+      },
+      {
+        "url": "https://www.topgear.com/sitemap.xml",
+        "status": 403
+      }
+    ],
+    "skipped": []
+  },
+  "signals": {
+    "readership": {
+      "status": "not_in_sample"
+    },
+    "placement": {
+      "sitemap_url": null,
+      "slugs_sampled": null,
+      "slugs_matched": null,
+      "slug_share": null,
+      "matched_examples": [],
+      "schema_types": [],
+      "pages_checked": []
+    },
+    "programmatic": {
+      "ads_txt": {
+        "present": true,
+        "url": "https://www.topgear.com/ads.txt",
+        "status": 200,
+        "records": 174,
+        "ad_systems": 37,
+        "direct": 79,
+        "reseller": 95,
+        "managerdomain": null,
+        "ownerdomain": null,
+        "contact": [],
+        "note": null
+      },
+      "header_bidding": {
+        "detected": null,
+        "scope": "initial_html"
+      },
+      "ad_server_tag": {
+        "gpt": null
+      }
+    },
+    "reachability": {
+      "robots_url": "https://www.topgear.com/robots.txt",
+      "status": 403,
+      "per_agent": {
+        "GPTBot": "allowed",
+        "ClaudeBot": "allowed",
+        "Google-Extended": "allowed",
+        "CCBot": "allowed",
+        "Applebot-Extended": "allowed",
+        "Meta-ExternalAgent": "allowed",
+        "Bytespider": "allowed",
+        "OAI-SearchBot": "allowed",
+        "ChatGPT-User": "allowed",
+        "PerplexityBot": "allowed",
+        "Perplexity-User": "allowed",
+        "Claude-SearchBot": "allowed",
+        "Claude-User": "allowed",
+        "OAI-AdsBot": "allowed"
+      },
+      "training": "allowed",
+      "search": "allowed",
+      "ai_rules_present": false,
+      "content_signal": [],
+      "excerpt": []
+    },
+    "commerce": {
+      "networks": null,
+      "evidence": []
+    },
+    "cdn": {
+      "providers": [
+        "cloudflare",
+        "akamai"
+      ],
+      "evidence_headers": [
+        "cf-ray",
+        "server: cloudflare",
+        "x-akamai-es-info"
+      ]
+    }
+  },
+  "score": {
+    "weights": {
+      "readership": 40,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "subscores": {
+      "readership": null,
+      "placement": null,
+      "programmatic": 1,
+      "reachability": 1,
+      "commerce": null
+    },
+    "points": {
+      "readership": null,
+      "placement": null,
+      "programmatic": 10,
+      "reachability": 10,
+      "commerce": null
+    },
+    "maxima": {
+      "readership": 0,
+      "placement": 0,
+      "programmatic": 10,
+      "reachability": 10,
+      "commerce": 0
+    },
+    "total": 20,
+    "max": 20,
+    "missed": []
+  },
+  "stance": {
+    "code": "no-owner",
+    "angle_label": "No stated AI policy usually means no owner yet. The first conversation is about who owns it."
+  },
+  "cannot_see": [
+    "Real agent traffic volumes",
+    "Direct-sold ad revenue",
+    "Who owns AI policy internally"
+  ],
+  "cache": {
+    "hit": false,
+    "stored_at": null
+  }
+}

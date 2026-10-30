@@ -1,0 +1,146 @@
+{
+  "domain": "rtings.com",
+  "vertical": null,
+  "source": "live",
+  "checked_at": "2026-10-30T06:18:35.921Z",
+  "fetch": {
+    "user_agent": "AyoGTMResearch/0.1 (+https://blankspace-publisher-call-sheet.pages.dev/method#crawler)",
+    "requests": 8,
+    "blocked": [],
+    "skipped": []
+  },
+  "signals": {
+    "readership": {
+      "status": "not_in_sample"
+    },
+    "placement": {
+      "sitemap_url": "https://www.rtings.com/sitemap.xml",
+      "slugs_sampled": 50,
+      "slugs_matched": 38,
+      "slug_share": 0.76,
+      "matched_examples": [
+        "https://www.rtings.com/tv/learn/3d-tvs-active-3d-vs-passive-3d",
+        "https://www.rtings.com/tv/learn/lcd-vs-led-vs-plasma",
+        "https://www.rtings.com/tv/learn/what-is-the-refresh-rate-60hz-vs-120hz",
+        "https://www.rtings.com/tv/reviews/by-size/size-to-distance-relationship",
+        "https://www.rtings.com/tv/learn/lcd-vs-led-vs-plasma/how-they-work"
+      ],
+      "schema_types": [],
+      "pages_checked": [
+        "https://www.rtings.com/",
+        "https://www.rtings.com/tv/learn/3d-tvs-active-3d-vs-passive-3d"
+      ]
+    },
+    "programmatic": {
+      "ads_txt": {
+        "present": null,
+        "url": "https://rtings.com/ads.txt",
+        "status": 301,
+        "note": "too_many_redirects"
+      },
+      "header_bidding": {
+        "detected": [],
+        "scope": "initial_html"
+      },
+      "ad_server_tag": {
+        "gpt": false
+      }
+    },
+    "reachability": {
+      "robots_url": "https://www.rtings.com/robots.txt",
+      "status": 200,
+      "per_agent": {
+        "GPTBot": "allowed",
+        "ClaudeBot": "allowed",
+        "Google-Extended": "allowed",
+        "CCBot": "allowed",
+        "Applebot-Extended": "allowed",
+        "Meta-ExternalAgent": "allowed",
+        "Bytespider": "allowed",
+        "OAI-SearchBot": "allowed",
+        "ChatGPT-User": "allowed",
+        "PerplexityBot": "allowed",
+        "Perplexity-User": "allowed",
+        "Claude-SearchBot": "allowed",
+        "Claude-User": "allowed",
+        "OAI-AdsBot": "allowed"
+      },
+      "training": "allowed",
+      "search": "allowed",
+      "ai_rules_present": false,
+      "content_signal": [],
+      "excerpt": [
+        "User-Agent: *",
+        "Disallow: /user_reviews/",
+        "Disallow: /admin/"
+      ]
+    },
+    "commerce": {
+      "networks": [],
+      "evidence": []
+    },
+    "cdn": {
+      "providers": [
+        "cloudflare",
+        "cloudfront"
+      ],
+      "evidence_headers": [
+        "cf-ray",
+        "server: cloudflare",
+        "x-amz-cf-id",
+        "x-amz-cf-pop",
+        "via: cloudfront"
+      ]
+    }
+  },
+  "score": {
+    "weights": {
+      "readership": 40,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "subscores": {
+      "readership": null,
+      "placement": 0.75,
+      "programmatic": 0,
+      "reachability": 1,
+      "commerce": 0
+    },
+    "points": {
+      "readership": null,
+      "placement": 15,
+      "programmatic": 0,
+      "reachability": 10,
+      "commerce": 0
+    },
+    "maxima": {
+      "readership": 0,
+      "placement": 20,
+      "programmatic": 5,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "total": 25,
+    "max": 50,
+    "missed": [
+      "Placement: no ItemList, Product or Review markup on the 2 pages checked.",
+      "Programmatic: no header bidding seen in the initial HTML. It may load later.",
+      "Commerce: no affiliate network links found in the pages checked."
+    ]
+  },
+  "stance": {
+    "code": "no-owner",
+    "angle_label": "No stated AI policy usually means no owner yet. The first conversation is about who owns it."
+  },
+  "cannot_see": [
+    "Real agent traffic volumes",
+    "Direct-sold ad revenue",
+    "Who owns AI policy internally"
+  ],
+  "cache": {
+    "hit": false,
+    "stored_at": null
+  }
+}

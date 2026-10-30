@@ -1,0 +1,174 @@
+{
+  "domain": "drive.co.uk",
+  "vertical": null,
+  "source": "live",
+  "checked_at": "2026-10-30T06:19:36.952Z",
+  "fetch": {
+    "user_agent": "AyoGTMResearch/0.1 (+https://blankspace-publisher-call-sheet.pages.dev/method#crawler)",
+    "requests": 7,
+    "blocked": [],
+    "skipped": []
+  },
+  "signals": {
+    "readership": {
+      "status": "not_in_sample"
+    },
+    "placement": {
+      "sitemap_url": "https://drive.co.uk/sitemap-review-pages.xml",
+      "slugs_sampled": 50,
+      "slugs_matched": 50,
+      "slug_share": 1,
+      "matched_examples": [
+        "https://drive.co.uk/cars/aston-martin/vantage/review",
+        "https://drive.co.uk/cars/audi/a1/review",
+        "https://drive.co.uk/cars/audi/a3/review",
+        "https://drive.co.uk/cars/audi/a3/s3/review",
+        "https://drive.co.uk/cars/audi/a3/saloon/review"
+      ],
+      "schema_types": [
+        "ItemList",
+        "Product",
+        "Review"
+      ],
+      "pages_checked": [
+        "https://drive.co.uk/",
+        "https://drive.co.uk/cars/aston-martin/vantage/review",
+        "https://drive.co.uk/cars/audi/a1/review"
+      ]
+    },
+    "programmatic": {
+      "ads_txt": {
+        "present": true,
+        "url": "https://drive.co.uk/ads.txt",
+        "status": 200,
+        "records": 97,
+        "ad_systems": 35,
+        "direct": 9,
+        "reseller": 88,
+        "managerdomain": null,
+        "ownerdomain": "drive.co.uk",
+        "contact": [],
+        "note": null
+      },
+      "header_bidding": {
+        "detected": [],
+        "scope": "initial_html"
+      },
+      "ad_server_tag": {
+        "gpt": false
+      }
+    },
+    "reachability": {
+      "robots_url": "https://drive.co.uk/robots.txt",
+      "status": 200,
+      "per_agent": {
+        "GPTBot": "allowed",
+        "ClaudeBot": "allowed",
+        "Google-Extended": "allowed",
+        "CCBot": "allowed",
+        "Applebot-Extended": "allowed",
+        "Meta-ExternalAgent": "allowed",
+        "Bytespider": "allowed",
+        "OAI-SearchBot": "allowed",
+        "ChatGPT-User": "allowed",
+        "PerplexityBot": "allowed",
+        "Perplexity-User": "allowed",
+        "Claude-SearchBot": "allowed",
+        "Claude-User": "allowed",
+        "OAI-AdsBot": "allowed"
+      },
+      "training": "allowed",
+      "search": "allowed",
+      "ai_rules_present": false,
+      "content_signal": [],
+      "excerpt": [
+        "User-agent: *",
+        "Disallow: /auto/",
+        "Disallow: /auto/*?from=heycar-uk$",
+        "Disallow: /auto/*?from=heycar-de$",
+        "Disallow: /auto/*?from=heycar-fr$",
+        "Disallow: /auto/*?from=heycar-es$",
+        "Disallow: /auto/*?from=buyacar$",
+        "Disallow: /auto/*?from=hj$",
+        "Disallow: /finance/",
+        "Disallow: /favourites",
+        "Disallow: /cars/new",
+        "Disallow: /cars/new/",
+        "Disallow: /checkout/",
+        "Disallow: /*?*",
+        "Allow: /*?from=heycar-uk$",
+        "Allow: /*?from=heycar-de$",
+        "Allow: /*?from=heycar-fr$",
+        "Allow: /*?from=heycar-es$",
+        "Allow: /*?from=buyacar$",
+        "Allow: /*?from=hj$"
+      ]
+    },
+    "commerce": {
+      "networks": [],
+      "evidence": []
+    },
+    "cdn": {
+      "providers": [
+        "cloudflare",
+        "cloudfront"
+      ],
+      "evidence_headers": [
+        "cf-ray",
+        "server: cloudflare",
+        "x-amz-cf-id",
+        "x-amz-cf-pop",
+        "via: cloudfront"
+      ]
+    }
+  },
+  "score": {
+    "weights": {
+      "readership": 40,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "subscores": {
+      "readership": null,
+      "placement": 1,
+      "programmatic": 0.667,
+      "reachability": 1,
+      "commerce": 0
+    },
+    "points": {
+      "readership": null,
+      "placement": 20,
+      "programmatic": 10,
+      "reachability": 10,
+      "commerce": 0
+    },
+    "maxima": {
+      "readership": 0,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "total": 40,
+    "max": 60,
+    "missed": [
+      "Programmatic: no header bidding seen in the initial HTML. It may load later.",
+      "Commerce: no affiliate network links found in the pages checked."
+    ]
+  },
+  "stance": {
+    "code": "no-owner",
+    "angle_label": "No stated AI policy usually means no owner yet. The first conversation is about who owns it."
+  },
+  "cannot_see": [
+    "Real agent traffic volumes",
+    "Direct-sold ad revenue",
+    "Who owns AI policy internally"
+  ],
+  "cache": {
+    "hit": false,
+    "stored_at": null
+  }
+}

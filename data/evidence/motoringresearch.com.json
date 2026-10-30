@@ -1,0 +1,146 @@
+{
+  "domain": "motoringresearch.com",
+  "vertical": null,
+  "source": "live",
+  "checked_at": "2026-10-30T06:20:24.046Z",
+  "fetch": {
+    "user_agent": "AyoGTMResearch/0.1 (+https://blankspace-publisher-call-sheet.pages.dev/method#crawler)",
+    "requests": 7,
+    "blocked": [],
+    "skipped": []
+  },
+  "signals": {
+    "readership": {
+      "status": "not_in_sample"
+    },
+    "placement": {
+      "sitemap_url": "https://www.motoringresearch.com/post-sitemap.xml",
+      "slugs_sampled": 50,
+      "slugs_matched": 0,
+      "slug_share": 0,
+      "matched_examples": [],
+      "schema_types": [],
+      "pages_checked": [
+        "https://www.motoringresearch.com/"
+      ]
+    },
+    "programmatic": {
+      "ads_txt": {
+        "present": true,
+        "url": "https://motoringresearch.com/ads.txt",
+        "status": 200,
+        "records": 1,
+        "ad_systems": 1,
+        "direct": 1,
+        "reseller": 0,
+        "managerdomain": null,
+        "ownerdomain": null,
+        "contact": [],
+        "note": null
+      },
+      "header_bidding": {
+        "detected": [],
+        "scope": "initial_html"
+      },
+      "ad_server_tag": {
+        "gpt": false
+      }
+    },
+    "reachability": {
+      "robots_url": "https://motoringresearch.com/robots.txt",
+      "status": 200,
+      "per_agent": {
+        "GPTBot": "allowed",
+        "ClaudeBot": "allowed",
+        "Google-Extended": "allowed",
+        "CCBot": "allowed",
+        "Applebot-Extended": "allowed",
+        "Meta-ExternalAgent": "allowed",
+        "Bytespider": "allowed",
+        "OAI-SearchBot": "allowed",
+        "ChatGPT-User": "allowed",
+        "PerplexityBot": "allowed",
+        "Perplexity-User": "allowed",
+        "Claude-SearchBot": "allowed",
+        "Claude-User": "allowed",
+        "OAI-AdsBot": "allowed"
+      },
+      "training": "allowed",
+      "search": "allowed",
+      "ai_rules_present": false,
+      "content_signal": [],
+      "excerpt": [
+        "User-agent: *",
+        "Disallow: /wp-admin/",
+        "Allow: /wp-admin/admin-ajax.php",
+        "Disallow: /trackback/",
+        "Disallow: /comments/feed/"
+      ]
+    },
+    "commerce": {
+      "networks": [],
+      "evidence": []
+    },
+    "cdn": {
+      "providers": [
+        "cloudflare"
+      ],
+      "evidence_headers": [
+        "cf-ray",
+        "server: cloudflare"
+      ]
+    }
+  },
+  "score": {
+    "weights": {
+      "readership": 40,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "subscores": {
+      "readership": null,
+      "placement": 0,
+      "programmatic": 0.33299999999999996,
+      "reachability": 1,
+      "commerce": 0
+    },
+    "points": {
+      "readership": null,
+      "placement": 0,
+      "programmatic": 5,
+      "reachability": 10,
+      "commerce": 0
+    },
+    "maxima": {
+      "readership": 0,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "total": 15,
+    "max": 60,
+    "missed": [
+      "Placement: 0 of 50 sampled sitemap URLs look like roundups, comparisons or reviews (0%). Full marks start at 30%.",
+      "Placement: no ItemList, Product or Review markup on the 1 page checked.",
+      "Programmatic: ads.txt lists 1 ad system. The mark is five.",
+      "Programmatic: no header bidding seen in the initial HTML. It may load later.",
+      "Commerce: no affiliate network links found in the pages checked."
+    ]
+  },
+  "stance": {
+    "code": "no-owner",
+    "angle_label": "No stated AI policy usually means no owner yet. The first conversation is about who owns it."
+  },
+  "cannot_see": [
+    "Real agent traffic volumes",
+    "Direct-sold ad revenue",
+    "Who owns AI policy internally"
+  ],
+  "cache": {
+    "hit": false,
+    "stored_at": null
+  }
+}

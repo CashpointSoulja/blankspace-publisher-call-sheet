@@ -1,0 +1,184 @@
+{
+  "domain": "runnersworld.com",
+  "vertical": null,
+  "source": "live",
+  "checked_at": "2026-10-30T06:21:14.414Z",
+  "fetch": {
+    "user_agent": "AyoGTMResearch/0.1 (+https://blankspace-publisher-call-sheet.pages.dev/method#crawler)",
+    "requests": 8,
+    "blocked": [],
+    "skipped": []
+  },
+  "signals": {
+    "readership": {
+      "status": "not_in_sample"
+    },
+    "placement": {
+      "sitemap_url": "https://www.runnersworld.com/en/sitemaps/content.2018-02-27T20:05:00.xml.gz",
+      "slugs_sampled": 50,
+      "slugs_matched": 0,
+      "slug_share": 0,
+      "matched_examples": [],
+      "schema_types": [
+        "ItemList"
+      ],
+      "pages_checked": [
+        "https://www.runnersworld.com/"
+      ]
+    },
+    "programmatic": {
+      "ads_txt": {
+        "present": true,
+        "url": "https://www.runnersworld.com/ads.txt",
+        "status": 200,
+        "records": 66,
+        "ad_systems": 25,
+        "direct": 66,
+        "reseller": 0,
+        "managerdomain": null,
+        "ownerdomain": "hearst.com",
+        "contact": [
+          "adstxt@hearst.com"
+        ],
+        "note": null
+      },
+      "header_bidding": {
+        "detected": [],
+        "scope": "initial_html"
+      },
+      "ad_server_tag": {
+        "gpt": false
+      }
+    },
+    "reachability": {
+      "robots_url": "https://runnersworld.com/robots.txt",
+      "status": 200,
+      "per_agent": {
+        "GPTBot": "allowed",
+        "ClaudeBot": "allowed",
+        "Google-Extended": "blocked",
+        "CCBot": "blocked",
+        "Applebot-Extended": "allowed",
+        "Meta-ExternalAgent": "allowed",
+        "Bytespider": "blocked",
+        "OAI-SearchBot": "allowed",
+        "ChatGPT-User": "allowed",
+        "PerplexityBot": "blocked",
+        "Perplexity-User": "allowed",
+        "Claude-SearchBot": "allowed",
+        "Claude-User": "allowed",
+        "OAI-AdsBot": "allowed"
+      },
+      "training": "partial",
+      "search": "partial",
+      "ai_rules_present": true,
+      "content_signal": [],
+      "excerpt": [
+        "User-agent: CCBot",
+        "User-agent: Google-Extended",
+        "User-agent: anthropic-ai",
+        "User-agent: PerplexityBot",
+        "User-agent: OmigiliBot",
+        "User-agent: Amazonbot",
+        "User-agent: Bytespider",
+        "Disallow: /",
+        "User-agent: ChatGPT-User",
+        "User-agent: GPTBot",
+        "User-agent: OAI-SearchBot",
+        "Disallow: /au/",
+        "Disallow: /cn/",
+        "Disallow: /dk/",
+        "Disallow: /en/",
+        "Disallow: /es/",
+        "Disallow: /in/",
+        "Disallow: /it/",
+        "Disallow: /ng/",
+        "Disallow: /no/",
+        "Disallow: /se/",
+        "Disallow: /ua/",
+        "Disallow: /uk/",
+        "User-agent: ChatGPT-User",
+        "User-agent: GPTBot",
+        "User-agent: OAI-SearchBot",
+        "User-agent: *",
+        "Disallow: /auth/",
+        "Disallow: /preview/",
+        "Disallow: /au/preview/",
+        "Disallow: /cn/preview/",
+        "Disallow: /dk/preview/",
+        "Disallow: /en/preview/",
+        "Disallow: /es/preview/",
+        "Disallow: /in/preview/",
+        "Disallow: /it/preview/",
+        "Disallow: /jp/preview/",
+        "Disallow: /ng/preview/",
+        "Disallow: /nl/preview/",
+        "Disallow: /no/preview/"
+      ]
+    },
+    "commerce": {
+      "networks": [],
+      "evidence": []
+    },
+    "cdn": {
+      "providers": [
+        "cloudflare"
+      ],
+      "evidence_headers": [
+        "cf-ray",
+        "server: cloudflare"
+      ]
+    }
+  },
+  "score": {
+    "weights": {
+      "readership": 40,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "subscores": {
+      "readership": null,
+      "placement": 0.25,
+      "programmatic": 0.667,
+      "reachability": 0.5,
+      "commerce": 0
+    },
+    "points": {
+      "readership": null,
+      "placement": 5,
+      "programmatic": 10,
+      "reachability": 5,
+      "commerce": 0
+    },
+    "maxima": {
+      "readership": 0,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "total": 20,
+    "max": 60,
+    "missed": [
+      "Placement: 0 of 50 sampled sitemap URLs look like roundups, comparisons or reviews (0%). Full marks start at 30%.",
+      "Programmatic: no header bidding seen in the initial HTML. It may load later.",
+      "Reachability: search and user-triggered agents are partly disallowed in robots.txt.",
+      "Commerce: no affiliate network links found in the pages checked."
+    ]
+  },
+  "stance": {
+    "code": "closed-door",
+    "angle_label": "Search agents are disallowed in robots.txt. The reason is not visible from outside."
+  },
+  "cannot_see": [
+    "Real agent traffic volumes",
+    "Direct-sold ad revenue",
+    "Who owns AI policy internally"
+  ],
+  "cache": {
+    "hit": false,
+    "stored_at": null
+  }
+}

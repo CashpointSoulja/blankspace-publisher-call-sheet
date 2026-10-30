@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-10-30",
+  "domains": [
+    "autocar.co.uk",
+    "autoexpress.co.uk",
+    "cnet.com",
+    "drive.co.uk",
+    "edmunds.com",
+    "evo.co.uk",
+    "expertreviews.co.uk",
+    "goodhousekeeping.com",
+    "gq-magazine.co.uk",
+    "idealo.co.uk",
+    "independent.co.uk",
+    "motoringresearch.com",
+    "nytimes.com",
+    "outdoorsmagic.com",
+    "pcmag.com",
+    "rtings.com",
+    "runnersworld.com",
+    "runrepeat.com",
+    "stuff.tv",
+    "techradar.com",
+    "tomsguide.com",
+    "topgear.com",
+    "usnews.com",
+    "whatcar.com",
+    "womenshealthmag.com"
+  ],
+  "scope": "Top nine in each sample vertical, deduplicated; collection in progress. Unknown signals remain unknown."
+}

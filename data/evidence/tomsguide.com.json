@@ -1,0 +1,169 @@
+{
+  "domain": "tomsguide.com",
+  "vertical": null,
+  "source": "live",
+  "checked_at": "2026-10-30T06:18:43.745Z",
+  "fetch": {
+    "user_agent": "AyoGTMResearch/0.1 (+https://blankspace-publisher-call-sheet.pages.dev/method#crawler)",
+    "requests": 8,
+    "blocked": [],
+    "skipped": []
+  },
+  "signals": {
+    "readership": {
+      "status": "not_in_sample"
+    },
+    "placement": {
+      "sitemap_url": "https://www.tomsguide.com/sitemap-news.xml",
+      "slugs_sampled": 50,
+      "slugs_matched": 4,
+      "slug_share": 0.08,
+      "matched_examples": [
+        "https://www.tomsguide.com/computing/macbooks/macbook-pro-oled-vs-macbook-pro-m6-which-laptop-should-you-buy",
+        "https://www.tomsguide.com/sales-events/15-best-birkenstock-deals-to-shop-for-fall-save-up-to-59-percent-on-cozy-clogs-and-sandals",
+        "https://www.tomsguide.com/computing/macbooks/i-saw-the-macbook-pro-oled-next-to-the-best-windows-laptop-with-tandem-oled-and-its-not-even-close",
+        "https://www.tomsguide.com/entertainment/sports/watch-liverpool-vs-chelsea-carabao-cup-2026-27"
+      ],
+      "schema_types": [
+        "ItemList"
+      ],
+      "pages_checked": [
+        "https://www.tomsguide.com/"
+      ]
+    },
+    "programmatic": {
+      "ads_txt": {
+        "present": true,
+        "url": "https://www.tomsguide.com/ads.txt",
+        "status": 200,
+        "records": 160,
+        "ad_systems": 47,
+        "direct": 69,
+        "reseller": 91,
+        "managerdomain": null,
+        "ownerdomain": "futureplc.com",
+        "contact": [
+          "programmaticpartnerships@futurenet.com"
+        ],
+        "note": null
+      },
+      "header_bidding": {
+        "detected": [],
+        "scope": "initial_html"
+      },
+      "ad_server_tag": {
+        "gpt": false
+      }
+    },
+    "reachability": {
+      "robots_url": "https://www.tomsguide.com/robots.txt",
+      "status": 200,
+      "per_agent": {
+        "GPTBot": "allowed",
+        "ClaudeBot": "allowed",
+        "Google-Extended": "allowed",
+        "CCBot": "allowed",
+        "Applebot-Extended": "blocked",
+        "Meta-ExternalAgent": "blocked",
+        "Bytespider": "blocked",
+        "OAI-SearchBot": "allowed",
+        "ChatGPT-User": "allowed",
+        "PerplexityBot": "allowed",
+        "Perplexity-User": "allowed",
+        "Claude-SearchBot": "allowed",
+        "Claude-User": "allowed",
+        "OAI-AdsBot": "allowed"
+      },
+      "training": "partial",
+      "search": "allowed",
+      "ai_rules_present": true,
+      "content_signal": [],
+      "excerpt": [
+        "User-agent: bytespider",
+        "User-agent: mistralai",
+        "User-agent: cohere",
+        "User-agent: ai2bot",
+        "User-agent: youbot",
+        "User-agent: omgili",
+        "User-agent: diffbot",
+        "User-agent: kangaroo",
+        "User-agent: img2dataset",
+        "User-agent: amazonbot",
+        "User-agent: amazon-qbusiness",
+        "User-Agent: meta-externalagent",
+        "User-Agent: meta-webindexer",
+        "User-Agent: Applebot",
+        "User-Agent: Applebot-Extended",
+        "Disallow: /",
+        "User-Agent: Applebot",
+        "User-Agent: Applebot-Extended",
+        "Disallow: /"
+      ]
+    },
+    "commerce": {
+      "networks": [],
+      "evidence": []
+    },
+    "cdn": {
+      "providers": [
+        "cloudflare",
+        "fastly"
+      ],
+      "evidence_headers": [
+        "cf-ray",
+        "server: cloudflare",
+        "x-served-by + via: varnish"
+      ]
+    }
+  },
+  "score": {
+    "weights": {
+      "readership": 40,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "subscores": {
+      "readership": null,
+      "placement": 0.45,
+      "programmatic": 0.667,
+      "reachability": 1,
+      "commerce": 0
+    },
+    "points": {
+      "readership": null,
+      "placement": 9,
+      "programmatic": 10,
+      "reachability": 10,
+      "commerce": 0
+    },
+    "maxima": {
+      "readership": 0,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "total": 29,
+    "max": 60,
+    "missed": [
+      "Placement: 4 of 50 sampled sitemap URLs look like roundups, comparisons or reviews (8%). Full marks start at 30%.",
+      "Programmatic: no header bidding seen in the initial HTML. It may load later.",
+      "Commerce: no affiliate network links found in the pages checked."
+    ]
+  },
+  "stance": {
+    "code": "already-decided",
+    "angle_label": "You\u2019ve already decided AI search is welcome. Those visits earn nothing yet."
+  },
+  "cannot_see": [
+    "Real agent traffic volumes",
+    "Direct-sold ad revenue",
+    "Who owns AI policy internally"
+  ],
+  "cache": {
+    "hit": false,
+    "stored_at": null
+  }
+}

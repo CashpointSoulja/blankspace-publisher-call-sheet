@@ -1,0 +1,176 @@
+{
+  "domain": "expertreviews.co.uk",
+  "vertical": null,
+  "source": "live",
+  "checked_at": "2026-10-30T06:19:07.863Z",
+  "fetch": {
+    "user_agent": "AyoGTMResearch/0.1 (+https://blankspace-publisher-call-sheet.pages.dev/method#crawler)",
+    "requests": 8,
+    "blocked": [],
+    "skipped": []
+  },
+  "signals": {
+    "readership": {
+      "status": "not_in_sample"
+    },
+    "placement": {
+      "sitemap_url": "https://www.expertreviews.co.uk/post-sitemap.xml",
+      "slugs_sampled": 50,
+      "slugs_matched": 50,
+      "slug_share": 1,
+      "matched_examples": [
+        "https://www.expertreviews.co.uk/technology/software-services/iprorecorder-review",
+        "https://www.expertreviews.co.uk/technology/laptops/toshiba-port-g-r600-review",
+        "https://www.expertreviews.co.uk/technology/software-services/quantum-leap-pianos-review",
+        "https://www.expertreviews.co.uk/technology/software-services/fourtrack-review",
+        "https://www.expertreviews.co.uk/technology/printing-cameras/360precision-atome-review"
+      ],
+      "schema_types": [],
+      "pages_checked": [
+        "https://www.expertreviews.co.uk/"
+      ]
+    },
+    "programmatic": {
+      "ads_txt": {
+        "present": true,
+        "url": "https://www.expertreviews.co.uk/ads.txt",
+        "status": 200,
+        "records": 166,
+        "ad_systems": 50,
+        "direct": 34,
+        "reseller": 132,
+        "managerdomain": "contentignite.com",
+        "ownerdomain": "expertreviews.co.uk",
+        "contact": [],
+        "note": null
+      },
+      "header_bidding": {
+        "detected": [],
+        "scope": "initial_html"
+      },
+      "ad_server_tag": {
+        "gpt": false
+      }
+    },
+    "reachability": {
+      "robots_url": "https://www.expertreviews.co.uk/robots.txt",
+      "status": 200,
+      "per_agent": {
+        "GPTBot": "allowed",
+        "ClaudeBot": "allowed",
+        "Google-Extended": "allowed",
+        "CCBot": "allowed",
+        "Applebot-Extended": "blocked",
+        "Meta-ExternalAgent": "allowed",
+        "Bytespider": "allowed",
+        "OAI-SearchBot": "allowed",
+        "ChatGPT-User": "allowed",
+        "PerplexityBot": "allowed",
+        "Perplexity-User": "allowed",
+        "Claude-SearchBot": "allowed",
+        "Claude-User": "allowed",
+        "OAI-AdsBot": "allowed"
+      },
+      "training": "partial",
+      "search": "allowed",
+      "ai_rules_present": true,
+      "content_signal": [],
+      "excerpt": [
+        "User-agent: Applebot-Extended",
+        "User-agent: BlexBot",
+        "User-agent: Brightbot",
+        "User-agent: PetalBot",
+        "User-agent: SentiBot",
+        "Disallow: /",
+        "User-agent: AhrefsBot",
+        "User-agent: AhrefsSiteAudit",
+        "User-agent: Baiduspider",
+        "User-agent: Barkrowler",
+        "User-agent: Bingbot",
+        "User-agent: Bytespider",
+        "User-agent: coccocbot",
+        "User-agent: DotBot",
+        "User-agent: MJ12Bot",
+        "User-agent: Screaming Frog SEO Spider",
+        "User-agent: SeekportBot",
+        "User-agent: SemrushBot",
+        "User-agent: SeznamBot",
+        "User-agent: Sogou",
+        "User-agent: Timpibot",
+        "User-agent: UniversalFeedParser",
+        "User-agent: Yahoo! Slurp",
+        "User-agent: YandexBot",
+        "User-agent: Yeti",
+        "Disallow: /*?s=",
+        "Disallow: /search$",
+        "Disallow: /search?",
+        "Disallow: /search/"
+      ]
+    },
+    "commerce": {
+      "networks": [],
+      "evidence": []
+    },
+    "cdn": {
+      "providers": [
+        "cloudflare",
+        "fastly"
+      ],
+      "evidence_headers": [
+        "cf-ray",
+        "server: cloudflare",
+        "x-served-by + via: varnish"
+      ]
+    }
+  },
+  "score": {
+    "weights": {
+      "readership": 40,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "subscores": {
+      "readership": null,
+      "placement": 0.75,
+      "programmatic": 0.667,
+      "reachability": 1,
+      "commerce": 0
+    },
+    "points": {
+      "readership": null,
+      "placement": 15,
+      "programmatic": 10,
+      "reachability": 10,
+      "commerce": 0
+    },
+    "maxima": {
+      "readership": 0,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "total": 35,
+    "max": 60,
+    "missed": [
+      "Placement: no ItemList, Product or Review markup on the 1 page checked.",
+      "Programmatic: no header bidding seen in the initial HTML. It may load later.",
+      "Commerce: no affiliate network links found in the pages checked."
+    ]
+  },
+  "stance": {
+    "code": "already-decided",
+    "angle_label": "You\u2019ve already decided AI search is welcome. Those visits earn nothing yet."
+  },
+  "cannot_see": [
+    "Real agent traffic volumes",
+    "Direct-sold ad revenue",
+    "Who owns AI policy internally"
+  ],
+  "cache": {
+    "hit": false,
+    "stored_at": null
+  }
+}

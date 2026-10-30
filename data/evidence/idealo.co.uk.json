@@ -1,0 +1,144 @@
+{
+  "domain": "idealo.co.uk",
+  "vertical": null,
+  "source": "live",
+  "checked_at": "2026-10-30T06:21:58.297Z",
+  "fetch": {
+    "user_agent": "AyoGTMResearch/0.1 (+https://blankspace-publisher-call-sheet.pages.dev/method#crawler)",
+    "requests": 7,
+    "blocked": [
+      {
+        "url": "https://www.idealo.co.uk/robots.txt",
+        "status": 403
+      },
+      {
+        "url": "https://www.idealo.co.uk/",
+        "status": 403
+      },
+      {
+        "url": "https://www.idealo.co.uk/ads.txt",
+        "status": 403
+      },
+      {
+        "url": "https://www.idealo.co.uk/sitemap.xml",
+        "status": 403
+      }
+    ],
+    "skipped": []
+  },
+  "signals": {
+    "readership": {
+      "status": "not_in_sample"
+    },
+    "placement": {
+      "sitemap_url": null,
+      "slugs_sampled": null,
+      "slugs_matched": null,
+      "slug_share": null,
+      "matched_examples": [],
+      "schema_types": [],
+      "pages_checked": []
+    },
+    "programmatic": {
+      "ads_txt": {
+        "present": false,
+        "url": "https://www.idealo.co.uk/ads.txt",
+        "status": 403,
+        "note": null
+      },
+      "header_bidding": {
+        "detected": null,
+        "scope": "initial_html"
+      },
+      "ad_server_tag": {
+        "gpt": null
+      }
+    },
+    "reachability": {
+      "robots_url": "https://www.idealo.co.uk/robots.txt",
+      "status": 403,
+      "per_agent": {
+        "GPTBot": "allowed",
+        "ClaudeBot": "allowed",
+        "Google-Extended": "allowed",
+        "CCBot": "allowed",
+        "Applebot-Extended": "allowed",
+        "Meta-ExternalAgent": "allowed",
+        "Bytespider": "allowed",
+        "OAI-SearchBot": "allowed",
+        "ChatGPT-User": "allowed",
+        "PerplexityBot": "allowed",
+        "Perplexity-User": "allowed",
+        "Claude-SearchBot": "allowed",
+        "Claude-User": "allowed",
+        "OAI-AdsBot": "allowed"
+      },
+      "training": "allowed",
+      "search": "allowed",
+      "ai_rules_present": false,
+      "content_signal": [],
+      "excerpt": []
+    },
+    "commerce": {
+      "networks": null,
+      "evidence": []
+    },
+    "cdn": {
+      "providers": [
+        "cloudflare"
+      ],
+      "evidence_headers": [
+        "cf-ray",
+        "server: cloudflare"
+      ]
+    }
+  },
+  "score": {
+    "weights": {
+      "readership": 40,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "subscores": {
+      "readership": null,
+      "placement": null,
+      "programmatic": 0,
+      "reachability": 1,
+      "commerce": null
+    },
+    "points": {
+      "readership": null,
+      "placement": null,
+      "programmatic": 0,
+      "reachability": 10,
+      "commerce": null
+    },
+    "maxima": {
+      "readership": 0,
+      "placement": 0,
+      "programmatic": 10,
+      "reachability": 10,
+      "commerce": 0
+    },
+    "total": 10,
+    "max": 20,
+    "missed": [
+      "Programmatic: no ads.txt found."
+    ]
+  },
+  "stance": {
+    "code": "no-owner",
+    "angle_label": "No stated AI policy usually means no owner yet. The first conversation is about who owns it."
+  },
+  "cannot_see": [
+    "Real agent traffic volumes",
+    "Direct-sold ad revenue",
+    "Who owns AI policy internally"
+  ],
+  "cache": {
+    "hit": false,
+    "stored_at": null
+  }
+}

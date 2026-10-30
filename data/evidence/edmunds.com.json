@@ -1,0 +1,151 @@
+{
+  "domain": "edmunds.com",
+  "vertical": null,
+  "source": "live",
+  "checked_at": "2026-10-30T06:20:40.632Z",
+  "fetch": {
+    "user_agent": "AyoGTMResearch/0.1 (+https://blankspace-publisher-call-sheet.pages.dev/method#crawler)",
+    "requests": 8,
+    "blocked": [
+      {
+        "url": "https://www.edmunds.com/",
+        "status": 403
+      }
+    ],
+    "skipped": [
+      {
+        "url": "https://www.edmunds.com/sitemap-articles-index-pages.xml",
+        "reason": "budget"
+      }
+    ]
+  },
+  "signals": {
+    "readership": {
+      "status": "not_in_sample"
+    },
+    "placement": {
+      "sitemap_url": null,
+      "slugs_sampled": null,
+      "slugs_matched": null,
+      "slug_share": null,
+      "matched_examples": [],
+      "schema_types": [],
+      "pages_checked": []
+    },
+    "programmatic": {
+      "ads_txt": {
+        "present": true,
+        "url": "https://www.edmunds.com/ads.txt",
+        "status": 200,
+        "records": 90,
+        "ad_systems": 40,
+        "direct": 18,
+        "reseller": 72,
+        "managerdomain": null,
+        "ownerdomain": null,
+        "contact": [],
+        "note": null
+      },
+      "header_bidding": {
+        "detected": null,
+        "scope": "initial_html"
+      },
+      "ad_server_tag": {
+        "gpt": null
+      }
+    },
+    "reachability": {
+      "robots_url": "https://www.edmunds.com/robots.txt",
+      "status": 200,
+      "per_agent": {
+        "GPTBot": "blocked",
+        "ClaudeBot": "blocked",
+        "Google-Extended": "allowed",
+        "CCBot": "allowed",
+        "Applebot-Extended": "allowed",
+        "Meta-ExternalAgent": "blocked",
+        "Bytespider": "blocked",
+        "OAI-SearchBot": "allowed",
+        "ChatGPT-User": "allowed",
+        "PerplexityBot": "allowed",
+        "Perplexity-User": "allowed",
+        "Claude-SearchBot": "allowed",
+        "Claude-User": "allowed",
+        "OAI-AdsBot": "allowed"
+      },
+      "training": "partial",
+      "search": "allowed",
+      "ai_rules_present": true,
+      "content_signal": [],
+      "excerpt": [
+        "User-agent: GPTBot",
+        "Disallow: /",
+        "User-agent: ClaudeBot",
+        "Disallow: /",
+        "User-agent: Bytespider",
+        "Disallow: /",
+        "User-agent: meta-externalagent",
+        "Disallow: /"
+      ]
+    },
+    "commerce": {
+      "networks": null,
+      "evidence": []
+    },
+    "cdn": {
+      "providers": [
+        "cloudflare"
+      ],
+      "evidence_headers": [
+        "cf-ray",
+        "server: cloudflare"
+      ]
+    }
+  },
+  "score": {
+    "weights": {
+      "readership": 40,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "subscores": {
+      "readership": null,
+      "placement": null,
+      "programmatic": 1,
+      "reachability": 1,
+      "commerce": null
+    },
+    "points": {
+      "readership": null,
+      "placement": null,
+      "programmatic": 10,
+      "reachability": 10,
+      "commerce": null
+    },
+    "maxima": {
+      "readership": 0,
+      "placement": 0,
+      "programmatic": 10,
+      "reachability": 10,
+      "commerce": 0
+    },
+    "total": 20,
+    "max": 20,
+    "missed": []
+  },
+  "stance": {
+    "code": "already-decided",
+    "angle_label": "You\u2019ve already decided AI search is welcome. Those visits earn nothing yet."
+  },
+  "cannot_see": [
+    "Real agent traffic volumes",
+    "Direct-sold ad revenue",
+    "Who owns AI policy internally"
+  ],
+  "cache": {
+    "hit": false,
+    "stored_at": null
+  }
+}

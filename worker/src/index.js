@@ -37,6 +37,7 @@ export default {
     try {
       const evidence = await runCheck(input, {
         siteOrigin: env.SITE_ORIGIN || url.origin,
+        fetchImpl: (input, init) => fetch(input, init),
         dnsCheck: env.DNS_CHECK !== "off"
       });
       const stored = writeCache(host, evidence, env, url);

@@ -1,0 +1,185 @@
+{
+  "domain": "usnews.com",
+  "vertical": null,
+  "source": "live",
+  "checked_at": "2026-10-30T06:21:05.668Z",
+  "fetch": {
+    "user_agent": "AyoGTMResearch/0.1 (+https://blankspace-publisher-call-sheet.pages.dev/method#crawler)",
+    "requests": 6,
+    "blocked": [],
+    "skipped": [
+      {
+        "url": "https://usnews.com/",
+        "reason": "timeout"
+      }
+    ]
+  },
+  "signals": {
+    "readership": {
+      "status": "not_in_sample"
+    },
+    "placement": {
+      "sitemap_url": null,
+      "slugs_sampled": null,
+      "slugs_matched": null,
+      "slug_share": null,
+      "matched_examples": [],
+      "schema_types": [],
+      "pages_checked": []
+    },
+    "programmatic": {
+      "ads_txt": {
+        "present": true,
+        "url": "https://www.usnews.com/ads.txt",
+        "status": 200,
+        "records": 401,
+        "ad_systems": 94,
+        "direct": 147,
+        "reseller": 254,
+        "managerdomain": null,
+        "ownerdomain": "usnews.com",
+        "contact": [
+          "adstxt@usnews.com"
+        ],
+        "note": null
+      },
+      "header_bidding": {
+        "detected": null,
+        "scope": "initial_html"
+      },
+      "ad_server_tag": {
+        "gpt": null
+      }
+    },
+    "reachability": {
+      "robots_url": "https://www.usnews.com/robots.txt",
+      "status": 200,
+      "per_agent": {
+        "GPTBot": "blocked",
+        "ClaudeBot": "blocked",
+        "Google-Extended": "blocked",
+        "CCBot": "blocked",
+        "Applebot-Extended": "blocked",
+        "Meta-ExternalAgent": "blocked",
+        "Bytespider": "blocked",
+        "OAI-SearchBot": "blocked",
+        "ChatGPT-User": "blocked",
+        "PerplexityBot": "blocked",
+        "Perplexity-User": "blocked",
+        "Claude-SearchBot": "allowed",
+        "Claude-User": "allowed",
+        "OAI-AdsBot": "allowed"
+      },
+      "training": "blocked",
+      "search": "partial",
+      "ai_rules_present": true,
+      "content_signal": [],
+      "excerpt": [
+        "User-agent: Bytespider",
+        "Disallow: /",
+        "User-agent: CCBot",
+        "Disallow: /",
+        "User-agent: GPTBot",
+        "Allow: /brandfuse/articles/lemonade/how-to-create-a-home-inventory-checklist-for-renters-insurance-claims",
+        "Allow: /brandfuse/articles/lemonade/how-renters-insurance-works-for-students-living-off-campus",
+        "Allow: /brandfuse/articles/lemonade/what-renters-insurance-policies-commonly-exclude",
+        "Allow: /brandfuse/articles/lemonade/5-high-value-items-your-renters-insurance-probably-doesnt-fully-cover",
+        "Allow: /brandfuse/articles/lemonade/8-steps-to-evaluate-a-renters-insurance-policy-before-signing",
+        "Disallow: /",
+        "User-agent: ChatGPT-User",
+        "Allow: /brandfuse/articles/lemonade/how-to-create-a-home-inventory-checklist-for-renters-insurance-claims",
+        "Allow: /brandfuse/articles/lemonade/how-renters-insurance-works-for-students-living-off-campus",
+        "Allow: /brandfuse/articles/lemonade/what-renters-insurance-policies-commonly-exclude",
+        "Allow: /brandfuse/articles/lemonade/5-high-value-items-your-renters-insurance-probably-doesnt-fully-cover",
+        "Allow: /brandfuse/articles/lemonade/8-steps-to-evaluate-a-renters-insurance-policy-before-signing",
+        "Disallow: /",
+        "User-agent: OAI-SearchBot",
+        "Allow: /brandfuse/articles/lemonade/how-to-create-a-home-inventory-checklist-for-renters-insurance-claims",
+        "Allow: /brandfuse/articles/lemonade/how-renters-insurance-works-for-students-living-off-campus",
+        "Allow: /brandfuse/articles/lemonade/what-renters-insurance-policies-commonly-exclude",
+        "Allow: /brandfuse/articles/lemonade/5-high-value-items-your-renters-insurance-probably-doesnt-fully-cover",
+        "Allow: /brandfuse/articles/lemonade/8-steps-to-evaluate-a-renters-insurance-policy-before-signing",
+        "Disallow: /",
+        "User-agent: ClaudeBot",
+        "Allow: /brandfuse/articles/lemonade/how-to-create-a-home-inventory-checklist-for-renters-insurance-claims",
+        "Allow: /brandfuse/articles/lemonade/how-renters-insurance-works-for-students-living-off-campus",
+        "Allow: /brandfuse/articles/lemonade/what-renters-insurance-policies-commonly-exclude",
+        "Allow: /brandfuse/articles/lemonade/5-high-value-items-your-renters-insurance-probably-doesnt-fully-cover",
+        "Allow: /brandfuse/articles/lemonade/8-steps-to-evaluate-a-renters-insurance-policy-before-signing",
+        "Disallow: /",
+        "User-agent: meta-externalagent",
+        "Disallow: /",
+        "User-agent: Google-Extended",
+        "Allow: /brandfuse/articles/lemonade/how-to-create-a-home-inventory-checklist-for-renters-insurance-claims",
+        "Allow: /brandfuse/articles/lemonade/how-renters-insurance-works-for-students-living-off-campus",
+        "Allow: /brandfuse/articles/lemonade/what-renters-insurance-policies-commonly-exclude",
+        "Allow: /brandfuse/articles/lemonade/5-high-value-items-your-renters-insurance-probably-doesnt-fully-cover",
+        "Allow: /brandfuse/articles/lemonade/8-steps-to-evaluate-a-renters-insurance-policy-before-signing"
+      ]
+    },
+    "commerce": {
+      "networks": null,
+      "evidence": []
+    },
+    "cdn": {
+      "providers": [
+        "cloudflare",
+        "cloudfront"
+      ],
+      "evidence_headers": [
+        "cf-ray",
+        "server: cloudflare",
+        "x-amz-cf-id",
+        "x-amz-cf-pop"
+      ]
+    }
+  },
+  "score": {
+    "weights": {
+      "readership": 40,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "subscores": {
+      "readership": null,
+      "placement": null,
+      "programmatic": 1,
+      "reachability": 0.5,
+      "commerce": null
+    },
+    "points": {
+      "readership": null,
+      "placement": null,
+      "programmatic": 10,
+      "reachability": 5,
+      "commerce": null
+    },
+    "maxima": {
+      "readership": 0,
+      "placement": 0,
+      "programmatic": 10,
+      "reachability": 10,
+      "commerce": 0
+    },
+    "total": 15,
+    "max": 20,
+    "missed": [
+      "Reachability: search and user-triggered agents are partly disallowed in robots.txt."
+    ]
+  },
+  "stance": {
+    "code": "closed-door",
+    "angle_label": "Search agents are disallowed in robots.txt. The reason is not visible from outside."
+  },
+  "cannot_see": [
+    "Real agent traffic volumes",
+    "Direct-sold ad revenue",
+    "Who owns AI policy internally"
+  ],
+  "cache": {
+    "hit": false,
+    "stored_at": null
+  }
+}

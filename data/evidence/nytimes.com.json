@@ -1,0 +1,172 @@
+{
+  "domain": "nytimes.com",
+  "vertical": null,
+  "source": "live",
+  "checked_at": "2026-10-30T06:18:11.890Z",
+  "fetch": {
+    "user_agent": "AyoGTMResearch/0.1 (+https://blankspace-publisher-call-sheet.pages.dev/method#crawler)",
+    "requests": 7,
+    "blocked": [
+      {
+        "url": "https://www.nytimes.com/",
+        "status": 403
+      }
+    ],
+    "skipped": [
+      {
+        "url": "https://www.nytimes.com/sitemaps/new/news.xml.gz",
+        "reason": "fetch_error"
+      }
+    ]
+  },
+  "signals": {
+    "readership": {
+      "status": "not_in_sample"
+    },
+    "placement": {
+      "sitemap_url": null,
+      "slugs_sampled": null,
+      "slugs_matched": null,
+      "slug_share": null,
+      "matched_examples": [],
+      "schema_types": [],
+      "pages_checked": []
+    },
+    "programmatic": {
+      "ads_txt": {
+        "present": true,
+        "url": "https://www.nytimes.com/ads.txt",
+        "status": 200,
+        "records": 30,
+        "ad_systems": 15,
+        "direct": 30,
+        "reseller": 0,
+        "managerdomain": null,
+        "ownerdomain": "nytimes.com",
+        "contact": [],
+        "note": null
+      },
+      "header_bidding": {
+        "detected": null,
+        "scope": "initial_html"
+      },
+      "ad_server_tag": {
+        "gpt": null
+      }
+    },
+    "reachability": {
+      "robots_url": "https://www.nytimes.com/robots.txt",
+      "status": 200,
+      "per_agent": {
+        "GPTBot": "blocked",
+        "ClaudeBot": "blocked",
+        "Google-Extended": "blocked",
+        "CCBot": "blocked",
+        "Applebot-Extended": "blocked",
+        "Meta-ExternalAgent": "blocked",
+        "Bytespider": "blocked",
+        "OAI-SearchBot": "blocked",
+        "ChatGPT-User": "blocked",
+        "PerplexityBot": "blocked",
+        "Perplexity-User": "blocked",
+        "Claude-SearchBot": "blocked",
+        "Claude-User": "blocked",
+        "OAI-AdsBot": "allowed"
+      },
+      "training": "blocked",
+      "search": "blocked",
+      "ai_rules_present": true,
+      "content_signal": [],
+      "excerpt": [
+        "User-agent: Applebot-Extended",
+        "Disallow: /",
+        "User-agent: Bytespider",
+        "Disallow: /",
+        "User-agent: CCBot",
+        "Disallow: /",
+        "User-agent: ChatGPT-User",
+        "Disallow: /",
+        "User-agent: ClaudeBot",
+        "Disallow: /",
+        "User-agent: Claude-SearchBot",
+        "Disallow: /",
+        "User-agent: Claude-User",
+        "Disallow: /",
+        "User-agent: Google-Extended",
+        "Disallow: /",
+        "User-agent: GPTBot",
+        "Disallow: /",
+        "User-agent: Meta-ExternalAgent",
+        "User-agent: meta-externalagent",
+        "Disallow: /",
+        "User-agent: OAI-SearchBot",
+        "Disallow: /",
+        "User-agent: PerplexityBot",
+        "Disallow: /",
+        "User-agent: Perplexity-User",
+        "Disallow: /"
+      ]
+    },
+    "commerce": {
+      "networks": null,
+      "evidence": []
+    },
+    "cdn": {
+      "providers": [
+        "cloudflare"
+      ],
+      "evidence_headers": [
+        "cf-ray",
+        "server: cloudflare"
+      ]
+    }
+  },
+  "score": {
+    "weights": {
+      "readership": 40,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "subscores": {
+      "readership": null,
+      "placement": null,
+      "programmatic": 1,
+      "reachability": 0,
+      "commerce": null
+    },
+    "points": {
+      "readership": null,
+      "placement": null,
+      "programmatic": 10,
+      "reachability": 0,
+      "commerce": null
+    },
+    "maxima": {
+      "readership": 0,
+      "placement": 0,
+      "programmatic": 10,
+      "reachability": 10,
+      "commerce": 0
+    },
+    "total": 10,
+    "max": 20,
+    "missed": [
+      "Reachability: search and user-triggered agents are all disallowed in robots.txt."
+    ]
+  },
+  "stance": {
+    "code": "closed-door",
+    "angle_label": "Search agents are disallowed in robots.txt. The reason is not visible from outside."
+  },
+  "cannot_see": [
+    "Real agent traffic volumes",
+    "Direct-sold ad revenue",
+    "Who owns AI policy internally"
+  ],
+  "cache": {
+    "hit": false,
+    "stored_at": null
+  }
+}

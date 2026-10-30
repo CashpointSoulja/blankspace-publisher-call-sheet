@@ -1,0 +1,188 @@
+{
+  "domain": "pcmag.com",
+  "vertical": null,
+  "source": "live",
+  "checked_at": "2026-10-30T06:18:04.310Z",
+  "fetch": {
+    "user_agent": "AyoGTMResearch/0.1 (+https://blankspace-publisher-call-sheet.pages.dev/method#crawler)",
+    "requests": 8,
+    "blocked": [],
+    "skipped": []
+  },
+  "signals": {
+    "readership": {
+      "status": "not_in_sample"
+    },
+    "placement": {
+      "sitemap_url": "https://www.pcmag.com/sitemap-reviews-0.xml",
+      "slugs_sampled": 50,
+      "slugs_matched": 50,
+      "slug_share": 1,
+      "matched_examples": [
+        "https://www.pcmag.com/reviews/ecoflow-delta-3-ultra-plus",
+        "https://www.pcmag.com/reviews/mcafee-total-protection",
+        "https://www.pcmag.com/reviews/sonos-ace-ultra",
+        "https://www.pcmag.com/reviews/sonos-beam-ultra",
+        "https://www.pcmag.com/reviews/amazon-kindle-paperwhite-2026"
+      ],
+      "schema_types": [
+        "ItemList"
+      ],
+      "pages_checked": [
+        "https://www.pcmag.com/"
+      ]
+    },
+    "programmatic": {
+      "ads_txt": {
+        "present": true,
+        "url": "https://www.pcmag.com/ads.txt",
+        "status": 200,
+        "records": 301,
+        "ad_systems": 67,
+        "direct": 132,
+        "reseller": 168,
+        "managerdomain": null,
+        "ownerdomain": "ziffdavis.com",
+        "contact": [],
+        "note": null
+      },
+      "header_bidding": {
+        "detected": [
+          "prebid"
+        ],
+        "scope": "initial_html"
+      },
+      "ad_server_tag": {
+        "gpt": true
+      }
+    },
+    "reachability": {
+      "robots_url": "https://www.pcmag.com/robots.txt",
+      "status": 200,
+      "per_agent": {
+        "GPTBot": "blocked",
+        "ClaudeBot": "blocked",
+        "Google-Extended": "allowed",
+        "CCBot": "blocked",
+        "Applebot-Extended": "blocked",
+        "Meta-ExternalAgent": "blocked",
+        "Bytespider": "blocked",
+        "OAI-SearchBot": "blocked",
+        "ChatGPT-User": "blocked",
+        "PerplexityBot": "blocked",
+        "Perplexity-User": "blocked",
+        "Claude-SearchBot": "blocked",
+        "Claude-User": "blocked",
+        "OAI-AdsBot": "allowed"
+      },
+      "training": "partial",
+      "search": "blocked",
+      "ai_rules_present": true,
+      "content_signal": [],
+      "excerpt": [
+        "User-agent: AddSearchBot",
+        "User-agent: AgentDataBot",
+        "User-agent: AI2Bot",
+        "User-agent: Ai2Bot-DeepResearchEval",
+        "User-agent: Ai2Bot-Dolma",
+        "User-agent: AIWebIndex",
+        "User-agent: AIWebIndex-Agent",
+        "User-agent: amazon-QBusiness",
+        "User-agent: AmazonBuyForMe",
+        "User-agent: Amazonbot",
+        "User-agent: Amzn-SearchBot",
+        "User-agent: Amzn-User",
+        "User-agent: Anchor Browser",
+        "User-agent: AndiAgent",
+        "User-agent: anthropic-ai",
+        "User-agent: ApifyBot",
+        "User-agent: ApifyWebsiteContentCrawler",
+        "User-agent: Applebot",
+        "User-agent: Applebot-extended",
+        "User-agent: atlassian-bot",
+        "User-agent: AutoRAG",
+        "User-agent: AwarioSmartBot",
+        "User-agent: AzureAI-SearchBot",
+        "User-agent: BeansLLM-CorpusBot",
+        "User-agent: Big Sur AI",
+        "User-agent: bigsur.ai",
+        "User-agent: BixelBot",
+        "User-agent: Brandwatch",
+        "User-agent: Bravebot",
+        "User-agent: Brightbot",
+        "User-agent: Bytespider",
+        "User-agent: CCBot",
+        "User-agent: Channel3Bot",
+        "User-agent: ChatGLM-Spider",
+        "User-agent: ChatGPT-User",
+        "User-agent: Claude-Code",
+        "User-agent: Claude-SearchBot",
+        "User-agent: Claude-User",
+        "User-agent: Claude-Web",
+        "User-agent: ClaudeBot"
+      ]
+    },
+    "commerce": {
+      "networks": [],
+      "evidence": []
+    },
+    "cdn": {
+      "providers": [
+        "cloudflare"
+      ],
+      "evidence_headers": [
+        "cf-ray",
+        "server: cloudflare"
+      ]
+    }
+  },
+  "score": {
+    "weights": {
+      "readership": 40,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "subscores": {
+      "readership": null,
+      "placement": 1,
+      "programmatic": 1,
+      "reachability": 0,
+      "commerce": 0
+    },
+    "points": {
+      "readership": null,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 0,
+      "commerce": 0
+    },
+    "maxima": {
+      "readership": 0,
+      "placement": 20,
+      "programmatic": 15,
+      "reachability": 10,
+      "commerce": 15
+    },
+    "total": 35,
+    "max": 60,
+    "missed": [
+      "Reachability: search and user-triggered agents are all disallowed in robots.txt.",
+      "Commerce: no affiliate network links found in the pages checked."
+    ]
+  },
+  "stance": {
+    "code": "closed-door",
+    "angle_label": "Search agents are disallowed in robots.txt. The reason is not visible from outside."
+  },
+  "cannot_see": [
+    "Real agent traffic volumes",
+    "Direct-sold ad revenue",
+    "Who owns AI policy internally"
+  ],
+  "cache": {
+    "hit": false,
+    "stored_at": null
+  }
+}
