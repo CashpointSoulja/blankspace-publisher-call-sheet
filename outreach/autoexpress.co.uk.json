@@ -1,9 +1,9 @@
 {
   "domain": "autoexpress.co.uk",
   "angle_code": "no-owner",
-  "recipient_role": "Commercial Director",
+  "recipient_role": "Commercial Director, online advertising and sales",
   "subject": "autoexpress.co.uk and AI search",
-  "body": "Hello,\n\nI’ve been looking at which publishers AI search tools point UK car buyers to.\n\nautoexpress.co.uk was cited in 54 of the 80 automotive answers in a dated sample of UK buyer queries.[^c1][^c2][^c3] It was cited in both runs of the sample, not just one.[^c4] Most of that agent traffic earns nothing today.\n\nWould a 20-minute call to walk through the queries that cited you be useful?\n\nBest wishes",
+  "body": "Hello,\n\nI’ve been looking at which publishers AI search tools point UK car buyers to.\n\nautoexpress.co.uk was cited in 54 of the 80 automotive answers in a dated sample of UK buyer queries.[^c1][^c2][^c3] It was cited in both runs of the sample, not just one.[^c4] Most of that agent traffic earns nothing today.\n\nWould it be worth a short conversation about whether an observe-only feasibility check on a few pages is practical, and what your SEO and engineering leads would need to see before agreeing to one?\n\nBest wishes",
   "claims": [
     {
       "id": "c1",

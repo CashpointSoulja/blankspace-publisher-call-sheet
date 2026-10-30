@@ -15,6 +15,8 @@ Collected files are kept exactly as collected, so field definitions live in the 
 | `sample.json` | `schema/sample.schema.json` | Sample conditions, counts, class shares, cost and the signal definition. Front page and `/method/`. |
 | `readership.json` | `schema/readership.schema.json` | Citation share per publisher. The call sheet ranks from it. |
 | `raw/probes.jsonl` | none (one JSON object per line) | Every probe as returned, with its cited URLs and cost |
+| `corrections.json` | `schema/corrections.schema.json` | Dated, sourced classification corrections, applied at load time. The collected files are never edited. |
+| `qualification.json` | `schema/qualification.schema.json` | Manual commercial qualification for `/first-wave/`: decision, sourced findings, role to ask, next question, gates and 30-day criteria |
 | `front.json` | `schema/front.schema.json` | Builder details and the verifier example. Not sample data. |
 | `queries.json` | `schema/queries.schema.json` | Queries as sent, with ids `auto-NN`, `ce-NN` and `sport-NN` |
 | `agents.json` | `schema/agents.schema.json` | Crawler tokens tested in robots.txt, verified against vendor pages or marked unverified with corroboration. The worker imports this file. |
@@ -40,6 +42,9 @@ probe_id,sample_id,date_utc,engine,run,vertical,query_id,query,location,logged_i
 - Every CSV row has the sample's id and date, a query that matches `queries.json`, and a domain whose class matches `domains.json`.
 - Each `readership.json` row is a publisher, with `share` = cited ÷ total, `s_citation_share` = min(1, share ÷ 0.25), and `probe_ids` equal to every probe that cites it.
 - An unverified agent token has a note and a corroboration URL.
+- A correction's domain exists with the class it corrects from.
+- An account ready for discovery has a verified commercial route, no failed gate, a next question and 30-day criteria. A domain reclassified away from publisher must be excluded. A hold needs a release condition. No contact details anywhere.
+- Drafts exist only for accounts ready for discovery, addressed to the role their record lists.
 - Every draft claim's `ref` resolves: a JSON pointer into that domain's evidence, or `company-claims#{id}`.
 - Every company claim a draft cites has a source.
 - Verifier `kept` and `tagged_company_claims` ids exist in the draft.

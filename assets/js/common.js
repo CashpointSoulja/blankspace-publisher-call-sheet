@@ -38,7 +38,7 @@ export function el(tag, attrs, ...children) {
     else if (k === "href") node.setAttribute("href", safeHref(v));
     else node.setAttribute(k, v === true ? "" : String(v));
   }
-  for (const c of children.flat()) {
+  for (const c of children.flat(Infinity)) {
     if (c === null || c === undefined || c === false) continue;
     node.append(c instanceof Node ? c : document.createTextNode(String(c)));
   }

@@ -66,16 +66,18 @@ export function renderEvidence(ev, opts = {}) {
           el("div", { class: "kpi-val" }, vertical ? VERTICALS[vertical] || vertical : "Not assessed"),
           el("div", { class: "kpi-label" }, !ev.vertical && opts.sampleVertical ? "Vertical, from the dated sample" : "Vertical")),
         el("div", { class: "kpi" },
-          el("div", { class: "kpi-val" }, s.reachability === undefined ? "Not checked" : STANCES[stanceCode] ? STANCES[stanceCode].priority : UNKNOWN),
-          el("div", { class: "kpi-label" }, "Priority")),
+          el("div", { class: "kpi-val" }, s.reachability === undefined ? "Not checked" : STANCES[stanceCode] ? STANCES[stanceCode].label : UNKNOWN),
+          el("div", { class: "kpi-label" }, "robots.txt policy, as declared")),
         el("div", { class: "kpi" },
           el("div", { class: "kpi-val" }, ev.fetch ? `${fmtNumber(ev.fetch.requests) ?? 0} / 8` : "Not run"),
           el("div", { class: "kpi-label" }, ev.fetch ? "Requests used" : "Live checks"))),
       el("p", { class: "small muted" },
         ev.fetch ? `Checked ${fmtDateTime(ev.checked_at) || UNKNOWN}. ` : `Sample collected ${fmtDate(opts.sampleDate) || UNKNOWN}. Live signals not collected yet. `,
         "Signals not read are left out of both the score and the maximum. They are never counted as zero."),
-      ev.stance && ev.stance.angle_label
-        ? reading(ev.stance.angle_label, "/stance/angle_label")
+      // Wording comes from the current rules for this stance code; a stored or live check keeps
+      // its own text in the raw JSON below.
+      STANCES[stanceCode] && STANCES[stanceCode].angle
+        ? reading(STANCES[stanceCode].angle, "/stance/code")
         : el("p", { class: "small muted" }, s.reachability === undefined
             ? "No opening angle yet. It comes from robots.txt, which hasn’t been checked for this publisher."
             : "No opening angle. robots.txt could not be read.")));
@@ -149,6 +151,7 @@ export function renderEvidence(ev, opts = {}) {
   const re = s.reachability || {};
   const perAgent = Object.entries(re.per_agent || {});
   const reachability = s.reachability === undefined ? notCollected("Agent reachability", ev.domain) : section("Agent reachability", "Declared policy, not observed behaviour",
+    el("p", { class: "small muted" }, "robots.txt is a request to crawlers. It doesn’t show real agent traffic, bot rules at the edge, who owns the policy, or willingness to pilot."),
     el("ul", { class: "facts" },
       fact("robots.txt", re.status ? `HTTP ${re.status}` : null, "/signals/reachability/status"),
       fact("Search and user-triggered agents", STATUS_WORDS[re.search] || null, "/signals/reachability/search"),
@@ -167,17 +170,19 @@ export function renderEvidence(ev, opts = {}) {
     (re.content_signal || []).length ? [el("p", { class: "small muted", style: "margin-top:.75rem" }, "Content-Signal lines, recorded verbatim and not scored"), el("pre", { class: "excerpt" }, re.content_signal.join("\n"))] : null);
 
   const c = s.commerce || {};
-  const commerce = s.commerce === undefined ? notCollected("Commerce monetisation", ev.domain) : section("Commerce monetisation", "Links in pages checked",
+  const commerce = s.commerce === undefined ? notCollected("Commerce monetisation", ev.domain) : section("Commerce monetisation", "Links in fetched HTML only",
     el("ul", { class: "facts" },
-      fact("Affiliate networks found", Array.isArray(c.networks) ? (c.networks.length ? c.networks.join(", ") : "None found") : null, "/signals/commerce/networks"),
-      (c.evidence || []).map((e, i) => fact(`${e.network}: link to ${e.pattern}`, e.page, `/signals/commerce/evidence/${i}`))));
+      fact("Affiliate links seen in the fetched HTML", Array.isArray(c.networks) ? (c.networks.length ? c.networks.join(", ") : "None seen, not assessed") : null, "/signals/commerce/networks", { unknown: Array.isArray(c.networks) && !c.networks.length }),
+      (c.evidence || []).map((e, i) => fact(`${e.network}: link to ${e.pattern}`, e.page, `/signals/commerce/evidence/${i}`))),
+    el("p", { class: "small muted" }, "Links rewritten by script after load, and ads run through an ad manager, are invisible here. None seen is unknown, not zero. Commercial readiness is reviewed by hand on the ",
+      el("a", { href: "/first-wave/" }, "first wave"), "."));
 
   const cdn = s.cdn || {};
   const cdnSection = s.cdn === undefined ? notCollected("CDN", ev.domain) : section("CDN", "Shown, not scored",
     el("ul", { class: "facts" },
       fact("Providers in response headers", (cdn.providers || []).join(", ") || null, "/signals/cdn/providers"),
       fact("Headers seen", (cdn.evidence_headers || []).join(", ") || "None", "/signals/cdn/evidence_headers")),
-    el("p", { class: "small muted" }, "Which CDNs blankspace deploys on is unknown to us, so this does not move the score."));
+    el("p", { class: "small muted" }, "A response header shows the edge a site sits behind. It doesn’t show whether the publisher’s team can deploy there, so this does not move the score."));
 
   // --- Fetch log -------------------------------------------------------------------
   const f = ev.fetch || {};

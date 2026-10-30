@@ -1,12 +1,14 @@
 // /method/: sample facts, queries, classifications and crawler lists, read from data/.
 
 import { el, clear, loadJSON, fmtNumber, fmtDate, fmtPct, VERTICALS, CLASS_LABELS } from "./common.js";
-import { loadSample, loadDomains } from "./sample-data.js";
+import { loadSampleSet } from "./sample-data.js";
 
 const val = (v, f = (x) => x) => (v === null || v === undefined || (Array.isArray(v) && !v.length) ? "Not recorded" : f(v));
 
 async function sampleFacts() {
-  const [s, q] = await Promise.all([loadSample().catch(() => null), loadJSON("/data/queries.json").catch(() => null)]);
+  const [set, q] = await Promise.all([loadSampleSet(), loadJSON("/data/queries.json").catch(() => null)]);
+  const s = set.sample;
+  renderCorrections(s);
   const box = document.getElementById("sample-facts");
   clear(box);
   const rows = [
@@ -18,7 +20,7 @@ async function sampleFacts() {
     ["Probes (query × engine × run)", val(s && s.probes, fmtNumber)],
     ["Citations captured", val(s && s.total_citations, fmtNumber)],
     ["Distinct domains cited", val(s && s.unique_domains, fmtNumber)],
-    ["Publishers among them", val(s && s.publishers_cited, fmtNumber)],
+    ["Publishers among them", val(s && s.publishers_cited, (n) => s.corrections.length ? `${fmtNumber(n)} after ${s.corrections.length} dated correction (${fmtNumber(s.original.publishers_cited)} as collected)` : fmtNumber(n))],
     ["Collection cost", val(s && s.collection_cost_usd, (c) => `US$${c.toFixed(2)}`)]
   ];
   box.append(el("table", { class: "data-table lg" },
@@ -60,7 +62,7 @@ async function sampleFacts() {
 }
 
 async function classifications() {
-  const d = await loadDomains().catch(() => ({}));
+  const d = (await loadSampleSet()).domains;
   const box = document.getElementById("domains");
   clear(box);
   const entries = Object.entries(d).sort((a, b) => b[1].citations - a[1].citations || a[0].localeCompare(b[0]));
@@ -75,7 +77,7 @@ async function classifications() {
     for (const [domain, x] of entries.filter(([, x]) => cls === "all" || x.class === cls)) {
       tbody.append(el("tr", {},
         el("td", { class: "strong" }, domain),
-        el("td", {}, CLASS_LABELS[x.class] || x.class),
+        el("td", {}, CLASS_LABELS[x.class] || x.class, x.corrected ? el("span", { class: "muted" }, ` (corrected from ${x.corrected.from})`) : null),
         el("td", { class: "num right" }, fmtNumber(x.citations)),
         el("td", {}, x.rationale)));
     }
@@ -118,7 +120,7 @@ async function agents() {
 
 // Where the full-marks cap bites, and how thin the long tail is, from readership.json.
 async function scaleFacts() {
-  const r = await loadJSON("/data/readership.json").catch(() => null);
+  const r = (await loadSampleSet()).readership;
   const box = document.getElementById("scale-facts");
   if (!box || !Array.isArray(r) || !r.length) return;
   const capped = r.filter((x) => x.s_citation_share >= 1);
@@ -126,6 +128,27 @@ async function scaleFacts() {
   const byVertical = Object.keys(VERTICALS).map((v) => `${capped.filter((x) => x.vertical === v).length} in ${VERTICALS[v].toLowerCase()}`).join(", ");
   clear(box);
   box.append(`In this sample ${capped.length} of ${r.length} publishers reach the cap (${byVertical}). Below it the scale is linear. ${thin.length} publishers were cited in only one or two of their vertical’s probes, which a re-run could easily change, so small differences in the tail mean little.`);
+}
+
+// Dated corrections, with what was collected beside what is shown.
+function renderCorrections(s) {
+  const box = document.getElementById("corrections-list");
+  if (!box || !s) return;
+  clear(box);
+  if (!s.corrections.length) { box.append(el("p", { class: "small muted" }, "No corrections.")); return; }
+  for (const c of s.corrections) {
+    box.append(el("div", { class: "inner" },
+      el("div", { class: "inner-head" }, el("span", {}, c.domain), el("span", {}, `${c.from} → ${c.to}`)),
+      el("div", { class: "inner-body" },
+        el("p", { class: "small" }, c.reason),
+        el("ul", { class: "facts" }, c.sources.map((x) => el("li", { class: "fact" },
+          el("span", { class: "fact-text" }, x.finding),
+          el("span", { class: "fact-value small" }, el("a", { href: x.url, rel: "noopener", target: "_blank" }, "Source")),
+          el("span", { class: "ptr" }, `Read ${fmtDate(x.accessed)}`)))))));
+  }
+  const pub = (list) => list.find((b) => b.class === "publisher");
+  box.append(el("p", { class: "small muted" },
+    `As collected: ${fmtNumber(s.original.publishers_cited)} publishers, ${fmtPct(pub(s.original.citation_buckets).share, 1)} of citations. After corrections: ${fmtNumber(s.publishers_cited)} publishers, ${fmtPct(pub(s.citation_buckets).share, 1)} of citations. The collected files are unchanged.`));
 }
 
 Promise.all([sampleFacts(), classifications(), agents(), scaleFacts()]).catch(() => { /* each section keeps its notice */ });

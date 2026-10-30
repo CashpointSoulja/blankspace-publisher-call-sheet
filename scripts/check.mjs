@@ -498,6 +498,30 @@ if (existsSync(path.join(ROOT, "data"))) {
     if (draft && /[\w.+-]+@[\w-]+\.[\w.]+/.test(draft.body)) fail("drafts", `drafts/${domain}.json: contact details in the body`);
   }
 
+  // Dated corrections (data/corrections.json) and manual qualification (data/qualification.json).
+  const corrections = FILES.includes("data/corrections.json") ? checkJson("data/corrections.json", "corrections") : null;
+  for (const c of (corrections && corrections.corrections) || []) {
+    const d = data.domains[c.domain];
+    if (!d) fail("data", `corrections.json: ${c.domain} is not in domains.json`);
+    else if (d.class !== c.from) fail("data", `corrections.json: ${c.domain} is ${d.class} as collected, not ${c.from}`);
+  }
+  const corrected = new Map(((corrections && corrections.corrections) || []).map((c) => [c.domain, c]));
+  const qualification = FILES.includes("data/qualification.json") ? checkJson("data/qualification.json", "qualification") : null;
+  for (const a of (qualification && qualification.accounts) || []) {
+    const at = `qualification.json ${a.account}`;
+    for (const dom of a.domains) if (!data.domains[dom]) fail("data", `${at}: ${dom} is not in domains.json`);
+    const gate = (g) => a.gates.find((x) => x.gate === g);
+    if (a.decision === "ready_for_discovery") {
+      if (!gate("commercial_route") || gate("commercial_route").status !== "passed") fail("data", `${at}: ready for discovery needs a verified commercial route`);
+      if (a.gates.some((g) => g.status === "failed")) fail("data", `${at}: a failed gate can't be ready for discovery`);
+      if (!a.next_question || !a.success_criteria_30d.length) fail("data", `${at}: needs a next question and 30-day criteria`);
+      for (const dom of a.domains) if (corrected.has(dom) && corrected.get(dom).to !== "publisher") fail("data", `${at}: ${dom} was reclassified, so it can't be ready`);
+    }
+    if (a.decision === "hold" && !a.release_condition) fail("data", `${at}: a hold needs a release condition`);
+    for (const dom of a.domains) if (corrected.has(dom) && corrected.get(dom).to !== "publisher" && a.decision !== "exclude") fail("data", `${at}: ${dom} was reclassified away from publisher; mark it excluded`);
+    if (/[\w.+-]+@[\w-]+\.[\w.]+/.test(JSON.stringify(a))) fail("data", `${at}: no contact details in qualification records`);
+  }
+
   // Release: no placeholders.
   const rel = RELEASE ? fail : warn;
   if (!data.sample) rel("placeholder", "sample.json missing");
