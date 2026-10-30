@@ -39,7 +39,7 @@ function listFiles() {
 }
 
 const FILES = listFiles();
-const TEXT_EXT = /\.(html|css|js|mjs|cjs|json|md|toml|txt|csv|svg|yml|yaml)$|(^|\/)(_headers|_redirects|\.gitignore)$/;
+const TEXT_EXT = /\.(html|css|js|mjs|cjs|json|jsonl|md|toml|txt|csv|svg|yml|yaml)$|(^|\/)(_headers|_redirects|\.gitignore)$/;
 const TEXT_FILES = FILES.filter((f) => TEXT_EXT.test(f));
 const HTML_FILES = FILES.filter((f) => f.endsWith(".html"));
 const SITE_JS = FILES.filter((f) => f.startsWith("assets/js/") && f.endsWith(".js"));
@@ -303,57 +303,155 @@ function checkJson(rel, schemaName) {
   return value;
 }
 
+function parseCSV(text) {
+  const rows = [];
+  let row = [], field = "", q = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (q) {
+      if (c === '"' && text[i + 1] === '"') { field += '"'; i++; }
+      else if (c === '"') q = false;
+      else field += c;
+    } else if (c === '"') q = true;
+    else if (c === ",") { row.push(field); field = ""; }
+    else if (c === "\n" || c === "\r") {
+      if (c === "\r" && text[i + 1] === "\n") i++;
+      row.push(field); rows.push(row); row = []; field = "";
+    } else field += c;
+  }
+  if (field !== "" || row.length) { row.push(field); rows.push(row); }
+  return rows.filter((r) => r.length > 1 || r[0] !== "");
+}
+
+const near = (a, b, tol) => Math.abs(a - b) <= tol;
+
 if (existsSync(path.join(ROOT, "data"))) {
   data.front = checkJson("data/front.json", "front");
-  data.targets = checkJson("data/targets.json", "targets");
-  data.queries = checkJson("data/queries.json", "queries");
+  data.sample = checkJson("data/sample.json", "sample");
+  data.readership = checkJson("data/readership.json", "readership") || [];
+  data.queries = checkJson("data/queries.json", "queries") || [];
+  data.domains = checkJson("data/domains.json", "domains") || {};
   data.agents = checkJson("data/agents.json", "agents");
-  data.domains = checkJson("data/domains.json", "domains");
-  data.claims = checkJson("data/company-claims.json", "company-claims");
+  data.claims = checkJson("data/company-claims.json", "company-claims") || [];
 
   const dirFiles = (dir) => FILES.filter((f) => f.startsWith(`data/${dir}/`) && f.endsWith(".json"));
   data.evidence = Object.fromEntries(dirFiles("evidence").map((f) => [path.basename(f, ".json"), checkJson(f, "evidence")]));
   data.drafts = Object.fromEntries(dirFiles("drafts").map((f) => [path.basename(f, ".json"), checkJson(f, "draft")]));
   data.verifier = Object.fromEntries(dirFiles("verifier").map((f) => [path.basename(f, ".json"), checkJson(f, "verifier")]));
+  const S = data.sample || {};
 
-  // CSV
-  const CSV_HEAD = "probe_id,sample_id,date_utc,engine,run,vertical,query_id,query,location,logged_in,citation_rank,cited_url,cited_domain,domain_class";
-  const csv = read("data/citation-sample.csv").replace(/\r\n/g, "\n");
-  const [head, ...lines] = csv.split("\n").filter((l) => l.length);
-  if (head !== CSV_HEAD) fail("data", `data/citation-sample.csv: header must be exactly\n    ${CSV_HEAD}`);
-  const csvSampleIds = new Set();
-  lines.forEach((l, i) => {
-    const cols = l.match(/("([^"]|"")*"|[^,]*)(,|$)/g).filter((c) => c !== "");
-    if (cols.length !== 14) fail("data", `data/citation-sample.csv line ${i + 2}: expected 14 columns, found ${cols.length}`);
-    else csvSampleIds.add(cols[1].replace(/,$/, ""));
+  // citation-sample.csv (SPEC §8.3)
+  const CSV_HEAD = ["probe_id", "sample_id", "date_utc", "engine", "run", "vertical", "query_id", "query", "location", "logged_in", "citation_rank", "cited_url", "cited_domain", "domain_class"];
+  const [head, ...body] = parseCSV(read("data/citation-sample.csv"));
+  if (!head || head.join(",") !== CSV_HEAD.join(",")) fail("data", `data/citation-sample.csv: header must be exactly ${CSV_HEAD.join(",")}`);
+  const csv = [];
+  body.forEach((cols, i) => {
+    if (cols.length !== CSV_HEAD.length) { fail("data", `citation-sample.csv line ${i + 2}: expected ${CSV_HEAD.length} columns, found ${cols.length}`); return; }
+    csv.push(Object.fromEntries(CSV_HEAD.map((h, k) => [h, cols[k]])));
   });
+  const queryById = Object.fromEntries(data.queries.map((q) => [q.id, q]));
+  const citedBy = new Map(); // probe_id -> Set(domain)
+  for (const [i, r] of csv.entries()) {
+    const at = `citation-sample.csv line ${i + 2}`;
+    if (S.sample_id && r.sample_id !== S.sample_id) fail("data", `${at}: sample_id ${r.sample_id} is not ${S.sample_id}`);
+    if (S.dates_utc && !S.dates_utc.includes(r.date_utc)) fail("data", `${at}: date ${r.date_utc} is not a sample date`);
+    const q = queryById[r.query_id];
+    if (!q) fail("data", `${at}: query_id ${r.query_id} is not in queries.json`);
+    else if (q.q !== r.query || q.vertical !== r.vertical) fail("data", `${at}: query text or vertical differs from queries.json ${r.query_id}`);
+    if (!citedBy.has(r.probe_id)) citedBy.set(r.probe_id, new Set());
+    if (r.cited_url) {
+      const d = data.domains[r.cited_domain];
+      if (!d) fail("data", `${at}: ${r.cited_domain} is not classified in domains.json`);
+      else if (d.class !== r.domain_class) fail("data", `${at}: ${r.cited_domain} is ${r.domain_class} here but ${d.class} in domains.json`);
+      citedBy.get(r.probe_id).add(r.cited_domain);
+    }
+  }
+  const withUrl = csv.filter((r) => r.cited_url);
 
-  // Cross-file
-  const ids = new Set([data.front?.sample_id, data.targets?.sample_id, data.queries?.sample_id, ...csvSampleIds].filter(Boolean));
-  if (ids.size > 1) fail("data", `sample_id differs across files: ${[...ids].join(", ")}`);
+  // raw/probes.jsonl
+  const probesFile = "data/raw/probes.jsonl";
+  const probes = existsSync(path.join(ROOT, probesFile))
+    ? read(probesFile).split("\n").filter(Boolean).map((l, i) => { try { return JSON.parse(l); } catch { fail("data", `${probesFile} line ${i + 1}: not valid JSON`); return null; } }).filter(Boolean)
+    : (fail("data", `${probesFile} is missing`), []);
+  const probeIds = new Set(probes.map((p) => p.probe_id));
+  if (probeIds.size !== probes.length) fail("data", `${probesFile}: duplicate probe_id`);
+  for (const p of probes) {
+    if (S.sample_id && p.sample_id !== S.sample_id) fail("data", `${probesFile} ${p.probe_id}: sample_id differs`);
+    if (!citedBy.has(p.probe_id)) fail("data", `${probesFile} ${p.probe_id}: no rows in citation-sample.csv`);
+    else if ((p.citations || []).length !== csv.filter((r) => r.probe_id === p.probe_id && r.cited_url).length) fail("data", `${probesFile} ${p.probe_id}: citation count differs from the CSV`);
+  }
+  for (const id of citedBy.keys()) if (!probeIds.has(id)) fail("data", `citation-sample.csv: probe ${id} is not in ${probesFile}`);
 
-  for (const row of data.targets?.rows || []) {
-    if (!data.evidence[row.domain]) fail("data", `targets.json row ${row.rank} (${row.domain}) has no data/evidence/${row.domain}.json`);
-    if (row.max !== 100 && Object.values(row.subscores).every((v) => v !== null)) fail("data", `targets.json ${row.domain}: max must be 100 when every signal is known`);
+  // sample.json figures, recomputed from the raw files
+  if (data.sample) {
+    if (S.queries !== data.queries.length) fail("data", `sample.json queries ${S.queries} ≠ ${data.queries.length} in queries.json`);
+    if (S.probes !== probes.length) fail("data", `sample.json probes ${S.probes} ≠ ${probes.length} in ${probesFile}`);
+    if (S.probes !== S.queries * S.engines.length * S.runs_per_query) fail("data", "sample.json probes ≠ queries × engines × runs_per_query");
+    if (S.total_citations !== withUrl.length) fail("data", `sample.json total_citations ${S.total_citations} ≠ ${withUrl.length} CSV rows with a URL`);
+    if (S.unique_domains !== Object.keys(data.domains).length) fail("data", `sample.json unique_domains ≠ ${Object.keys(data.domains).length} in domains.json`);
+    const publishers = Object.values(data.domains).filter((d) => d.class === "publisher").length;
+    if (S.publishers_cited !== publishers) fail("data", `sample.json publishers_cited ${S.publishers_cited} ≠ ${publishers} publishers in domains.json`);
+    for (const b of S.citation_buckets) {
+      const n = withUrl.filter((r) => r.domain_class === b.class).length;
+      if (b.count !== n) fail("data", `sample.json bucket ${b.class}: count ${b.count} ≠ ${n} in the CSV`);
+      if (!near(b.share, n / withUrl.length, 0.0001)) fail("data", `sample.json bucket ${b.class}: share ${b.share} ≠ ${(n / withUrl.length).toFixed(4)}`);
+    }
+    const cost = probes.reduce((a, p) => a + (p.cost_usd || 0), 0);
+    if (typeof S.collection_cost_usd === "number" && !near(cost, S.collection_cost_usd, 0.0001)) fail("data", `sample.json collection_cost_usd ${S.collection_cost_usd} ≠ ${cost.toFixed(4)} summed from ${probesFile}`);
+  }
+  if (new Set(data.queries.map((q) => q.id)).size !== data.queries.length) fail("data", "queries.json: duplicate id");
+
+  // readership.json (SPEC §3.1)
+  if (data.readership.length !== S.publishers_cited) fail("data", `readership.json has ${data.readership.length} rows; sample.json says ${S.publishers_cited} publishers`);
+  const seen = new Set();
+  for (const r of data.readership) {
+    const at = `readership.json ${r.domain}`;
+    if (seen.has(r.domain)) fail("data", `${at}: duplicate`);
+    seen.add(r.domain);
+    const d = data.domains[r.domain];
+    if (!d || d.class !== "publisher") fail("data", `${at}: only publisher-class domains are ranked`);
+    // probe_ids lists every probe citing the domain, in any vertical; the share counts only its own.
+    const probeById = new Map(probes.map((p) => [p.probe_id, p]));
+    const inVertical = r.probe_ids.filter((id) => probeById.get(id) && probeById.get(id).vertical === r.vertical).length;
+    if (probes.length && inVertical !== r.probes_cited_in_vertical) fail("data", `${at}: ${inVertical} probe ids in ${r.vertical} but probes_cited_in_vertical is ${r.probes_cited_in_vertical}`);
+    const allCiting = [...citedBy].filter(([, ds]) => ds.has(r.domain)).length;
+    if (allCiting !== r.probe_ids.length) fail("data", `${at}: ${r.probe_ids.length} probe ids, but ${allCiting} probes cite it in the CSV`);
+    if (!near(r.share, r.probes_cited_in_vertical / r.vertical_probes_total, 0.0005)) fail("data", `${at}: share ≠ probes_cited_in_vertical ÷ vertical_probes_total`);
+    if (!near(r.s_citation_share, Math.min(1, r.share / 0.25), 1e-9)) fail("data", `${at}: s_citation_share ≠ min(1, share ÷ 0.25)`);
+    const total = probes.filter((p) => p.vertical === r.vertical).length;
+    if (probes.length && r.vertical_probes_total !== total) fail("data", `${at}: vertical_probes_total ${r.vertical_probes_total} ≠ ${total} probes in ${r.vertical}`);
+    for (const id of r.probe_ids) {
+      if (!citedBy.get(id) || !citedBy.get(id).has(r.domain)) fail("data", `${at}: probe ${id} does not cite it in citation-sample.csv`);
+    }
   }
 
-  const claimIds = new Set((data.claims || []).map((c) => c.id));
+  // agents.json (SPEC §4)
+  for (const a of data.agents?.agents || []) {
+    if (a.verified === false && (!a.note || !a.corroboration_url)) fail("data", `agents.json ${a.token}: unverified tokens need a note and a corroboration_url`);
+    if (a.verified === true && !a.doc_url) fail("data", `agents.json ${a.token}: verified tokens need the vendor doc_url`);
+  }
+
+  // company-claims.json (SPEC §8.5)
+  const claimIds = new Set(data.claims.map((c) => c.id));
   for (const id of ["cpm", "pickup", "sole-supplier-growth", "sole-supplier-referrals"]) {
     if (!claimIds.has(id)) fail("data", `company-claims.json: missing entry “${id}”`);
   }
+
+  // Drafts and verifier logs (SPEC §8.6, §8.7, §9)
   const pointer = (obj, ptr) => ptr.split("/").slice(1).reduce((a, k) => (a == null ? undefined : a[k.replace(/~1/g, "/").replace(/~0/g, "~")]), obj);
   for (const [domain, draft] of Object.entries(data.drafts)) {
     if (!draft) continue;
-    const ev = data.evidence[domain];
+    const row = data.readership.find((r) => r.domain === domain);
+    const ev = data.evidence[domain] || (row ? { signals: { readership: { status: "in_sample", share: row.share, probes_cited: row.probes_cited_in_vertical, probes_total: row.vertical_probes_total, stability: row.stability, probe_ids: row.probe_ids } } } : null);
     const draftIds = new Set(draft.claims.map((c) => c.id));
     for (const c of draft.claims) {
       if (c.type === "company_claim") {
-        const cc = (data.claims || []).find((x) => `company-claims#${x.id}` === c.ref);
+        const cc = data.claims.find((x) => `company-claims#${x.id}` === c.ref);
         if (!cc) fail("data", `drafts/${domain}.json ${c.id}: ${c.ref} is not in company-claims.json`);
         else if (!cc.source_url) fail("data", `drafts/${domain}.json ${c.id}: cites ${cc.id}, which has no source_url`);
         else if (!c.text.includes(cc.required_phrasing)) fail("data", `drafts/${domain}.json ${c.id}: company claim must use “${cc.required_phrasing}”`);
       } else if (!ev || pointer(ev, c.ref) === undefined) {
-        fail("data", `drafts/${domain}.json ${c.id}: ${c.ref} does not resolve in evidence/${domain}.json`);
+        fail("data", `drafts/${domain}.json ${c.id}: ${c.ref} does not resolve in this domain's evidence`);
       }
     }
     for (const m of draft.body.matchAll(/\[\^(c\d+)\]/g)) if (!draftIds.has(m[1])) fail("data", `drafts/${domain}.json: body marker ${m[1]} has no claim`);
@@ -367,13 +465,17 @@ if (existsSync(path.join(ROOT, "data"))) {
     if (!v || !v.removed.some((r) => r.text === ex.removed_text)) fail("data", "front.json verifier_example.removed_text must appear verbatim in that domain's verifier log");
   }
 
-  // Release-only: placeholders are not allowed.
+  // Release: no placeholders.
   const rel = RELEASE ? fail : warn;
-  if (!data.front?.sample_id) rel("placeholder", "front.json: sample not wired in (sample_id is null)");
-  if (!(data.targets?.rows || []).length) rel("placeholder", "targets.json: no rows");
-  for (const a of data.agents?.agents || []) if (!a.checked) rel("placeholder", `agents.json: ${a.token} not yet checked against its vendor page`);
-  for (const c of data.claims || []) if (!c.source_url || !c.accessed) rel("placeholder", `company-claims.json: ${c.id} has no source; pages will not show it`);
+  if (!data.sample) rel("placeholder", "sample.json missing");
+  if (!data.readership.length) rel("placeholder", "readership.json has no rows");
+  for (const c of data.claims) if (!c.source_url || !c.accessed) rel("placeholder", `company-claims.json: ${c.id} has no source; pages will not show it`);
   if (!data.front?.builder?.repo_url) rel("placeholder", "front.json: builder.repo_url not set");
+  // Not placeholders, but gaps worth seeing on every run.
+  const unverified = (data.agents?.agents || []).filter((a) => !a.verified).map((a) => a.token);
+  if (unverified.length) warn("gap", `agents.json: ${unverified.join(", ")} unverified on vendor pages (corroborated instead)`);
+  if (!Object.keys(data.drafts).length) warn("gap", "no outreach drafts yet; evidence pages say so");
+  if (!Object.keys(data.evidence).length) warn("gap", "no stored live checks in data/evidence/; live signals show as not collected");
 }
 
 // --- Report -----------------------------------------------------------------------------------

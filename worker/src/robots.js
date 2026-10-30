@@ -100,7 +100,7 @@ export function summarisePolicy(parsed, agents) {
   for (const a of agents) {
     const ok = isAllowed(parsed, a.token, "/");
     perAgent[a.token] = ok ? "allowed" : "blocked";
-    byGroup[a.group].push(ok);
+    if (byGroup[a.group]) byGroup[a.group].push(ok);
   }
   const status = (list) => {
     if (!list.length) return null;

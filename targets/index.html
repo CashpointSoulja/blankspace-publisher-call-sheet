@@ -55,7 +55,7 @@
     <div class="wrap">
       <span class="tag">Call sheet</span>
       <h1>Who I’d call first</h1>
-      <p class="sub">Publishers from the dated citation sample, ranked by score. Move the weights to yours and the order changes. A signal that couldn’t be read is left out of that publisher’s total and maximum, never counted as zero.</p>
+      <p class="sub">Every publisher cited in the dated sample, ranked by how often answers in its vertical cited it. Move the weights to yours and the order changes. A signal not yet read is left out of that publisher’s total and maximum, never counted as zero.</p>
     </div>
   </header>
 
@@ -68,6 +68,7 @@
         </div>
         <div class="sliders" id="sliders"></div>
         <p class="small muted" style="margin-top:1rem">With your weights, each publisher ranks by points earned over points available on its known signals. The weights are kept in the page address, so you can share them.</p>
+        <p class="notice" id="weights-note" hidden style="margin-top:1rem"><strong>Only citation share is collected so far.</strong> Placement, programmatic, reachability and commerce come from a live check of each publisher, which hasn’t been run across the list. Until it is, those weights can’t change the order. Use “Run” on any row to read them now.</p>
       </div>
 
       <div class="window">
@@ -93,10 +94,10 @@
                     <th scope="col">Publisher</th>
                     <th scope="col" class="hide-sm">Vertical</th>
                     <th scope="col">Score</th>
-                    <th scope="col">Signals</th>
-                    <th scope="col" class="hide-sm">Stance</th>
+                    <th scope="col">Citation share</th>
+                    <th scope="col" class="hide-sm">Probes citing it</th>
                     <th scope="col" class="hide-sm">Stability</th>
-                    <th scope="col" class="hide-sm">CDN</th>
+                    <th scope="col">Live check</th>
                   </tr>
                 </thead>
                 <tbody id="rows" aria-live="polite"></tbody>
@@ -107,7 +108,7 @@
         </div>
       </div>
 
-      <p class="small muted">Signals, left to right: readership, placement, programmatic, reachability, commerce. A hatched bar is unknown. Stance and its opening angle are my reading of the publisher’s robots.txt; each evidence page shows the lines it rests on.</p>
+      <p class="small muted">Citation share is the share of a vertical’s sampled probes whose answer cited the publisher. It is citation frequency on this one dated sample, not measured agent traffic. Full marks at one probe in four. Each publisher sits in the vertical where its share is highest. <a href="/method/#signals">How it’s calculated</a></p>
     </div>
   </section>
 </main>

@@ -58,8 +58,8 @@
       <div class="hero-copy">
         <span class="tag">Publisher call sheet</span>
         <h1 id="hero-title-empty">Which publishers AI answers cite, and <span class="hl">who I’d call first.</span></h1>
-        <h1 id="hero-title-data" hidden><span data-slot="publishers_cited" data-format="number">—</span> publishers showed up in AI answers to <span data-slot="queries" data-format="number">—</span> shopping queries. <span class="hl">Here’s who I’d call first.</span></h1>
-        <p class="hero-sub">Across automotive, consumer electronics and sportswear: the publishers I’d call first, the evidence behind each one, and the message I’d send.</p>
+        <h1 id="hero-title-data" hidden><span data-slot="publishers_cited" data-format="number">—</span> publishers were cited in AI answers to <span data-slot="queries" data-format="number">—</span> UK shopping queries. <span class="hl">Here’s who I’d call first.</span></h1>
+        <p class="hero-sub">Across automotive, consumer electronics and sportswear: who gets cited, the evidence behind each one, and where I’d start. One answer engine: <span data-slot="engine">—</span>. Runs per query: <span data-slot="runs_per_query" data-format="number">—</span>.</p>
         <div class="actions">
           <a class="btn btn-primary" href="/targets/">See the call sheet <span class="arrow" aria-hidden="true">→</span></a>
           <a class="btn btn-ghost" href="#check">Check any publisher</a>
@@ -95,8 +95,8 @@
                       <th scope="col">#</th>
                       <th scope="col">Publisher</th>
                       <th scope="col" class="hide-sm">Vertical</th>
+                      <th scope="col">Citation share</th>
                       <th scope="col">Score</th>
-                      <th scope="col" class="hide-sm">Opening angle</th>
                     </tr>
                   </thead>
                   <tbody id="preview-rows" aria-live="polite"></tbody>
@@ -144,7 +144,7 @@
       <div class="section-head">
         <span class="eyebrow">Scoring</span>
         <h2 id="score-title">How a publisher earns a place</h2>
-        <p class="sub">Five signals, 100 points. Every point traces to a file you can open. A signal I couldn’t read is left out of the total and the maximum. It is never counted as zero.</p>
+        <p class="sub">Five signals, 100 points. Every point traces to a file you can open. A signal not yet read is left out of the total and the maximum. It is never counted as zero. So far only citation share is collected for the sample, so the call sheet scores out of 40. The live check reads the other four for any publisher.</p>
       </div>
 
       <div class="window">
@@ -155,9 +155,9 @@
         </div>
         <ul class="score-rows">
           <li class="score-row">
-            <div class="score-name"><h3>Agent readership</h3><span class="tag tag-neutral tag-sm">Dated sample</span></div>
+            <div class="score-name"><h3>Citation share</h3><span class="tag tag-neutral tag-sm">Dated sample</span></div>
             <div class="score-weight"><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="score-pts">40</span></div>
-            <p>Share of a vertical’s sampled queries where answer engines cited the publisher. Full marks at one query in four.</p>
+            <p>Share of a vertical’s sampled probes whose answer cited the publisher. Full marks at one in four. Citation frequency on this sample, not measured traffic.</p>
           </li>
           <li class="score-row">
             <div class="score-name"><h3>Placement fit</h3><span class="tag tag-neutral tag-sm">Live</span></div>
@@ -204,7 +204,7 @@
             <input class="input" id="check-url" name="url" type="text" inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="publisher.co.uk" required>
             <button class="btn btn-primary" type="submit">Run check</button>
           </div>
-          <p class="form-note">Reads robots.txt, response headers, ads.txt, the sitemap and up to two pages. Identifies itself honestly and obeys robots.txt. Readership appears only for publishers in the dated sample.</p>
+          <p class="form-note">Reads robots.txt, response headers, ads.txt, the sitemap and up to two pages. Identifies itself honestly and obeys robots.txt. Citation share appears only for publishers in the dated sample.</p>
         </form>
       </div>
     </div>
@@ -220,7 +220,7 @@
       <div class="grid-3">
         <article class="card span-2">
           <h3>Outreach drafts, checked before you read them</h3>
-          <p>One draft per publisher on the call sheet, addressed to a role rather than a named person. Every claim links to its evidence. Anything that can’t be traced is removed, and the removal is logged.</p>
+          <p>Each draft is addressed to a role rather than a named person. Every claim links to its evidence. Anything that can’t be traced is removed, and the removal is logged. No drafts are published yet: they wait on the live signals each opening angle depends on.</p>
           <div class="inner" style="margin:1rem 0">
             <div class="inner-body" id="verifier-example">
               <span class="micro">Verifier log</span>
@@ -228,7 +228,7 @@
             </div>
           </div>
           <p>No send function exists anywhere in the code.</p>
-          <a class="card-link" href="/targets/">Read the drafts →</a>
+          <a class="card-link" href="/method/#verifier">How drafts are checked →</a>
         </article>
 
         <article class="card">
@@ -261,7 +261,7 @@
         <h2 id="builder-title">Who built this</h2>
         <p class="sub" style="margin-top:1rem"><span data-slot="builder.name">Ayo Ahmed</span>. <span data-slot="builder.bio"></span></p>
         <div class="actions" style="margin-top:1.5rem">
-          <a class="btn btn-ghost" data-href-slot="builder.repo_url" href="/method/" hidden>Repository</a>
+          <a class="btn btn-ghost" data-href-slot="builder.repo_url" href="https://github.com/CashpointSoulja/blankspace-publisher-call-sheet">Repository</a>
           <a class="btn btn-ghost" href="/method/">How it works</a>
         </div>
       </div>
@@ -272,7 +272,7 @@
             <tr><th scope="col">The role asks for</th><th scope="col">Where it is</th></tr>
           </thead>
           <tbody>
-            <tr><td class="strong">Outreach that books qualified publisher meetings</td><td>Call sheet, evidence pages, verified drafts</td></tr>
+            <tr><td class="strong">Outreach that books qualified publisher meetings</td><td>Call sheet and evidence pages. Drafts and their verifier are specified; none are published yet.</td></tr>
             <tr><td class="strong">The GTM machine: lists, research agents, analytics</td><td>Live check, scoring, verifier, method</td></tr>
             <tr><td class="strong">Sequences and CRM</td><td>Not built. A CRM is a buying decision, not a demo. The plan covers set-up.</td></tr>
             <tr><td class="strong">A/B testing</td><td>The plan: test design for small numbers</td></tr>

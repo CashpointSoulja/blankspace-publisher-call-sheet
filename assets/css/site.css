@@ -481,13 +481,8 @@ details.raw pre { max-height: 420px; }
 .sliders { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1rem 1.5rem; }
 .slider .bar-meta { font-size: .8125rem; }
 .slider output { color: var(--accent); font-weight: 700; }
-.minibars { display: inline-flex; align-items: flex-end; gap: 3px; height: 22px; }
-.minibar { display: flex; align-items: flex-end; width: 6px; height: 100%; background: var(--track); border-radius: 2px; overflow: hidden; }
-.minibar-fill { display: block; width: 100%; background: var(--accent); border-radius: 2px 2px 0 0; }
-.minibar-unknown {
-  display: block; width: 100%;
-  background: repeating-linear-gradient(135deg, var(--track-fill) 0 2px, transparent 2px 4px);
-}
+.scroll-y { max-height: 560px; overflow-y: auto; }
+.scroll-y thead th { position: sticky; top: 0; background: var(--chrome); }
 
 /* ---------- Company claims ---------- */
 .claim { margin: 0; padding: .875rem 1rem; border-top: 1px solid var(--row-line); font-size: .9375rem; color: var(--text); }

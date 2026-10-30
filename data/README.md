@@ -1,22 +1,24 @@
 # Data
 
-The site reads every number from these files at runtime. They ship as empty placeholders. Real collected data replaces them in the data-wiring pass.
+The site reads every number from these files at runtime. The citation sample was collected on 30 Oct 2026. Pages read the collected files directly, with no derived copies.
 
 Rules for anything written here:
 
 - Unknown is `null`, never `0`. Pages show `null` as unknown, and scoring leaves it out of both the total and the maximum.
 - Nothing synthetic. Every value comes from a recorded probe or a fetched public file.
-- `node scripts/check.mjs` validates every file against `schema/`. `node scripts/check.mjs --release` also fails on placeholders: an empty sample, unchecked agents, or company claims with no source.
+- `node scripts/check.mjs` validates every file against `schema/`. `node scripts/check.mjs --release` also fails on placeholders: no sample, company claims with no source, or no repository link.
 
-JSON has no comments, so each object file carries a `$comment` and a `$schema` pointer. The full field definitions are the JSON Schemas in `schema/`.
+Collected files are kept exactly as collected, so field definitions live in the JSON Schemas in `schema/`, not in the files. `front.json` carries a `$comment` and a `$schema` pointer.
 
 | File | Schema | Contents |
 |---|---|---|
-| `front.json` | `schema/front.schema.json` | Front-page summary: sample date, engines, n, class shares, preview rows, verifier example, builder |
-| `targets.json` | `schema/targets.schema.json` | Ranked call sheet. One row per in-sample publisher, with sub-scores in [0, 1] or null |
-| `queries.json` | `schema/queries.schema.json` | Queries as typed, with ids `auto-NN`, `ce-NN` and `sport-NN`, plus engine and model names on the day |
-| `agents.json` | `schema/agents.schema.json` | Crawler tokens tested in robots.txt, with the vendor page and the date checked. The worker imports this file. |
-| `domains.json` | `schema/domains.schema.json` | Class and one-line rationale for every cited domain |
+| `sample.json` | `schema/sample.schema.json` | Sample conditions, counts, class shares, cost and the signal definition. Front page and `/method/`. |
+| `readership.json` | `schema/readership.schema.json` | Citation share per publisher. The call sheet ranks from it. |
+| `raw/probes.jsonl` | none (one JSON object per line) | Every probe as returned, with its cited URLs and cost |
+| `front.json` | `schema/front.schema.json` | Builder details and the verifier example. Not sample data. |
+| `queries.json` | `schema/queries.schema.json` | Queries as sent, with ids `auto-NN`, `ce-NN` and `sport-NN` |
+| `agents.json` | `schema/agents.schema.json` | Crawler tokens tested in robots.txt, verified against vendor pages or marked unverified with corroboration. The worker imports this file. |
+| `domains.json` | `schema/domains.schema.json` | Every cited domain, keyed by domain: class, one-line rationale and counts |
 | `company-claims.json` | `schema/company-claims.schema.json` | blankspace's own figures. An array, per SPEC §8.5. Pages show a claim only once `source_url` and `accessed` are set. |
 | `citation-sample.csv` | Header row below | One row per cited URL. A probe with no citations gets one row with an empty `cited_url`. |
 | `evidence/{domain}.json` | `schema/evidence.schema.json` | Evidence object per publisher. The worker returns the same shape. |
@@ -33,8 +35,10 @@ probe_id,sample_id,date_utc,engine,run,vertical,query_id,query,location,logged_i
 
 `scripts/check.mjs` also checks the following:
 
-- Every `targets.json` row has `evidence/{domain}.json`.
-- `sample_id` is the same in `front.json`, `targets.json`, `queries.json` and the CSV.
+- Every figure in `sample.json` is recomputed from the CSV, `raw/probes.jsonl`, `queries.json` and `domains.json`, including class counts and shares, publishers cited and collection cost.
+- Every CSV row has the sample's id and date, a query that matches `queries.json`, and a domain whose class matches `domains.json`.
+- Each `readership.json` row is a publisher, with `share` = cited ÷ total, `s_citation_share` = min(1, share ÷ 0.25), and `probe_ids` equal to every probe that cites it.
+- An unverified agent token has a note and a corroboration URL.
 - Every draft claim's `ref` resolves: a JSON pointer into that domain's evidence, or `company-claims#{id}`.
 - Every company claim a draft cites has a source.
 - Verifier `kept` and `tagged_company_claims` ids exist in the draft.

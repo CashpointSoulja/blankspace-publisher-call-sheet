@@ -1,8 +1,9 @@
 // /p/{domain}/: evidence page for an in-sample publisher.
 // Loads data/evidence/{domain}.json, plus the draft and verifier log when they exist.
 
-import { el, clear, loadJSON, loadText, parseCSV, fmtDate, fmtDateTime, VERTICALS } from "./common.js";
+import { el, clear, loadJSON, fmtNumber, fmtDateTime, VERTICALS } from "./common.js";
 import { renderEvidence, resolvePointer } from "./evidence-view.js";
+import { loadSample, loadReadership, loadDomains, loadCitations, sampleDate, rankReadership, readershipSignal, evidenceFromSample } from "./sample-data.js";
 
 const DOMAIN_RE = /^[a-z0-9.-]+\.[a-z]{2,}$/;
 const REASONS = {
@@ -39,43 +40,64 @@ async function main() {
   document.title = `${domain} | Evidence | Publisher call sheet`;
   title.textContent = domain;
 
-  const [ev, front, draft, verifier, claims] = await Promise.all([
-    loadJSON(`/data/evidence/${domain}.json`),
-    loadJSON("/data/front.json").catch(() => null),
+  const [sample, readership, domains, liveFile, draft, verifier, claims] = await Promise.all([
+    loadSample().catch(() => null),
+    loadReadership().catch(() => []),
+    loadDomains().catch(() => ({})),
+    loadJSON(`/data/evidence/${domain}.json`).catch(() => null),
     loadJSON(`/data/drafts/${domain}.json`).catch(() => null),
     loadJSON(`/data/verifier/${domain}.json`).catch(() => null),
     loadJSON("/data/company-claims.json").catch(() => [])
   ]);
 
-  if (!ev) {
-    sub.textContent = "This domain has no evidence file in the dated sample.";
+  const ranked = rankReadership(readership);
+  const row = ranked.find((r) => r.domain === domain);
+  if (!row && !liveFile) {
+    const cls = domains[domain];
+    sub.textContent = cls
+      ? `Cited in the sample, but classified as ${cls.class}, so it isn’t ranked. ${cls.rationale}.`
+      : "This domain was not cited in the dated sample.";
     notice(
-      el("strong", {}, `No evidence for ${domain}.`), " ",
-      "Only publishers in the dated sample have an evidence page. ",
+      el("strong", {}, `No call-sheet entry for ${domain}.`), " ",
+      "Only publishers cited in the dated sample have an evidence page. ",
       el("a", { href: `/check/?url=${encodeURIComponent(domain)}` }, "Run a live check instead"), ".");
     return;
   }
 
-  sub.textContent = `${ev.vertical ? VERTICALS[ev.vertical] || ev.vertical : "No vertical"}. Every line below points to the field it was read from.`;
-  clear(root);
-  root.append(renderEvidence(ev, { sampleDate: front && front.sample_date }));
+  // A stored live check (data/evidence/{domain}.json) adds the live signals; citation share
+  // always comes from readership.json.
+  let ev = row ? evidenceFromSample(row, sample) : liveFile;
+  if (liveFile && row) {
+    ev = { ...liveFile, vertical: row.vertical, signals: { ...liveFile.signals, readership: readershipSignal(row, sample) } };
+  }
 
-  const citations = await renderCitations(ev);
-  if (citations) root.append(citations);
+  const cls = domains[domain];
+  sub.textContent = [
+    row ? `Rank ${row.rank} of ${ranked.length} publishers.` : null,
+    ev.vertical ? `${VERTICALS[ev.vertical] || ev.vertical}.` : null,
+    cls ? `Classified as a publisher: ${cls.rationale}.` : null,
+    "Every line below points to the field it was read from."
+  ].filter(Boolean).join(" ");
+  clear(root);
+  root.append(renderEvidence(ev, { sampleDate: sampleDate(sample) }));
+
+  if (row) root.append(await renderCitations(domain, row, cls));
   root.append(renderDraft(domain, ev, draft, verifier, claims || []));
 }
 
-async function renderCitations(ev) {
-  const r = ev.signals && ev.signals.readership;
-  if (!r || r.status !== "in_sample" || !Array.isArray(r.probe_ids) || !r.probe_ids.length) return null;
-  const text = await loadText("/data/citation-sample.csv").catch(() => null);
-  const ids = new Set(r.probe_ids);
-  const rows = text ? parseCSV(text).filter((row) => ids.has(row.probe_id) && row.cited_domain === ev.domain) : [];
+async function renderCitations(domain, row, cls) {
+  const ids = new Set(row.probe_ids);
+  const all = await loadCitations().catch(() => []);
+  const rows = all.filter((c) => ids.has(c.probe_id) && c.cited_domain === domain);
+  const totals = cls ? `${fmtNumber(cls.citations)} citations in ${fmtNumber(cls.probes_cited)} probes across the whole sample` : null;
   return el("section", { class: "inner", "aria-labelledby": "cite-h" },
-    el("div", { class: "inner-head" }, el("span", { id: "cite-h" }, "Citation rows"), el("span", { class: "tag tag-neutral tag-sm" }, "Dated sample")),
+    el("div", { class: "inner-head" }, el("span", { id: "cite-h" }, `Citation rows · ${rows.length}`), el("span", { class: "tag tag-neutral tag-sm" }, "Dated sample")),
+    el("div", { class: "inner-body small muted" },
+      `Every answer in the sample that cited it, in any vertical, from citation-sample.csv. Its citation share counts only the ${row.probes_cited_in_vertical} in ${VERTICALS[row.vertical] || row.vertical}.${totals ? ` ${totals}.` : ""}`),
     rows.length
       ? el("div", { class: "table-scroll" }, el("table", { class: "data-table" },
-          el("thead", {}, el("tr", {}, ["Probe", "Engine", "Run", "Query", "Rank", "Cited URL"].map((h) => el("th", { scope: "col" }, h)))),
+          el("caption", { class: "visually-hidden" }, `Citations of ${domain} in the sample`),
+          el("thead", {}, el("tr", {}, ["Probe", "Engine", "Run", "Query", "Position", "Cited URL"].map((h) => el("th", { scope: "col" }, h)))),
           el("tbody", {}, rows.map((row) => el("tr", {},
             el("td", {}, row.probe_id),
             el("td", {}, row.engine),

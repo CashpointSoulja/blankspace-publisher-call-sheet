@@ -2,26 +2,18 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "domains.schema.json",
   "title": "domains.json",
-  "description": "Classification of every cited registrable domain (SPEC §6).",
+  "description": "Every cited registrable domain (Public Suffix List), keyed by domain, with its class and one line of rationale (SPEC §6). Only class publisher is ranked.",
   "type": "object",
-  "required": ["sample_id", "domains"],
-  "additionalProperties": false,
-  "properties": {
-    "$schema": { "type": "string" },
-    "$comment": { "type": "string" },
-    "sample_id": { "type": ["string", "null"], "pattern": "^cs-\\d{4}-\\d{2}-\\d{2}$" },
-    "domains": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["domain", "class", "rationale"],
-        "additionalProperties": false,
-        "properties": {
-          "domain": { "type": "string", "pattern": "^[a-z0-9.-]+\\.[a-z]{2,}$" },
-          "class": { "enum": ["publisher", "retailer", "brand", "ugc", "other"], "description": "publisher: main revenue is content monetisation via ads or affiliate. Comparison and release-tracking sites count." },
-          "rationale": { "type": "string", "minLength": 1, "description": "One line." }
-        }
-      }
+  "additionalProperties": {
+    "type": "object",
+    "required": ["class", "rationale", "citations", "probes_cited", "vertical_shares"],
+    "additionalProperties": false,
+    "properties": {
+      "class": { "enum": ["publisher", "retailer", "brand", "ugc", "other"] },
+      "rationale": { "type": "string", "minLength": 1 },
+      "citations": { "type": "integer", "minimum": 1 },
+      "probes_cited": { "type": "integer", "minimum": 1 },
+      "vertical_shares": { "type": "object", "additionalProperties": { "type": "number", "minimum": 0, "maximum": 1 } }
     }
   }
 }

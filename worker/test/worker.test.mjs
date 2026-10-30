@@ -312,3 +312,10 @@ test("handler: routing, validation and rate limit", async () => {
   const limited = { ...env, RATE_LIMITER: { limit: async () => ({ success: false }) } };
   assert.equal((await worker.fetch(req("api/check?url=example.com"), limited)).status, 429);
 });
+
+test("agents.json groups: ads tokens are per-agent only", () => {
+  const p = summarisePolicy(parseRobots("User-agent: OAI-AdsBot\nDisallow: /\n"), [...AGENTS, { token: "OAI-AdsBot", group: "ads" }]);
+  assert.equal(p.per_agent["OAI-AdsBot"], "blocked");
+  assert.equal(p.search, "allowed");
+  assert.equal(p.training, "allowed");
+});

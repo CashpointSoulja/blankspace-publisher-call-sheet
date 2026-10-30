@@ -1,7 +1,8 @@
 // /check/?url=: live evidence for any publisher URL, via the worker (SPEC §7).
 
-import { el, clear, loadJSON, CHECK_ENDPOINT } from "./common.js";
+import { el, clear, CHECK_ENDPOINT } from "./common.js";
 import { renderEvidence } from "./evidence-view.js";
+import { loadSample, loadReadership, sampleDate } from "./sample-data.js";
 
 const form = document.getElementById("check-form");
 const input = document.getElementById("check-url");
@@ -20,9 +21,9 @@ async function run(url) {
   button.disabled = true;
   out.append(el("p", { class: "notice", role: "status" }, "Checking. Up to eight requests, eight seconds each."));
 
-  const [front, targets] = await Promise.all([
-    loadJSON("/data/front.json").catch(() => null),
-    loadJSON("/data/targets.json").catch(() => null)
+  const [sample, readership] = await Promise.all([
+    loadSample().catch(() => null),
+    loadReadership().catch(() => [])
   ]);
 
   let res;
@@ -45,17 +46,17 @@ async function run(url) {
     return;
   }
 
-  const inSample = targets && Array.isArray(targets.rows) && targets.rows.some((r) => r.domain === body.domain);
+  const inSample = readership.some((r) => r.domain === body.domain);
   if (inSample) {
     out.append(el("p", { class: "notice" },
       el("strong", {}, `${body.domain} is in the dated sample. `),
-      "Its sample evidence page includes readership and a draft. ",
+      "Its evidence page adds its citation share and the answers that cited it. ",
       el("a", { href: `/p/${encodeURIComponent(body.domain)}/` }, "Open it")));
   }
   if (body.cache && body.cache.hit) {
     out.append(el("p", { class: "small muted" }, "Served from the 24-hour cache for this host. The publisher was not contacted again."));
   }
-  out.append(renderEvidence(body, { sampleDate: front && front.sample_date }));
+  out.append(renderEvidence(body, { sampleDate: sampleDate(sample) }));
 }
 
 const initial = new URLSearchParams(location.search).get("url");

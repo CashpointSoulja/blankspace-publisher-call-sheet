@@ -1,20 +1,10 @@
 {
   "$schema": "./schema/front.schema.json",
-  "$comment": "Front page summary of the dated citation sample (SPEC §8.1). Placeholder: every value is null or empty until the sample is run and wired in. null renders as an empty slot, never as zero. Field definitions: schema/front.schema.json.",
-  "sample_id": null,
-  "sample_date": null,
-  "engines": [],
-  "runs_per_query": null,
-  "queries": null,
-  "probes": null,
-  "publishers_cited": null,
-  "shortlist_size": null,
-  "citation_buckets": [],
-  "preview": [],
+  "$comment": "Front-page fields that are not sample data. Sample figures are read from sample.json and readership.json. verifier_example stays null until a verified draft exists. Field definitions: schema/front.schema.json.",
   "verifier_example": null,
   "builder": {
     "name": "Ayo Ahmed",
     "bio": null,
-    "repo_url": null
+    "repo_url": "https://github.com/CashpointSoulja/blankspace-publisher-call-sheet"
   }
 }

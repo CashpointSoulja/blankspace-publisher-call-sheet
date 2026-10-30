@@ -33,6 +33,13 @@ function section(title, tag, ...body) {
 
 const STATUS_WORDS = { allowed: "Allowed", partial: "Partly disallowed", blocked: "Disallowed" };
 
+// A live signal that has never been fetched for this domain. Not zero, not unknown-after-trying.
+function notCollected(title, domain) {
+  return section(title, "Not collected",
+    el("p", { class: "small muted" }, "Not collected for the sample yet. ",
+      el("a", { href: `/check/?url=${encodeURIComponent(domain)}` }, "Run the live checks"), " to read it now."));
+}
+
 // opts: { sampleDate } for the "Not in the dated sample" line.
 export function renderEvidence(ev, opts = {}) {
   const live = ev.source === "live";
@@ -57,17 +64,19 @@ export function renderEvidence(ev, opts = {}) {
           el("div", { class: "kpi-val" }, ev.vertical ? VERTICALS[ev.vertical] || ev.vertical : "None"),
           el("div", { class: "kpi-label" }, "Vertical")),
         el("div", { class: "kpi" },
-          el("div", { class: "kpi-val" }, STANCES[stanceCode] ? STANCES[stanceCode].priority : UNKNOWN),
+          el("div", { class: "kpi-val" }, s.reachability === undefined ? "Not checked" : STANCES[stanceCode] ? STANCES[stanceCode].priority : UNKNOWN),
           el("div", { class: "kpi-label" }, "Priority")),
         el("div", { class: "kpi" },
-          el("div", { class: "kpi-val" }, `${fmtNumber(ev.fetch?.requests) ?? 0} / 8`),
-          el("div", { class: "kpi-label" }, "Requests used"))),
+          el("div", { class: "kpi-val" }, ev.fetch ? `${fmtNumber(ev.fetch.requests) ?? 0} / 8` : "Not run"),
+          el("div", { class: "kpi-label" }, ev.fetch ? "Requests used" : "Live checks"))),
       el("p", { class: "small muted" },
-        `Checked ${fmtDateTime(ev.checked_at) || UNKNOWN}. `,
-        "Signals that could not be read are left out of both the score and the maximum. They are never counted as zero."),
+        ev.fetch ? `Checked ${fmtDateTime(ev.checked_at) || UNKNOWN}. ` : `Sample collected ${fmtDate(opts.sampleDate) || UNKNOWN}. Live signals not collected yet. `,
+        "Signals not read are left out of both the score and the maximum. They are never counted as zero."),
       ev.stance && ev.stance.angle_label
         ? reading(ev.stance.angle_label, "/stance/angle_label")
-        : el("p", { class: "small muted" }, "No opening angle. robots.txt could not be read.")));
+        : el("p", { class: "small muted" }, s.reachability === undefined
+            ? "No opening angle yet. It comes from robots.txt, which hasn’t been checked for this publisher."
+            : "No opening angle. robots.txt could not be read.")));
 
   // --- Breakdown -------------------------------------------------------------------
   const rows = SIGNALS.map((k) => {
@@ -91,11 +100,11 @@ export function renderEvidence(ev, opts = {}) {
 
   // --- Signals ---------------------------------------------------------------------
   const r = s.readership || {};
-  const readership = section("Agent readership", "Dated sample",
+  const readership = section("Citation share", "Dated sample",
     el("ul", { class: "facts" },
       r.status === "in_sample"
         ? [
-            fact("Share of sampled queries in its vertical that cited this domain", fmtPct(r.share, 1), "/signals/readership/share"),
+            fact("Share of its vertical’s sampled probes whose answer cited it", fmtPct(r.share, 1), "/signals/readership/share"),
             fact("Probes citing it", r.probes_cited != null && r.probes_total != null ? `${fmtNumber(r.probes_cited)} of ${fmtNumber(r.probes_total)}` : null, "/signals/readership/probes_cited"),
             el("li", { class: "fact", title: STABILITY_TOOLTIP },
               el("span", { class: "fact-text" }, "Stability ", el("span", { class: "muted small" }, `(${STABILITY_TOOLTIP})`)),
@@ -103,10 +112,11 @@ export function renderEvidence(ev, opts = {}) {
               el("code", { class: "ptr" }, "/signals/readership/stability")),
             fact("Sample", r.sample_id, "/signals/readership/sample_id")
           ]
-        : fact(`Not in the dated sample (${fmtDate(opts.sampleDate) || "date not set"})`, "Unknown", "/signals/readership/status", { unknown: true })));
+        : fact(`Not in the dated sample (${fmtDate(opts.sampleDate) || "date not set"})`, "Unknown", "/signals/readership/status", { unknown: true })),
+    el("p", { class: "small muted" }, "Citation frequency on this one dated sample. Not measured agent traffic, readership or revenue."));
 
   const p = s.placement || {};
-  const placement = section("Placement fit", live ? "Live" : "Sample",
+  const placement = s.placement === undefined ? notCollected("Placement fit", ev.domain) : section("Placement fit", live ? "Live" : "Sample",
     el("ul", { class: "facts" },
       fact("Sitemap read", p.sitemap_url || "None reachable", "/signals/placement/sitemap_url"),
       fact("Sitemap URLs sampled", fmtNumber(p.slugs_sampled), "/signals/placement/slugs_sampled"),
@@ -120,7 +130,7 @@ export function renderEvidence(ev, opts = {}) {
   const g = s.programmatic || {};
   const ads = g.ads_txt || {};
   const hb = g.header_bidding || {};
-  const programmatic = section("Programmatic stack", "Initial HTML only",
+  const programmatic = s.programmatic === undefined ? notCollected("Programmatic stack", ev.domain) : section("Programmatic stack", "Initial HTML only",
     el("ul", { class: "facts" },
       fact("ads.txt", ads.present === null || ads.present === undefined ? (ads.note ? `Unknown (${ads.note.replace(/_/g, " ")})` : null) : yesNo(ads.present, "Published", "Not found"), "/signals/programmatic/ads_txt/present"),
       ads.present ? [
@@ -136,7 +146,7 @@ export function renderEvidence(ev, opts = {}) {
 
   const re = s.reachability || {};
   const perAgent = Object.entries(re.per_agent || {});
-  const reachability = section("Agent reachability", "Declared policy, not observed behaviour",
+  const reachability = s.reachability === undefined ? notCollected("Agent reachability", ev.domain) : section("Agent reachability", "Declared policy, not observed behaviour",
     el("ul", { class: "facts" },
       fact("robots.txt", re.status ? `HTTP ${re.status}` : null, "/signals/reachability/status"),
       fact("Search and user-triggered agents", STATUS_WORDS[re.search] || null, "/signals/reachability/search"),
@@ -155,13 +165,13 @@ export function renderEvidence(ev, opts = {}) {
     (re.content_signal || []).length ? [el("p", { class: "small muted", style: "margin-top:.75rem" }, "Content-Signal lines, recorded verbatim and not scored"), el("pre", { class: "excerpt" }, re.content_signal.join("\n"))] : null);
 
   const c = s.commerce || {};
-  const commerce = section("Commerce monetisation", "Links in pages checked",
+  const commerce = s.commerce === undefined ? notCollected("Commerce monetisation", ev.domain) : section("Commerce monetisation", "Links in pages checked",
     el("ul", { class: "facts" },
       fact("Affiliate networks found", Array.isArray(c.networks) ? (c.networks.length ? c.networks.join(", ") : "None found") : null, "/signals/commerce/networks"),
       (c.evidence || []).map((e, i) => fact(`${e.network}: link to ${e.pattern}`, e.page, `/signals/commerce/evidence/${i}`))));
 
   const cdn = s.cdn || {};
-  const cdnSection = section("CDN", "Shown, not scored",
+  const cdnSection = s.cdn === undefined ? notCollected("CDN", ev.domain) : section("CDN", "Shown, not scored",
     el("ul", { class: "facts" },
       fact("Providers in response headers", (cdn.providers || []).join(", ") || null, "/signals/cdn/providers"),
       fact("Headers seen", (cdn.evidence_headers || []).join(", ") || "None", "/signals/cdn/evidence_headers")),
@@ -169,7 +179,7 @@ export function renderEvidence(ev, opts = {}) {
 
   // --- Fetch log -------------------------------------------------------------------
   const f = ev.fetch || {};
-  const fetchLog = section("What the check fetched", null,
+  const fetchLog = !ev.fetch ? notCollected("What the check fetched", ev.domain) : section("What the check fetched", null,
     el("ul", { class: "facts" },
       fact("User-agent", f.user_agent, "/fetch/user_agent"),
       fact("Requests to the publisher", f.requests != null ? `${f.requests} of 8` : null, "/fetch/requests"),

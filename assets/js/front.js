@@ -1,6 +1,9 @@
-// Front page: fills slots from data/front.json. Unknown values stay as visible empty slots.
+// Front page: fills slots from data/sample.json, data/readership.json and data/front.json.
+// Unknown values stay as visible empty slots.
 
-import { el, clear, loadJSON, fmtNumber, fmtDate, VERTICALS, CLASS_LABELS, initTabs } from "./common.js";
+import { el, clear, loadJSON, fmtNumber, fmtDate, fmtPct, VERTICALS, CLASS_LABELS, initTabs } from "./common.js";
+import { partsFromSubscores, score } from "./score.js";
+import { loadSample, loadReadership, sampleDate, rankReadership } from "./sample-data.js";
 
 const REASONS = {
   no_matching_evidence: "No matching evidence",
@@ -32,16 +35,17 @@ function renderPreview(vertical) {
     .slice(0, 5);
   if (!rows.length) {
     tbody.append(el("tr", { class: "empty-row" }, el("td", { colspan: "5" },
-      previewRows.length ? "No publishers from this vertical near the top of the sample." : "No sample rows yet. The call sheet fills in once the sample is scored.")));
+      previewRows.length ? "No publishers from this vertical in the sample." : "No sample rows found.")));
     return;
   }
   for (const r of rows) {
+    const scored = score(partsFromSubscores({ readership: r.s_citation_share }));
     tbody.append(el("tr", {},
       el("td", { class: "num" }, String(r.rank)),
       el("td", {}, el("a", { class: "domain-link", href: `/p/${encodeURIComponent(r.domain)}/` }, r.domain)),
       el("td", { class: "hide-sm" }, VERTICALS[r.vertical] || r.vertical),
-      el("td", { class: "score-cell" }, el("strong", {}, String(Math.round(r.total))), el("span", {}, ` / ${Math.round(r.max)}`)),
-      el("td", { class: "hide-sm" }, r.angle_label || "")));
+      el("td", { class: "num" }, fmtPct(r.share, 1)),
+      el("td", { class: "score-cell" }, el("strong", {}, String(Math.round(scored.total))), el("span", {}, ` / ${Math.round(scored.max)}`))));
   }
 }
 
@@ -66,6 +70,7 @@ function renderBuckets(buckets) {
 }
 
 function fill(data) {
+  // data merges sample.json (sample figures) and front.json (builder, verifier example).
   document.querySelectorAll("[data-slot]").forEach((node) => {
     const v = format(get(data, node.dataset.slot), node.dataset.format);
     if (v !== null) { node.textContent = v; node.classList.remove("is-empty"); }
@@ -81,9 +86,9 @@ function fill(data) {
     document.getElementById("hero-title-data").hidden = false;
   }
 
-  previewRows = Array.isArray(data.preview) ? data.preview : [];
+  previewRows = data.ranked || [];
   renderPreview("all");
-  status.textContent = previewRows.length ? "Top five shown. Ranks are across all verticals." : "Awaiting sample data.";
+  status.textContent = previewRows.length ? "Top five shown, by citation share. Ranks are across all verticals." : "No sample rows found.";
   renderBuckets(data.citation_buckets);
 
   const v = data.verifier_example;
@@ -102,6 +107,15 @@ function fill(data) {
 document.querySelectorAll("[data-slot]").forEach((n) => n.classList.add("is-empty"));
 renderPreview("all");
 
-loadJSON("/data/front.json")
-  .then((data) => { if (data) fill(data); else status.textContent = "Sample data not found at /data/front.json."; })
+Promise.all([loadSample(), loadReadership(), loadJSON("/data/front.json").catch(() => null)])
+  .then(([sample, readership, front]) => {
+    if (!sample) { status.textContent = "Sample data not found at /data/sample.json."; return; }
+    fill({
+      ...(front || {}),
+      ...sample,
+      sample_date: sampleDate(sample),
+      engine: sample.engines.join(", "),
+      ranked: rankReadership(readership)
+    });
+  })
   .catch(() => { status.textContent = "Sample data could not be read."; });

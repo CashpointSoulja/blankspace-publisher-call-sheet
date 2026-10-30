@@ -1,8 +1,0 @@
-{
-  "$schema": "./schema/targets.schema.json",
-  "$comment": "Ranked call sheet (SPEC §8.2). In-sample publisher domains only, so every row has max 100 unless a signal is unknown. Sub-scores are in [0, 1] or null for unknown. Placeholder: no rows until the sample is scored. Field definitions: schema/targets.schema.json.",
-  "sample_id": null,
-  "generated_at": null,
-  "default_weights": { "readership": 40, "placement": 20, "programmatic": 15, "reachability": 10, "commerce": 15 },
-  "rows": []
-}

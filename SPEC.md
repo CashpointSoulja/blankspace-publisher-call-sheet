@@ -11,7 +11,7 @@ Unofficial concept by Ayo Ahmed for the blankspace Founding GTM Associate applic
 | Decision | Options | Default in code until decided |
 |---|---|---|
 | Site visibility | Public link vs unlisted or password | Public link, `<meta name="robots" content="noindex, nofollow">` on every page, plus `Disallow: /` in the site's own robots.txt |
-| Citation sample size | Within the pre-approved ~$2 cap: fewer queries, one engine, or one run | Whatever was actually run, recorded in `front.json` and `/method`. Never extrapolated |
+| Citation sample size | Within the pre-approved ~$2 cap: fewer queries, one engine, or one run | Whatever was actually run, recorded in `sample.json` and `/method`. Never extrapolated |
 
 ---
 
@@ -67,8 +67,8 @@ Measured values and the full component spec now live in `BRAND.md`, built from t
 
 | Route | Purpose | Data |
 |---|---|---|
-| `/` | Story: finding → assumption → scoring → live check → next steps → builder | `data/front.json` |
-| `/targets` | Ranked call sheet, vertical filter, weight sliders that re-rank live | `data/targets.json` |
+| `/` | Story: finding → assumption → scoring → live check → next steps → builder | `data/sample.json`, `data/readership.json`, `data/front.json` |
+| `/targets` | Ranked call sheet, vertical filter, weight sliders that re-rank live | `data/readership.json` |
 | `/p/{domain}` | Evidence page: raw signals, score breakdown, "why not higher", citation rows, angle, "can't see from outside", outreach draft and verifier log | `data/evidence/{domain}.json`, `data/drafts/{domain}.json`, `data/verifier/{domain}.json` |
 | `/check?url=` | Live evidence page for any URL. Readership shows "Not in the dated sample ({date})"; score out of known maximum | Worker `/api/check` |
 | `/pilots` | Pilot-health checklist, all questions, no data | Static |
@@ -91,7 +91,9 @@ Default weights: readership 40, placement 20, programmatic 15, reachability 10, 
 
 `/targets` ranks in-sample domains only, so every row has max 100. With custom slider weights it ranks by `Σ w_i s_i / Σ w_i`. A live check of an out-of-sample URL shows `x / 60`.
 
-### 3.1 Agent readership (w = 40, dated sample only)
+### 3.1 Citation share (w = 40, dated sample only)
+
+Shown as "Citation share". It is citation frequency on this sample only: not measured agent traffic, readership, all-engine visibility or revenue. The data key stays `readership` in evidence objects and weights.
 
 ```
 share_v(d)  = probes in vertical v whose citations include domain d / total probes in v
@@ -199,7 +201,7 @@ ai_rules_present = any robots.txt group names a listed agent, or any Content-Sig
 ## 6. Citation sample method
 
 - Queries: `data/queries.json`, three verticals, ids `auto-01…`, `ce-01…`, `sport-01…`. Model names refreshed at build time.
-- Conditions: UK location, logged out, the engines and runs recorded in `front.json`. Every probe is one (query, engine, run).
+- Conditions: UK-phrased queries, logged out, the engines and runs recorded in `sample.json`. Every probe is one (query, engine, run).
 - Capture every cited URL from the answer's sources, in order. Registrable domain via the Public Suffix List.
 - Classification (`data/domains.json`, one line of rationale per domain): `publisher` (main revenue is content monetisation via ads or affiliate, so comparison and release-tracking sites count), `retailer`, `brand`, `ugc` (forums, Reddit, video), `other`.
 - Only `publisher` domains are ranked. Class shares are published as a finding in their own right.
@@ -225,7 +227,9 @@ ai_rules_present = any robots.txt group names a listed agent, or any Content-Sig
 ```
 data/
   front.json
-  targets.json
+  sample.json
+  readership.json
+  raw/probes.jsonl
   queries.json
   agents.json
   domains.json
@@ -238,63 +242,39 @@ data/
 
 ### 8.1 front.json
 
-```json
-{
-  "sample_id": "cs-YYYY-MM-DD",
-  "sample_date": "YYYY-MM-DD",
-  "engines": ["string"],
-  "runs_per_query": 1,
-  "queries": 60,
-  "probes": 120,
-  "publishers_cited": 0,
-  "shortlist_size": 25,
-  "citation_buckets": [
-    { "class": "publisher|retailer|brand|ugc|other", "share": 0.0 }
-  ],
-  "preview": [
-    {
-      "rank": 1,
-      "domain": "string",
-      "vertical": "automotive|consumer_electronics|sportswear",
-      "total": 0,
-      "max": 100,
-      "angle_code": "already-decided",
-      "angle_label": "string"
-    }
-  ],
-  "verifier_example": {
-    "domain": "string",
-    "removed_text": "string",
-    "reason": "no_matching_evidence"
-  },
-  "builder": { "name": "string", "bio": "string", "repo_url": "string" }
-}
-```
-
-`preview`: at least the top 5 overall plus the top 5 per vertical, with global ranks kept.
-
-### 8.2 targets.json
+Front-page fields that are not sample data. Sample figures come from `sample.json` and `readership.json`, so each exists once.
 
 ```json
 {
-  "sample_id": "string",
-  "generated_at": "ISO-8601",
-  "default_weights": { "readership": 40, "placement": 20, "programmatic": 15, "reachability": 10, "commerce": 15 },
-  "rows": [
-    {
-      "rank": 1,
-      "domain": "string",
-      "vertical": "string",
-      "subscores": { "readership": 0.0, "placement": 0.0, "programmatic": 0.0, "reachability": 0.0, "commerce": 0.0 },
-      "total": 0,
-      "max": 100,
-      "stance": "already-decided",
-      "stability": "both_runs|one_run|single_run_only",
-      "cdn": ["cloudflare"]
-    }
-  ]
+  "verifier_example": { "domain": "string", "removed_text": "string", "reason": "no_matching_evidence" },
+  "builder": { "name": "string", "bio": "string|null", "repo_url": "string" }
 }
 ```
+
+`verifier_example` stays `null` until a verified draft exists.
+
+### 8.2 sample.json and readership.json
+
+`sample.json` records the sample's conditions and counts: `sample_id`, `dates_utc`, `engines`, `runs_per_query`, `queries`, `probes`, `condition`, `total_citations`, `unique_domains`, `publishers_cited`, `citation_buckets` (class, share, count), `collection_cost_usd` and `signal_definition`. The front page and `/method` read their numbers from it.
+
+`readership.json` is the call sheet's source. It has one row per publisher-class domain, in its highest-share vertical:
+
+```json
+{
+  "domain": "string",
+  "vertical": "automotive|consumer_electronics|sportswear",
+  "probes_cited_in_vertical": 0,
+  "vertical_probes_total": 80,
+  "share": 0.0,
+  "stability": "both_runs|one_run|single_run_only",
+  "probe_ids": ["every probe, in any vertical, whose answer cited the domain"],
+  "s_citation_share": 0.0
+}
+```
+
+`/targets` ranks by `s_citation_share`, then `share`. The live signals for in-sample publishers come from a live check, stored as `evidence/{domain}.json` when kept. Until then they are unknown, and each row scores out of 40.
+
+Raw probes are kept in `data/raw/probes.jsonl`. Field definitions for every file are in `data/schema/`.
 
 ### 8.3 citation-sample.csv
 

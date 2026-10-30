@@ -76,9 +76,10 @@
         <span class="eyebrow">The citation sample</span>
         <h2 id="sample-title">One dated sample, recorded in full</h2>
         <div class="prose" style="margin-top:1.5rem">
-          <p>Shopping queries in three verticals were put to AI answer engines from the UK, logged out. Every probe is one query, on one engine, in one run. Every cited URL was captured from the answer’s sources, in order, and reduced to its registrable domain using the Public Suffix List.</p>
+          <p>Buyer-intent shopping queries in three verticals, phrased as a UK buyer would ask them, were put to an AI answer engine, logged out, more than once each. Every probe is one query, on one engine, in one run. Every cited URL was captured from the answer’s sources, in order, and reduced to its registrable domain using the Public Suffix List.</p>
           <p><strong>Results vary from run to run.</strong> The same query on the same engine can cite different sites an hour later. That is why each publisher’s stability is recorded, and why the sample is always shown with its date.</p>
-          <p>Figures are what was actually run. Nothing is extrapolated.</p>
+          <p>Figures are what was actually run. Nothing is extrapolated. The table shows the sample’s own record of its conditions.</p>
+          <p class="callout" id="signal-definition">Loading the signal definition.</p>
         </div>
       </div>
       <div class="inner" id="sample-facts"><p class="inner-body small muted">Loading.</p></div>
@@ -115,6 +116,7 @@
           <li class="fact"><span class="fact-text"><strong>Other.</strong> Everything else, such as encyclopaedias and government sites.</span></li>
         </ul>
       </div>
+      <ul class="bars" id="class-shares" style="max-width:640px; margin-bottom:2.5rem"></ul>
       <div id="domains"></div>
     </div>
   </section>
@@ -129,15 +131,16 @@
       <pre class="block">total = Σ (wᵢ × sᵢ)   over known signals
 max   = Σ wᵢ          over known signals
 shown as "round(total) / max"</pre>
-      <p class="small muted">Default weights: readership 40, placement 20, programmatic 15, reachability 10, commerce 15. With custom weights the call sheet ranks by Σ wᵢsᵢ ÷ Σ wᵢ. A live check of a publisher outside the sample has no readership, so it scores out of 60.</p>
+      <p class="small muted">Default weights: citation share 40, placement 20, programmatic 15, reachability 10, commerce 15. With custom weights the call sheet ranks by Σ wᵢsᵢ ÷ Σ wᵢ. A live check of a publisher outside the sample has no citation share, so it scores out of 60. Publishers in the sample have citation share only until their live signals are read, so they score out of 40.</p>
 
       <div class="faq-list" style="margin-top:2.5rem">
         <details class="faq" open>
-          <summary>Agent readership · 40 · dated sample only</summary>
+          <summary>Citation share · 40 · dated sample only</summary>
           <div class="faq-body">
-            <pre class="block">share = probes in the vertical citing the domain ÷ probes in the vertical
-s     = min(1, share ÷ 0.25)</pre>
-            <p>A domain’s vertical is the one where its share is highest. Stability: cited in every run of at least one query and engine pair; cited in a single run only; or one run per query in the sample. Outside the sample, readership is unknown.</p>
+            <pre class="block">share            = probes in the vertical whose answer cited the domain
+                   ÷ probes in the vertical
+s_citation_share = min(1, share ÷ 0.25)</pre>
+            <p>A domain’s vertical is the one where its share is highest. Stability: cited in every run of at least one query and engine pair; cited in a single run only; or one run per query in the sample. Stability here is within this sample only. Outside the sample, citation share is unknown. It measures how often answers cited a publisher, not how many agents visit it.</p>
           </div>
         </details>
         <details class="faq">
@@ -233,7 +236,7 @@ s = 1 | 0.5 | 0          unknown if robots.txt can’t be read</pre>
       <div class="section-head" style="margin-bottom:1.5rem">
         <span class="eyebrow">Agent lists</span>
         <h2 id="agents-title">The AI agents tested in robots.txt</h2>
-        <p class="sub">Each token is checked against its operator’s documentation. A token not yet confirmed says so.</p>
+        <p class="sub">Each token is checked against its operator’s documentation. A token that couldn’t be confirmed there says so, with the source that corroborates it.</p>
       </div>
       <div class="inner" id="agents"></div>
     </div>
@@ -282,7 +285,8 @@ s = 1 | 0.5 | 0          unknown if robots.txt can’t be read</pre>
           <li><strong>Revenue.</strong> Direct-sold ads, deal terms and affiliate earnings are invisible from outside. No traffic or revenue estimates are made.</li>
           <li><strong>Who owns AI policy.</strong> robots.txt shows a decision, not who made it.</li>
           <li><strong>Later scripts.</strong> Header bidding and affiliate links added after the first response are not seen.</li>
-          <li><strong>One sample.</strong> One date, one location, logged out. Personalised answers may differ.</li>
+          <li><strong>One sample.</strong> One engine, one date, UK-phrased queries rather than a UK location, logged out. Other engines and personalised answers may cite different sites.</li>
+          <li><strong>Citation is not traffic.</strong> Citation share counts how often answers named a site. It doesn’t measure agent visits, readership or revenue.</li>
           <li><strong>Declared, not observed.</strong> Crawlers can ignore robots.txt. Reachability reports what the site asks for.</li>
         </ul>
       </div>
@@ -297,9 +301,10 @@ s = 1 | 0.5 | 0          unknown if robots.txt can’t be read</pre>
       </div>
       <ul class="facts" style="max-width:720px">
         <li class="fact"><a class="fact-text" href="/data/citation-sample.csv" download>citation-sample.csv</a><span class="fact-value">Every probe and citation</span></li>
-        <li class="fact"><a class="fact-text" href="/data/front.json">front.json</a><span class="fact-value">Sample summary</span></li>
-        <li class="fact"><a class="fact-text" href="/data/targets.json">targets.json</a><span class="fact-value">Ranked call sheet</span></li>
-        <li class="fact"><a class="fact-text" href="/data/queries.json">queries.json</a><span class="fact-value">Queries and engines</span></li>
+        <li class="fact"><a class="fact-text" href="/data/raw/probes.jsonl">raw/probes.jsonl</a><span class="fact-value">Every probe as returned, with its cost</span></li>
+        <li class="fact"><a class="fact-text" href="/data/sample.json">sample.json</a><span class="fact-value">Sample conditions and counts</span></li>
+        <li class="fact"><a class="fact-text" href="/data/readership.json">readership.json</a><span class="fact-value">Citation share per publisher</span></li>
+        <li class="fact"><a class="fact-text" href="/data/queries.json">queries.json</a><span class="fact-value">Queries as sent</span></li>
         <li class="fact"><a class="fact-text" href="/data/domains.json">domains.json</a><span class="fact-value">Classifications</span></li>
         <li class="fact"><a class="fact-text" href="/data/agents.json">agents.json</a><span class="fact-value">Agent tokens</span></li>
         <li class="fact"><a class="fact-text" href="/data/company-claims.json">company-claims.json</a><span class="fact-value">blankspace’s claims and sources</span></li>

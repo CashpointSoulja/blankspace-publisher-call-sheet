@@ -9,13 +9,8 @@ import {
   parseAdsTxt, looksLikeHtml, headerBidding, hasGpt, extractLinks, affiliateEvidence,
   schemaTypes, parseSitemap, pickChildSitemap, slugMatches, detectCdn
 } from "./signals.js";
-import { DEFAULT_WEIGHTS, STANCES, partsFromEvidence, score, stanceFrom, missedPoints } from "../../assets/js/score.js";
+import { DEFAULT_WEIGHTS, STANCES, CANNOT_SEE, partsFromEvidence, score, stanceFrom, missedPoints } from "../../assets/js/score.js";
 
-export const CANNOT_SEE = [
-  "Real agent traffic volumes",
-  "Direct-sold ad revenue",
-  "Who owns AI policy internally"
-];
 
 const HTML_ACCEPT = "text/html,application/xhtml+xml;q=0.9,*/*;q=0.5";
 const SITEMAP_LIMIT = 50;
@@ -98,7 +93,9 @@ export async function runCheck(input, { siteOrigin, fetchImpl = fetch, dnsCheck 
   }
 
   // --- Signals ---------------------------------------------------------------------
-  const agents = agentsData.agents.map(({ token, group }) => ({ token, group }));
+  // agents.json groups: training, search_user_triggered, ads. Ads validators are reported
+  // per agent but count towards neither status.
+  const agents = agentsData.agents.map(({ token, group }) => ({ token, group: group === "search_user_triggered" ? "search" : group }));
 
   const reachability = robots.unreachable
     ? { robots_url: robots.url, status: robots.status ?? null, training: null, search: null, per_agent: {}, ai_rules_present: null, content_signal: [], excerpt: [] }

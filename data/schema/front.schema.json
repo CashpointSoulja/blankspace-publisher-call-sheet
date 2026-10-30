@@ -2,52 +2,13 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "front.schema.json",
   "title": "front.json",
-  "description": "Front page summary of the dated citation sample (SPEC §8.1). null means not yet known and renders as an empty slot.",
+  "description": "Front-page fields that are not sample data. Sample figures come from sample.json and readership.json, so they exist in one place only.",
   "type": "object",
-  "required": ["sample_id", "sample_date", "engines", "runs_per_query", "queries", "probes", "publishers_cited", "shortlist_size", "citation_buckets", "preview", "verifier_example", "builder"],
+  "required": ["builder", "verifier_example"],
   "additionalProperties": false,
   "properties": {
     "$schema": { "type": "string" },
     "$comment": { "type": "string" },
-    "sample_id": { "type": ["string", "null"], "pattern": "^cs-\\d{4}-\\d{2}-\\d{2}$", "description": "cs-YYYY-MM-DD. Matches targets.json and citation-sample.csv." },
-    "sample_date": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "UTC date the sample was run." },
-    "engines": { "type": "array", "items": { "type": "string", "minLength": 1 }, "description": "Answer engines actually probed, named as they were run." },
-    "runs_per_query": { "type": ["integer", "null"], "minimum": 1 },
-    "queries": { "type": ["integer", "null"], "minimum": 1, "description": "Number of distinct queries." },
-    "probes": { "type": ["integer", "null"], "minimum": 1, "description": "One probe is one (query, engine, run)." },
-    "publishers_cited": { "type": ["integer", "null"], "minimum": 0, "description": "Distinct publisher-class registrable domains cited at least once." },
-    "shortlist_size": { "type": ["integer", "null"], "minimum": 1 },
-    "citation_buckets": {
-      "type": "array",
-      "description": "Share of all citations by domain class. Shares sum to 1.",
-      "items": {
-        "type": "object",
-        "required": ["class", "share"],
-        "additionalProperties": false,
-        "properties": {
-          "class": { "enum": ["publisher", "retailer", "brand", "ugc", "other"] },
-          "share": { "type": "number", "minimum": 0, "maximum": 1 }
-        }
-      }
-    },
-    "preview": {
-      "type": "array",
-      "description": "At least the top 5 overall plus the top 5 per vertical, with global ranks kept.",
-      "items": {
-        "type": "object",
-        "required": ["rank", "domain", "vertical", "total", "max", "angle_code", "angle_label"],
-        "additionalProperties": false,
-        "properties": {
-          "rank": { "type": "integer", "minimum": 1 },
-          "domain": { "type": "string", "pattern": "^[a-z0-9.-]+\\.[a-z]{2,}$" },
-          "vertical": { "enum": ["automotive", "consumer_electronics", "sportswear"] },
-          "total": { "type": "number", "minimum": 0, "maximum": 100 },
-          "max": { "type": "number", "minimum": 0, "maximum": 100 },
-          "angle_code": { "enum": ["already-decided", "reading-free", "no-owner", "closed-door", "unknown"] },
-          "angle_label": { "type": ["string", "null"] }
-        }
-      }
-    },
     "verifier_example": {
       "type": ["object", "null"],
       "required": ["domain", "removed_text", "reason"],

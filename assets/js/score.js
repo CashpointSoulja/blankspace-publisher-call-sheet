@@ -15,7 +15,7 @@ export const DEFAULT_WEIGHTS = Object.freeze({
 });
 
 export const SIGNAL_LABELS = Object.freeze({
-  readership: "Agent readership",
+  readership: "Citation share",
   placement: "Placement fit",
   programmatic: "Programmatic stack",
   reachability: "Agent reachability",
@@ -45,6 +45,13 @@ export const STANCES = Object.freeze({
     angle: null
   }
 });
+
+// What no outside check can see (SPEC §8.4 cannot_see).
+export const CANNOT_SEE = Object.freeze([
+  "Real agent traffic volumes",
+  "Direct-sold ad revenue",
+  "Who owns AI policy internally"
+]);
 
 const clamp01 = (x) => Math.max(0, Math.min(1, x));
 const isNum = (x) => typeof x === "number" && Number.isFinite(x);
@@ -102,7 +109,7 @@ export function partsFromEvidence(signals) {
   };
 }
 
-// targets.json rows carry one sub-score per signal (number or null).
+// Call-sheet rows carry one sub-score per signal (number or null).
 export function partsFromSubscores(subscores) {
   const out = {};
   for (const k of SIGNALS) {
@@ -175,7 +182,7 @@ export function missedPoints(signals, weights = DEFAULT_WEIGHTS) {
   const out = [];
   const r = s.readership;
   if (r && r.status === "in_sample" && isNum(r.share) && r.share < 0.25) {
-    out.push(`Readership: cited in ${pct(r.share)} of sampled queries in its vertical. Full marks start at 25%.`);
+    out.push(`Citation share: cited in ${pct(r.share)} of its vertical’s sampled probes. Full marks start at 25%.`);
   }
   const p = s.placement;
   if (p) {

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "readership.schema.json",
+  "title": "readership.json",
+  "description": "Citation-share signal for every publisher in the sample (SPEC §3.1). One row per publisher, in its highest-share vertical. The call sheet ranks from this file.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["domain", "vertical", "probes_cited_in_vertical", "vertical_probes_total", "share", "stability", "probe_ids", "s_citation_share"],
+    "additionalProperties": false,
+    "properties": {
+      "domain": { "type": "string", "pattern": "^[a-z0-9.-]+\\.[a-z]{2,}$", "description": "Registrable domain; class publisher in domains.json." },
+      "vertical": { "enum": ["automotive", "consumer_electronics", "sportswear"] },
+      "probes_cited_in_vertical": { "type": "integer", "minimum": 1 },
+      "vertical_probes_total": { "type": "integer", "minimum": 1 },
+      "share": { "type": "number", "minimum": 0, "maximum": 1, "description": "probes_cited_in_vertical ÷ vertical_probes_total" },
+      "stability": { "enum": ["both_runs", "one_run", "single_run_only"] },
+      "probe_ids": { "type": "array", "minItems": 1, "items": { "type": "string" }, "description": "Every probe, in any vertical, whose answer cited the domain. Each appears in citation-sample.csv. The share counts only those in the row's vertical." },
+      "s_citation_share": { "type": "number", "minimum": 0, "maximum": 1, "description": "min(1, share ÷ 0.25)" }
+    }
+  }
+}
