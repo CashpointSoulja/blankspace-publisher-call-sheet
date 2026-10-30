@@ -40,5 +40,7 @@
    "count": 372
   }
  ],
- "collection_cost_usd": 0.6512
+ "collection_cost_usd": 0.6512,
+ "signal_definition": "Citation share: share of probes in a vertical (120 UK buyer-intent queries x 2 runs, Perplexity Sonar only, 2026-10-30) whose answer cited the domain. It is citation frequency on this sample only - not measured agent traffic, readership, all-engine visibility, or lost revenue. Repeat runs on the same engine indicate within-sample stability only.",
+ "total_spend_usd_exact": 0.6619
 }

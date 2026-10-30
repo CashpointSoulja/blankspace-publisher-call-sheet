@@ -5,7 +5,6 @@
   "probes_cited_in_vertical": 60,
   "vertical_probes_total": 80,
   "share": 0.75,
-  "s_readership": 1.0,
   "stability": "both_runs",
   "probe_ids": [
    "ce-02-r1",
@@ -68,7 +67,8 @@
    "ce-39-r2",
    "ce-40-r1",
    "ce-40-r2"
-  ]
+  ],
+  "s_citation_share": 1.0
  },
  {
   "domain": "autoexpress.co.uk",
@@ -76,7 +76,6 @@
   "probes_cited_in_vertical": 54,
   "vertical_probes_total": 80,
   "share": 0.675,
-  "s_readership": 1.0,
   "stability": "both_runs",
   "probe_ids": [
    "auto-01-r1",
@@ -133,7 +132,8 @@
    "auto-39-r2",
    "auto-40-r1",
    "auto-40-r2"
-  ]
+  ],
+  "s_citation_share": 1.0
  },
  {
   "domain": "whatcar.com",
@@ -141,7 +141,6 @@
   "probes_cited_in_vertical": 46,
   "vertical_probes_total": 80,
   "share": 0.575,
-  "s_readership": 1.0,
   "stability": "both_runs",
   "probe_ids": [
    "auto-01-r1",
@@ -190,7 +189,8 @@
    "auto-37-r2",
    "auto-38-r1",
    "auto-38-r2"
-  ]
+  ],
+  "s_citation_share": 1.0
  },
  {
   "domain": "drive.co.uk",
@@ -198,7 +198,6 @@
   "probes_cited_in_vertical": 44,
   "vertical_probes_total": 80,
   "share": 0.55,
-  "s_readership": 1.0,
   "stability": "both_runs",
   "probe_ids": [
    "auto-02-r1",
@@ -245,7 +244,8 @@
    "auto-38-r2",
    "auto-39-r1",
    "auto-39-r2"
-  ]
+  ],
+  "s_citation_share": 1.0
  },
  {
   "domain": "runnersworld.com",
@@ -253,7 +253,6 @@
   "probes_cited_in_vertical": 38,
   "vertical_probes_total": 80,
   "share": 0.475,
-  "s_readership": 1.0,
   "stability": "both_runs",
   "probe_ids": [
    "ce-29-r1",
@@ -296,7 +295,8 @@
    "sport-37-r2",
    "sport-40-r1",
    "sport-40-r2"
-  ]
+  ],
+  "s_citation_share": 1.0
  },
  {
   "domain": "nytimes.com",
@@ -304,7 +304,6 @@
   "probes_cited_in_vertical": 32,
   "vertical_probes_total": 80,
   "share": 0.4,
-  "s_readership": 1.0,
   "stability": "both_runs",
   "probe_ids": [
    "ce-01-r1",
@@ -343,7 +342,8 @@
    "sport-19-r2",
    "sport-35-r1",
    "sport-35-r2"
-  ]
+  ],
+  "s_citation_share": 1.0
  },
  {
   "domain": "cnet.com",
@@ -351,7 +351,6 @@
   "probes_cited_in_vertical": 30,
   "vertical_probes_total": 80,
   "share": 0.375,
-  "s_readership": 1.0,
   "stability": "both_runs",
   "probe_ids": [
    "ce-01-r1",
@@ -386,7 +385,8 @@
    "ce-40-r2",
    "sport-17-r1",
    "sport-17-r2"
-  ]
+  ],
+  "s_citation_share": 1.0
  },
  {
   "domain": "independent.co.uk",
@@ -394,7 +394,6 @@
   "probes_cited_in_vertical": 26,
   "vertical_probes_total": 80,
   "share": 0.325,
-  "s_readership": 1.0,
   "stability": "both_runs",
   "probe_ids": [
    "auto-03-r2",
@@ -440,7 +439,8 @@
    "sport-34-r2",
    "sport-37-r1",
    "sport-37-r2"
-  ]
+  ],
+  "s_citation_share": 1.0
  },
  {
   "domain": "rtings.com",
@@ -448,7 +448,6 @@
   "probes_cited_in_vertical": 26,
   "vertical_probes_total": 80,
   "share": 0.325,
-  "s_readership": 1.0,
   "stability": "both_runs",
   "probe_ids": [
    "ce-01-r1",
@@ -483,7 +482,8 @@
    "sport-26-r2",
    "sport-40-r1",
    "sport-40-r2"
-  ]
+  ],
+  "s_citation_share": 1.0
  },
  {
   "domain": "runrepeat.com",
@@ -491,7 +491,6 @@
   "probes_cited_in_vertical": 26,
   "vertical_probes_total": 80,
   "share": 0.325,
-  "s_readership": 1.0,
   "stability": "both_runs",
   "probe_ids": [
    "sport-01-r1",
@@ -520,7 +519,8 @@
    "sport-30-r2",
    "sport-40-r1",
    "sport-40-r2"
-  ]
+  ],
+  "s_citation_share": 1.0
  },
  {
   "domain": "tomsguide.com",
@@ -528,7 +528,6 @@
   "probes_cited_in_vertical": 26,
   "vertical_probes_total": 80,
   "share": 0.325,
-  "s_readership": 1.0,
   "stability": "both_runs",
   "probe_ids": [
    "ce-06-r1",
@@ -565,7 +564,8 @@
    "sport-16-r2",
    "sport-25-r1",
    "sport-25-r2"
-  ]
+  ],
+  "s_citation_share": 1.0
  },
  {
   "domain": "techradar.com",
@@ -573,7 +573,6 @@
   "probes_cited_in_vertical": 21,
   "vertical_probes_total": 80,
   "share": 0.2625,
-  "s_readership": 1.0,
   "stability": "both_runs",
   "probe_ids": [
    "ce-09-r1",
@@ -597,7 +596,8 @@
    "ce-35-r2",
    "ce-38-r1",
    "ce-38-r2"
-  ]
+  ],
+  "s_citation_share": 1.0
  },
  {
   "domain": "stuff.tv",
@@ -605,7 +605,6 @@
   "probes_cited_in_vertical": 20,
   "vertical_probes_total": 80,
   "share": 0.25,
-  "s_readership": 1.0,
   "stability": "both_runs",
   "probe_ids": [
    "ce-01-r1",
@@ -628,7 +627,8 @@
    "ce-33-r2",
    "ce-35-r1",
    "ce-35-r2"
-  ]
+  ],
+  "s_citation_share": 1.0
  },
  {
   "domain": "expertreviews.co.uk",
@@ -636,7 +636,6 @@
   "probes_cited_in_vertical": 18,
   "vertical_probes_total": 80,
   "share": 0.225,
-  "s_readership": 0.9,
   "stability": "both_runs",
   "probe_ids": [
    "ce-02-r1",
@@ -657,7 +656,8 @@
    "ce-31-r2",
    "ce-39-r1",
    "ce-39-r2"
-  ]
+  ],
+  "s_citation_share": 0.9
  },
  {
   "domain": "wired.com",
@@ -665,7 +665,6 @@
   "probes_cited_in_vertical": 16,
   "vertical_probes_total": 80,
   "share": 0.2,
-  "s_readership": 0.8,
   "stability": "both_runs",
   "probe_ids": [
    "ce-06-r1",
@@ -688,7 +687,8 @@
    "sport-30-r2",
    "sport-35-r1",
    "sport-35-r2"
-  ]
+  ],
+  "s_citation_share": 0.8
  },
  {
   "domain": "cnn.com",
@@ -696,7 +696,6 @@
   "probes_cited_in_vertical": 14,
   "vertical_probes_total": 80,
   "share": 0.175,
-  "s_readership": 0.7,
   "stability": "both_runs",
   "probe_ids": [
    "ce-10-r1",
@@ -725,7 +724,8 @@
    "sport-26-r2",
    "sport-35-r1",
    "sport-35-r2"
-  ]
+  ],
+  "s_citation_share": 0.7
  },
  {
   "domain": "t3.com",
@@ -733,7 +733,6 @@
   "probes_cited_in_vertical": 14,
   "vertical_probes_total": 80,
   "share": 0.175,
-  "s_readership": 0.7,
   "stability": "both_runs",
   "probe_ids": [
    "ce-03-r1",
@@ -752,7 +751,8 @@
    "ce-37-r2",
    "sport-11-r1",
    "sport-11-r2"
-  ]
+  ],
+  "s_citation_share": 0.7
  },
  {
   "domain": "telegraph.co.uk",
@@ -760,7 +760,6 @@
   "probes_cited_in_vertical": 14,
   "vertical_probes_total": 80,
   "share": 0.175,
-  "s_readership": 0.7,
   "stability": "both_runs",
   "probe_ids": [
    "ce-04-r1",
@@ -787,7 +786,8 @@
    "sport-08-r2",
    "sport-34-r1",
    "sport-34-r2"
-  ]
+  ],
+  "s_citation_share": 0.7
  },
  {
   "domain": "womenshealthmag.com",
@@ -795,7 +795,6 @@
   "probes_cited_in_vertical": 14,
   "vertical_probes_total": 80,
   "share": 0.175,
-  "s_readership": 0.7,
   "stability": "both_runs",
   "probe_ids": [
    "sport-04-r1",
@@ -812,7 +811,8 @@
    "sport-31-r2",
    "sport-34-r1",
    "sport-34-r2"
-  ]
+  ],
+  "s_citation_share": 0.7
  },
  {
   "domain": "evo.co.uk",
@@ -820,7 +820,6 @@
   "probes_cited_in_vertical": 12,
   "vertical_probes_total": 80,
   "share": 0.15,
-  "s_readership": 0.6,
   "stability": "both_runs",
   "probe_ids": [
    "auto-09-r1",
@@ -835,7 +834,8 @@
    "auto-27-r2",
    "auto-37-r1",
    "auto-37-r2"
-  ]
+  ],
+  "s_citation_share": 0.6
  },
  {
   "domain": "goodhousekeeping.com",
@@ -843,7 +843,6 @@
   "probes_cited_in_vertical": 12,
   "vertical_probes_total": 80,
   "share": 0.15,
-  "s_readership": 0.6,
   "stability": "both_runs",
   "probe_ids": [
    "ce-13-r1",
@@ -860,7 +859,8 @@
    "sport-21-r2",
    "sport-27-r1",
    "sport-27-r2"
-  ]
+  ],
+  "s_citation_share": 0.6
  },
  {
   "domain": "gq-magazine.co.uk",
@@ -868,7 +868,6 @@
   "probes_cited_in_vertical": 12,
   "vertical_probes_total": 80,
   "share": 0.15,
-  "s_readership": 0.6,
   "stability": "both_runs",
   "probe_ids": [
    "sport-01-r1",
@@ -883,7 +882,8 @@
    "sport-29-r2",
    "sport-34-r1",
    "sport-34-r2"
-  ]
+  ],
+  "s_citation_share": 0.6
  },
  {
   "domain": "idealo.co.uk",
@@ -891,7 +891,6 @@
   "probes_cited_in_vertical": 12,
   "vertical_probes_total": 80,
   "share": 0.15,
-  "s_readership": 0.6,
   "stability": "both_runs",
   "probe_ids": [
    "ce-05-r1",
@@ -913,7 +912,8 @@
    "sport-33-r2",
    "sport-34-r1",
    "sport-34-r2"
-  ]
+  ],
+  "s_citation_share": 0.6
  },
  {
   "domain": "outdoorsmagic.com",
@@ -921,7 +921,6 @@
   "probes_cited_in_vertical": 12,
   "vertical_probes_total": 80,
   "share": 0.15,
-  "s_readership": 0.6,
   "stability": "both_runs",
   "probe_ids": [
    "sport-07-r1",
@@ -936,7 +935,8 @@
    "sport-27-r2",
    "sport-33-r1",
    "sport-33-r2"
-  ]
+  ],
+  "s_citation_share": 0.6
  },
  {
   "domain": "pcworld.com",
@@ -944,7 +944,6 @@
   "probes_cited_in_vertical": 12,
   "vertical_probes_total": 80,
   "share": 0.15,
-  "s_readership": 0.6,
   "stability": "both_runs",
   "probe_ids": [
    "ce-06-r1",
@@ -959,7 +958,8 @@
    "ce-37-r2",
    "ce-38-r1",
    "ce-38-r2"
-  ]
+  ],
+  "s_citation_share": 0.6
  },
  {
   "domain": "tomshardware.com",
@@ -967,7 +967,6 @@
   "probes_cited_in_vertical": 12,
   "vertical_probes_total": 80,
   "share": 0.15,
-  "s_readership": 0.6,
   "stability": "both_runs",
   "probe_ids": [
    "ce-06-r1",
@@ -982,7 +981,8 @@
    "ce-28-r2",
    "ce-38-r1",
    "ce-38-r2"
-  ]
+  ],
+  "s_citation_share": 0.6
  },
  {
   "domain": "treelinereview.com",
@@ -990,7 +990,6 @@
   "probes_cited_in_vertical": 12,
   "vertical_probes_total": 80,
   "share": 0.15,
-  "s_readership": 0.6,
   "stability": "both_runs",
   "probe_ids": [
    "sport-06-r1",
@@ -1005,7 +1004,8 @@
    "sport-33-r2",
    "sport-35-r1",
    "sport-35-r2"
-  ]
+  ],
+  "s_citation_share": 0.6
  },
  {
   "domain": "whathifi.com",
@@ -1013,7 +1013,6 @@
   "probes_cited_in_vertical": 12,
   "vertical_probes_total": 80,
   "share": 0.15,
-  "s_readership": 0.6,
   "stability": "both_runs",
   "probe_ids": [
    "ce-01-r1",
@@ -1028,7 +1027,8 @@
    "ce-35-r1",
    "ce-35-r2",
    "ce-38-r2"
-  ]
+  ],
+  "s_citation_share": 0.6
  },
  {
   "domain": "yahoo.com",
@@ -1036,7 +1036,6 @@
   "probes_cited_in_vertical": 11,
   "vertical_probes_total": 80,
   "share": 0.1375,
-  "s_readership": 0.55,
   "stability": "both_runs",
   "probe_ids": [
    "auto-04-r1",
@@ -1060,7 +1059,8 @@
    "sport-20-r1",
    "sport-20-r2",
    "sport-30-r2"
-  ]
+  ],
+  "s_citation_share": 0.55
  },
  {
   "domain": "marieclaire.co.uk",
@@ -1068,7 +1068,6 @@
   "probes_cited_in_vertical": 10,
   "vertical_probes_total": 80,
   "share": 0.125,
-  "s_readership": 0.5,
   "stability": "both_runs",
   "probe_ids": [
    "sport-01-r1",
@@ -1081,7 +1080,8 @@
    "sport-08-r2",
    "sport-18-r1",
    "sport-18-r2"
-  ]
+  ],
+  "s_citation_share": 0.5
  },
  {
   "domain": "mashable.com",
@@ -1089,7 +1089,6 @@
   "probes_cited_in_vertical": 10,
   "vertical_probes_total": 80,
   "share": 0.125,
-  "s_readership": 0.5,
   "stability": "both_runs",
   "probe_ids": [
    "ce-01-r1",
@@ -1102,7 +1101,8 @@
    "ce-12-r2",
    "ce-36-r1",
    "ce-36-r2"
-  ]
+  ],
+  "s_citation_share": 0.5
  },
  {
   "domain": "motoringresearch.com",
@@ -1110,7 +1110,6 @@
   "probes_cited_in_vertical": 10,
   "vertical_probes_total": 80,
   "share": 0.125,
-  "s_readership": 0.5,
   "stability": "both_runs",
   "probe_ids": [
    "auto-02-r1",
@@ -1123,7 +1122,8 @@
    "auto-17-r2",
    "auto-26-r1",
    "auto-26-r2"
-  ]
+  ],
+  "s_citation_share": 0.5
  },
  {
   "domain": "soundguys.com",
@@ -1131,7 +1131,6 @@
   "probes_cited_in_vertical": 10,
   "vertical_probes_total": 80,
   "share": 0.125,
-  "s_readership": 0.5,
   "stability": "both_runs",
   "probe_ids": [
    "ce-01-r1",
@@ -1144,7 +1143,8 @@
    "ce-30-r2",
    "ce-35-r1",
    "ce-35-r2"
-  ]
+  ],
+  "s_citation_share": 0.5
  },
  {
   "domain": "the-independent.com",
@@ -1152,7 +1152,6 @@
   "probes_cited_in_vertical": 10,
   "vertical_probes_total": 80,
   "share": 0.125,
-  "s_readership": 0.5,
   "stability": "both_runs",
   "probe_ids": [
    "ce-05-r1",
@@ -1167,7 +1166,8 @@
    "ce-40-r2",
    "sport-02-r1",
    "sport-02-r2"
-  ]
+  ],
+  "s_citation_share": 0.5
  },
  {
   "domain": "womensrunning.co.uk",
@@ -1175,7 +1175,6 @@
   "probes_cited_in_vertical": 10,
   "vertical_probes_total": 80,
   "share": 0.125,
-  "s_readership": 0.5,
   "stability": "both_runs",
   "probe_ids": [
    "ce-29-r1",
@@ -1190,7 +1189,8 @@
    "sport-29-r2",
    "sport-36-r1",
    "sport-36-r2"
-  ]
+  ],
+  "s_citation_share": 0.5
  },
  {
   "domain": "autocar.co.uk",
@@ -1198,7 +1198,6 @@
   "probes_cited_in_vertical": 8,
   "vertical_probes_total": 80,
   "share": 0.1,
-  "s_readership": 0.4,
   "stability": "both_runs",
   "probe_ids": [
    "auto-01-r1",
@@ -1209,7 +1208,8 @@
    "auto-13-r2",
    "auto-39-r1",
    "auto-39-r2"
-  ]
+  ],
+  "s_citation_share": 0.4
  },
  {
   "domain": "businessinsider.com",
@@ -1217,7 +1217,6 @@
   "probes_cited_in_vertical": 8,
   "vertical_probes_total": 80,
   "share": 0.1,
-  "s_readership": 0.4,
   "stability": "both_runs",
   "probe_ids": [
    "ce-08-r1",
@@ -1232,7 +1231,8 @@
    "sport-19-r2",
    "sport-35-r1",
    "sport-35-r2"
-  ]
+  ],
+  "s_citation_share": 0.4
  },
  {
   "domain": "digitalcameraworld.com",
@@ -1240,7 +1240,6 @@
   "probes_cited_in_vertical": 8,
   "vertical_probes_total": 80,
   "share": 0.1,
-  "s_readership": 0.4,
   "stability": "both_runs",
   "probe_ids": [
    "ce-14-r1",
@@ -1251,7 +1250,8 @@
    "ce-24-r2",
    "ce-26-r1",
    "ce-26-r2"
-  ]
+  ],
+  "s_citation_share": 0.4
  },
  {
   "domain": "edmunds.com",
@@ -1259,7 +1259,6 @@
   "probes_cited_in_vertical": 8,
   "vertical_probes_total": 80,
   "share": 0.1,
-  "s_readership": 0.4,
   "stability": "both_runs",
   "probe_ids": [
    "auto-06-r1",
@@ -1270,7 +1269,8 @@
    "auto-17-r2",
    "auto-34-r1",
    "auto-34-r2"
-  ]
+  ],
+  "s_citation_share": 0.4
  },
  {
   "domain": "engadget.com",
@@ -1278,7 +1278,6 @@
   "probes_cited_in_vertical": 8,
   "vertical_probes_total": 80,
   "share": 0.1,
-  "s_readership": 0.4,
   "stability": "both_runs",
   "probe_ids": [
    "ce-01-r1",
@@ -1289,7 +1288,8 @@
    "ce-21-r2",
    "ce-40-r1",
    "ce-40-r2"
-  ]
+  ],
+  "s_citation_share": 0.4
  },
  {
   "domain": "garagegymreviews.com",
@@ -1297,7 +1297,6 @@
   "probes_cited_in_vertical": 8,
   "vertical_probes_total": 80,
   "share": 0.1,
-  "s_readership": 0.4,
   "stability": "both_runs",
   "probe_ids": [
    "sport-16-r1",
@@ -1308,7 +1307,8 @@
    "sport-20-r2",
    "sport-26-r1",
    "sport-26-r2"
-  ]
+  ],
+  "s_citation_share": 0.4
  },
  {
   "domain": "menshealth.com",
@@ -1316,7 +1316,6 @@
   "probes_cited_in_vertical": 8,
   "vertical_probes_total": 80,
   "share": 0.1,
-  "s_readership": 0.4,
   "stability": "both_runs",
   "probe_ids": [
    "ce-09-r1",
@@ -1329,7 +1328,8 @@
    "sport-23-r2",
    "sport-29-r1",
    "sport-29-r2"
-  ]
+  ],
+  "s_citation_share": 0.4
  },
  {
   "domain": "nbcnews.com",
@@ -1337,7 +1337,6 @@
   "probes_cited_in_vertical": 8,
   "vertical_probes_total": 80,
   "share": 0.1,
-  "s_readership": 0.4,
   "stability": "both_runs",
   "probe_ids": [
    "ce-01-r1",
@@ -1354,7 +1353,8 @@
    "sport-20-r2",
    "sport-25-r1",
    "sport-25-r2"
-  ]
+  ],
+  "s_citation_share": 0.4
  },
  {
   "domain": "techadvisor.com",
@@ -1362,7 +1362,6 @@
   "probes_cited_in_vertical": 8,
   "vertical_probes_total": 80,
   "share": 0.1,
-  "s_readership": 0.4,
   "stability": "both_runs",
   "probe_ids": [
    "ce-03-r1",
@@ -1373,7 +1372,8 @@
    "ce-32-r2",
    "ce-33-r1",
    "ce-33-r2"
-  ]
+  ],
+  "s_citation_share": 0.4
  },
  {
   "domain": "topgear.com",
@@ -1381,7 +1381,6 @@
   "probes_cited_in_vertical": 8,
   "vertical_probes_total": 80,
   "share": 0.1,
-  "s_readership": 0.4,
   "stability": "both_runs",
   "probe_ids": [
    "auto-08-r1",
@@ -1392,7 +1391,8 @@
    "auto-27-r2",
    "auto-29-r1",
    "auto-29-r2"
-  ]
+  ],
+  "s_citation_share": 0.4
  },
  {
   "domain": "usnews.com",
@@ -1400,7 +1400,6 @@
   "probes_cited_in_vertical": 8,
   "vertical_probes_total": 80,
   "share": 0.1,
-  "s_readership": 0.4,
   "stability": "both_runs",
   "probe_ids": [
    "auto-06-r1",
@@ -1411,7 +1410,8 @@
    "auto-20-r2",
    "auto-24-r1",
    "auto-24-r2"
-  ]
+  ],
+  "s_citation_share": 0.4
  },
  {
   "domain": "verywellfit.com",
@@ -1419,7 +1419,6 @@
   "probes_cited_in_vertical": 8,
   "vertical_probes_total": 80,
   "share": 0.1,
-  "s_readership": 0.4,
   "stability": "both_runs",
   "probe_ids": [
    "sport-12-r1",
@@ -1430,7 +1429,8 @@
    "sport-19-r2",
    "sport-26-r1",
    "sport-26-r2"
-  ]
+  ],
+  "s_citation_share": 0.4
  },
  {
   "domain": "220triathlon.com",
@@ -1438,7 +1438,6 @@
   "probes_cited_in_vertical": 6,
   "vertical_probes_total": 80,
   "share": 0.075,
-  "s_readership": 0.3,
   "stability": "both_runs",
   "probe_ids": [
    "sport-21-r1",
@@ -1447,7 +1446,8 @@
    "sport-29-r2",
    "sport-37-r1",
    "sport-37-r2"
-  ]
+  ],
+  "s_citation_share": 0.3
  },
  {
   "domain": "amateurphotographer.com",
@@ -1455,7 +1455,6 @@
   "probes_cited_in_vertical": 6,
   "vertical_probes_total": 80,
   "share": 0.075,
-  "s_readership": 0.3,
   "stability": "both_runs",
   "probe_ids": [
    "ce-14-r1",
@@ -1464,7 +1463,8 @@
    "ce-15-r2",
    "ce-32-r1",
    "ce-32-r2"
-  ]
+  ],
+  "s_citation_share": 0.3
  },
  {
   "domain": "autoblog.com",
@@ -1472,7 +1472,6 @@
   "probes_cited_in_vertical": 6,
   "vertical_probes_total": 80,
   "share": 0.075,
-  "s_readership": 0.3,
   "stability": "both_runs",
   "probe_ids": [
    "auto-04-r1",
@@ -1481,7 +1480,8 @@
    "auto-20-r2",
    "auto-34-r1",
    "auto-34-r2"
-  ]
+  ],
+  "s_citation_share": 0.3
  },
  {
   "domain": "electrifying.com",
@@ -1489,7 +1489,6 @@
   "probes_cited_in_vertical": 6,
   "vertical_probes_total": 80,
   "share": 0.075,
-  "s_readership": 0.3,
   "stability": "both_runs",
   "probe_ids": [
    "auto-03-r1",
@@ -1498,7 +1497,8 @@
    "auto-07-r2",
    "auto-13-r1",
    "auto-13-r2"
-  ]
+  ],
+  "s_citation_share": 0.3
  },
  {
   "domain": "glamourmagazine.co.uk",
@@ -1506,7 +1506,6 @@
   "probes_cited_in_vertical": 6,
   "vertical_probes_total": 80,
   "share": 0.075,
-  "s_readership": 0.3,
   "stability": "both_runs",
   "probe_ids": [
    "sport-04-r1",
@@ -1515,7 +1514,8 @@
    "sport-07-r2",
    "sport-08-r1",
    "sport-08-r2"
-  ]
+  ],
+  "s_citation_share": 0.3
  },
  {
   "domain": "gq.com",
@@ -1523,7 +1523,6 @@
   "probes_cited_in_vertical": 6,
   "vertical_probes_total": 80,
   "share": 0.075,
-  "s_readership": 0.3,
   "stability": "both_runs",
   "probe_ids": [
    "sport-16-r1",
@@ -1532,7 +1531,8 @@
    "sport-17-r2",
    "sport-39-r1",
    "sport-39-r2"
-  ]
+  ],
+  "s_citation_share": 0.3
  },
  {
   "domain": "ign.com",
@@ -1540,7 +1540,6 @@
   "probes_cited_in_vertical": 6,
   "vertical_probes_total": 80,
   "share": 0.075,
-  "s_readership": 0.3,
   "stability": "both_runs",
   "probe_ids": [
    "ce-06-r1",
@@ -1549,7 +1548,8 @@
    "ce-17-r2",
    "ce-28-r1",
    "ce-28-r2"
-  ]
+  ],
+  "s_citation_share": 0.3
  },
  {
   "domain": "irunfar.com",
@@ -1557,7 +1557,6 @@
   "probes_cited_in_vertical": 6,
   "vertical_probes_total": 80,
   "share": 0.075,
-  "s_readership": 0.3,
   "stability": "both_runs",
   "probe_ids": [
    "sport-06-r1",
@@ -1566,7 +1565,8 @@
    "sport-19-r2",
    "sport-20-r1",
    "sport-20-r2"
-  ]
+  ],
+  "s_citation_share": 0.3
  },
  {
   "domain": "motortrend.com",
@@ -1574,7 +1574,6 @@
   "probes_cited_in_vertical": 6,
   "vertical_probes_total": 80,
   "share": 0.075,
-  "s_readership": 0.3,
   "stability": "both_runs",
   "probe_ids": [
    "auto-10-r1",
@@ -1583,7 +1582,8 @@
    "auto-17-r2",
    "auto-34-r1",
    "auto-34-r2"
-  ]
+  ],
+  "s_citation_share": 0.3
  },
  {
   "domain": "outdoorgearlab.com",
@@ -1591,7 +1591,6 @@
   "probes_cited_in_vertical": 6,
   "vertical_probes_total": 80,
   "share": 0.075,
-  "s_readership": 0.3,
   "stability": "both_runs",
   "probe_ids": [
    "sport-06-r1",
@@ -1600,7 +1599,8 @@
    "sport-30-r2",
    "sport-39-r1",
    "sport-39-r2"
-  ]
+  ],
+  "s_citation_share": 0.3
  },
  {
   "domain": "pcgamer.com",
@@ -1608,7 +1608,6 @@
   "probes_cited_in_vertical": 6,
   "vertical_probes_total": 80,
   "share": 0.075,
-  "s_readership": 0.3,
   "stability": "both_runs",
   "probe_ids": [
    "ce-27-r1",
@@ -1617,7 +1616,8 @@
    "ce-28-r2",
    "ce-38-r1",
    "ce-38-r2"
-  ]
+  ],
+  "s_citation_share": 0.3
  },
  {
   "domain": "standard.co.uk",
@@ -1625,7 +1625,6 @@
   "probes_cited_in_vertical": 6,
   "vertical_probes_total": 80,
   "share": 0.075,
-  "s_readership": 0.3,
   "stability": "both_runs",
   "probe_ids": [
    "ce-13-r1",
@@ -1638,7 +1637,8 @@
    "sport-18-r2",
    "sport-29-r1",
    "sport-29-r2"
-  ]
+  ],
+  "s_citation_share": 0.3
  },
  {
   "domain": "testix.co.uk",
@@ -1646,7 +1646,6 @@
   "probes_cited_in_vertical": 6,
   "vertical_probes_total": 80,
   "share": 0.075,
-  "s_readership": 0.3,
   "stability": "both_runs",
   "probe_ids": [
    "sport-18-r1",
@@ -1655,7 +1654,8 @@
    "sport-33-r2",
    "sport-38-r1",
    "sport-38-r2"
-  ]
+  ],
+  "s_citation_share": 0.3
  },
  {
   "domain": "evpowered.co.uk",
@@ -1663,7 +1663,6 @@
   "probes_cited_in_vertical": 5,
   "vertical_probes_total": 80,
   "share": 0.0625,
-  "s_readership": 0.25,
   "stability": "both_runs",
   "probe_ids": [
    "auto-03-r2",
@@ -1671,7 +1670,8 @@
    "auto-07-r2",
    "auto-39-r1",
    "auto-39-r2"
-  ]
+  ],
+  "s_citation_share": 0.25
  },
  {
   "domain": "advnture.com",
@@ -1679,14 +1679,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "sport-09-r1",
    "sport-09-r2",
    "sport-36-r1",
    "sport-36-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "bikeradar.com",
@@ -1694,14 +1694,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "sport-14-r1",
    "sport-14-r2",
    "sport-39-r1",
    "sport-39-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "caranddriver.com",
@@ -1709,14 +1709,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "auto-06-r1",
    "auto-06-r2",
    "auto-17-r1",
    "auto-17-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "carbuyer.co.uk",
@@ -1724,14 +1724,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "auto-11-r1",
    "auto-11-r2",
    "auto-30-r1",
    "auto-30-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "compareelectronic.com",
@@ -1739,14 +1739,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "ce-04-r1",
    "ce-04-r2",
    "ce-12-r1",
    "ce-12-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "coolcuration.com",
@@ -1754,14 +1754,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "ce-12-r1",
    "ce-12-r2",
    "ce-29-r1",
    "ce-29-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "cyclingnews.com",
@@ -1769,14 +1769,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "sport-14-r1",
    "sport-14-r2",
    "sport-39-r1",
    "sport-39-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "cyclingweekly.com",
@@ -1784,14 +1784,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "sport-14-r1",
    "sport-14-r2",
    "sport-39-r1",
    "sport-39-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "esquire.com",
@@ -1799,14 +1799,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "ce-08-r1",
    "ce-08-r2",
    "ce-40-r1",
    "ce-40-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "eurogamer.net",
@@ -1814,14 +1814,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "ce-18-r1",
    "ce-18-r2",
    "ce-19-r1",
    "ce-19-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "everydayhealth.com",
@@ -1829,7 +1829,6 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "ce-10-r1",
@@ -1838,7 +1837,8 @@
    "sport-19-r2",
    "sport-20-r1",
    "sport-20-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "gagadget.com",
@@ -1846,14 +1846,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "ce-24-r1",
    "ce-24-r2",
    "ce-30-r1",
    "ce-30-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "gearjunkie.com",
@@ -1861,14 +1861,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "sport-06-r1",
    "sport-06-r2",
    "sport-35-r1",
    "sport-35-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "gsmarena.com",
@@ -1876,14 +1876,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "ce-03-r1",
    "ce-03-r2",
    "ce-32-r1",
    "ce-32-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "huffingtonpost.co.uk",
@@ -1891,14 +1891,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "ce-02-r1",
    "ce-02-r2",
    "ce-05-r1",
    "ce-05-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "motoring.today",
@@ -1906,14 +1906,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "auto-02-r1",
    "auto-02-r2",
    "auto-25-r1",
    "auto-25-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "outsideonline.com",
@@ -1921,14 +1921,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "sport-06-r1",
    "sport-06-r2",
    "sport-30-r1",
    "sport-30-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "pcguide.com",
@@ -1936,14 +1936,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "ce-06-r1",
    "ce-06-r2",
    "ce-28-r1",
    "ce-28-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "runweekly.com",
@@ -1951,14 +1951,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "sport-27-r1",
    "sport-27-r2",
    "sport-29-r1",
    "sport-29-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "stereonet.com",
@@ -1966,14 +1966,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "ce-07-r1",
    "ce-07-r2",
    "ce-22-r1",
    "ce-22-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "theruntesters.com",
@@ -1981,7 +1981,6 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "ce-29-r1",
@@ -1990,7 +1989,8 @@
    "sport-01-r2",
    "sport-03-r1",
    "sport-03-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "thetriathlete.co.uk",
@@ -1998,14 +1998,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "sport-21-r1",
    "sport-21-r2",
    "sport-22-r1",
    "sport-22-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "ukpicks.co.uk",
@@ -2013,14 +2013,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "sport-21-r1",
    "sport-21-r2",
    "sport-24-r1",
    "sport-24-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "usatoday.com",
@@ -2028,14 +2028,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "auto-04-r1",
    "auto-04-r2",
    "auto-10-r1",
    "auto-10-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "womanandhome.com",
@@ -2043,14 +2043,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "sport-08-r1",
    "sport-08-r2",
    "sport-18-r1",
    "sport-18-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "zdnet.com",
@@ -2058,14 +2058,14 @@
   "probes_cited_in_vertical": 4,
   "vertical_probes_total": 80,
   "share": 0.05,
-  "s_readership": 0.2,
   "stability": "both_runs",
   "probe_ids": [
    "ce-33-r1",
    "ce-33-r2",
    "ce-40-r1",
    "ce-40-r2"
-  ]
+  ],
+  "s_citation_share": 0.2
  },
  {
   "domain": "a2zcheck.com",
@@ -2073,12 +2073,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-32-r1",
    "sport-32-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "alastairrunning.com",
@@ -2086,12 +2086,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-03-r1",
    "sport-03-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "barbend.com",
@@ -2099,12 +2099,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-16-r1",
    "sport-16-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "bestchargers.co.uk",
@@ -2112,12 +2112,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "auto-29-r1",
    "auto-29-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "bikehikesafari.com",
@@ -2125,12 +2125,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-35-r1",
    "sport-35-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "carmagazine.co.uk",
@@ -2138,12 +2138,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "auto-14-r1",
    "auto-14-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "carthrottle.com",
@@ -2151,12 +2151,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "auto-37-r1",
    "auto-37-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "classical-music.com",
@@ -2164,12 +2164,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "ce-16-r1",
    "ce-16-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "coachweb.com",
@@ -2177,12 +2177,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-37-r1",
    "sport-37-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "complex.com",
@@ -2190,12 +2190,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-13-r1",
    "sport-13-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "creatorgearinsider.com",
@@ -2203,12 +2203,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "ce-24-r1",
    "ce-24-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "digitaltrends.com",
@@ -2216,12 +2216,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "ce-32-r1",
    "ce-32-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "doctorsofrunning.com",
@@ -2229,12 +2229,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-03-r1",
    "sport-03-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "dpreview.com",
@@ -2242,12 +2242,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "ce-14-r1",
    "ce-14-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "effortlessswimming.com",
@@ -2255,12 +2255,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-21-r1",
    "sport-21-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "elle.com",
@@ -2268,12 +2268,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-11-r1",
    "sport-11-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "evcompared.co.uk",
@@ -2281,12 +2281,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "auto-39-r1",
    "auto-39-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "evguide.uk",
@@ -2294,12 +2294,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "auto-13-r1",
    "auto-13-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "femmecyclist.com",
@@ -2307,12 +2307,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-39-r1",
    "sport-39-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "findthisbest.co.uk",
@@ -2320,12 +2320,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-21-r1",
    "sport-21-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "fitandwell.com",
@@ -2333,12 +2333,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-16-r1",
    "sport-16-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "forbes.com",
@@ -2346,14 +2346,14 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "ce-10-r1",
    "ce-10-r2",
    "sport-30-r1",
    "sport-30-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "fourfourtwo.com",
@@ -2361,12 +2361,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-05-r1",
    "sport-05-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "gamesradar.com",
@@ -2374,12 +2374,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "ce-17-r1",
    "ce-17-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "gearscouted.com",
@@ -2387,12 +2387,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-12-r1",
    "sport-12-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "globalbrandsmagazine.com",
@@ -2400,12 +2400,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "ce-09-r1",
    "ce-09-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "go-electra.com",
@@ -2413,12 +2413,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "auto-20-r1",
    "auto-20-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "gocompare.com",
@@ -2426,12 +2426,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "auto-31-r1",
    "auto-31-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "golfalot.com",
@@ -2439,12 +2439,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-23-r1",
    "sport-23-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "golfmagic.com",
@@ -2452,12 +2452,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-23-r1",
    "sport-23-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "highsnobiety.com",
@@ -2465,12 +2465,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-13-r1",
    "sport-13-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "horseandhound.co.uk",
@@ -2478,12 +2478,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "auto-35-r1",
    "auto-35-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "howtogeek.com",
@@ -2491,12 +2491,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "auto-04-r1",
    "auto-04-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "inews.co.uk",
@@ -2504,12 +2504,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-33-r1",
    "sport-33-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "inthesnow.com",
@@ -2517,12 +2517,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-34-r1",
    "sport-34-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "kentucky.com",
@@ -2530,12 +2530,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "auto-17-r1",
    "auto-17-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "lifehacker.com",
@@ -2543,12 +2543,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "ce-25-r1",
    "ce-25-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "livefortheoutdoors.com",
@@ -2556,12 +2556,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-37-r1",
    "sport-37-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "livescience.com",
@@ -2569,12 +2569,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "ce-21-r1",
    "ce-21-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "loudersound.com",
@@ -2582,12 +2582,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "ce-31-r1",
    "ce-31-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "macworld.com",
@@ -2595,12 +2595,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "ce-36-r1",
    "ce-36-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "mensjournal.com",
@@ -2608,12 +2608,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-06-r1",
    "sport-06-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "mirror.co.uk",
@@ -2621,12 +2621,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "auto-27-r1",
    "auto-27-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "moneysupermarket.com",
@@ -2634,12 +2634,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "auto-31-r1",
    "auto-31-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "moveelectric.com",
@@ -2647,12 +2647,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "auto-20-r1",
    "auto-20-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "nationalclubgolfer.com",
@@ -2660,12 +2660,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-23-r1",
    "sport-23-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "netballer.co.uk",
@@ -2673,12 +2673,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-31-r1",
    "sport-31-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "outdoorlife.com",
@@ -2686,12 +2686,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-30-r1",
    "sport-30-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "pcgamesn.com",
@@ -2699,12 +2699,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "ce-38-r1",
    "ce-38-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "pickbest.co.uk",
@@ -2712,12 +2712,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-18-r1",
    "sport-18-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "practicalcaravan.com",
@@ -2725,12 +2725,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "auto-19-r1",
    "auto-19-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "pricerunner.com",
@@ -2738,12 +2738,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-36-r1",
    "sport-36-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "pricespy.co.uk",
@@ -2751,12 +2751,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-05-r1",
    "sport-05-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "road.cc",
@@ -2764,12 +2764,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-14-r1",
    "sport-14-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "run-cadence.com",
@@ -2777,12 +2777,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-03-r1",
    "sport-03-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "runnea.co.uk",
@@ -2790,12 +2790,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-11-r1",
    "sport-11-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "running4beginners.co.uk",
@@ -2803,12 +2803,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-27-r1",
    "sport-27-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "runningstate.com",
@@ -2816,12 +2816,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-25-r1",
    "sport-25-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "runtothefinish.com",
@@ -2829,12 +2829,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-20-r1",
    "sport-20-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "scarbir.com",
@@ -2842,12 +2842,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "ce-30-r1",
    "ce-30-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "scotsman.com",
@@ -2855,14 +2855,14 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "ce-05-r1",
    "ce-05-r2",
    "sport-29-r1",
    "sport-29-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "shape.com",
@@ -2870,12 +2870,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-17-r1",
    "sport-17-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "slashgear.com",
@@ -2883,12 +2883,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "auto-04-r1",
    "auto-04-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "solihullobserver.co.uk",
@@ -2896,12 +2896,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "auto-11-r1",
    "auto-11-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "space.com",
@@ -2909,12 +2909,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "ce-24-r1",
    "ce-24-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "squashchamps.com",
@@ -2922,12 +2922,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-32-r1",
    "sport-32-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "storagereview.com",
@@ -2935,12 +2935,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "ce-27-r1",
    "ce-27-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "switchbacktravel.com",
@@ -2948,12 +2948,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-33-r1",
    "sport-33-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "techanything.co.uk",
@@ -2961,12 +2961,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "ce-04-r1",
    "ce-04-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "the-gadgeteer.com",
@@ -2974,12 +2974,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "ce-26-r1",
    "ce-26-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "thecarexpert.co.uk",
@@ -2987,12 +2987,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "auto-25-r1",
    "auto-25-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "thehoopsgeek.com",
@@ -3000,12 +3000,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-13-r1",
    "sport-13-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "thisismoney.co.uk",
@@ -3013,12 +3013,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "auto-25-r1",
    "auto-25-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "today.com",
@@ -3026,12 +3026,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "ce-21-r1",
    "ce-21-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "top5best.com",
@@ -3039,12 +3039,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-32-r1",
    "sport-32-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "trailrunnermag.com",
@@ -3052,12 +3052,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-02-r1",
    "sport-02-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "travelandleisure.com",
@@ -3065,14 +3065,14 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "ce-21-r1",
    "ce-21-r2",
    "sport-02-r1",
    "sport-02-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "triathlonhealth.com",
@@ -3080,12 +3080,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-22-r1",
    "sport-22-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "uswitch.com",
@@ -3093,14 +3093,14 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "auto-31-r1",
    "auto-31-r2",
    "ce-04-r1",
    "ce-04-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "vanreviewer.co.uk",
@@ -3108,12 +3108,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "auto-38-r1",
    "auto-38-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "weartesters.com",
@@ -3121,12 +3121,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-13-r1",
    "sport-13-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "windowscentral.com",
@@ -3134,12 +3134,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "ce-06-r1",
    "ce-06-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "yorkshire.com",
@@ -3147,12 +3147,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "sport-36-r1",
    "sport-36-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "yourhorse.co.uk",
@@ -3160,12 +3160,12 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "auto-35-r1",
    "auto-35-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "yours.co.uk",
@@ -3173,14 +3173,14 @@
   "probes_cited_in_vertical": 2,
   "vertical_probes_total": 80,
   "share": 0.025,
-  "s_readership": 0.1,
   "stability": "both_runs",
   "probe_ids": [
    "ce-04-r1",
    "ce-04-r2",
    "sport-11-r1",
    "sport-11-r2"
-  ]
+  ],
+  "s_citation_share": 0.1
  },
  {
   "domain": "barefootreview.com",
@@ -3188,11 +3188,11 @@
   "probes_cited_in_vertical": 1,
   "vertical_probes_total": 80,
   "share": 0.0125,
-  "s_readership": 0.05,
   "stability": "one_run",
   "probe_ids": [
    "sport-30-r2"
-  ]
+  ],
+  "s_citation_share": 0.05
  },
  {
   "domain": "techtimes.com",
@@ -3200,11 +3200,11 @@
   "probes_cited_in_vertical": 1,
   "vertical_probes_total": 80,
   "share": 0.0125,
-  "s_readership": 0.05,
   "stability": "one_run",
   "probe_ids": [
    "ce-38-r1"
-  ]
+  ],
+  "s_citation_share": 0.05
  },
  {
   "domain": "trailruntemple.com",
@@ -3212,10 +3212,10 @@
   "probes_cited_in_vertical": 1,
   "vertical_probes_total": 80,
   "share": 0.0125,
-  "s_readership": 0.05,
   "stability": "one_run",
   "probe_ids": [
    "sport-30-r2"
-  ]
+  ],
+  "s_citation_share": 0.05
  }
 ]
