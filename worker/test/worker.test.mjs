@@ -9,8 +9,8 @@ import {
   parseSitemap, pickChildSitemap, slugMatches, detectCdn
 } from "../src/signals.js";
 import { runCheck, userAgentFor } from "../src/check.js";
-import worker from "../src/index.js";
-import { score, partsFromEvidence, partsFromSubscores, stanceFrom, ratio } from "../../assets/js/score.js";
+import worker, { kvKey } from "../src/index.js";
+import { score, partsFromEvidence, partsFromSubscores, stanceFrom, ratio, RUBRIC_VERSION } from "../../assets/js/score.js";
 
 // --- Mock network -----------------------------------------------------------------------
 
@@ -339,4 +339,34 @@ test("default fetch is never called unbound (Workers throws Illegal invocation)"
   } finally {
     globalThis.fetch = real;
   }
+});
+
+test("cache keys carry the rubric version, so a check scored under an older rubric is never served", async () => {
+  const host = "rubric-test.co.uk";
+  assert.equal(kvKey(host), `check:v${RUBRIC_VERSION}:${host}`);
+  const stale = { domain: host, checked_at: "2026-10-29T06:17:00Z", score: { total: 40, max: 60 } };
+  const store = new Map([[`check:${host}`, stale]]);
+  const reads = [];
+  const kv = { get: async (k) => { reads.push(k); return store.get(k) || null; }, put: async (k, v) => { store.set(k, JSON.parse(v)); } };
+  const env = { SITE_ORIGIN: SITE, DNS_CHECK: "off", CHECK_CACHE: kv };
+  const req = (ip) => new Request(`https://w.example/api/check?url=${host}`, { headers: { "cf-connecting-ip": ip } });
+
+  // Only the old, unversioned entry exists: it must not be returned. No upstream request is made.
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async () => { throw new Error("offline"); };
+  try {
+    const res = await worker.fetch(req("192.0.2.10"), env);
+    const body = await res.json();
+    assert.deepEqual(reads, [kvKey(host)]);
+    assert.notEqual(body.checked_at, stale.checked_at);
+  } finally {
+    globalThis.fetch = realFetch;
+  }
+
+  // A current-version entry is served as a cache hit.
+  const current = { domain: host, checked_at: "2026-10-30T09:00:00Z", score: { total: 40, max: 45 } };
+  store.set(kvKey(host), current);
+  const hit = await (await worker.fetch(req("192.0.2.11"), env)).json();
+  assert.equal(hit.cache.hit, true);
+  assert.deepEqual(hit.score, current.score);
 });

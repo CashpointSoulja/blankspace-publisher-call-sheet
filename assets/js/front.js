@@ -31,8 +31,23 @@ function renderWave(q) {
       el("a", { class: "domain-link", href: `/first-wave/#${encodeURIComponent(a.domains[0])}` }, a.account),
       el("span", {}, a.decision_reason)));
   }
-  const ready = q.accounts.filter((a) => a.decision === "ready_for_discovery").length;
+  const readyList = q.accounts.filter((a) => a.decision === "ready_for_discovery");
+  const ready = readyList.length;
+  const other = q.accounts.length - ready;
   status.textContent = `${ready} ready for discovery, reviewed ${fmtDate(q.reviewed_at)}. Not qualified leads.`;
+
+  // The headline is the decision; the research count sits below it.
+  const n = (k) => ["No", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"][k] || String(k);
+  document.getElementById("wave-ready-count").textContent = `${n(ready)} ${ready === 1 ? "account" : "accounts"}`;
+  document.getElementById("wave-other-count").textContent = n(other);
+  document.getElementById("hero-title-empty").hidden = true;
+  document.getElementById("hero-title-data").hidden = false;
+  if (ready) {
+    const names = readyList.map((a) => a.account);
+    const list = names.length > 1 ? `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]}` : names[0];
+    document.getElementById("hero-decision").textContent =
+      `Start with ${list}: ${ready > 1 ? "each publishes" : "it publishes"} a commercial route. Willingness to buy is unknown, and the other gates are open questions.`;
+  }
 }
 
 const REASONS = {
@@ -118,15 +133,10 @@ function fill(data) {
     if (typeof href === "string" && /^https:\/\//.test(href)) { node.setAttribute("href", href); node.hidden = false; }
   });
 
-  // The numeric headline only appears once both numbers exist.
-  if (typeof data.publishers_cited === "number" && typeof data.queries === "number") {
-    document.getElementById("hero-title-empty").hidden = true;
-    document.getElementById("hero-title-data").hidden = false;
-  }
 
   previewRows = data.ranked || [];
   renderPreview("all");
-  status.textContent = previewRows.length ? "Top five from the call sheet. Positions are across all verticals." : "No sample rows found.";
+  status.textContent = previewRows.length ? "Top five from the call sheet: ranked on evidence, not readiness. Positions are across all verticals." : "No sample rows found.";
   renderBuckets(data.citation_buckets);
 
   const v = data.verifier_example;

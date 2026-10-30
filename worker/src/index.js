@@ -5,6 +5,7 @@
 
 import { runCheck } from "./check.js";
 import { normaliseTarget, TargetError } from "./guard.js";
+import { RUBRIC_VERSION } from "../../assets/js/score.js";
 
 const CACHE_TTL_SECONDS = 24 * 60 * 60;
 const FALLBACK_LIMIT = { requests: 10, windowMs: 60_000 };
@@ -106,16 +107,21 @@ async function allow(ip, env) {
 
 // --- 24-hour cache by host ------------------------------------------------------------
 // KV when bound (works everywhere). Otherwise the Cache API, which only persists on a
-// custom domain or route, not on workers.dev.
+// custom domain or route, not on workers.dev. Keys carry the rubric version, so a check scored
+// under an older rubric is never served; old entries expire on their own TTL.
+
+export function kvKey(host) {
+  return `check:v${RUBRIC_VERSION}:${host}`;
+}
 
 function cacheKey(host, url) {
-  return new Request(`${url.origin}/__check-cache/${encodeURIComponent(host)}`);
+  return new Request(`${url.origin}/__check-cache/v${RUBRIC_VERSION}/${encodeURIComponent(host)}`);
 }
 
 async function readCache(host, env, url) {
   try {
     if (env.CHECK_CACHE) {
-      const v = await env.CHECK_CACHE.get(`check:${host}`, "json");
+      const v = await env.CHECK_CACHE.get(kvKey(host), "json");
       return v || null;
     }
     if (typeof caches !== "undefined") {
@@ -129,7 +135,7 @@ async function readCache(host, env, url) {
 async function writeCache(host, evidence, env, url) {
   try {
     if (env.CHECK_CACHE) {
-      await env.CHECK_CACHE.put(`check:${host}`, JSON.stringify(evidence), { expirationTtl: CACHE_TTL_SECONDS });
+      await env.CHECK_CACHE.put(kvKey(host), JSON.stringify(evidence), { expirationTtl: CACHE_TTL_SECONDS });
       return;
     }
     if (typeof caches !== "undefined") {

@@ -228,6 +228,7 @@ main { display: block; }
 .hero-sub { color: var(--muted); font-size: 1rem; line-height: 1.7; max-width: 480px; margin: 0 0 2rem; }
 .hero-meta { display: flex; flex-wrap: wrap; column-gap: .5rem; row-gap: .25rem; margin: -1rem 0 2rem; color: var(--muted); font-size: .875rem; font-weight: 600; }
 .hero-meta > span { white-space: nowrap; }
+.hero-meta > span:first-child { white-space: normal; }
 .label-line { margin-top: 2rem; color: var(--muted); font-size: .8125rem; line-height: 1.6; max-width: 520px; }
 
 /* ---------- Cards (BRAND §5) ---------- */
@@ -501,7 +502,7 @@ details.raw pre { max-height: 420px; }
 .wave-group + .wave-group { margin-top: 3rem; }
 .wave-title { font-size: 1.5rem; margin-bottom: .5rem; }
 .wave-grid { margin-top: 1.5rem; gap: 1.25rem; }
-.wave-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: .75rem; }
+.wave-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: .5rem 1rem; margin-bottom: .75rem; }
 .wave-head h3 { font-size: 1.1875rem; margin: 0; }
 .wave-reason { color: var(--text) !important; font-size: .9375rem !important; }
 .wave-sub { margin: 1.25rem 0 .375rem; }

@@ -40,8 +40,8 @@ function notCollected(title, domain) {
       el("a", { href: `/check/?url=${encodeURIComponent(domain)}` }, "Run the live checks"), " to read it now."));
 }
 
-// opts: { sampleDate } for the "Not in the dated sample" line; { sampleVertical } to show the
-// sample's vertical beside a live check, which has none of its own.
+// opts: { sampleDate } for the "Not in the dated sample" line; { sampleVertical, sampleShare } to show
+// the sample's vertical and citation share beside a live check, which has neither of its own.
 export function renderEvidence(ev, opts = {}) {
   const live = ev.source === "live";
   const s = ev.signals || {};
@@ -116,7 +116,15 @@ export function renderEvidence(ev, opts = {}) {
               el("code", { class: "ptr" }, "/signals/readership/stability")),
             fact("Sample", r.sample_id, "/signals/readership/sample_id")
           ]
-        : fact(`Not in the dated sample (${fmtDate(opts.sampleDate) || "date not set"})`, "Unknown", "/signals/readership/status", { unknown: true })),
+        : live
+          // The worker never sees the sample, so its readership status is not a finding. Say what
+          // the sample holds instead, without changing the live score.
+          ? fact(opts.sampleShare != null
+              ? `Not assessed by the live check. Citation share in the dated sample (${fmtDate(opts.sampleDate) || "date not set"})`
+              : `Not assessed by the live check. Not in the dated sample (${fmtDate(opts.sampleDate) || "date not set"})`,
+            opts.sampleShare != null ? fmtPct(opts.sampleShare, 1) : "Unknown",
+            opts.sampleShare != null ? "data/readership.json" : "/signals/readership/status", { unknown: opts.sampleShare == null })
+          : fact(`Not in the dated sample (${fmtDate(opts.sampleDate) || "date not set"})`, "Unknown", "/signals/readership/status", { unknown: true })),
     el("p", { class: "small muted" }, "Citation frequency on this one dated sample. Not measured agent traffic, readership or revenue."));
 
   const p = s.placement || {};

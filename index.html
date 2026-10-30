@@ -59,10 +59,10 @@
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <span class="tag">Publisher call sheet</span>
-        <h1 id="hero-title-empty">Which publishers AI answers cite, and <span class="hl">who I’d call first.</span></h1>
-        <h1 id="hero-title-data" hidden><span data-slot="publishers_cited" data-format="number">—</span> publishers were cited in AI answers to <span data-slot="queries" data-format="number">—</span> UK shopping queries. <span class="hl">Here’s where I’d start.</span></h1>
-        <p class="hero-sub">Across automotive, consumer electronics and sportswear: who gets cited, the evidence behind each one, and where I’d start.</p>
-        <p class="hero-meta" id="hero-meta"><span data-slot="engine_short">—</span><span class="sep" aria-hidden="true">·</span><span><span data-slot="queries" data-format="number">—</span> UK queries</span><span class="sep" aria-hidden="true">·</span><span><span data-slot="runs_per_query" data-format="number">—</span> runs</span><span class="sep" aria-hidden="true">·</span><a href="/method/#sample">Method</a></p>
+        <h1 id="hero-title-empty">Where I’d start, and <span class="hl">where I wouldn’t.</span></h1>
+        <h1 id="hero-title-data" hidden><span id="wave-ready-count">—</span> worth a first conversation. <span class="hl"><span id="wave-other-count">—</span> I wouldn’t start with.</span></h1>
+        <p class="hero-sub" id="hero-decision">Each account was reviewed by hand against its current public pages, with every finding sourced and dated. Willingness to buy is unknown.</p>
+        <p class="hero-meta" id="hero-meta"><span>From <span data-slot="publishers_cited" data-format="number">—</span> publishers cited in AI answers to <span data-slot="queries" data-format="number">—</span> UK shopping queries, <span data-slot="sample_date" data-format="date">—</span></span><span class="sep" aria-hidden="true">·</span><span data-slot="engine_short">—</span><span class="sep" aria-hidden="true">·</span><span><span data-slot="runs_per_query" data-format="number">—</span> runs per query</span><span class="sep" aria-hidden="true">·</span><a href="/method/#sample">Method</a></p>
         <div class="actions">
           <a class="btn btn-primary" href="/first-wave/">See the first wave <span class="arrow" aria-hidden="true">→</span></a>
           <a class="btn btn-ghost" href="/targets/">Open the call sheet</a>
@@ -183,7 +183,7 @@
           <li class="score-row">
             <div class="score-name"><h3>Commerce monetisation</h3><span class="tag tag-neutral tag-sm">Live</span></div>
             <div class="score-weight"><div class="bar-track"><div class="bar-fill" style="width:37.5%"></div></div><span class="score-pts">15</span></div>
-            <p>Affiliate networks found in page links. A publisher already earning from buying intent understands the pitch quickly.</p>
+            <p>Affiliate networks seen in links in the fetched HTML. None seen is unknown, not zero. Commercial readiness is reviewed by hand, not scored.</p>
           </li>
           <li class="score-row">
             <div class="score-name"><h3>Agent reachability</h3><span class="tag tag-neutral tag-sm">Live</span></div>
@@ -231,7 +231,7 @@
       <div class="grid-3">
         <article class="card span-2">
           <h3>Outreach drafts, checked before you read them</h3>
-          <p>Each draft is addressed to a role rather than a named person. Every claim links to its evidence. Anything that can’t be traced is removed, and the removal is logged. No drafts are published yet: they wait on the live signals each opening angle depends on.</p>
+          <p>Each draft is addressed to a role rather than a named person. Every claim links to its evidence. Anything that can’t be traced is removed, and the removal is logged. Drafts are written only for accounts ready for discovery: two so far, each asking for a feasibility conversation, not a sale.</p>
           <div class="inner" style="margin:1rem 0">
             <div class="inner-body" id="verifier-example">
               <span class="micro">Verifier log</span>
@@ -239,7 +239,7 @@
             </div>
           </div>
           <p>No send function exists anywhere in the code.</p>
-          <a class="card-link" href="/method/#verifier">How drafts are checked →</a>
+          <a class="card-link" href="/first-wave/">See the accounts and their drafts →</a>
         </article>
 
         <article class="card">
@@ -283,7 +283,7 @@
             <tr><th scope="col">The role asks for</th><th scope="col">Where it is</th></tr>
           </thead>
           <tbody>
-            <tr><td class="strong">Outreach that books qualified publisher meetings</td><td>Call sheet and evidence pages. Drafts and their verifier are specified; none are published yet.</td></tr>
+            <tr><td class="strong">Outreach that books qualified publisher meetings</td><td>First wave reviewed by hand, call sheet, evidence pages and two verified drafts. Nothing has been sent, so there are no meetings yet.</td></tr>
             <tr><td class="strong">The GTM machine: lists, research agents, analytics</td><td>Live check, scoring, verifier, method</td></tr>
             <tr><td class="strong">Sequences and CRM</td><td>Not built. A CRM is a buying decision, not a demo. The plan covers set-up.</td></tr>
             <tr><td class="strong">A/B testing</td><td>The plan: test design for small numbers</td></tr>

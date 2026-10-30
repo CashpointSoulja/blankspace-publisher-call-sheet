@@ -19,7 +19,7 @@
       "decision_reason": "A current commercial route is published. Willingness to buy is unknown.",
       "verified": [
         {
-          "finding": "The advertise page lists advertising and partnership opportunities, including programmatic and eCommerce routes",
+          "finding": "The advertise page lists advertising and partnership opportunities, including programmatic and eCommerce routes (page first published 24 Jan 2022, still served)",
           "source_url": "https://www.techradar.com/how-to/advertise-with-us",
           "accessed": "2026-10-30"
         },
@@ -128,7 +128,7 @@
         "runrepeat.com"
       ],
       "decision": "hold",
-      "decision_reason": "Ads and affiliate revenue are confirmed, but ads are managed by a third party and no direct commercial route or sponsored-content policy was found.",
+      "decision_reason": "Ads and affiliate revenue are confirmed. Ads are managed by a third party, and no direct commercial route or sponsored-content policy was found in the sources reviewed (About and privacy pages).",
       "verified": [
         {
           "finding": "The about page confirms the site earns from affiliate commissions and ads",
@@ -141,13 +141,13 @@
           "accessed": "2026-10-30"
         }
       ],
-      "owner_role": "Unknown: no commercial role is published",
+      "owner_role": "Unknown: no commercial route verified in the About and privacy pages",
       "next_question": "Does your editorial policy allow sponsored placements, and who decides on new ad formats alongside your ad manager?",
       "gates": [
         {
           "gate": "commercial_route",
           "status": "open",
-          "note": "Ad revenue confirmed, but no direct advertising or partnerships route is published."
+          "note": "Ad revenue confirmed, but no direct advertising or partnerships route found in the About and privacy pages."
         },
         {
           "gate": "editorial_policy",
@@ -171,7 +171,7 @@
         }
       ],
       "success_criteria_30d": [],
-      "release_condition": "A public advertising or partnerships route, and an editorial policy that allows sponsored placements."
+      "release_condition": "A direct answer from RunRepeat, or a public page, showing who decides on new ad formats and whether its editorial policy allows sponsored placements."
     },
     {
       "account": "Treeline Review",
@@ -179,7 +179,7 @@
         "treelinereview.com"
       ],
       "decision": "hold",
-      "decision_reason": "Its editorial policy rules out product placement, which agent-facing placements would resemble. Affiliate income is not sponsor readiness.",
+      "decision_reason": "Its stated policy rules out banner ads, pop-ups and product placement. Whether agent-facing placements fall under that is for the publisher to say. Affiliate income is not sponsor readiness.",
       "verified": [
         {
           "finding": "Trust page states: “No banner ads. No pop-ups. No product placement.”",
@@ -217,7 +217,7 @@
         }
       ],
       "success_criteria_30d": [],
-      "release_condition": "Only if the publisher states that agent-facing placements fit its editorial policy."
+      "release_condition": "A direct answer from Treeline Review that agent-facing placements fit its editorial policy."
     },
     {
       "account": "drive.co.uk",
@@ -225,7 +225,7 @@
         "drive.co.uk"
       ],
       "decision": "exclude",
-      "decision_reason": "Not a publisher. The current site is a car marketplace, so it is reclassified as a retailer (see corrections.json) and removed from the ranking.",
+      "decision_reason": "Not a publisher. The current site is a car marketplace, so it is reclassified as a retailer, with a dated correction on the method page, and removed from the ranking.",
       "verified": [
         {
           "finding": "Homepage: “New & Used Cars for Sale Online”, backed by Volkswagen Financial Services",
